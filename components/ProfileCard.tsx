@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Facebook, Linkedin, Mail, Calendar } from "lucide-react";
+import { Facebook, Linkedin, Mail, Calendar, Github } from "lucide-react";
 import { Card } from "./Card";
 import { Whatsapp } from "./icons/Whatsapp";
 import { Button } from "./Button";
@@ -50,11 +50,12 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                         <span className="text-muted-foreground font-medium">Send Email</span>
                     </Button>
                 </div>
-                <div className="flex justify-left gap-4 pt-2">
+                <div className="flex justify-center gap-4 pt-2">
                     {[
                         { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/" },
                         { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/paul-puzon-932b86303/" },
                         { icon: Whatsapp, label: "Whatsapp", href: "https://wa.me/639914075808" },
+                        { icon: Github, label: "Github", href: "https://github.com/Paul02-Git" },
                     ].map((social, i) => (
                         <a
                             key={i}

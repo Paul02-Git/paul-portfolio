@@ -90,7 +90,7 @@ export default function PortfolioPage() {
                                             <button
                                                 key={page}
                                                 onClick={() => handlePageChange(page)}
-                                                className={`w-10 h-10 rounded-full border transition-colors font-medium text-sm cursor-pointer ${currentPage === page
+                                                className={`w-10 h-10 rounded-sm border transition-colors font-medium text-sm cursor-pointer ${currentPage === page
                                                     ? 'bg-primary text-primary-foreground border-primary'
                                                     : 'border-border/40 bg-muted/30 hover:bg-muted/50'
                                                     }`}

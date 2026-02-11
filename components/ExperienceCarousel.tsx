@@ -11,7 +11,7 @@ const ExperienceItem = ({ exp }: { exp: Experience }) => (
             {exp.year}
         </div>
         <div className="flex gap-4 items-center">
-            <div className="w-11 h-11 rounded-lg bg-muted/50 border border-border/50 flex-shrink-0 flex items-center justify-center p-2 group-hover:bg-white transition-all shadow-sm relative">
+            <div className="w-11 h-11 rounded-sm bg-muted/50 border border-border/50 flex-shrink-0 flex items-center justify-center p-2 group-hover:bg-white transition-all shadow-sm relative">
                 <Image
                     src={exp.logo}
                     alt={exp.company}

@@ -30,7 +30,7 @@ const BrandItem = ({ brand }: { brand: Brand }) => {
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: -45, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-bold whitespace-nowrap shadow-xl pointer-events-none"
+                        className="absolute z-50 px-3 py-1.5 rounded-md bg-foreground text-background text-xs font-bold whitespace-nowrap shadow-xl pointer-events-none"
                     >
                         {brand.name}
                         {/* Tooltip Arrow */}
