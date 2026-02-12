@@ -22,8 +22,8 @@ export default function Navbar() {
     return (
         <>
             <div className="fixed top-6 left-0 right-0 z-50 pointer-events-none">
-                <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6">
-                    <nav className="pointer-events-auto bg-white/80 backdrop-blur-md border border-white/20 shadow-sm shadow-black/10 rounded-lg px-4 py-4 flex items-center justify-between transition-all duration-300">
+                <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-6">
+                    <nav className="pointer-events-auto bg-white/50 backdrop-blur-md border border-white/20 shadow-sm shadow-black/10 rounded-sm px-4 py-4 flex items-center justify-between transition-all duration-300">
                         <div className="flex items-center gap-3">
                             <Link href="/" className="flex items-center gap-3 group">
                                 <div className="flex items-center text-foreground group-hover:text-primary transition-colors">

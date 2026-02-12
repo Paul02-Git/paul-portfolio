@@ -23,11 +23,13 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { Whatsapp } from "@/components/icons/Whatsapp";
 import { ProfileCard } from "@/components/ProfileCard";
 import { Marquee } from "@/components/Marquee";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { DynamicImageCard } from "@/components/DynamicImageCard";
 import { Footer } from "@/components/Footer";
 import { cn } from "@/lib/utils";
 
 // Data
-import { experiences, tools, projects, services, marqueeItems } from "@/data/portfolio";
+import { experiences, tools, projects, services, marqueeItems, testimonials } from "@/data/portfolio";
 
 
 
@@ -52,8 +54,8 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-grid auto-rows-[minmax(180px,auto)]">
 
         {/* Left Column: Profile Card */}
-        <div className="lg:col-span-4 flex flex-col h-full">
-          <ProfileCard />
+        <div className="lg:col-span-4 transition-all duration-300">
+          <ProfileCard className="h-full" />
         </div>
 
         {/* Middle Column: Experience & Expert Area */}
@@ -86,12 +88,33 @@ export default function Home() {
         </div>
       </div>
 
+      {/* New Grid Section: 2 Boxes (60/40 split) */}
+      <div className="grid grid-cols-1 lg:grid-cols-10 gap-grid">
+        <Card className="lg:col-span-6">
+          <TestimonialCarousel testimonials={testimonials} />
+        </Card>
+        <DynamicImageCard
+          className="lg:col-span-4 min-h-[150px] object-fit:cover"
+          images={[
+            "/images/Raidersfancruise.png",
+            "/images/Ichiban.png",
+            "/images/Jets.png",
+            "/images/Techloq.png",
+            "/images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg",
+            "/images/Think Plan.jpg",
+            "/images/reviews.png",
+            "/images/undraw_online-review_08y6.svg",
+            "/images/undraw_agreement_ftet.svg"
+          ]}
+        />
+      </div>
+
       {/* Services Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-grid">
         <div className="lg:col-span-9">
           <Card>
             <SectionTitle link="/services" linkText="See All Services">Services I Offer</SectionTitle>
-            <div className="flex flex-wrap gap-3 md:gap-4">
+            <div className="flex flex-wrap gap-grid">
               {services.map((service, i) => (
                 <ServiceCard key={i} service={service} index={i} />
               ))}
@@ -99,17 +122,17 @@ export default function Home() {
           </Card>
         </div>
 
-        {/* Call to Work Section */}
+        {/* Marquee Section */}
         <div className="lg:col-span-3">
           <Card className="bg-white border-border/60 relative h-full flex flex-col justify-between items-start text-left overflow-hidden p-8">
             <Marquee
               items={marqueeItems}
               speed={60}
-              className="bg-muted/30 rounded-2xl h-14"
+              className="bg-muted/30 rounded-xl h-14"
             />
 
             <div className="space-y-grid mt-8">
-              <h2 className="text-3xl font-bold text-foreground tracking-tight leading-[1.1]">
+              <h2 className="text-4xl font-bold text-foreground tracking-tight leading-[1.1]">
                 Let's <span className="inline-block animate-bounce-subtle">👋</span><br />
                 Work Together
               </h2>

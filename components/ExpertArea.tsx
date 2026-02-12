@@ -8,7 +8,7 @@ interface ExpertAreaProps {
 export const ExpertArea = ({ tools }: ExpertAreaProps) => (
     <div className="grid grid-cols-3 gap-grid">
         {tools.map((tool) => (
-            <div key={tool.name} className="flex flex-col items-center group">
+            <div key={tool.name} className="flex flex-col items-center group text-xs font-medium">
                 <div className="w-full aspect-[5/3] rounded-lg bg-muted/50 flex items-center justify-center p-2 group-hover:bg-muted transition-colors relative mb-2">
                     <Image
                         src={tool.logo}
@@ -17,7 +17,7 @@ export const ExpertArea = ({ tools }: ExpertAreaProps) => (
                         className="p-4 object-contain transition-transform group-hover:scale-110"
                     />
                 </div>
-                <span className="text-xs font-medium text-foreground">{tool.name}</span>
+                <span className="text-foreground">{tool.name}</span>
             </div>
         ))}
     </div>

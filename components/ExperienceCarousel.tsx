@@ -6,8 +6,8 @@ interface ExperienceCarouselProps {
 }
 
 const ExperienceItem = ({ exp }: { exp: Experience }) => (
-    <div className="grid grid-cols-[130px_1fr] items-center group mb-grid px-2 w-full">
-        <div className="text-[14px] font-bold text-muted-foreground/60 uppercase tracking-widest whitespace-nowrap">
+    <div className="grid grid-cols-[120px_4fr] items-center group mb-grid px-2 w-full">
+        <div className="text-[12px] font-bold text-muted-foreground/60 uppercase tracking-widest whitespace-nowrap">
             {exp.year}
         </div>
         <div className="flex gap-4 items-center">

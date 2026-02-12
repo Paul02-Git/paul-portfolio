@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 
 export const ProfileCard = ({ className }: { className?: string }) => {
     return (
-        <Card className={cn("p-0 flex flex-col", className)}>
-            <div className="relative w-full overflow-hidden p-4 h-[300px] sm:h-[350px] lg:h-[270px]">
-                <div className="w-full h-full rounded-md overflow-hidden relative ">
+        <div className={cn("flex flex-col gap-grid h-full", className)}>
+            <Card className="flex-grow p-card-md flex-col">
+                <div className="relative w-full overflow-hidden h-[200px] sm:h-[250px] lg:h-[180px] rounded-md">
                     <Image
                         src="/images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg"
                         alt="Paul Puzon"
@@ -22,35 +22,42 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                         priority
                     />
                 </div>
-            </div>
-            <div className="p-grid space-y-4 pt-2 lg:pt-4 flex-none flex flex-col justify-between">
-                <div>
-                    <h1 className="mb-2 flex items-center gap-2">
-                        Paul Puzon <span className="text-3xl lg:text-3xl">👋</span>
-                    </h1>
-                    <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
-                        I help clients build fast, reliable <span className="text-foreground font-semibold">WordPress</span> & <span className="text-foreground font-semibold"> Elementor</span> websites with seamless integrations and <span className="text-foreground font-semibold">GoHighLevel workflows.</span>
-                    </p>
+                <div className="flex-grow flex flex-col justify-between pt-4">
+                    <div className="flex flex-col gap-2">
+                        <h1 className="flex items-center gap-2">
+                            How you doing? <span className="text-3xl lg:text-3xl">👋</span>
+                        </h1>
+                        <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                            I'm Paul, I help clients build fast, reliable <span className="text-foreground font-semibold">WordPress</span> & <span className="text-foreground font-semibold"> Elementor</span> websites with seamless integrations and <span className="text-foreground font-semibold">GHL workflows.</span>
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-3 pt-4 mt-auto">
+                            <Button
+                                className="w-full sm:flex-1"
+                                icon={<Calendar className="w-5 h-5" />}
+                                iconPosition="left"
+                            >
+                                Book A Call
+                            </Button>
+                            <Button
+                                variant="outline"
+                                className="w-full sm:flex-1"
+                                href="mailto:paulpuzon0007@gmail.com"
+                                icon={<Mail className="w-5 h-5" />}
+                                iconPosition="left"
+                            >
+                                <span className="text-muted-foreground font-medium">Send Email</span>
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                    <Button
-                        className="w-full sm:flex-1"
-                        icon={<Calendar className="w-5 h-5" />}
-                        iconPosition="left"
-                    >
-                        Book A Call
-                    </Button>
-                    <Button
-                        variant="outline"
-                        className="w-full sm:flex-1"
-                        href="mailto:paulpuzon0007@gmail.com"
-                        icon={<Mail className="w-5 h-5" />}
-                        iconPosition="left"
-                    >
-                        <span className="text-muted-foreground font-medium">Send Email</span>
-                    </Button>
-                </div>
-                <div className="flex justify-center gap-4 pt-2">
+            </Card>
+
+            <Card className="flex flex-col items-center p-card-sm gap-4">
+                <h2>
+                    <div className="flex items-center gap-2">Stay Connected <img src="/images/undraw_friendly-guy-avatar_dqp5.svg" alt="Avatar" className="w-10 h-10" /></div>
+                </h2>
+                <div className="flex justify-center gap-4">
                     {[
                         { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/" },
                         { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/paul-puzon-932b86303/" },
@@ -62,14 +69,14 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                             href={social.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-sm bg-white border border-border text-muted-foreground hover:text-primary hover:border-primary/20 transition-all hover:-translate-y-0.5 shadow-sm"
+                            className="p-3 rounded-sm bg-muted/30 border border-border/20 text-muted-foreground hover:text-primary hover:border-primary/20 transition-all hover:-translate-y-0.5 shadow-sm group"
                             aria-label={social.label}
                         >
-                            <social.icon className="w-6 h-6" />
+                            <social.icon className="w-5 h-5 transition-colors group-hover:text-primary" />
                         </a>
                     ))}
                 </div>
-            </div>
-        </Card>
+            </Card>
+        </div>
     );
 };

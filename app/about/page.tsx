@@ -26,7 +26,7 @@ export default function AboutPage() {
                 {/* Right Column - Content */}
                 <div className="lg:col-span-8">
                     {/* Consolidated Content Card */}
-                    <Card className="p-grid md:p-12 space-y-12 md:space-y-16">
+                    <Card className="space-y-12 md:space-y-16">
                         {/* About Me Section */}
                         <section className="space-y-8">
                             <div className="flex flex-col gap-4">

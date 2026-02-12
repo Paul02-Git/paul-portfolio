@@ -19,7 +19,7 @@ interface TestimonialCarouselProps {
 
 const TestimonialCard = ({ rating, quote, name, role, source }: Testimonial) => {
     return (
-        <div className="p-6 md:p-8 rounded-lg bg-muted/30 border border-border/20 space-y-6 h-full flex flex-col justify-between">
+        <div className="p-card-md rounded-lg bg-muted/30 border border-border/20 space-y-6 h-full flex flex-col justify-between">
             <div className="space-y-4">
                 {/* Header with stars and source */}
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -93,9 +93,9 @@ export const TestimonialCarousel = ({ testimonials }: TestimonialCarouselProps) 
 
     return (
         <section className="space-y-2">
-            <div className="flex flex-wrap items-center justify-between gap-4 px-2">
-                <h2 className="">
-                    Trusted By Clients 🏆</h2>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+                <h2>
+                    <div className="flex items-center gap-2">Trusted By Clients <img src="/images/undraw_online-review_08y6.svg" alt="Client Approved" className="w-14 h-14 object-contain" /></div></h2>
                 <div className="flex gap-2">
                     <Button
                         variant="outline"
@@ -104,7 +104,7 @@ export const TestimonialCarousel = ({ testimonials }: TestimonialCarouselProps) 
                         aria-label="Previous testimonial"
                         className="cursor-pointer"
                     >
-                        <ChevronLeft className="w-5 h-5 text-foreground" />
+                        <ChevronLeft className="w-4 h-4 text-foreground" />
                     </Button>
                     <Button
                         variant="outline"
@@ -113,7 +113,7 @@ export const TestimonialCarousel = ({ testimonials }: TestimonialCarouselProps) 
                         aria-label="Next testimonial"
                         className="cursor-pointer"
                     >
-                        <ChevronRight className="w-5 h-5 text-foreground" />
+                        <ChevronRight className="w-4 h-4 text-foreground" />
                     </Button>
                 </div>
             </div>
