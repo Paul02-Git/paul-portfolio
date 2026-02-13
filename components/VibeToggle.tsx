@@ -104,7 +104,7 @@ export const VibeToggle = ({
             title={`Current: ${activeVibe.name} - Click to switch`}
         >
             <div className="relative w-5 h-5 flex items-center justify-center">
-                <AnimatePresence mode="wait" initial={false}>
+                <AnimatePresence mode="popLayout" initial={false}>
                     <motion.div
                         key={activeVibe.name}
                         initial={{ scale: 0.6, opacity: 0, rotate: -30 }}

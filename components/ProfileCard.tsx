@@ -14,29 +14,29 @@ export const ProfileCard = ({ className }: { className?: string }) => {
     return (
         <div className={cn("flex flex-col gap-grid h-full", className)}>
             <Card className="flex-grow p-card-md flex-col">
-                <div className="relative w-full overflow-hidden h-[200px] sm:h-[250px] lg:h-[180px] rounded-md">
+                <div className="relative w-full overflow-hidden h-[150px] sm:h-[200px] lg:h-[150px] rounded-md">
                     <Image
-                        src="/images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg"
+                        src="/images/Paul-Dev.svg"
                         alt="Paul Puzon"
                         fill
                         quality={80}
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 25vw, 20vw"
-                        className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                        className="object-contain object-center transition-transform duration-700 hover:scale-105"
                         priority
                     />
                 </div>
                 <div className="flex-grow flex flex-col justify-between pt-4">
                     <div className="flex flex-col gap-2">
-                        <h1 className="flex items-center gap-2">
-                            <span className="text-2xl lg:text-3xl">How you doing? 👋</span>
+                        <h1 className="flex items-center gap-2 justify-center">
+                            <span className="text-2xl lg:text-3xl">How you doing?👋</span>
                         </h1>
-                        <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                        <p className="text-muted-foreground text-sm lg:text-base leading-relaxed text-center md:max-w-[50ch] md:mx-auto">
                             I&apos;m Paul, I help clients build fast, reliable <span className="text-foreground font-semibold">WordPress</span> & <span className="text-foreground font-semibold"> Elementor</span> websites with seamless integrations and <span className="text-foreground font-semibold">GHL workflows.</span>
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-3 pt-4 mt-auto">
                             <Button
-                                className="w-full sm:flex-1"
+                                className="w-full sm:flex-1 p-3 text-sm"
                                 icon={<Calendar className="w-5 h-5" />}
                                 iconPosition="left"
                                 href="https://calendly.com/paulpuzon0007/30min"
@@ -47,7 +47,7 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                             </Button>
                             <Button
                                 variant="outline"
-                                className="w-full sm:flex-1"
+                                className="w-full sm:flex-1 p-3 text-sm"
                                 href="mailto:paulpuzon0007@gmail.com"
                                 icon={<Mail className="w-5 h-5" />}
                                 iconPosition="left"

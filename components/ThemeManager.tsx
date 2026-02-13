@@ -10,6 +10,7 @@ export const ThemeManager = () => {
             const theme = vibes[index];
             if (theme) {
                 document.documentElement.style.setProperty('--primary', theme.color);
+                document.documentElement.style.setProperty('--secondary', theme.secondaryColor);
                 localStorage.setItem('selected-vibe', index.toString());
             }
         };

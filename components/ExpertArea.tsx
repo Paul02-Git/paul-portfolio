@@ -9,7 +9,7 @@ export const ExpertArea = ({ tools }: ExpertAreaProps) => (
     <div className="grid grid-cols-3 gap-grid">
         {tools.map((tool) => (
             <div key={tool.name} className="flex flex-col items-center group text-xs font-medium">
-                <div className="w-full aspect-[5/3] rounded-lg bg-muted/50 flex items-center justify-center p-2 group-hover:bg-muted transition-colors relative mb-2">
+                <div className="w-full aspect-[16/9] rounded-lg bg-muted/50 flex items-center justify-center p-2 group-hover:bg-muted relative mb-2">
                     <Image
                         src={tool.logo}
                         alt={tool.name}

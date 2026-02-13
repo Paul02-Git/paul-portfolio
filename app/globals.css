@@ -5,7 +5,8 @@
   --foreground: #0F172A;
   --card: #ffffff;
   --card-foreground: #0F172A;
-  --primary: #108a00;
+  /* Primary colors are handled dynamically by ThemeManager/VibeToggle */
+  --primary: transparent;
   --primary-foreground: #FFFFFF;
   --muted: #F1F5F9;
   --muted-foreground: #707070;

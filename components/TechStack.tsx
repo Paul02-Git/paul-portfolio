@@ -144,9 +144,9 @@ export const TechStack = ({ className }: TechStackProps) => {
 
                         {/* Content */}
                         <div className="flex items-center gap-4 z-10 relative gap-4 pt-2">
-                            <div className="w-24 h-24 bg-black/5 rounded-md flex items-center justify-center relative overflow-hidden shrink-0 shadow-md border border-border/10">
+                            <div className="w-24 aspect-square bg-black/5 rounded-md flex items-center justify-center relative overflow-hidden shrink-0 shadow-md border border-border/10">
                                 {spotifyData?.albumImageUrl ? (
-                                    <Image src={spotifyData.albumImageUrl} alt="Album Art" fill className="object-contain" />
+                                    <Image src={spotifyData.albumImageUrl} alt="Album Art" fill className="object-cover" />
                                 ) : (
                                     <Music className="w-8 h-8 text-foreground/30" />
                                 )}

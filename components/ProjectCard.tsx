@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ project, onClick }: ProjectCardProps) => (
     <button
-        className="flex-grow group cursor-pointer relative w-full aspect-16/9 rounded-lg overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+        className="flex-grow group cursor-pointer relative w-full aspect-[16/9] rounded-lg overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
         onClick={() => onClick(project.image)}
         aria-label={`View ${project.title} details`}
     >

@@ -13,7 +13,7 @@ export const PortfolioProjectCard = ({ project, onClick, priority = false }: Por
     <div className="group space-y-5">
         {/* Image Card */}
         <button
-            className="group cursor-pointer relative w-full aspect-[16/10] rounded-[10px] overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary border border-border/50 bg-muted shadow-sm hover:shadow-md transition-shadow duration-500"
+            className="group cursor-pointer relative w-full aspect-[16/9] rounded-[10px] overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary border border-border/50 bg-muted shadow-sm hover:shadow-md transition-shadow duration-500"
             onClick={() => onClick(project.image)}
             aria-label={`View ${project.title} screenshot`}
         >
@@ -41,17 +41,6 @@ export const PortfolioProjectCard = ({ project, onClick, priority = false }: Por
                 </p>
             </div>
 
-            {project.link && (
-                <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-muted-foreground hover:text-primary transition-colors mt-1 whitespace-nowrap group/link"
-                >
-                    Visit Site
-                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                </a>
-            )}
         </div>
     </div>
 );

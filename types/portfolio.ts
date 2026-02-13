@@ -32,7 +32,7 @@ export interface Testimonial {
     quote: string;
     name: string;
     role: string;
-    source: string;
+
 }
 
 export interface Stat {
@@ -48,4 +48,12 @@ export interface FAQItem {
 export interface Brand {
     name: string;
     logo: string;
+}
+
+export interface Vibe {
+    name: string;
+    color: string;
+    secondaryColor: string;
+    icon: LucideIcon;
+    label: string;
 }

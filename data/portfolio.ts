@@ -2,11 +2,11 @@ import { Layout, Zap, Code2, Headset, Puzzle, Palette, Search, Gauge, Bot, Shiel
 import { Experience, Tool, Project, Service, Testimonial } from "@/types/portfolio";
 
 export const vibes = [
-    { name: "Professional", color: "#108a00", icon: ShieldCheck, label: "Trust & Growth" },
-    { name: "Creative", color: "#000000", icon: Palette, label: "Innovation & Design" },
-    { name: "Premium", color: "#f06431", icon: Sparkles, label: "Excellence & Quality" },
-    { name: "Visionary", color: "#2563eb", icon: Globe, label: "Global Reach" },
-    { name: "Modern", color: "#854836", icon: Activity, label: "Dynamic & Bold" }
+    { name: "Professional", color: "#108a00", secondaryColor: "#56AB2F", icon: ShieldCheck, label: "Trust & Growth" },
+    { name: "Creative", color: "#000000", secondaryColor: "#334155", icon: Palette, label: "Innovation & Design" },
+    { name: "Premium", color: "#f06431", secondaryColor: "#fbbf24", icon: Sparkles, label: "Excellence & Quality" },
+    { name: "Visionary", color: "#2563eb", secondaryColor: "#7dd3fc", icon: Globe, label: "Global Reach" },
+    { name: "Modern", color: "#854836", secondaryColor: "#d97706", icon: Activity, label: "Dynamic & Bold" }
 ];
 
 export const experiences: Experience[] = [
@@ -20,10 +20,10 @@ export const experiences: Experience[] = [
 
 export const tools: Tool[] = [
     { name: "Figma", logo: "/images/Figma-logo.svg" },
-    { name: "Wordpress", logo: "https://s.w.org/style/images/about/WordPress-logotype-wmark.png" },
+    { name: "Wordpress", logo: "/images/WPLOGO.svg" },
     { name: "GHL", logo: "/images/GHL Logo.svg" },
-    { name: "Elementor", logo: "/images/elementor-custom.png" },
-    { name: "Antigravity", logo: "/images/GAG.webp" },
+    { name: "Elementor", logo: "/images/Elementor-Logo-Symbol-Red.svg" },
+    { name: "Antigravity", logo: "/images/G-AG.svg" },
     { name: "GA4", logo: "https://www.vectorlogo.zone/logos/google_analytics/google_analytics-icon.svg" },
 ];
 
@@ -113,18 +113,18 @@ export const stats = [
 
 export const brands = [
 
-    { name: "Elementor", logo: "/images/elementor-custom.png" },
+    { name: "Elementor", logo: "/images/Elementor-Logo-Symbol-Red.svg" },
     { name: "Figma", logo: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg" },
     { name: "Wordpress", logo: "https://www.vectorlogo.zone/logos/wordpress/wordpress-icon.svg" },
-    { name: "Antigravity", logo: "/images/GAG.webp" },
+    { name: "Antigravity", logo: "/images/G-AG.svg" },
     { name: "Slack", logo: "https://www.vectorlogo.zone/logos/slack/slack-icon.svg" },
     { name: "HubSpot", logo: "https://www.vectorlogo.zone/logos/hubspot/hubspot-icon.svg" },
     { name: "GHL", logo: "/images/GHL Logo.svg" },
     { name: "Google Analytics", logo: "https://www.vectorlogo.zone/logos/google_analytics/google_analytics-icon.svg" },
-    { name: "Google Tag Manager", logo: "/images/GTM.webp" },
-    { name: "Microsoft Clarity", logo: "/images/Microsoft Clarity.png" },
-    { name: "Cloudways", logo: "/images/cloudways.png" },
-    { name: "ClickUp", logo: "/images/clickup.png" },
+    { name: "Google Tag Manager", logo: "/images/GTM.svg" },
+    { name: "Microsoft Clarity", logo: "/images/MS CLARITY.svg" },
+    { name: "Cloudways", logo: "/images/Cloudways_Logo.svg" },
+    { name: "ClickUp", logo: "/images/ClickUp.svg" },
 
 
 
@@ -136,63 +136,64 @@ export const testimonials: Testimonial[] = [
         quote: "I am genuinely grateful for having been recommended to WebCornerstone by a trusted colleague. I required a professional website to be developed very quickly,",
         name: "Mark P. Smith",
         role: "Owner, MPS & Associates, LLC",
-        source: "Framer.com"
+
+
     },
     {
         rating: 5,
         quote: "I've worked with dozens of developers over 15 years, but Paul truly stands out. He delivers top-notch WordPress solutions on time, on budget, and with impressive results.",
         name: "David Chen",
         role: "Founder & CEO",
-        source: "Framer.com"
+
     },
     {
         rating: 5,
         quote: "Paul is a great developer. He is very skilled with Elementor. He understood the design quickly and executed it perfectly.",
         name: "Michael Johnson",
         role: "CEO",
-        source: "Framer.com"
+
     },
     {
         rating: 5,
         quote: "Great communication and fast turnaround. My website is now optimized and running smoothly.",
         name: "James Wilson",
         role: "CEO",
-        source: "Framer.com"
+
     },
     {
         rating: 5,
         quote: "Helped us fix several WordPress issues and improved our site speed. Reliable and efficient.",
         name: "Robert Brown",
         role: "Operations Manager",
-        source: "Framer.com"
+
     },
     {
         rating: 5,
         quote: "Set up our pages in Elementor beautifully. Everything is responsive and looks great on mobile.",
         name: "Jessica Lee",
         role: "Marketing Manager",
-        source: "Framer.com"
+
     },
     {
         rating: 5,
         quote: "Professional, detail-oriented, and easy to work with. Also helped with admin tasks beyond the website.",
         name: "Daniel Brooks",
         role: "Startup Founder",
-        source: "Framer.com"
+
     },
     {
         rating: 5,
         quote: "Handled our website updates and integrations without any problems. Smooth experience from start to finish.",
         name: "Olivia Martinez",
         role: "Startup Founder",
-        source: "Framer.com"
+
     },
     {
         rating: 5,
         quote: "Very dependable virtual assistant with strong technical skills in WordPress and website management.",
         name: "Kevin Rodriguez",
         role: "Small Business Owner",
-        source: "Framer.com"
+
     }
 ];
 
