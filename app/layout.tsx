@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Particles from "@/components/Particles";
+import { ThemeManager } from "@/components/ThemeManager";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body className="font-sans antialiased bg-slate-50 relative overflow-x-hidden bg-grain-refined" suppressHydrationWarning>
+        <ThemeManager />
         {/* Rich Theme-Aligned Mesh Gradient Background */}
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
           <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[50%] bg-[#F7DB91]/30 blur-[100px] rounded-full animate-rotate-slower" style={{ animationDuration: '40s' }} />

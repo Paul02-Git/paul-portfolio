@@ -8,8 +8,7 @@ import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { Marquee } from "@/components/Marquee";
 import { Toolbox } from "@/components/Toolbox";
 import { Footer } from "@/components/Footer";
-import { brands, stats, testimonials, marqueeItems } from "@/data/portfolio";
-import { motion, AnimatePresence } from "framer-motion";
+import { stats, testimonials, marqueeItems } from "@/data/portfolio";
 
 
 export default function AboutPage() {
@@ -26,22 +25,24 @@ export default function AboutPage() {
                 {/* Right Column - Content */}
                 <div className="lg:col-span-8">
                     {/* Consolidated Content Card */}
-                    <Card className="space-y-12 md:space-y-16">
-                        {/* About Me Section */}
+                    <Card className="p-6 md:p-12 space-y-12 md:space-y-16">
+                        {/* About Me Section Body */}
                         <section className="space-y-8">
-                            <div className="flex flex-col gap-4">
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold self-start uppercase tracking-wider">
+                            <div className="flex flex-col-reverse md:flex-row justify-between items-start gap-4">
+                                <div className="space-y-4 flex-1">
+                                    <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                                        Hi, This Is <span className="text-primary">Paul</span> 👋
+                                    </h1>
+                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                        A Passionate
+                                        <span className="text-foreground font-semibold"> WordPress Specialist</span> having <span className="text-foreground font-semibold">4+ years</span> of
+                                        Experiences over 24+ Country Worldwide. I specialize in building high-performing, accessible, and beautiful web experiences that convert.
+                                    </p>
+                                </div>
+                                <div className="my-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-[8px] bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-wider whitespace-nowrap">
                                     <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                     Available For Hire
                                 </div>
-                                <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                                    Hi, This Is <span className="text-primary">Paul Puzon</span> 👋
-                                </h1>
-                                <p className="text-lg text-muted-foreground leading-relaxed">
-                                    A Passionate <span className="text-foreground font-semibold">Full Stack Developer</span> 🖥️ &
-                                    <span className="text-foreground font-semibold"> WordPress Specialist</span> having <span className="text-foreground font-semibold">4+ years</span> of
-                                    Experiences over 24+ Country Worldwide. I specialize in building high-performing, accessible, and beautiful web experiences that convert.
-                                </p>
                             </div>
 
                             {/* Stats Grid */}

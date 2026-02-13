@@ -15,7 +15,14 @@ export const ProjectCard = ({ project, onClick }: ProjectCardProps) => (
         aria-label={`View ${project.title} details`}
     >
         <div className="relative h-full w-full border border-border">
-            <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+            <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                quality={80}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            />
             <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-foreground border border-white">
                 {project.category}
             </div>

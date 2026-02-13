@@ -1,5 +1,13 @@
-import { Layout, Zap, Code2, Headset, Puzzle, Palette, Smartphone, Box, Fingerprint, Camera, Film, Eye } from "lucide-react";
-import { Experience, Tool, Project, Service, Stat, FAQItem, Brand, Testimonial } from "@/types/portfolio";
+import { Layout, Zap, Code2, Headset, Puzzle, Palette, Search, Gauge, Bot, ShieldCheck, Sparkles, Globe, Activity } from "lucide-react";
+import { Experience, Tool, Project, Service, Testimonial } from "@/types/portfolio";
+
+export const vibes = [
+    { name: "Professional", color: "#108a00", icon: ShieldCheck, label: "Trust & Growth" },
+    { name: "Creative", color: "#000000", icon: Palette, label: "Innovation & Design" },
+    { name: "Premium", color: "#f06431", icon: Sparkles, label: "Excellence & Quality" },
+    { name: "Visionary", color: "#2563eb", icon: Globe, label: "Global Reach" },
+    { name: "Modern", color: "#854836", icon: Activity, label: "Dynamic & Bold" }
+];
 
 export const experiences: Experience[] = [
     { year: "2018-2022", company: "24task", role: "Virtual Assistant", logo: "/images/24Task.png" },
@@ -22,39 +30,72 @@ export const tools: Tool[] = [
 export const projects: Project[] = [
     {
         title: "Jets Fan Cruise",
-        category: "Web Design",
-        image: "/images/Jets.png",
-        link: "https://jetsfancruise.com"
-    },
-    {
-        title: "Raiders Fan Cruise",
         category: "Web Development",
-        image: "/images/Raidersfancruise.png",
-        link: "https://raidersfancruise.com"
+        image: "/images/Jets-Fan-Cruise.png",
+
     },
     {
-        title: "Jets Fan Cruise",
-        category: "Figma Design",
-        image: "/images/Jets.png",
-        link: "#"
+        title: "Ichiban Go",
+        category: "Web Development",
+        image: "/images/IchibanGO.png",
     },
     {
-        title: "Raiders Fan Cruise",
-        category: "Web Application",
-        image: "/images/Raidersfancruise.png",
-        link: "#"
+        title: "Health Optimization GT3",
+        category: "Web Development",
+        image: "/images/GT3Health.png",
+
+    },
+    {
+        title: "Evident Elements",
+        category: "Web Development",
+        image: "/images/EvidentElements.png",
+    },
+    {
+        title: "ForeverLawn Central Florida",
+        category: "Web Development",
+        image: "/images/Foreverlawn.png",
+    },
+    {
+        title: "K9 Grass Synthetic Turf",
+        category: "Landing Page",
+        image: "/images/K9Grass FLCL.png",
+    },
+    {
+        title: "Winning Tax Strategies",
+        category: "Mockup Development",
+        image: "/images/WinningTaxStrategies.png",
+
+    },
+    {
+        title: "Landscape Synthetic Turf",
+        category: "Landing Page",
+        image: "/images/Landspace Synthetic Turf.png",
+
     }, {
-        title: "Jets Fan Cruise",
-        category: "SaaS App | UI UX Design",
-        image: "/images/Jets.png",
-        link: "#"
+        title: "Consult with Che",
+        category: "Web Development",
+        image: "/images/CHE.png",
+
     },
     {
-        title: "Raiders Fan Cruise",
-        category: "SaaS App | UI UX Design",
-        image: "/images/Raidersfancruise.png",
-        link: "#"
+        title: "Dr. Precious Diaz",
+        category: "Web Development",
+        image: "/images/Precious Diaz.png",
+
     },
+    {
+        title: "Techloq",
+        category: "Virtual Assistant",
+        image: "/images/Techloq-Filter.png",
+
+    },
+    {
+        title: "24Task",
+        category: "Virtual Assistant",
+        image: "/images/24task-VA.png",
+
+    },
+
 ];
 
 export const services: Service[] = [
@@ -93,37 +134,65 @@ export const brands = [
 export const testimonials: Testimonial[] = [
     {
         rating: 5,
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
-        source: "Framer.com"
-    },
-    {
-        rating: 4,
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
+        quote: "I am genuinely grateful for having been recommended to WebCornerstone by a trusted colleague. I required a professional website to be developed very quickly,",
+        name: "Mark P. Smith",
+        role: "Owner, MPS & Associates, LLC",
         source: "Framer.com"
     },
     {
         rating: 5,
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
+        quote: "I've worked with dozens of developers over 15 years, but Paul truly stands out. He delivers top-notch WordPress solutions on time, on budget, and with impressive results.",
+        name: "David Chen",
+        role: "Founder & CEO",
         source: "Framer.com"
     },
     {
         rating: 5,
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
+        quote: "Paul is a great developer. He is very skilled with Elementor. He understood the design quickly and executed it perfectly.",
+        name: "Michael Johnson",
+        role: "CEO",
         source: "Framer.com"
     },
     {
         rating: 5,
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
+        quote: "Great communication and fast turnaround. My website is now optimized and running smoothly.",
+        name: "James Wilson",
+        role: "CEO",
+        source: "Framer.com"
+    },
+    {
+        rating: 5,
+        quote: "Helped us fix several WordPress issues and improved our site speed. Reliable and efficient.",
+        name: "Robert Brown",
+        role: "Operations Manager",
+        source: "Framer.com"
+    },
+    {
+        rating: 5,
+        quote: "Set up our pages in Elementor beautifully. Everything is responsive and looks great on mobile.",
+        name: "Jessica Lee",
+        role: "Marketing Manager",
+        source: "Framer.com"
+    },
+    {
+        rating: 5,
+        quote: "Professional, detail-oriented, and easy to work with. Also helped with admin tasks beyond the website.",
+        name: "Daniel Brooks",
+        role: "Startup Founder",
+        source: "Framer.com"
+    },
+    {
+        rating: 5,
+        quote: "Handled our website updates and integrations without any problems. Smooth experience from start to finish.",
+        name: "Olivia Martinez",
+        role: "Startup Founder",
+        source: "Framer.com"
+    },
+    {
+        rating: 5,
+        quote: "Very dependable virtual assistant with strong technical skills in WordPress and website management.",
+        name: "Kevin Rodriguez",
+        role: "Small Business Owner",
         source: "Framer.com"
     }
 ];
@@ -177,12 +246,12 @@ export const faqs = [
 ];
 
 export const fullServices: Service[] = [
-    { title: "UI UX Design", icon: Palette },
-    { title: "Mobile App", icon: Smartphone },
-    { title: "Product Design", icon: Box },
-    { title: "Branding", icon: Fingerprint },
-    { title: "Photography", icon: Camera },
-    { title: "Motion Design", icon: Film },
-    { title: "Web Development", icon: Code2 },
-    { title: "Visualization", icon: Eye },
+    { title: "WordPress &\nElementor", icon: Layout },
+    { title: "GHL\nSpecialist", icon: Zap },
+    { title: "Web\nDevelopment", icon: Code2 },
+    { title: "Virtual\nAssistant", icon: Headset },
+    { title: "Marketing\nIntegrations", icon: Puzzle },
+    { title: "SEO\nOptimization", icon: Search },
+    { title: "Speed\nOptimization", icon: Gauge },
+    { title: "CRM\nAutomation", icon: Bot },
 ];

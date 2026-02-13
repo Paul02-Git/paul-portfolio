@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
 
-export type ProjectCategory = 'Web Design' | 'Web Development' | 'Figma Design' | 'Web Application' | 'SaaS App | UI UX Design';
+export type ProjectCategory = 'Web Design' | 'Web Development' | 'Figma Design' | 'Web Application' | 'SaaS App | UI UX Design' | 'Landing Page' | 'Mockup Development' | 'Virtual Assistant';
 export type TestimonialRating = 1 | 2 | 3 | 4 | 5;
 
 export interface Experience {

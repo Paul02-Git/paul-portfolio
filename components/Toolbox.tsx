@@ -20,6 +20,8 @@ const BrandItem = ({ brand }: { brand: Brand }) => {
                     src={brand.logo}
                     alt={brand.name}
                     fill
+                    quality={80}
+                    sizes="(max-width: 768px) 33vw, (max-width: 1024px) 20vw, 150px"
                     className="p-5 object-contain"
                 />
             </div>

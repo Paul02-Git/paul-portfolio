@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { ProfileCard } from "@/components/ProfileCard";
 import Navbar from "@/components/Navbar";
 import { Card } from "@/components/Card";
@@ -14,7 +15,7 @@ import { X } from "lucide-react";
 export default function PortfolioPage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const ITEMS_PER_PAGE = 5;
+    const ITEMS_PER_PAGE = 6;
     const projectsGridRef = React.useRef<HTMLDivElement>(null);
 
     // Calculate pagination
@@ -51,25 +52,25 @@ export default function PortfolioPage() {
                 {/* Right Column - Content */}
                 <div className="lg:col-span-8">
                     {/* Consolidated Content Card */}
-                    <Card className="p-grid md:p-12 space-y-12 md:space-y-16">
+                    <Card className="p-6 md:p-12 space-y-12 md:space-y-16">
                         {/* Portfolio Section */}
                         <section className="space-y-12">
                             <div className="flex flex-col gap-4">
                                 <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                                    Check Out My Latest <span className="text-primary">Projects</span>
+                                    My Latest <span className="text-primary">Projects</span>
                                 </h1>
-                                <p className="text-lg text-muted-foreground leading-relaxed">
-                                    A collection of projects where I've blended <span className="text-foreground font-semibold">Technical Excellence</span> with <span className="text-foreground font-semibold">User-Centric Design</span>. Each piece represents a unique challenge solved with precision and passion.
+                                <p className="text-lg text-muted-foreground leading-relaxed max-w-[50ch]">
+                                    A collection of projects where I&apos;ve blended <span className="text-foreground font-semibold">Technical Excellence</span> with <span className="text-foreground font-semibold">User-Centric Design</span>. Each piece represents a unique challenge solved with precision and passion.
                                 </p>
                             </div>
 
-                            {/* Projects Grid */}
-                            <div ref={projectsGridRef} className="grid grid-cols-1 gap-12 md:grid-cols-1 pb-8">
+                            <div ref={projectsGridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 pb-8">
                                 {currentProjects.map((project, i) => (
                                     <PortfolioProjectCard
                                         key={i}
                                         project={project}
                                         onClick={(img: string) => setSelectedImage(img)}
+                                        priority={i < 4}
                                     />
                                 ))}
                             </div>
@@ -129,25 +130,31 @@ export default function PortfolioPage() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
                         onClick={() => setSelectedImage(null)}
-                        className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
                     >
                         <motion.button
-                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
-                            onClick={() => setSelectedImage(null)}
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[110]"
                         >
                             <X className="w-8 h-8" />
                         </motion.button>
+
                         <motion.div
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
-                            className="relative max-w-5xl w-full h-full flex items-center justify-center"
+                            className="relative max-w-7xl w-full h-[85vh] flex items-center justify-center p-2"
                         >
-                            <img
+                            <Image
                                 src={selectedImage}
                                 alt="Project Screenshot"
-                                className="max-w-full max-h-full object-contain rounded-xl shadow-2xl"
+                                fill
+                                quality={90}
+                                sizes="90vw"
+                                className="object-contain rounded-lg shadow-2xl ring-1 ring-white/10"
+                                priority
                             />
                         </motion.div>
                     </motion.div>

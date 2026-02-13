@@ -19,7 +19,7 @@ export const Marquee = ({
     const prefersReducedMotion = useReducedMotion();
     // CENTRAL STYLE CONFIGURATION
     // Change these values to update all Marquee instances simultaneously
-    const defaultItemStyles = "text-lg md:text-2xl font-bold tracking-widest pt-8 py-8 bg-muted/70";
+    const defaultItemStyles = "text-lg md:text-md font-bold tracking-widest pt-8 py-8 bg-muted/70";
     const defaultColor = "text-foreground/60"; // Global default color
 
     // For infinite loop, we need two sets of items moving together
@@ -77,7 +77,7 @@ export const MarqueeDemo = () => {
     ];
 
     return (
-        <div className="space-y-12 py-10">
+        <div className="space-y-12 py-6">
             <div className="space-y-4 px-6">
                 <h3 className="text-sm font-bold text-muted-foreground/40 uppercase tracking-widest">Default Speed</h3>
                 <Marquee items={sampleItems} />

@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import { ProfileCard } from "@/components/ProfileCard";
 import Navbar from "@/components/Navbar";
 import { Card } from "@/components/Card";
-import { Marquee } from "@/components/Marquee";
 import { Footer } from "@/components/Footer";
-import { marqueeItems, faqs } from "@/data/portfolio";
+import { faqs } from "@/data/portfolio";
 import { Send } from "lucide-react";
 import { FAQ } from "@/components/FAQ";
+import { cn } from "@/lib/utils";
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -18,9 +18,39 @@ export default function ContactPage() {
         budget: "$20000+",
         comment: ""
     });
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setStatus("loading");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                setFormData({
+                    name: "",
+                    email: "",
+                    subject: "",
+                    budget: "$20000+",
+                    comment: ""
+                });
+                // Reset success message after 5 seconds
+                setTimeout(() => setStatus("idle"), 5000);
+            } else {
+                setStatus("error");
+            }
+        } catch (err) {
+            console.error(err);
+            setStatus("error");
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -48,11 +78,9 @@ export default function ContactPage() {
                         <section className="space-y-12">
                             <div className="flex flex-col gap-4 mb-8">
                                 <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                                    Let's 👋 <span className="text-primary">Work</span> Together
+                                    Let&apos;s 👋 <span className="text-primary">Work</span> Together
                                 </h1>
-                                <p className="text-lg text-muted-foreground leading-relaxed">
-                                    I'm here to help if you're searching for a product designer to bring your idea to life or a design partner to help take your business to the next level.
-                                </p>
+                                I&apos;m here to help if you&apos;re searching for a product designer to bring your idea to life or a design partner to help take your business to the next level.
                             </div>
 
                             {/* Contact Form */}
@@ -131,9 +159,10 @@ export default function ContactPage() {
                                                 backgroundSize: '1.25rem'
                                             }}
                                         >
-                                            <option value="$5000-$10000">$5000-$10000</option>
-                                            <option value="$10000-$20000">$10000-$20000</option>
-                                            <option value="$20000+">$20000+</option>
+                                            <option value="$500-$1000">$500-$1000</option>
+                                            <option value="$1000-$2000">$1000-$2000</option>
+                                            <option value="$2000+">$2000+</option>
+                                            <option value="not-sure-yet">Not sure yet</option>
                                         </select>
                                     </div>
                                 </div>
@@ -158,11 +187,39 @@ export default function ContactPage() {
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
-                                    className="w-full bg-primary text-primary-foreground font-bold py-4 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group"
+                                    disabled={status === "loading"}
+                                    className={cn(
+                                        "w-full font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 group cursor-pointer",
+                                        status === "loading" ? "bg-muted text-muted-foreground cursor-not-allowed" :
+                                            status === "success" ? "bg-green-600 text-white" :
+                                                status === "error" ? "bg-red-600 text-white" :
+                                                    "bg-primary text-primary-foreground hover:bg-primary/90"
+                                    )}
                                 >
-                                    Send Message
-                                    <Send className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                                    {status === "loading" ? (
+                                        "Sending..."
+                                    ) : status === "success" ? (
+                                        "Message Sent! ✨"
+                                    ) : status === "error" ? (
+                                        "Error! Try Again"
+                                    ) : (
+                                        <>
+                                            Send Message
+                                            <Send className="w-5 h-5" />
+                                        </>
+                                    )}
                                 </button>
+
+                                {status === "success" && (
+                                    <p className="text-center text-green-600 font-medium animate-in fade-in slide-in-from-top-2 duration-300">
+                                        Thanks for reaching out! I&apos;ll get back to you soon.
+                                    </p>
+                                )}
+                                {status === "error" && (
+                                    <p className="text-center text-red-600 font-medium animate-in fade-in slide-in-from-top-2 duration-300">
+                                        Something went wrong. Please try emailing me directly.
+                                    </p>
+                                )}
                             </form>
                         </section>
 
