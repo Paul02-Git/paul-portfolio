@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
     { year: "2022-2024", company: "MTC", role: "Data Analyst", logo: "/images/MTC.jpg" },
     { year: "2019-2021", company: "Techloq Filter", role: "Administrative VA", logo: "/images/Techloq.png" },
     { year: "2019-2022", company: "RedLineCoin", role: "Web & Mobile QA Tester", logo: "/images/Redline.jpg" },
-    { year: "2023-Present", company: "Freelancer", role: "WordPress Developer", logo: "/images/elementor-custom.png" },
+    { year: "2023-Present", company: "Freelancer", role: "WordPress Developer", logo: "/images/Elementor-Logo-Symbol-Red.svg" },
     { year: "2026", company: "Vibe Coding", role: "Noob Vibe Coder", logo: "/images/GAG.webp" },
 ];
 
