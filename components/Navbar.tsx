@@ -59,7 +59,11 @@ export default function Navbar() {
                                 icon={<ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />}
                                 href="/contact"
                             >
+<<<<<<< HEAD
                                 Let's Talk
+=======
+                                Let&apos;s Talk
+>>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                             </Button>
 
                             {/* Mobile Menu Button */}

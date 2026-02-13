@@ -1,25 +1,41 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "./Button";
+=======
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, Star, Check } from "lucide-react";
+import { Button } from "./Button";
+import Image from "next/image";
+>>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
 
 interface Testimonial {
     rating: number;
     quote: string;
     name: string;
     role: string;
+<<<<<<< HEAD
     source: string;
+=======
+>>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
 }
 
 interface TestimonialCarouselProps {
     testimonials: Testimonial[];
 }
 
+<<<<<<< HEAD
 const TestimonialCard = ({ rating, quote, name, role, source }: Testimonial) => {
     return (
         <div className="p-card-md rounded-lg bg-muted/30 border border-border/20 space-y-6 h-full flex flex-col justify-between">
+=======
+const TestimonialCard = ({ rating, quote, name, role }: Testimonial) => {
+    return (
+        <div className="p-card-md rounded-lg bg-muted/30 border border-border/50 space-y-4 h-full flex flex-col justify-between">
+>>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
             <div className="space-y-4">
                 {/* Header with stars and source */}
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -31,6 +47,7 @@ const TestimonialCard = ({ rating, quote, name, role, source }: Testimonial) => 
                             />
                         ))}
                     </div>
+<<<<<<< HEAD
                     <div className="px-3 py-1.5 rounded-lg bg-white border border-border/40 shadow-sm shrink-0">
                         <a
                             href={`https://${source}`}
@@ -44,11 +61,26 @@ const TestimonialCard = ({ rating, quote, name, role, source }: Testimonial) => 
                             </svg>
                         </a>
                     </div>
+=======
+
+                    <div className="px-2 py-1 rounded-full bg-primary/10 border border-primary/20 flex items-center gap-1.5">
+                        <div className="bg-primary rounded-full p-0.5">
+                            <Check className="w-2 h-2 text-white" />
+                        </div>
+                        <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Satisfied Client</span>
+                    </div>
+
+
+>>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                 </div>
 
                 {/* Quote */}
                 <p className="text-base text-foreground/90 leading-relaxed font-medium line-clamp-4">
+<<<<<<< HEAD
                     "{quote}"
+=======
+                    &quot;{quote}&quot;
+>>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                 </p>
             </div>
 
@@ -95,7 +127,11 @@ export const TestimonialCarousel = ({ testimonials }: TestimonialCarouselProps) 
         <section className="space-y-2">
             <div className="flex flex-wrap items-center justify-between gap-4">
                 <h2>
+<<<<<<< HEAD
                     <div className="flex items-center gap-2">Trusted By Clients <img src="/images/undraw_online-review_08y6.svg" alt="Client Approved" className="w-14 h-14 object-contain" /></div></h2>
+=======
+                    <div className="flex items-center gap-2">What Clients Say <Image src="/images/undraw_online-review_08y6.svg" alt="Client Approved" width={56} height={56} className="w-14 h-14 object-contain" /></div></h2>
+>>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                 <div className="flex gap-2">
                     <Button
                         variant="outline"
@@ -118,7 +154,11 @@ export const TestimonialCarousel = ({ testimonials }: TestimonialCarouselProps) 
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div className="relative overflow-hidden px-1 py-4">
+=======
+            <div className="relative overflow-hidden py-2">
+>>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                 <motion.div
                     className="flex"
                     initial={false}
