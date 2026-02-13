@@ -248,7 +248,7 @@ export const TechStack = ({ className }: TechStackProps) => {
                         </div>
 
                         <div className="relative w-12 h-12 flex items-center justify-center">
-                            <AnimatePresence mode="wait">w
+                            <AnimatePresence mode="popLayout">
                                 <motion.div
                                     key={activeVibe.name}
                                     initial={{ scale: 0.5, opacity: 0, rotate: -45 }}
