@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import { Layout, Zap, Code2, Headset, Puzzle, Palette, Smartphone, Box, Fingerprint, Camera, Film, Eye } from "lucide-react";
-import { Experience, Tool, Project, Service, Stat, FAQItem, Brand, Testimonial } from "@/types/portfolio";
-=======
 import { Layout, Zap, Code2, Headset, Puzzle, Palette, Search, Gauge, Bot, ShieldCheck, Sparkles, Globe, Activity } from "lucide-react";
 import { Experience, Tool, Project, Service, Testimonial } from "@/types/portfolio";
 
@@ -12,7 +8,6 @@ export const vibes = [
     { name: "Visionary", color: "#2563eb", icon: Globe, label: "Global Reach" },
     { name: "Modern", color: "#854836", icon: Activity, label: "Dynamic & Bold" }
 ];
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
 
 export const experiences: Experience[] = [
     { year: "2018-2022", company: "24task", role: "Virtual Assistant", logo: "/images/24Task.png" },
@@ -35,41 +30,6 @@ export const tools: Tool[] = [
 export const projects: Project[] = [
     {
         title: "Jets Fan Cruise",
-<<<<<<< HEAD
-        category: "Web Design",
-        image: "/images/Jets.png",
-        link: "https://jetsfancruise.com"
-    },
-    {
-        title: "Raiders Fan Cruise",
-        category: "Web Development",
-        image: "/images/Raidersfancruise.png",
-        link: "https://raidersfancruise.com"
-    },
-    {
-        title: "Jets Fan Cruise",
-        category: "Figma Design",
-        image: "/images/Jets.png",
-        link: "#"
-    },
-    {
-        title: "Raiders Fan Cruise",
-        category: "Web Application",
-        image: "/images/Raidersfancruise.png",
-        link: "#"
-    }, {
-        title: "Jets Fan Cruise",
-        category: "SaaS App | UI UX Design",
-        image: "/images/Jets.png",
-        link: "#"
-    },
-    {
-        title: "Raiders Fan Cruise",
-        category: "SaaS App | UI UX Design",
-        image: "/images/Raidersfancruise.png",
-        link: "#"
-    },
-=======
         category: "Web Development",
         image: "/images/Jets-Fan-Cruise.png",
 
@@ -135,8 +95,6 @@ export const projects: Project[] = [
         image: "/images/24task-Va.png",
 
     },
-
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
 ];
 
 export const services: Service[] = [
@@ -175,57 +133,27 @@ export const brands = [
 export const testimonials: Testimonial[] = [
     {
         rating: 5,
-<<<<<<< HEAD
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
-        source: "Framer.com"
-    },
-    {
-        rating: 4,
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
-=======
         quote: "I am genuinely grateful for having been recommended to WebCornerstone by a trusted colleague. I required a professional website to be developed very quickly,",
         name: "Mark P. Smith",
         role: "Owner, MPS & Associates, LLC",
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
         source: "Framer.com"
     },
     {
         rating: 5,
-<<<<<<< HEAD
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
-=======
         quote: "I've worked with dozens of developers over 15 years, but Paul truly stands out. He delivers top-notch WordPress solutions on time, on budget, and with impressive results.",
         name: "David Chen",
         role: "Founder & CEO",
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
         source: "Framer.com"
     },
     {
         rating: 5,
-<<<<<<< HEAD
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
-=======
         quote: "Paul is a great developer. He is very skilled with Elementor. He understood the design quickly and executed it perfectly.",
         name: "Michael Johnson",
         role: "CEO",
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
         source: "Framer.com"
     },
     {
         rating: 5,
-<<<<<<< HEAD
-        quote: "We've been using BentoFolio for over a year now, and I must say, it's been a game-changer for us. The user interface is intuitive and the feature.",
-        name: "Oliver Clain",
-        role: "Product Designer",
-=======
         quote: "Great communication and fast turnaround. My website is now optimized and running smoothly.",
         name: "James Wilson",
         role: "CEO",
@@ -264,7 +192,6 @@ export const testimonials: Testimonial[] = [
         quote: "Very dependable virtual assistant with strong technical skills in WordPress and website management.",
         name: "Kevin Rodriguez",
         role: "Small Business Owner",
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
         source: "Framer.com"
     }
 ];
@@ -318,16 +245,6 @@ export const faqs = [
 ];
 
 export const fullServices: Service[] = [
-<<<<<<< HEAD
-    { title: "UI UX Design", icon: Palette },
-    { title: "Mobile App", icon: Smartphone },
-    { title: "Product Design", icon: Box },
-    { title: "Branding", icon: Fingerprint },
-    { title: "Photography", icon: Camera },
-    { title: "Motion Design", icon: Film },
-    { title: "Web Development", icon: Code2 },
-    { title: "Visualization", icon: Eye },
-=======
     { title: "WordPress &\nElementor", icon: Layout },
     { title: "GHL\nSpecialist", icon: Zap },
     { title: "Web\nDevelopment", icon: Code2 },
@@ -336,5 +253,4 @@ export const fullServices: Service[] = [
     { title: "SEO\nOptimization", icon: Search },
     { title: "Speed\nOptimization", icon: Gauge },
     { title: "CRM\nAutomation", icon: Bot },
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
 ];

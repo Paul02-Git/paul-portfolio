@@ -20,11 +20,8 @@ const BrandItem = ({ brand }: { brand: Brand }) => {
                     src={brand.logo}
                     alt={brand.name}
                     fill
-<<<<<<< HEAD
-=======
                     quality={80}
                     sizes="(max-width: 768px) 33vw, (max-width: 1024px) 20vw, 150px"
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                     className="p-5 object-contain"
                 />
             </div>

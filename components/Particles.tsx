@@ -19,10 +19,7 @@ export default function Particles({
     className,
     particleColors = ["#ffffff"],
     particleCount = 100,
-<<<<<<< HEAD
-    particleSpread = 130,
-=======
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
+
     speed = 0.1,
     particleBaseSize = 300,
     moveParticlesOnHover = true,

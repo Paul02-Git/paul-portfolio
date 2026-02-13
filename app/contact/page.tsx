@@ -4,19 +4,11 @@ import React, { useState } from "react";
 import { ProfileCard } from "@/components/ProfileCard";
 import Navbar from "@/components/Navbar";
 import { Card } from "@/components/Card";
-<<<<<<< HEAD
-import { Marquee } from "@/components/Marquee";
-import { Footer } from "@/components/Footer";
-import { marqueeItems, faqs } from "@/data/portfolio";
-import { Send } from "lucide-react";
-import { FAQ } from "@/components/FAQ";
-=======
 import { Footer } from "@/components/Footer";
 import { faqs } from "@/data/portfolio";
 import { Send } from "lucide-react";
 import { FAQ } from "@/components/FAQ";
 import { cn } from "@/lib/utils";
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -26,11 +18,6 @@ export default function ContactPage() {
         budget: "$20000+",
         comment: ""
     });
-<<<<<<< HEAD
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-=======
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -64,7 +51,6 @@ export default function ContactPage() {
             console.error(err);
             setStatus("error");
         }
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -92,17 +78,9 @@ export default function ContactPage() {
                         <section className="space-y-12">
                             <div className="flex flex-col gap-4 mb-8">
                                 <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-<<<<<<< HEAD
-                                    Let's 👋 <span className="text-primary">Work</span> Together
-                                </h1>
-                                <p className="text-lg text-muted-foreground leading-relaxed">
-                                    I'm here to help if you're searching for a product designer to bring your idea to life or a design partner to help take your business to the next level.
-                                </p>
-=======
                                     Let&apos;s 👋 <span className="text-primary">Work</span> Together
                                 </h1>
                                 I&apos;m here to help if you&apos;re searching for a product designer to bring your idea to life or a design partner to help take your business to the next level.
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                             </div>
 
                             {/* Contact Form */}
@@ -181,16 +159,10 @@ export default function ContactPage() {
                                                 backgroundSize: '1.25rem'
                                             }}
                                         >
-<<<<<<< HEAD
-                                            <option value="$5000-$10000">$5000-$10000</option>
-                                            <option value="$10000-$20000">$10000-$20000</option>
-                                            <option value="$20000+">$20000+</option>
-=======
                                             <option value="$500-$1000">$500-$1000</option>
                                             <option value="$1000-$2000">$1000-$2000</option>
                                             <option value="$2000+">$2000+</option>
                                             <option value="not-sure-yet">Not sure yet</option>
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                                         </select>
                                     </div>
                                 </div>
@@ -215,13 +187,6 @@ export default function ContactPage() {
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
-<<<<<<< HEAD
-                                    className="w-full bg-primary text-primary-foreground font-bold py-4 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group"
-                                >
-                                    Send Message
-                                    <Send className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                                </button>
-=======
                                     disabled={status === "loading"}
                                     className={cn(
                                         "w-full font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 group cursor-pointer",
@@ -255,7 +220,6 @@ export default function ContactPage() {
                                         Something went wrong. Please try emailing me directly.
                                     </p>
                                 )}
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
                             </form>
                         </section>
 

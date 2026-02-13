@@ -15,13 +15,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "s.w.org",
       },
-<<<<<<< HEAD
-=======
       {
         protocol: "https",
         hostname: "i.scdn.co",
       },
->>>>>>> 218ee1c4dca668fc6d1b635d211e7cfe9265732f
     ],
   },
   async headers() {
