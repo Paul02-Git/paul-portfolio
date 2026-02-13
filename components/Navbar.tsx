@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "./Button";
+import { VibeToggle } from "./VibeToggle";
 
 const navLinks = [
     { href: "/", label: "Home" },
@@ -53,6 +54,9 @@ export default function Navbar() {
                         </div>
 
                         <div className="flex items-center gap-2 sm:gap-4">
+                            {/* Vibe Toggle */}
+                            <VibeToggle className="md:block cursor-pointer" />
+
                             <Button
                                 size="sm"
                                 className="group shadow-lg shadow-black/5"
@@ -92,6 +96,12 @@ export default function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
+                    </div>
+
+                    {/* Vibe Toggle in Mobile Menu */}
+                    <div className="flex items-center gap-3">
+                        <span className="text-sm text-muted-foreground">Theme:</span>
+                        <VibeToggle showLabel={true} />
                     </div>
                 </div>
             )}
