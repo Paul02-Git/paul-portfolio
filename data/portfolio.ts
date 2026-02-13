@@ -92,7 +92,7 @@ export const projects: Project[] = [
     {
         title: "24Task",
         category: "Virtual Assistant",
-        image: "/images/24task-VA.png",
+        image: "/images/24task-Va.png",
 
     },
 
