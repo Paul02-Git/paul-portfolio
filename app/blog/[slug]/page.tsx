@@ -173,7 +173,7 @@ export default function BlogPostPage() {
                                 <div className="pt-4">
                                     <Link
                                         href="/contact"
-                                        className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-white font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+                                        className="inline-flex items-center gap-2 px-8 rounded-[8px] py-3 bg-primary text-white font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
                                     >
                                         Work with me <ArrowLeft className="w-4 h-4 rotate-180" />
                                     </Link>
