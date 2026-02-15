@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Card } from "./Card";
 import { cn } from "@/lib/utils";
 import { Music, Play, Pause, ExternalLink, Calendar } from "lucide-react";
 import { vibes } from "@/data/portfolio";
@@ -107,7 +106,7 @@ export const TechStack = ({ className }: TechStackProps) => {
     };
 
     return (
-        <Card className={cn("relative overflow-hidden flex items-center justify-center min-h-[350px] p-0 bg-transparent border-0 shadow-none perspective-1000", className)}>
+        <div className={cn("relative overflow-hidden flex items-center justify-center min-h-[370px] bg-white/80 backdrop-blur-xl border border-white/20 rounded-lg shadow-md shadow-black/10 perspective-1000", className)}>
             {/* Background Gradient/Glow */}
 
 
@@ -118,7 +117,7 @@ export const TechStack = ({ className }: TechStackProps) => {
                 className="hidden"
             />
             {/* Grid Layout: 3 Rows, 2 Columns */}
-            <div className="absolute inset-0 grid grid-rows-2 grid-cols-2 gap-4">
+            <div className="absolute inset-0 grid grid-rows-2 grid-cols-2 gap-4 p-4 md:p-8">
 
                 {/* Big Spotify Card (Takes Top 2 Rows) */}
                 <div className="row-span-2 col-span-2 relative group w-full h-full">
@@ -127,7 +126,7 @@ export const TechStack = ({ className }: TechStackProps) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ backgroundColor: dominantColor }}
-                        className="backdrop-blur-sm rounded-lg p-card-md border border-border/50 flex flex-col justify-between gap-3 shadow-sm transition-colors w-full h-full block relative overflow-hidden"
+                        className="backdrop-blur-sm rounded-lg p-4 border border-border/50 flex flex-col justify-between gap-2 shadow-sm transition-colors w-full h-full block relative overflow-hidden"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between z-10 relative">
@@ -229,7 +228,7 @@ export const TechStack = ({ className }: TechStackProps) => {
                         href="https://calendly.com/paulpuzon0007/30min"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full mt-1 py-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-white text-[10px] font-bold rounded-full transition-all duration-300 flex items-center justify-center gap-1.5 border border-primary/20"
+                        className="w-full mt-1 py-1.5 bg-primary hover:bg-primary/80 text-white hover:text-white text-[10px] font-bold rounded-full transition-all duration-300 flex items-center justify-center gap-1.5 border border-primary/20"
                     >
                         Book Discovery <ExternalLink className="w-2.5 h-2.5" />
                     </a>
@@ -283,7 +282,7 @@ export const TechStack = ({ className }: TechStackProps) => {
                         ))}
                     </div>
                 </div>
-            </div>
-        </Card>
+            </div >
+        </div >
     );
 };

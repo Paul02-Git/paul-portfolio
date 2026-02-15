@@ -19,7 +19,7 @@ export const ServiceCard = ({
             ) : "w-full"
         )}
     >
-        <div className="w-full aspect-[4/3] bg-white rounded-[0.5rem] border border-border/50 shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all group-hover:border-primary flex items-center justify-center">
+        <div className="w-full aspect-[4/3] bg-white rounded-[0.5rem] border border-border/50 shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all border-primary flex items-center justify-center">
             <service.icon strokeWidth={1.5} className="w-10 h-10 md:w-10 md:h-10" />
         </div>
         <h3 className="font-medium text-foreground text-sm md:text-base tracking-tight leading-tight whitespace-pre-line">

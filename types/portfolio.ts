@@ -57,3 +57,12 @@ export interface Vibe {
     icon: LucideIcon;
     label: string;
 }
+export interface BlogPost {
+    title: string;
+    excerpt: string;
+    date: string;
+    category: 'WordPress' | 'Marketing' | 'GHL' | 'SEO';
+    image: string;
+    slug: string;
+    content: string;
+}

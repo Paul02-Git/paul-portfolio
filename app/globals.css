@@ -57,11 +57,11 @@ body {
 
     /* Minimalist Scale: Base (Mobile) -> LG (MD) -> XL (LG+) */
     @media (min-width: 768px) {
-      @apply text-xl;
+      @apply text-3xl;
     }
 
     @media (min-width: 1024px) {
-      @apply text-2xl;
+      @apply text-4xl;
     }
   }
 
@@ -70,11 +70,11 @@ body {
 
     /* Minimalist Scale: Base (Mobile) -> LG (MD) -> XL (LG+) */
     @media (min-width: 768px) {
-      @apply text-xl;
+      @apply text-2xl;
     }
 
     @media (min-width: 1024px) {
-      @apply text-2xl;
+      @apply text-3xl;
     }
   }
 

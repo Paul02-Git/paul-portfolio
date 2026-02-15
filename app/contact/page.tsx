@@ -73,7 +73,7 @@ export default function ContactPage() {
                 {/* Right Column - Content */}
                 <div className="lg:col-span-8">
                     {/* Consolidated Content Card */}
-                    <Card className="p-grid md:p-12 space-y-12 md:space-y-16">
+                    <Card className="p-card md:p-12 space-y-12 md:space-y-16">
                         {/* Contact Section */}
                         <section className="space-y-12">
                             <div className="flex flex-col gap-4 mb-8">

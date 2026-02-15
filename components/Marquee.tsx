@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface MarqueeProps {
@@ -11,7 +11,7 @@ interface MarqueeProps {
 
 export const Marquee = ({
     items,
-    speed = 20, // default slower for better UX
+    speed = 50, // default slower for better UX
     className,
     itemClassName,
     pauseOnHover = true,
@@ -19,7 +19,7 @@ export const Marquee = ({
     const prefersReducedMotion = useReducedMotion();
     // CENTRAL STYLE CONFIGURATION
     // Change these values to update all Marquee instances simultaneously
-    const defaultItemStyles = "text-lg md:text-md font-bold tracking-widest pt-8 py-8 bg-muted/70";
+    const defaultItemStyles = "text-2xl md:text-4xl font-bold tracking-widest h-18 bg-muted";
     const defaultColor = "text-foreground/60"; // Global default color
 
     // For infinite loop, we need two sets of items moving together
@@ -28,24 +28,28 @@ export const Marquee = ({
     return (
         <div
             className={cn(
-                "relative w-full overflow-hidden flex items-center bg-muted/20",
+                "relative w-full overflow-hidden flex items-center",
                 "[mask-image:linear-gradient(to_right,transparent,black_15%,black_90%,transparent)]",
                 className
             )}
         >
-            <motion.div
+            <style jsx>{`
+                @keyframes marquee {
+                    from { transform: translateX(0); }
+                    to { transform: translateX(-50%); }
+                }
+                .animate-marquee {
+                    animation: ${prefersReducedMotion ? "none" : `marquee ${speed}s linear infinite`};
+                }
+                .pause-on-hover:hover {
+                    animation-play-state: paused;
+                }
+            `}</style>
+            <div
                 className={cn(
-                    "flex whitespace-nowrap min-w-full shrink-0 items-center",
-                    pauseOnHover && "hover:[animation-play-state:paused]"
+                    "flex whitespace-nowrap min-w-full shrink-0 items-center animate-marquee",
+                    pauseOnHover && "pause-on-hover"
                 )}
-                animate={prefersReducedMotion ? {} : {
-                    x: ["0%", "-50%"]
-                }}
-                transition={{
-                    duration: speed,
-                    ease: "linear",
-                    repeat: Infinity,
-                }}
             >
                 {doubledItems.map((item, idx) => (
                     <div
@@ -60,42 +64,6 @@ export const Marquee = ({
                         {item}
                     </div>
                 ))}
-            </motion.div>
-        </div>
-    );
-};
-
-// Example Usage Component
-export const MarqueeDemo = () => {
-    const sampleItems = [
-        "Fast, Reliable Websites ⚡",
-        "Crafting Digital Experiences 🎨",
-        "Available For Hire 🚀",
-        "Modern Web Design ✨",
-        "High Performance Code 💻",
-        "Full Stack Excellence 🌟",
-    ];
-
-    return (
-        <div className="space-y-12 py-6">
-            <div className="space-y-4 px-6">
-                <h3 className="text-sm font-bold text-muted-foreground/40 uppercase tracking-widest">Default Speed</h3>
-                <Marquee items={sampleItems} />
-            </div>
-
-            <div className="space-y-4 px-6">
-                <h3 className="text-sm font-bold text-muted-foreground/40 uppercase tracking-widest">Fast Speed</h3>
-                <Marquee items={sampleItems} speed={60} className="bg-primary/5 rounded-2xl" />
-            </div>
-
-            <div className="space-y-4 px-6">
-                <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Slow Speed</h3>
-                <Marquee
-                    items={sampleItems}
-                    speed={60}
-                    className="border-y border-border/60 bg-transparent py-4"
-                    itemClassName="text-primary italic font-medium"
-                />
             </div>
         </div>
     );

@@ -67,7 +67,7 @@ export default function Home() {
         {/* Right Column: Recent Projects */}
         <div className="lg:col-span-4 flex flex-col h-full">
           <Card className="h-full flex flex-col flex-1">
-            <SectionTitle link="/portfolio" linkText="See All">Recent Projects</SectionTitle>
+            <SectionTitle>Featured Projects</SectionTitle>
             <div className="flex-1 flex flex-col gap-4">
               {projects.slice(0, 2).map((project, i) => (
                 <ProjectCard
@@ -86,14 +86,11 @@ export default function Home() {
         <Card className="lg:col-span-6">
           <TestimonialCarousel testimonials={testimonials} />
         </Card>
-        <Card className="lg:col-span-4 p-0 overflow-hidden relative min-h-[200px]">
-          <div className="absolute inset-0 bg-muted/20" /> {/* Subtle background */}
-          <TechStack brands={brands} className="w-full h-full" />
-        </Card>
+        <TechStack brands={brands} className="lg:col-span-4" />
       </div>
 
       {/* Services Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-grid">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-grid ">
         <div className="lg:col-span-8">
           <Card>
             <SectionTitle link="/services" linkText="See All Services">Services I Offer</SectionTitle>
@@ -107,11 +104,9 @@ export default function Home() {
 
         {/* Marquee Section */}
         <div className="lg:col-span-4">
-          <Card className="relative h-full flex flex-col justify-between items-start text-left overflow-hidden rounded-lg border border-border/60 bg-white/80 backdrop-blur-md shadow-md shadow-black/10 p-4">
+          <Card className="relative h-full flex flex-col justify-between items-start text-left overflow-hidden rounded-lg border border-border/60 backdrop-blur-md shadow-md shadow-black/10">
             <Marquee
               items={marqueeItems}
-              speed={60}
-              className="bg-muted/30 rounded-xl h-14"
             />
 
             <div className="space-y-grid mt-4">
@@ -121,7 +116,7 @@ export default function Home() {
               </h2>
               <div className="pt-2">
                 <a href="/contact" className="inline-flex items-center gap-2 font-bold text-primary hover:text-primary/80 group text-xl border-b-2 border-primary/20 pb-1 transition-colors">
-                  Let's Talk <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  Let&apos;s Talk <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
             </div>

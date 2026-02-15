@@ -80,8 +80,6 @@ export default function ServicesPage() {
                         {/* Marquee Section */}
                         <Marquee
                             items={marqueeItems}
-                            speed={70}
-
                         />
                     </Card>
 

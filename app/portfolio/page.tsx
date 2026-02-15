@@ -115,7 +115,6 @@ export default function PortfolioPage() {
                         {/* Marquee Section */}
                         <Marquee
                             items={marqueeItems}
-                            speed={70}
                         />
                     </Card>
 

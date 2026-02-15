@@ -40,9 +40,22 @@ const FAQItem = ({ question, answer, isOpen, onClick }: FAQItemProps) => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
-                        <div className="px-6 pb-6 text-muted-foreground text-sm md:text-base leading-relaxed border-t border-border/10 pt-4">
-                            {answer}
-                        </div>
+                        <div
+                            className="px-6 pb-6 text-muted-foreground text-sm md:text-base leading-relaxed border-t border-border/10 pt-4 faq-answer"
+                            dangerouslySetInnerHTML={{ __html: answer }}
+                        />
+                        <style jsx global>{`
+                            .faq-answer a {
+                                color: var(--primary);
+                                font-weight: 700;
+                                text-decoration: underline;
+                                text-underline-offset: 4px;
+                                transition: opacity 0.2s;
+                            }
+                            .faq-answer a:hover {
+                                opacity: 0.8;
+                            }
+                        `}</style>
                     </motion.div>
                 )}
             </AnimatePresence>

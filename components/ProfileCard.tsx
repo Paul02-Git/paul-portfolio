@@ -21,7 +21,7 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                         fill
                         quality={80}
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 25vw, 20vw"
-                        className="object-contain object-center transition-transform duration-700 hover:scale-105"
+                        className="object-contain object-center"
                         priority
                     />
                 </div>
@@ -30,13 +30,13 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                         <h1 className="flex items-center gap-2 justify-center">
                             <span className="text-2xl lg:text-3xl">How you doing?👋</span>
                         </h1>
-                        <p className="text-muted-foreground text-sm lg:text-base leading-relaxed text-center md:max-w-[50ch] md:mx-auto">
+                        <p className="text-muted-foreground text-md lg:text-md leading-relaxed text-center md:max-w-[50ch] md:mx-auto">
                             I&apos;m Paul, I help clients build fast, reliable <span className="text-foreground font-semibold">WordPress</span> & <span className="text-foreground font-semibold"> Elementor</span> websites with seamless integrations and <span className="text-foreground font-semibold">GHL workflows.</span>
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-3 pt-4 mt-auto">
+                        <div className="flex flex-col gap-3 p-3 mt-auto sm:flex-row">
                             <Button
-                                className="w-full sm:flex-1 p-3 text-sm"
+                                className="w-full sm:flex-1 text-sm"
                                 icon={<Calendar className="w-5 h-5" />}
                                 iconPosition="left"
                                 href="https://calendly.com/paulpuzon0007/30min"
@@ -47,7 +47,7 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                             </Button>
                             <Button
                                 variant="outline"
-                                className="w-full sm:flex-1 p-3 text-sm"
+                                className="w-full sm:flex-1 text-sm"
                                 href="mailto:paulpuzon0007@gmail.com"
                                 icon={<Mail className="w-5 h-5" />}
                                 iconPosition="left"
