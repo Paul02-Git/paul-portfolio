@@ -33,7 +33,7 @@ export const ExperienceCarousel = ({ experiences }: ExperienceCarouselProps) => 
 
     return (
         <div className="relative flex-1 overflow-hidden">
-            <div className="carousel-scroll">
+            <div className="carousel-scroll will-change-transform">
                 <div className="space-y-2">
                     {tripleExperiences.map((exp, i) => (
                         <ExperienceItem key={`set1-${i}`} exp={exp} />

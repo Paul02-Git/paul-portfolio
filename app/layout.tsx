@@ -18,21 +18,26 @@ const siteDescription = "I build conversion-focused WordPress websites and GoHig
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Paul | Get More Leads & Booked Calls With WordPress & GHL",
+    default: "Paul Puzon | WordPress Developer Philippines | Hire Elementor Expert",
     template: "%s | Paul Puzon"
   },
-  description: siteDescription,
+  description: "Hire a WordPress developer with 4+ years experience. 50+ projects delivered. Elementor & GoHighLevel specialist based in Philippines. Free consultation available.",
   keywords: [
     "WordPress Developer",
+    "WordPress Developer Philippines",
+    "Hire WordPress Developer",
     "GoHighLevel Specialist",
     "GHL Expert",
     "Elementor Developer",
+    "Elementor Expert",
     "Web Development",
     "Marketing Automation",
     "CRM Integration",
     "Lead Generation",
     "Virtual Assistant",
-    "SEO Optimization"
+    "SEO Optimization",
+    "Hire Elementor Expert",
+    "WordPress Developer for Hire"
   ],
   authors: [{ name: "Paul Puzon" }],
   creator: "Paul Puzon",

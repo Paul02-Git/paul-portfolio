@@ -57,7 +57,7 @@ export const Marquee = ({
                         className={cn(
                             defaultItemStyles,
                             defaultColor,
-                            "flex items-center",
+                            "flex items-center will-change-transform",
                             itemClassName
                         )}
                     >

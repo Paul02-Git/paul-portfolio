@@ -116,7 +116,7 @@ export default function Home() {
               </h2>
               <div className="pt-2">
                 <a href="/contact" className="inline-flex items-center gap-2 font-bold text-primary hover:text-primary/80 group text-xl border-b-2 border-primary/20 pb-1 transition-colors">
-                  Let&apos;s Talk <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  Let&apos;s Start <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
             </div>
