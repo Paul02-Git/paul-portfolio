@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         description: 'Learn about Paul Puzon, a passionate WordPress specialist with 4+ years of experience.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio.vercel.app/about'
+        canonical: 'https://paul-portfolio-drab.vercel.app/about'
     }
 };
 

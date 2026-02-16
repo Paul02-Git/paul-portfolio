@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const siteUrl = "https://paul-portfolio.vercel.app";
+const siteUrl = "https://paul-portfolio-drab.vercel.app";
 
 export const metadata: Metadata = {
     title: "Hire WordPress Developer | Paul Puzon | Elementor & GHL Expert",

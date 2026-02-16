@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         description: 'View my latest WordPress, Elementor, and web development projects.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio.vercel.app/portfolio'
+        canonical: 'https://paul-portfolio-drab.vercel.app/portfolio'
     }
 };
 

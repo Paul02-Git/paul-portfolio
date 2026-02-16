@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         description: 'Get in touch to discuss your WordPress, Elementor, or GoHighLevel project. Free consultation available.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio.vercel.app/contact'
+        canonical: 'https://paul-portfolio-drab.vercel.app/contact'
     }
 };
 

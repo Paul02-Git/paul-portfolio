@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         description: 'Read the latest tutorials, guides, and insights on WordPress, Elementor, GoHighLevel, and web development.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio.vercel.app/blog'
+        canonical: 'https://paul-portfolio-drab.vercel.app/blog'
     }
 };
 

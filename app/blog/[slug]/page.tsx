@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { blogPosts } from '@/data/portfolio';
 import BlogPostClient from './BlogPostClient';
 
-const siteUrl = 'https://paul-portfolio.vercel.app';
+const siteUrl = 'https://paul-portfolio-drab.vercel.app';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {

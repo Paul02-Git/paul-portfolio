@@ -15,7 +15,7 @@ import { testimonials, marqueeItems, faqs, fullServices } from "@/data/portfolio
 import Script from "next/script";
 import { ReadyToStart } from "@/components/ReadyToStart";
 
-const siteUrl = "https://paul-portfolio.vercel.app";
+const siteUrl = "https://paul-portfolio-drab.vercel.app";
 
 // Service Schema for SEO
 const serviceSchema = {

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/api/', '/admin/'],
         },
-        sitemap: 'https://paul-portfolio.vercel.app/sitemap.xml',
+        sitemap: 'https://paul-portfolio-drab.vercel.app/sitemap.xml',
     };
 }

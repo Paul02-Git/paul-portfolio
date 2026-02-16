@@ -12,7 +12,7 @@ import { stats, testimonials, marqueeItems } from "@/data/portfolio";
 import Script from "next/script";
 import { ReadyToStart } from "@/components/ReadyToStart";
 
-const siteUrl = "https://paul-portfolio.vercel.app";
+const siteUrl = "https://paul-portfolio-drab.vercel.app";
 
 // Reviews Schema for SEO
 const reviewsSchema = testimonials.map((testimonial, index) => ({

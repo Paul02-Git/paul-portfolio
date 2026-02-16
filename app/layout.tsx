@@ -11,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = "https://paul-portfolio.vercel.app";
+const siteUrl = "https://paul-portfolio-drab.vercel.app";
 const siteName = "Paul Puzon | WordPress & GHL Specialist";
 const siteDescription = "I build conversion-focused WordPress websites and GoHighLevel systems that automate follow-ups and increase client acquisition.";
 

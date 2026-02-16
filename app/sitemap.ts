@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/portfolio';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://paul-portfolio.vercel.app';
+    const baseUrl = 'https://paul-portfolio-drab.vercel.app';
 
     // Static pages
     const staticPages = [
