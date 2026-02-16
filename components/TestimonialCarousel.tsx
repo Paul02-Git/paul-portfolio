@@ -87,9 +87,9 @@ export const TestimonialCarousel = ({ testimonials }: TestimonialCarouselProps) 
 
     return (
         <section className="space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center justify-between">
                 <h2>
-                    <div className="flex items-center gap-2">What Clients Say <Image src="/images/undraw_online-review_08y6.svg" alt="Client Approved" width={56} height={56} className="w-14 h-14 object-contain" /></div></h2>
+                    <div className="flex items-center">What Clients Say <Image src="/images/undraw_online-review_08y6.svg" alt="Client Approved" width={56} height={56} className="w-14 h-14 object-contain" /></div></h2>
                 <div className="flex gap-2">
                     <Button
                         variant="outline"

@@ -13,11 +13,7 @@ import { Footer } from "@/components/Footer";
 import { ServiceCard } from "@/components/ServiceCard";
 import { testimonials, marqueeItems, faqs, fullServices } from "@/data/portfolio";
 import Script from "next/script";
-import Link from "next/link";
-import { Calendar, MessageSquare } from "lucide-react";
-import { ServicesOffered } from "@/components/ServicesOffered";
 import { ReadyToStart } from "@/components/ReadyToStart";
-import { HowItWorks } from "@/components/HowItWorks";
 
 const siteUrl = "https://paul-portfolio.vercel.app";
 
