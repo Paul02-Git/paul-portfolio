@@ -27,7 +27,7 @@ export default function Navbar() {
                 <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-6">
                     <nav className="pointer-events-auto bg-white/50 backdrop-blur-md border border-white/20 shadow-sm shadow-black/10 rounded-sm px-4 py-4 flex items-center justify-between transition-all duration-300">
                         <div className="flex items-center gap-3">
-                            <Link href="/" className="flex items-center gap-3 group">
+                            <Link href="/" className="flex items-center gap-3 group" aria-label="Paul Puzon Home">
                                 <div className="flex items-center text-foreground group-hover:text-primary transition-colors">
                                     <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10 20L40 90L55 55" />

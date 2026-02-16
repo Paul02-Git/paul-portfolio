@@ -11,9 +11,123 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const siteUrl = "https://paul-portfolio.vercel.app";
+const siteName = "Paul Puzon | WordPress & GHL Specialist";
+const siteDescription = "I build conversion-focused WordPress websites and GoHighLevel systems that automate follow-ups and increase client acquisition.";
+
 export const metadata: Metadata = {
-  title: "Paul — Personal Portfolio",
-  description: "A premium, high-converting bento-style portfolio.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Paul | Get More Leads & Booked Calls With WordPress & GHL",
+    template: "%s | Paul Puzon"
+  },
+  description: siteDescription,
+  keywords: [
+    "WordPress Developer",
+    "GoHighLevel Specialist",
+    "GHL Expert",
+    "Elementor Developer",
+    "Web Development",
+    "Marketing Automation",
+    "CRM Integration",
+    "Lead Generation",
+    "Virtual Assistant",
+    "SEO Optimization"
+  ],
+  authors: [{ name: "Paul Puzon" }],
+  creator: "Paul Puzon",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: siteName,
+    title: "Paul | Get More Leads & Booked Calls With WordPress & GHL",
+    description: siteDescription,
+    images: [
+      {
+        url: `${siteUrl}/images/OG IMAGE - Paul Wordpress and Elementor.png`,
+        width: 1200,
+        height: 630,
+        alt: "Paul Puzon - WordPress & GHL Specialist",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Paul | Get More Leads & Booked Calls With WordPress & GHL",
+    description: siteDescription,
+    images: [`${siteUrl}/images/OG IMAGE - Paul Wordpress and Elementor.png`],
+    creator: "@paulpuzon",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "google-site-verification=0pd22dU8wyCso0QYi5zp2Kz5kBl4bDDCaYBJ1JZ9jHg", // User will need to add this
+  },
+};
+
+// JSON-LD Schema Markup
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Paul Puzon",
+  url: siteUrl,
+  image: `${siteUrl}/images/OG IMAGE - Paul Wordpress and Elementor.png`,
+  jobTitle: "WordPress Developer & GoHighLevel Specialist",
+  description: siteDescription,
+  knowsAbout: [
+    "WordPress Development",
+    "GoHighLevel",
+    "Elementor",
+    "Web Development",
+    "Marketing Automation",
+    "CRM Integration",
+    "SEO Optimization",
+    "Virtual Assistant Services"
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/paul-puzon-932b86303/",
+    "https://github.com/Paul02-Git/",
+    "https://www.facebook.com/paul.puzon73/",
+    "https://discord.com/invite/6kcnz2c7",
+    "https://www.youtube.com/@paulpuzon73",
+    "https://wa.me/639914075808"
+
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "PH"
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteName,
+  url: siteUrl,
+  logo: `${siteUrl}/app/favicon.ico`,
+  description: siteDescription,
+  founder: {
+    "@type": "Person",
+    name: "Paul Puzon"
+  },
+  areaServed: "Worldwide",
+  serviceType: [
+    "WordPress Development",
+    "GoHighLevel Setup",
+    "Web Development",
+    "Marketing Automation",
+    "CRM Integration"
+  ]
 };
 
 export default function RootLayout({
@@ -25,6 +139,19 @@ export default function RootLayout({
     <html lang="en" className={spaceGrotesk.variable} suppressHydrationWarning>
       <head>
         <ThemeScript />
+        {/* JSON-LD Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
       </head>
       <body className="font-sans antialiased bg-slate-50 relative overflow-x-hidden bg-grain-refined" suppressHydrationWarning>
         <ThemeManager />

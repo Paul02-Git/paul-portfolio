@@ -174,7 +174,7 @@ export const TechStack = ({ className }: TechStackProps) => {
                         </div>
 
                         {/* Visualizer / Audio Control */}
-                        <div className="flex items-center justify-between gap-2 z-10 relative mt-auto w-full pt-3 border-t border-border/10">
+                        <div className="flex items-center justify-between gap-2 z-10 relative mt-auto w-full pt-2 border-t border-border/10">
                             {spotifyData?.previewUrl ? (
                                 <button
                                     onClick={toggleAudio}
@@ -189,7 +189,7 @@ export const TechStack = ({ className }: TechStackProps) => {
                             ) : (
                                 <span className="text-[10px] text-muted-foreground/50 uppercase tracking-widest font-bold">No Preview Available</span>
                             )}
-                            <div className="flex gap-1 items-end h-6 ml-auto">
+                            <div className="flex gap-1 items-center h-6 ml-auto">
                                 {[...Array(12)].map((_, i) => (
                                     <motion.div
                                         key={i}

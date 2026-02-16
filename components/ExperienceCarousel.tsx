@@ -21,7 +21,7 @@ const ExperienceItem = ({ exp }: { exp: Experience }) => (
             </div>
             <div className="flex flex-col items-start min-w-0">
                 <h3 className="font-bold text-foreground text-sm leading-tight mb-0.5">{exp.company}</h3>
-                <p className="text-[14px] text-muted-foreground leading-normal">{exp.role}</p>
+                <p className="text-[14px] text-foreground/70 font-medium leading-normal">{exp.role}</p>
             </div>
         </div>
     </div>

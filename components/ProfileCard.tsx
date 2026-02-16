@@ -30,8 +30,8 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                         <h1 className="flex items-center gap-2 justify-center">
                             <span className="text-2xl lg:text-3xl">How you doing?👋</span>
                         </h1>
-                        <p className="text-muted-foreground text-md lg:text-md leading-relaxed text-center md:max-w-[50ch] md:mx-auto">
-                            I&apos;m Paul, I help clients build fast, reliable <span className="text-foreground font-semibold">WordPress</span> & <span className="text-foreground font-semibold"> Elementor</span> websites with seamless integrations and <span className="text-foreground font-semibold">GHL workflows.</span>
+                        <p className="text-foreground/80 text-md lg:text-md leading-relaxed text-center md:max-w-[50ch] md:mx-auto">
+                            I&apos;m Paul, I help clients build fast, reliable <span className="text-foreground font-extrabold uppercase tracking-tight">WordPress</span> & <span className="text-foreground font-extrabold uppercase tracking-tight"> Elementor</span> websites with seamless integrations and <span className="text-foreground font-extrabold uppercase tracking-tight">GHL workflows.</span>
                         </p>
 
                         <div className="flex flex-col gap-3 p-3 mt-auto sm:flex-row">
@@ -52,7 +52,7 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                                 icon={<Mail className="w-5 h-5" />}
                                 iconPosition="left"
                             >
-                                <span className="text-muted-foreground font-medium">Send Email</span>
+                                <span className="text-foreground font-bold">Send Email</span>
                             </Button>
                         </div>
                     </div>

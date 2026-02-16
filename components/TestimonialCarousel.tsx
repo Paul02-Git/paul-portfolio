@@ -32,7 +32,7 @@ const TestimonialCard = ({ rating, quote, name, role }: Testimonial) => {
                             />
                         ))}
                     </div>
-                    <div className="px-2 py-1 rounded-full bg-primary/10 border border-primary/20 flex items-center gap-1.5">
+                    <div className="px-2 py-1 rounded-full bg-primary/10 border border-primary/30 flex items-center gap-1.5">
                         <div className="bg-primary rounded-full p-0.5">
                             <Check className="w-2 h-2 text-white" />
                         </div>
@@ -131,12 +131,12 @@ export const TestimonialCarousel = ({ testimonials }: TestimonialCarouselProps) 
             </div>
 
             {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-4">
+            <div className="flex justify-center gap-3 mt-4">
                 {Array.from({ length: testimonials.length - (visibleItems - 1) }).map((_, i) => (
                     <button
                         key={i}
                         onClick={() => setCurrentIndex(i)}
-                        className={`h-2 transition-all duration-300 rounded-full ${i === currentIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/20 hover:bg-muted-foreground/40"
+                        className={`h-2 transition-all duration-300 rounded-full ${i === currentIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/20 hover:bg-muted-foreground/40 cursor-pointer"
                             }`}
                     />
                 ))}
