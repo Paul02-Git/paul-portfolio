@@ -19,7 +19,7 @@ export const Marquee = ({
     const prefersReducedMotion = useReducedMotion();
     // CENTRAL STYLE CONFIGURATION
     // Change these values to update all Marquee instances simultaneously
-    const defaultItemStyles = "text-2xl md:text-4xl font-bold tracking-widest h-18 bg-muted";
+    const defaultItemStyles = "text-2xl md:text-3xl font-bold tracking-widest h-14 bg-muted";
     const defaultColor = "text-foreground/60"; // Global default color
 
     // For infinite loop, we need two sets of items moving together

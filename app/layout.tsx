@@ -17,6 +17,18 @@ const siteDescription = "I build conversion-focused WordPress websites and GoHig
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: [
+      { url: "/images/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/images/favicon.svg", type: "image/svg+xml" },
+      { url: "/images/favicon.ico", rel: "shortcut icon" },
+    ],
+    apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    title: "HIRE PAUL",
+  },
   title: {
     default: "Paul Puzon | WordPress Developer Philippines | Hire Elementor Expert",
     template: "%s | Paul Puzon"
@@ -27,9 +39,9 @@ export const metadata: Metadata = {
     "WordPress Developer Philippines",
     "Hire WordPress Developer",
     "GoHighLevel Specialist",
-    "GHL Expert",
+    "GHL Expert in Philippines",
     "Elementor Developer",
-    "Elementor Expert",
+    "Elementor Expert in the Philippines",
     "Web Development",
     "Marketing Automation",
     "CRM Integration",

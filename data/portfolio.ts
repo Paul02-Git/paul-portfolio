@@ -31,13 +31,13 @@ export const projects: Project[] = [
     {
         title: "Jets Fan Cruise",
         category: "Web Development",
-        image: "/images/Jets-Fan-Cruise.png",
+        image: "/images/Jets-Fan-Cruise-1.webp",
 
     },
     {
         title: "Consult with Che",
         category: "Web Development",
-        image: "/images/consultwithche-com-Homelessness.webp",
+        image: "/images/consultwithche-com-Homelessness-wp.webp",
 
     },
     {

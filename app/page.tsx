@@ -1,9 +1,10 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   ArrowUpRight,
+  Calendar,
   X,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,8 +22,10 @@ import { Marquee } from "@/components/Marquee";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { TechStack } from "@/components/TechStack";
 import { Footer } from "@/components/Footer";
+import { HomeCtaGrid } from "@/components/HomeCtaGrid";
 // Data
 import { experiences, tools, projects, services, marqueeItems, testimonials, brands } from "@/data/portfolio";
+import { Button } from "@/components/Button";
 
 
 
@@ -88,7 +91,7 @@ export default function Home() {
         </Card>
         <TechStack brands={brands} className="lg:col-span-4" />
       </div>
-
+      <HomeCtaGrid />
       {/* Services Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-grid ">
         <div className="lg:col-span-8">
@@ -104,25 +107,37 @@ export default function Home() {
 
         {/* Marquee Section */}
         <div className="lg:col-span-4">
-          <Card className="relative h-full flex flex-col justify-between items-start text-left overflow-hidden rounded-lg border border-border/60 backdrop-blur-md shadow-md shadow-black/10">
+          <Card className="space-y-4 relative h-full flex flex-col justify-between items-start text-left overflow-hidden rounded-lg border border-border/60 backdrop-blur-md shadow-md shadow-black/10">
             <Marquee
               items={marqueeItems}
             />
 
-            <div className="space-y-grid mt-4">
+            <div className="space-y-2 w-full">
               <h2 className="text-4xl font-bold text-foreground tracking-tight leading-[1.1]">
                 Let&apos;s <span className="inline-block animate-bounce-subtle">👋</span><br />
                 Work Together
               </h2>
+
               <div className="pt-2">
-                <a href="/contact" className="inline-flex items-center gap-2 font-bold text-primary hover:text-primary/80 group text-xl border-b-2 border-primary/20 pb-1 transition-colors">
-                  Let&apos;s Start <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                <Button
+                  className="w-full"
+                  icon={<Calendar className="w-5 h-5" />}
+                  iconPosition="left"
+                  href="https://calendly.com/paulpuzon0007/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book A Free Call
+                </Button>
+
               </div>
             </div>
           </Card>
         </div>
       </div>
+
+
+
 
       <Footer />
 

@@ -97,9 +97,9 @@ export default function ServicesPage() {
                             <section className="space-y-8">
                                 <div className="flex flex-col-reverse md:flex-row justify-between items-start">
                                     <div className="space-y-4 flex-1">
-                                        <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                                        <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                                             Services I <span className="text-primary">Offer</span>
-                                        </h1>
+                                        </h2>
                                         <p className="text-lg text-muted-foreground leading-relaxed">
                                             I provide high-end <span className="text-foreground font-semibold">WordPress</span> & <span className="text-foreground font-semibold">Web Solutions</span> tailored for growth. From complex integrations to high-converting funnels, I handle the technical excellence so you can focus on your business.
                                         </p>

@@ -30,9 +30,9 @@ export default function HirePage() {
                         <section className="space-y-6">
 
 
-                            <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight max-w-[20ch]">
+                            <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight max-w-[20ch]">
                                 Hire a <span className="text-primary">WordPress Developer</span> Who Delivers Results
-                            </h1>
+                            </h2>
 
                             <p className="text-lg text-muted-foreground leading-relaxed">
                                 Looking for a reliable WordPress developer? I specialize in building high-performance,

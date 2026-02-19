@@ -1,5 +1,22 @@
 import type { NextConfig } from "next";
 
+const contentSecurityPolicy = `
+  default-src 'self';
+  base-uri 'self';
+  form-action 'self';
+  frame-ancestors 'none';
+  img-src 'self' data: blob: https:;
+  font-src 'self' data: https:;
+  style-src 'self' 'unsafe-inline' https:;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;
+  connect-src 'self' https: ws: wss:;
+  frame-src 'self' https:;
+  object-src 'none';
+  upgrade-insecure-requests;
+`
+  .replace(/\s{2,}/g, " ")
+  .trim();
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -41,6 +58,10 @@ const nextConfig: NextConfig = {
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: contentSecurityPolicy,
           },
         ],
       },

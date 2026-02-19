@@ -69,9 +69,9 @@ export default function AboutPage() {
                             <section className="space-y-8">
                                 <div className="flex flex-col-reverse md:flex-row justify-between items-start gap-4">
                                     <div className="space-y-4 flex-1">
-                                        <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                                        <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                                             Hi, This Is <span className="text-primary">Paul</span> 👋
-                                        </h1>
+                                        </h2>
                                         <p className="text-lg text-muted-foreground leading-relaxed">
                                             A Passionate
                                             <span className="text-foreground font-semibold"> WordPress Specialist</span> having <span className="text-foreground font-semibold">4+ years</span> of

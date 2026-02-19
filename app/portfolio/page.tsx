@@ -56,9 +56,9 @@ export default function PortfolioPage() {
                         {/* Portfolio Section */}
                         <section className="space-y-12">
                             <div className="flex flex-col gap-4">
-                                <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                                <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                                     My Latest <span className="text-primary">Projects</span>
-                                </h1>
+                                </h2>
                                 <p className="text-lg text-muted-foreground leading-relaxed max-w-[50ch]">
                                     A collection of projects where I&apos;ve blended <span className="text-foreground font-semibold">Technical Excellence</span> with <span className="text-foreground font-semibold">User-Centric Design</span>. Each piece represents a unique challenge solved with precision and passion.
                                 </p>

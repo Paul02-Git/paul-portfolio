@@ -14,7 +14,7 @@ export const ProfileCard = ({ className }: { className?: string }) => {
     return (
         <div className={cn("flex flex-col gap-grid h-full", className)}>
             <Card className="flex-grow p-card-md flex-col">
-                <div className="relative w-full overflow-hidden h-[150px] sm:h-[200px] lg:h-[150px] rounded-md">
+                <div className="relative w-full overflow-hidden h-[120px] sm:h-[150px] lg:h-[120px] rounded-md">
                     <Image
                         src="/images/Paul-Dev.svg"
                         alt="Paul Puzon"
@@ -28,15 +28,15 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                 <div className="flex-grow flex flex-col justify-between pt-4">
                     <div className="flex flex-col gap-2">
                         <h1 className="flex items-center gap-2 justify-center">
-                            <span className="text-2xl lg:text-3xl">How you doing?👋</span>
+                            <span className="text-2xl lg:text-3xl text-center max-w-[20ch]">Helping <span className="text-primary">Brands</span> Build Websites That Convert</span>
                         </h1>
                         <p className="text-foreground/80 text-md lg:text-md leading-relaxed text-center md:max-w-[50ch] md:mx-auto">
                             I&apos;m Paul, I help clients build fast, reliable <span className="text-foreground font-extrabold uppercase tracking-tight">WordPress</span> & <span className="text-foreground font-extrabold uppercase tracking-tight"> Elementor</span> websites with seamless integrations and <span className="text-foreground font-extrabold uppercase tracking-tight">GHL workflows.</span>
                         </p>
 
-                        <div className="flex flex-col gap-3 p-3 mt-auto sm:flex-row">
+                        <div className="flex flex-col gap-3 p-3 mt-auto sm:flex-row sm:flex-wrap xl:flex-nowrap">
                             <Button
-                                className="w-full sm:flex-1 text-sm"
+                                className="w-full flex-1 sm:flex-[1_1_220px] xl:flex-1 text-sm"
                                 icon={<Calendar className="w-5 h-5" />}
                                 iconPosition="left"
                                 href="https://calendly.com/paulpuzon0007/30min"
@@ -47,7 +47,7 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                             </Button>
                             <Button
                                 variant="outline"
-                                className="w-full sm:flex-1 text-sm"
+                                className="w-full flex-1 sm:flex-[1_1_220px] xl:flex-1 text-sm"
                                 href="mailto:paulpuzon0007@gmail.com"
                                 icon={<Mail className="w-5 h-5" />}
                                 iconPosition="left"

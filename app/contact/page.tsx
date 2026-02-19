@@ -10,6 +10,7 @@ import { Send } from "lucide-react";
 import { FAQ } from "@/components/FAQ";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
+import { HomeCtaGrid } from "@/components/HomeCtaGrid";
 
 // Generate FAQ Schema for SEO
 const faqSchema = {
@@ -100,9 +101,9 @@ export default function ContactPage() {
                             {/* Contact Section */}
                             <section className="space-y-12">
                                 <div className="flex flex-col gap-4 mb-8">
-                                    <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                                    <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                                         Let&apos;s 👋 <span className="text-primary">Work</span> Together
-                                    </h1>
+                                    </h2>
                                     <p className="align-left text-muted-foreground max-w-[57ch]">I&apos;m here to help if you&apos;re searching for a product designer to bring your idea to life or a design partner to help take your business to the next level.
                                     </p>
                                 </div>
@@ -265,11 +266,7 @@ export default function ContactPage() {
 
                             {/* FAQ Section */}
                             <FAQ items={faqs} />
-
-
-
                         </Card>
-
                         <Footer />
                     </div>
                 </div>

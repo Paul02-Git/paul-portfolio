@@ -261,10 +261,10 @@ export const TechStack = ({ className }: TechStackProps) => {
                             </AnimatePresence>
                         </div>
 
-                        <div className="text-[11px] font-bold text-foreground mt-1 text-center">
+                        <div className="text-[14px] font-bold text-foreground text-center">
                             {activeVibe.name}
                         </div>
-                        <div className="text-[9px] text-muted-foreground text-center font-medium opacity-80">
+                        <div className="text-[12px] text-foreground/80 text-center font-medium opacity-80">
                             {activeVibe.label}
                         </div>
                     </div>

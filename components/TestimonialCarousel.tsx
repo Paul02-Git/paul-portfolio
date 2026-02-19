@@ -32,11 +32,11 @@ const TestimonialCard = ({ rating, quote, name, role }: Testimonial) => {
                             />
                         ))}
                     </div>
-                    <div className="px-2 py-1 rounded-full bg-primary/10 border border-primary/30 flex items-center gap-1.5">
-                        <div className="bg-primary rounded-full p-0.5">
-                            <Check className="w-2 h-2 text-white" />
+                    <div className="px-2 py-1 rounded-full bg-primary flex items-center gap-1.5">
+                        <div className="bg-white rounded-full p-0.5">
+                            <Check className="w-2 h-2 text-primary" />
                         </div>
-                        <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Satisfied Client</span>
+                        <span className="text-[10px] font-bold text-white uppercase tracking-wider">Satisfied Client</span>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@ const TestimonialCard = ({ rating, quote, name, role }: Testimonial) => {
             <div className="pt-4 border-t border-border/40 flex flex-wrap items-center justify-between gap-2">
                 <div>
                     <p className="text-sm font-bold text-foreground">{name}</p>
-                    <p className="text-xs font-semibold text-muted-foreground/80">{role}</p>
+                    <p className="text-xs font-semibold text-foreground/70">{role}</p>
                 </div>
             </div>
         </div>
@@ -131,12 +131,13 @@ export const TestimonialCarousel = ({ testimonials }: TestimonialCarouselProps) 
             </div>
 
             {/* Pagination Dots */}
-            <div className="flex justify-center gap-3 mt-4">
+            <div className="flex justify-center gap-4 mt-4">
                 {Array.from({ length: testimonials.length - (visibleItems - 1) }).map((_, i) => (
                     <button
                         key={i}
+                        aria-label={`Go to slide ${i + 1}`}
                         onClick={() => setCurrentIndex(i)}
-                        className={`h-2 transition-all duration-300 rounded-full ${i === currentIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/20 hover:bg-muted-foreground/40 cursor-pointer"
+                        className={`h-3 transition-all duration-300 rounded-full ${i === currentIndex ? "w-12 bg-primary" : "w-3 bg-muted-foreground/60 hover:bg-muted-foreground/80 cursor-pointer"
                             }`}
                     />
                 ))}
