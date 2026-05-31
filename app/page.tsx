@@ -76,11 +76,11 @@ export default function Home() {
               </Button>
               <Button
                 variant="outline"
-                href="/portfolio"
+                href="/contact"
                 icon={<ArrowUpRight className="w-5 h-5" />}
                 iconPosition="right"
               >
-                View My Work
+                Ask a Question
               </Button>
             </motion.div>
 
@@ -177,7 +177,7 @@ export default function Home() {
 
         {/* ── DOUBLE MARQUEE BAND — full viewport width ── */}
         <div className="relative left-1/2 -translate-x-1/2 w-screen">
-          <div className="bg-foreground py-8 rotate-[-1deg] scale-x-[1.05] space-y-3">
+          <div className="bg-foreground py-8 space-y-3">
 
             {/* Row 1 — scrolls left */}
             <div className="overflow-hidden">
@@ -196,7 +196,7 @@ export default function Home() {
                     className="inline-flex items-center gap-8 px-4 text-white font-bold text-lg uppercase tracking-widest whitespace-nowrap"
                   >
                     {item}
-                    <span className="text-primary leading-none">✦</span>
+                    <span className="text-white/90 leading-none">✦</span>
                   </span>
                 ))}
               </div>
@@ -325,7 +325,7 @@ export default function Home() {
                 image: "https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg",
                 href: "/services",
               },
-            ].map((service, i) => (
+            ].slice(0, 3).map((service, i) => (
               <motion.div
                 key={i}
                 {...fadeUp(i * 0.08)}
@@ -520,7 +520,7 @@ export default function Home() {
 
         {/* ── PROCESS MARQUEE BAND (matches top marquee) ── */}
         <div className="relative left-1/2 -translate-x-1/2 w-screen">
-          <div className="bg-foreground py-8 rotate-[-1deg] scale-x-[1.05] w-screen">
+          <div className="bg-foreground py-8 w-screen">
             <div className="overflow-hidden">
               <div className="flex items-center animate-marquee w-max">
                 {[...Array(4)].flatMap(() => [
@@ -537,7 +537,7 @@ export default function Home() {
                     className="inline-flex items-center gap-8 px-4 text-white font-bold text-lg uppercase tracking-widest whitespace-nowrap"
                   >
                     {item}
-                    <span className="text-primary leading-none">✦</span>
+                    <span className="text-white/90 leading-none">✦</span>
                   </span>
                 ))}
               </div>

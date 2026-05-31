@@ -124,10 +124,10 @@ export default function AboutPage() {
                         <Eyebrow>Who I Am</Eyebrow>
                     </motion.div>
 
-                    <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center mt-4 md:mt-2">
                         <motion.h1
                             {...fadeUp(0.05)}
-                            className="lg:col-span-7 text-4xl sm:text-5xl lg:text-[3.75rem] font-bold leading-[1.05] tracking-tight"
+                            className="lg:col-span-7 leading-[1.05] tracking-tight max-w-[20ch]"
                         >
                             I&apos;m A Specialist In <span className="text-primary">Web Design &amp; Development</span>
                         </motion.h1>
@@ -136,13 +136,14 @@ export default function AboutPage() {
                             <p className="text-muted-foreground leading-relaxed">
                                 My work covers a wide range of digital needs — from fast WordPress builds and conversion-ready Shopify stores to GoHighLevel funnels, SEO, and automation.
                             </p>
-                            <div className="flex flex-wrap items-center gap-4">
+                            <div className="flex flex-col sm:flex-row gap-4">
                                 <Button href="https://calendly.com/paulpuzon0007/30min" target="_blank" rel="noopener noreferrer" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
                                     Free Consultation
                                 </Button>
-                                <Link href="/contact" className="inline-flex items-center gap-1.5 font-bold text-foreground hover:text-primary transition-colors">
+                                <Button href="/contact" variant="outline">
                                     Contact Us <ArrowUpRight className="w-4 h-4" />
-                                </Link>
+                                </Button>
+                                
                             </div>
                         </motion.div>
                     </div>
