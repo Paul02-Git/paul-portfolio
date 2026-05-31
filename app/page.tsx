@@ -460,7 +460,7 @@ export default function Home() {
           >
             <div className="space-y-5">
               <p className="text-primary text-xs font-semibold uppercase tracking-widest">Portfolio</p>
-              <h2 className="max-w-[16ch]">Explore My Portfolio of Creative Solutions</h2>
+              <h2 className="max-w-[16ch]">Explore My Portfolio</h2>
             </div>
             <p className="text-muted-foreground text-sm max-w-[34ch] lg:text-right">
               A look at the websites and systems I&apos;ve built to help businesses grow.
