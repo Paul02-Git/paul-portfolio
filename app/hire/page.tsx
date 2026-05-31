@@ -4,7 +4,6 @@ import React from "react";
 import { ProfileCard } from "@/components/ProfileCard";
 import Navbar from "@/components/Navbar";
 import { Card } from "@/components/Card";
-import { Footer } from "@/components/Footer";
 import { Check, Clock, DollarSign, Zap, MessageSquare, Calendar, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { stats } from "@/data/portfolio";
@@ -232,8 +231,6 @@ export default function HirePage() {
                         {/* Final CTA */}
                         <ReadyToStart />
                     </Card>
-
-                    <Footer />
                 </div>
             </div>
         </main>

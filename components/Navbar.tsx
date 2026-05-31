@@ -23,30 +23,30 @@ export default function Navbar() {
 
     return (
         <>
-            <div className="fixed top-6 left-0 right-0 z-50 pointer-events-none">
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-6">
-                    <nav className="pointer-events-auto bg-white/50 backdrop-blur-md border border-white/20 shadow-sm shadow-black/10 rounded-sm px-4 py-4 flex items-center justify-between transition-all duration-300">
-                        <div className="flex items-center gap-3">
-                            <Link href="/" className="flex items-center gap-3 group" aria-label="Paul Puzon Home">
-                                <div className="flex items-center text-foreground group-hover:text-primary transition-colors">
-                                    <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10 20L40 90L55 55" />
-                                        <path d="M45 55L60 90L90 20" />
-                                    </svg>
-                                </div>
-                                <span className="font-bold text-lg hidden sm:block">W!P</span>
-                            </Link>
-                        </div>
+            <header className="fixed top-0 left-0 right-0 z-50 bg-card border-b border-border/60">
+                <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6">
+                    <nav className="relative flex items-center justify-between h-16">
 
-                        {/* Desktop Links */}
-                        <div className="hidden md:flex items-center gap-6">
+                        {/* Logo — left */}
+                        <Link href="/" className="flex items-center gap-2.5 group shrink-0" aria-label="Paul Puzon Home">
+                            <div className="flex items-center text-foreground group-hover:text-primary transition-colors">
+                                <svg className="w-7 h-7" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 20L40 90L55 55" />
+                                    <path d="M45 55L60 90L90 20" />
+                                </svg>
+                            </div>
+                            <span className="font-bold text-lg hidden sm:block">W!P</span>
+                        </Link>
+
+                        {/* Desktop Links — centered */}
+                        <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.label}
                                     href={link.href}
                                     className={cn(
                                         "text-sm font-medium transition-colors hover:text-foreground",
-                                        pathname === link.href ? "text-foreground font-bold" : "text-muted-foreground"
+                                        pathname === link.href ? "text-foreground font-semibold" : "text-muted-foreground"
                                     )}
                                 >
                                     {link.label}
@@ -54,9 +54,9 @@ export default function Navbar() {
                             ))}
                         </div>
 
-                        <div className="flex items-center gap-2 sm:gap-4">
-                            {/* Vibe Toggle */}
-                            <VibeToggle className="md:block cursor-pointer" />
+                        {/* Right — actions */}
+                        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                            <VibeToggle className="cursor-pointer" />
 
                             <Button
                                 size="sm"
@@ -64,7 +64,7 @@ export default function Navbar() {
                                 icon={<ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />}
                                 href="/contact"
                             >
-                                Let&apos;s Talk
+                                Let&apos;s Connect
                             </Button>
 
                             {/* Mobile Menu Button */}
@@ -78,7 +78,7 @@ export default function Navbar() {
                         </div>
                     </nav>
                 </div>
-            </div>
+            </header>
 
             {/* Mobile Menu Overlay */}
             {isOpen && (

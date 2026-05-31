@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+// @ts-ignore: CSS module type declarations are not available in this project setup.
 import "./globals.css";
 import { ThemeManager } from "@/components/ThemeManager";
 import { ThemeScript } from "@/components/ThemeScript";
 import { DynamicBackground } from "@/components/DynamicBackground";
+import { Footer } from "@/components/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -153,7 +155,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={spaceGrotesk.variable} suppressHydrationWarning>
+    <html lang="en" className={`${spaceGrotesk.variable} overflow-x-hidden`} suppressHydrationWarning>
       <head>
         <ThemeScript />
         {/* JSON-LD Schema Markup */}
@@ -170,13 +172,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-slate-50 relative overflow-x-hidden bg-grain-refined" suppressHydrationWarning>
+      <body className="font-sans antialiased bg-background relative overflow-x-hidden" suppressHydrationWarning>
         <ThemeManager />
-        <DynamicBackground />
 
-        <div className="min-h-screen max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6 py-6 relative z-10">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6 pt-6 relative z-10">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

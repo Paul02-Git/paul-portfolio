@@ -3,16 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Calendar, ArrowLeft, Share2, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Facebook, Twitter, Link2, Check } from "lucide-react";
 import { blogPosts } from "@/data/portfolio";
 import Navbar from "@/components/Navbar";
-import { Card } from "@/components/Card";
-import { Footer } from "@/components/Footer";
-import { cn } from "@/lib/utils";
 
 export default function BlogPostClient({ slug }: { slug: string }) {
-    const currentIndex = blogPosts.findIndex(p => p.slug === slug);
+    const currentIndex = blogPosts.findIndex((p) => p.slug === slug);
     const post = blogPosts[currentIndex];
 
     const prevPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
@@ -20,31 +16,25 @@ export default function BlogPostClient({ slug }: { slug: string }) {
 
     const [copied, setCopied] = React.useState(false);
 
-    const handleShare = async () => {
-        const shareData = {
-            title: post.title,
-            text: post.excerpt,
-            url: window.location.href,
-        };
+    const shareUrl = () => (typeof window !== "undefined" ? window.location.href : "");
 
+    const copyLink = async () => {
         try {
-            if (navigator.share) {
-                await navigator.share(shareData);
-            } else {
-                await navigator.clipboard.writeText(window.location.href);
-                setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
-            }
-        } catch (err) {
-            console.error("Error sharing:", err);
+            await navigator.clipboard.writeText(shareUrl());
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        } catch {
+            /* noop */
         }
     };
 
+    const openShare = (url: string) => window.open(url, "_blank", "noopener,noreferrer");
+
     if (!post) {
         return (
-            <main className="min-h-screen flex items-center justify-center p-card">
+            <main className="min-h-screen flex items-center justify-center">
                 <div className="text-center space-y-4">
-                    <h1 className="text-2xl font-bold">Post Not Found</h1>
+                    <h1>Post Not Found</h1>
                     <Link href="/blog" className="text-primary hover:underline inline-flex items-center gap-2">
                         <ArrowLeft className="w-4 h-4" /> Back to Blog
                     </Link>
@@ -53,135 +43,159 @@ export default function BlogPostClient({ slug }: { slug: string }) {
         );
     }
 
+    const author = post.author ?? "Paul Puzon";
+    const authorRole = post.authorRole ?? "WordPress & GHL Specialist";
+    const initials = author.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
+    const wordCount = post.content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+    const readTime = Math.max(1, Math.round(wordCount / 200));
+
     return (
-        <main className="space-y-6 pb-12 pt-32 md:pt-34">
+        <main className="pb-20 pt-40">
             <Navbar />
 
-            <div className="max-w-[1120px] mx-auto">
-                <div className="mb-8">
-                    <Link
-                        href="/blog"
-                        className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors group"
-                    >
-                        <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                        Back to Blog
-                    </Link>
+            <article className="max-w-[960px] mx-auto">
+
+                {/* Date */}
+                <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    {post.date} <span className="text-border">·</span> {readTime} min read
+                </p>
+
+                {/* Title */}
+                <h1 className="mt-5 text-center text-3xl md:text-5xl font-bold leading-[1.1] tracking-tight">
+                    {post.title}
+                </h1>
+
+                {/* Excerpt */}
+                <p className="mt-6 text-center text-lg text-muted-foreground leading-relaxed max-w-[60ch] mx-auto">
+                    {post.excerpt}
+                </p>
+
+                {/* Author */}
+                <div className="mt-8 flex items-center justify-center gap-3">
+                    <span className="w-10 h-10 rounded-full bg-foreground flex items-center justify-center text-white text-sm font-bold shrink-0">
+                        {initials}
+                    </span>
+                    <div className="text-left">
+                        <p className="text-sm font-semibold text-primary leading-tight">{author}</p>
+                        <p className="text-xs text-muted-foreground">{authorRole}</p>
+                    </div>
                 </div>
 
-                <Card className="overflow-hidden border-none shadow-2xl shadow-black/5">
-                    {/* Header Image */}
-                    <div className="relative aspect-[21/10] w-full overflow-hidden rounded-lg">
-                        <Image
-                            src={post.image}
-                            alt={post.title}
-                            fill
-                            priority
-                            className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t" />
-                        <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10">
-                            <span className="px-4 py-1.5 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] shadow-lg">
-                                {post.category}
+                {/* Share */}
+                <div className="mt-8 flex items-center justify-center gap-3">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                        Share
+                    </span>
+                    <button
+                        onClick={() => openShare(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl())}`)}
+                        aria-label="Share on Facebook"
+                        className="cursor-pointer w-9 h-9 flex items-center justify-center rounded-full border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                    >
+                        <Facebook className="w-4 h-4" />
+                    </button>
+                    <button
+                        onClick={() => openShare(`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl())}&text=${encodeURIComponent(post.title)}`)}
+                        aria-label="Share on X"
+                        className="cursor-pointer w-9 h-9 flex items-center justify-center rounded-full border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                    >
+                        <Twitter className="w-4 h-4" />
+                    </button>
+                    <button
+                        onClick={copyLink}
+                        aria-label="Copy link"
+                        className="cursor-pointer w-9 h-9 flex items-center justify-center rounded-full border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                    >
+                        {copied ? <Check className="w-4 h-4 text-primary" /> : <Link2 className="w-4 h-4" />}
+                    </button>
+                </div>
+
+                {/* Featured image */}
+                <div className="mt-10 relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-muted/30">
+                    <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        priority
+                        quality={90}
+                        sizes="(max-width: 1024px) 100vw, 960px"
+                        className="object-cover"
+                    />
+                </div>
+
+                {/* Body */}
+                <div
+                    className="mt-10 text-base md:text-lg text-foreground/80 leading-relaxed
+                               [&>div>p:first-of-type]:first-letter:float-left
+                               [&>div>p:first-of-type]:first-letter:mr-3
+                               [&>div>p:first-of-type]:first-letter:mt-1
+                               [&>div>p:first-of-type]:first-letter:text-6xl
+                               [&>div>p:first-of-type]:first-letter:font-bold
+                               [&>div>p:first-of-type]:first-letter:leading-[0.7]
+                               [&>div>p:first-of-type]:first-letter:text-foreground
+                               [&_h2]:text-foreground [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4
+                               [&_h3]:text-foreground [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-8 [&_h3]:mb-3
+                               [&_h4]:text-foreground [&_h4]:font-bold
+                               [&_p]:mb-6
+                               [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2
+                               [&_strong]:text-foreground [&_strong]:font-bold
+                               [&_i]:text-primary
+                               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2"
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+
+                {/* Prev / Next */}
+                <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-border/60 pt-10">
+                    {prevPost ? (
+                        <Link href={`/blog/${prevPost.slug}`} className="group space-y-1 text-left">
+                            <span className="text-xs font-bold uppercase tracking-widest text-primary inline-flex items-center gap-2">
+                                <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" /> Previous
                             </span>
-                        </div>
+                            <p className="font-semibold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
+                                {prevPost.title}
+                            </p>
+                        </Link>
+                    ) : <div />}
+
+                    {nextPost && (
+                        <Link href={`/blog/${nextPost.slug}`} className="group space-y-1 sm:text-right">
+                            <span className="text-xs font-bold uppercase tracking-widest text-primary inline-flex items-center gap-2 sm:justify-end w-full">
+                                Next <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                            </span>
+                            <p className="font-semibold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
+                                {nextPost.title}
+                            </p>
+                        </Link>
+                    )}
+                </div>
+
+                {/* Subscribe CTA */}
+                <div className="mt-12 text-center rounded-[8px] border border-border/60 bg-muted/30 p-8 space-y-5">
+                    <div className="space-y-2">
+                        <h3>Enjoyed this article?</h3>
+                        <p className="text-muted-foreground max-w-md mx-auto">
+                            Get practical WordPress, GoHighLevel &amp; SEO insights in your inbox — no spam, just value.
+                        </p>
                     </div>
-
-                    {/* Article Content */}
-                    <article className="mt-8 p-2 md:p-card space-y-10">
-                        <header className="space-y-4">
-                            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground font-medium">
-                                <div className="flex items-center gap-2">
-                                    <Calendar className="w-4 h-4 text-primary" />
-                                    {post.date}
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Clock className="w-4 h-4 text-primary" />
-                                    5 min read
-                                </div>
-                                <button
-                                    onClick={handleShare}
-                                    className="flex items-center gap-2 hover:text-primary transition-colors cursor-pointer ml-auto group/share"
-                                >
-                                    <Share2 className={cn("w-4 h-4 transition-transform", copied ? "scale-125 text-primary" : "group-hover/share:rotate-12")} />
-                                    {copied ? "Link Copied!" : "Share"}
-                                </button>
-                            </div>
-
-                            <h1 className="text-3xl md:text-4xl lg:text-6xl font-black text-foreground leading-[1.1] tracking-tight">
-                                {post.title}
-                            </h1>
-                        </header>
-
-                        {/* Visual Divider */}
-                        <div className="h-px w-full bg-gradient-to-r from-transparent via-border/60 to-transparent" />
-
-                        {/* Main Body */}
-                        <div
-                            className="prose prose-lg prose-invert max-w-none text-muted-foreground leading-relaxed
-                                       [&_h2]:text-foreground [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mb-4 [&_h2]:mt-10
-                                       [&_p]:mb-6
-                                       [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2
-                                       [&_strong]:text-foreground [&_strong]:font-bold
-                                       [&_i]:text-primary"
-                            dangerouslySetInnerHTML={{ __html: post.content }}
+                    <form
+                        action="/contact"
+                        className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
+                    >
+                        <input
+                            type="email"
+                            required
+                            placeholder="Enter your email"
+                            aria-label="Email address"
+                            className="flex-1 rounded-[8px] border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary transition-colors"
                         />
-
-                        {/* Post-to-Post Navigation */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-border/10 pt-10">
-                            {prevPost ? (
-                                <Link
-                                    href={`/blog/${prevPost.slug}`}
-                                    className="group p-6 rounded-2xl bg-muted/20 border border-border/40 hover:bg-muted/40 transition-all space-y-2 text-left"
-                                >
-                                    <span className="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2">
-                                        <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
-                                        Previous Post
-                                    </span>
-                                    <h4 className="text-md font-bold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
-                                        {prevPost.title}
-                                    </h4>
-                                </Link>
-                            ) : <div />}
-
-                            {nextPost && (
-                                <Link
-                                    href={`/blog/${nextPost.slug}`}
-                                    className="group p-6 rounded-2xl bg-muted/20 border border-border/40 hover:bg-muted/40 transition-all space-y-2 text-right"
-                                >
-                                    <span className="text-xs font-bold uppercase tracking-widest text-primary flex items-center justify-end gap-2 text-right">
-                                        Next Post
-                                        <ArrowLeft className="w-3 h-3 rotate-180 transition-transform group-hover:translate-x-1" />
-                                    </span>
-                                    <h4 className="text-md font-bold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
-                                        {nextPost.title}
-                                    </h4>
-                                </Link>
-                            )}
-                        </div>
-
-                        {/* Footer / CTA */}
-                        <footer className="pt-4 mt-4 border-t border-border/10">
-                            <div className="bg-muted/30 rounded-2xl p-8 text-center space-y-4 border border-border/40">
-                                <h3 className="text-2xl font-bold text-foreground">Liked this article?</h3>
-                                <p className="text-muted-foreground max-w-lg mx-auto text-md">
-                                    I regularly share insights on WordPress development and marketing automation.
-                                    Let's build something amazing together.
-                                </p>
-                                <div className="pt-4">
-                                    <Link
-                                        href="/contact"
-                                        className="inline-flex items-center gap-2 px-8 rounded-[8px] py-3 bg-primary text-white font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
-                                    >
-                                        Work with me <ArrowLeft className="w-4 h-4 rotate-180" />
-                                    </Link>
-                                </div>
-                            </div>
-                        </footer>
-                    </article>
-                </Card>
-
-                <Footer />
-            </div>
+                        <button
+                            type="submit"
+                            className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-[8px] px-6 py-3 text-sm hover:bg-primary/90 transition-colors shrink-0 cursor-pointer"
+                        >
+                            Subscribe <ArrowRight className="w-4 h-4" />
+                        </button>
+                    </form>
+                </div>
+            </article>
         </main>
     );
 }

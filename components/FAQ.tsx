@@ -73,9 +73,11 @@ export const FAQ = ({ items, title = "Frequently Asked Questions❓" }: FAQProps
 
     return (
         <section className="space-y-8">
-            <h2>
-                {title}
-            </h2>
+            {title && (
+                <h2>
+                    {title}
+                </h2>
+            )}
             <div className="grid gap-4">
                 {items.map((item, i) => (
                     <FAQItem

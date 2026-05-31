@@ -65,4 +65,6 @@ export interface BlogPost {
     image: string;
     slug: string;
     content: string;
+    author?: string;
+    authorRole?: string;
 }

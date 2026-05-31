@@ -1,48 +1,80 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import { Card } from "@/components/Card";
-import { Footer } from "@/components/Footer";
-import { BlogCard } from "@/components/BlogCard";
 import { blogPosts } from "@/data/portfolio";
 import { motion } from "framer-motion";
+import { LayoutGrid } from "lucide-react";
+
+const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-60px" } as const,
+    transition: { duration: 0.55, ease: "easeOut" as const, delay },
+});
 
 export default function BlogPage() {
     return (
-        <main className="space-y-6 pb-12 pt-28 md:pt-24">
+        <main className="pb-20 pt-28 md:pt-32">
             <Navbar />
 
-            <div>
-                <Card className="p-6 md:p-12 space-y-12">
-                    {/* Header Section */}
-                    <header className="space-y-6 max-w-2xl mx-auto text-center">
-                        <div
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[8px] bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider"
-                        >
-                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                            Insights & Articles
-                        </div>
+            {/* Breadcrumb */}
+            <p className="text-center text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
+                <span className="text-primary mx-1.5">/</span>
+                <span className="text-foreground">Blog</span>
+            </p>
 
-                        <div className="space-y-4 text-center">
-                            <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                                <span className="text-primary">Blog</span>
-                            </h1>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                Exploring the intersection of <span className="text-foreground font-semibold">Technical Excellence</span> and <span className="text-foreground font-semibold">Marketing Automation</span>. Digital insights on WordPress, GHL, and scaling businesses.
+            {/* Masthead */}
+            <h1 className="mt-5 text-center font-bold tracking-tighter text-5xl sm:text-6xl lg:text-[6rem] uppercase">
+                <span className="text-foreground">Ideas </span>
+                <span className="text-transparent [-webkit-text-stroke:1.5px_var(--foreground)]">That </span>
+                <span className="text-primary">Inspire</span>
+            </h1>
+
+            {/* Toolbar */}
+            <div className="mt-14 flex items-center justify-between py-4">
+                <div className="flex items-center gap-3 text-sm font-medium text-muted-foreground">
+                    <LayoutGrid className="w-4 h-4 text-primary" />
+                    <span>
+                        Showing <span className="text-primary font-bold">{blogPosts.length} articles</span>
+                    </span>
+                </div>
+                <p className="text-sm font-medium text-muted-foreground">
+                    Sort by: <span className="text-foreground font-semibold">Latest</span>
+                </p>
+            </div>
+
+            {/* Grid */}
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+                {blogPosts.map((post, i) => (
+                    <motion.article key={post.slug} {...fadeUp((i % 2) * 0.08)}>
+                        <Link href={`/blog/${post.slug}`} className="group block">
+                            <div className="relative aspect-[3/2] rounded-[8px] overflow-hidden mb-5 bg-muted/30">
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    fill
+                                    quality={90}
+                                    sizes="(max-width: 768px) 90vw, 45vw"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black text-[10px] font-bold uppercase tracking-widest text-white">
+                                    {post.category}
+                                </span>
+                            </div>
+                            <h3 className="text-lg md:text-xl font-bold leading-snug text-foreground group-hover:text-primary transition-colors">
+                                {post.title}
+                            </h3>
+                            <p className="mt-2 text-sm text-muted-foreground">
+                                {post.date} <span className="text-foreground/40">by</span>{" "}
+                                <span className="text-foreground font-medium">{post.author ?? "Paul Puzon"}</span>
                             </p>
-                        </div>
-                    </header>
-
-                    {/* Blog Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {blogPosts.map((post, i) => (
-                            <BlogCard key={post.slug} post={post} index={i} />
-                        ))}
-                    </div>
-                </Card>
-
-                <Footer />
+                        </Link>
+                    </motion.article>
+                ))}
             </div>
         </main>
     );

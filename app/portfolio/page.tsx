@@ -6,7 +6,6 @@ import { ProfileCard } from "@/components/ProfileCard";
 import Navbar from "@/components/Navbar";
 import { Card } from "@/components/Card";
 import { Marquee } from "@/components/Marquee";
-import { Footer } from "@/components/Footer";
 import { PortfolioProjectCard } from "@/components/PortfolioProjectCard";
 import { projects, marqueeItems } from "@/data/portfolio";
 import { motion, AnimatePresence } from "framer-motion";
@@ -117,8 +116,6 @@ export default function PortfolioPage() {
                             items={marqueeItems}
                         />
                     </Card>
-
-                    <Footer />
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
 
 :root {
   --background: #F8FAFC;
-  --foreground: #0F172A;
+  --foreground: #181818;
   --card: #ffffff;
   --card-foreground: #0F172A;
   /* Primary colors are handled dynamically by ThemeManager/VibeToggle */
@@ -46,36 +46,67 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @layer base {
+  /* Global heading transform — set to none to revert to normal case */
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: Capitalize;
+  }
+
   h1 {
-    @apply text-2xl font-bold text-foreground leading-tight tracking-tight;
-
-    /* Minimalist Scale: Base (Mobile) -> LG (MD) -> XL (LG+) */
-    @media (min-width: 768px) {
-      @apply text-3xl;
-    }
-
-    @media (min-width: 1024px) {
-      @apply text-4xl;
-    }
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--foreground);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    @media (min-width: 768px)  { font-size: 2.25rem;  }
+    @media (min-width: 1024px) { font-size: 3rem;     }
   }
 
   h2 {
-    @apply text-xl font-semibold text-foreground tracking-tight;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--foreground);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    @media (min-width: 768px)  { font-size: 2rem;     }
+    @media (min-width: 1024px) { font-size: 2.5rem;   }
+  }
 
-    /* Minimalist Scale: Base (Mobile) -> LG (MD) -> XL (LG+) */
-    @media (min-width: 768px) {
-      @apply text-2xl;
-    }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--foreground);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    @media (min-width: 768px)  { font-size: 1.625rem; }
+  }
 
-    @media (min-width: 1024px) {
-      @apply text-3xl;
-    }
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--foreground);
+    line-height: 1.4;
+    @media (min-width: 768px)  { font-size: 1.375rem; }
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    letter-spacing: 0.025em;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
   * {
@@ -84,6 +115,26 @@ body {
 }
 
 @layer utilities {
+  /* ── Global section rhythm ── single source of truth for vertical spacing.
+     .section-y  = identical top + bottom padding on every block.
+     .section-yb = bottom-only (used by the hero, whose top is the navbar clearance). */
+  .section-y {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .section-yb {
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 768px) {
+    .section-y {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    .section-yb {
+      padding-bottom: 5rem;
+    }
+  }
+
   .mask-fade-v {
     mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
@@ -137,6 +188,10 @@ body {
 
   .animate-marquee {
     animation: marquee 40s linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee 40s linear infinite reverse;
   }
 
   .animate-bounce-subtle {

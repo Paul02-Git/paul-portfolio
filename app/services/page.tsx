@@ -9,7 +9,6 @@ import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { Marquee } from "@/components/Marquee";
 import { Toolbox } from "@/components/Toolbox";
 import { FAQ } from "@/components/FAQ";
-import { Footer } from "@/components/Footer";
 import { ServiceCard } from "@/components/ServiceCard";
 import { testimonials, marqueeItems, faqs, fullServices } from "@/data/portfolio";
 import Script from "next/script";
@@ -152,8 +151,6 @@ export default function ServicesPage() {
                                 items={marqueeItems}
                             />
                         </Card>
-
-                        <Footer />
                     </div>
                 </div>
             </main>
