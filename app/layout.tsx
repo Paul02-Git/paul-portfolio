@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
-// @ts-ignore: CSS module type declarations are not available in this project setup.
 import "./globals.css";
 import { ThemeManager } from "@/components/ThemeManager";
 import { ThemeScript } from "@/components/ThemeScript";
-import { DynamicBackground } from "@/components/DynamicBackground";
 import { Footer } from "@/components/Footer";
 
 const spaceGrotesk = Space_Grotesk({
@@ -64,7 +62,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: `${siteUrl}/images/OG IMAGE - Paul Wordpress and Elementor.png`,
+        url: `${siteUrl}/images/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Paul Puzon - WordPress & GHL Specialist",
@@ -75,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Paul | Get More Leads & Booked Calls With WordPress & GHL",
     description: siteDescription,
-    images: [`${siteUrl}/images/OG IMAGE - Paul Wordpress and Elementor.png`],
+    images: [`${siteUrl}/images/og-image.png`],
     creator: "@paulpuzon",
   },
   robots: {
@@ -100,7 +98,7 @@ const personSchema = {
   "@type": "Person",
   name: "Paul Puzon",
   url: siteUrl,
-  image: `${siteUrl}/images/OG IMAGE - Paul Wordpress and Elementor.png`,
+  image: `${siteUrl}/images/og-image.png`,
   jobTitle: "WordPress Developer & GoHighLevel Specialist",
   description: siteDescription,
   knowsAbout: [
@@ -117,7 +115,7 @@ const personSchema = {
     "https://www.linkedin.com/in/paul-puzon-932b86303/",
     "https://github.com/Paul02-Git/",
     "https://www.facebook.com/paul.puzon73/",
-    "https://discord.com/invite/6kcnz2c7",
+    "https://discord.gg/8pRQWSETW",
     "https://www.youtube.com/@paulpuzon73",
     "https://wa.me/639914075808"
 
@@ -155,7 +153,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} overflow-x-hidden`} suppressHydrationWarning>
+    <html lang="en" className={`${spaceGrotesk.variable} overflow-x-clip`} suppressHydrationWarning>
       <head>
         <ThemeScript />
         {/* JSON-LD Schema Markup */}
@@ -172,7 +170,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-background relative overflow-x-hidden" suppressHydrationWarning>
+      <body className="font-sans antialiased bg-background relative overflow-x-clip" suppressHydrationWarning>
         <ThemeManager />
 
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6 pt-6 relative z-10">

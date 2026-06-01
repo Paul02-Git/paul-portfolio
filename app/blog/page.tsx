@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { blogPosts } from "@/data/portfolio";
-import { motion } from "framer-motion";
 import { LayoutGrid } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
@@ -65,7 +65,7 @@ export default function BlogPage() {
                                     {post.category}
                                 </span>
                             </div>
-                            <h3 className="text-lg md:text-xl font-bold leading-snug text-foreground group-hover:text-primary transition-colors">
+                            <h3 className="line-clamp-2 text-lg md:text-xl font-bold leading-snug text-foreground group-hover:text-primary transition-colors">
                                 {post.title}
                             </h3>
                             <p className="mt-2 text-sm text-muted-foreground">

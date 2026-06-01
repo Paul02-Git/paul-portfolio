@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
 
-export type ProjectCategory = 'Web Design' | 'Web Development' | 'Figma Design' | 'Web Application' | 'SaaS App | UI UX Design' | 'Landing Page' | 'Mockup Development' | 'Virtual Assistant';
+export type ProjectCategory = 'Web Design' | 'Web Development' | 'Figma Design' | 'Web Application' | 'SaaS App | UI UX Design' | 'Landing Page' | 'Mockup Development' | 'Virtual Assistant' | 'Shopify Development';
 export type TestimonialRating = 1 | 2 | 3 | 4 | 5;
 
 export interface Experience {
@@ -15,11 +15,14 @@ export interface Tool {
     logo: string;
 }
 
+export type ToolKey = 'shopify' | 'klaviyo' | 'figma' | 'elementor' | 'ghl' | 'hubspot' | 'va';
+
 export interface Project {
     title: string;
     category: ProjectCategory;
     image: string;
     link?: string;
+    tools?: ToolKey[];
 }
 
 export interface Service {

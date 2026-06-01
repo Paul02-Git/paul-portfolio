@@ -2,124 +2,189 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ProfileCard } from "@/components/ProfileCard";
 import Navbar from "@/components/Navbar";
-import { Card } from "@/components/Card";
-import { Marquee } from "@/components/Marquee";
-import { PortfolioProjectCard } from "@/components/PortfolioProjectCard";
-import { projects, marqueeItems } from "@/data/portfolio";
+import { projects } from "@/data/portfolio";
+import type { ToolKey } from "@/types/portfolio";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/Button";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ArrowUpRight } from "lucide-react";
+
+// Logo (or text badge) shown for each tool used on a project.
+const TOOL_META: Record<ToolKey, { name: string; logo?: string; text?: string }> = {
+    shopify: { name: "Shopify", logo: "/images/shopify.svg" },
+    klaviyo: { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+    figma: { name: "Figma", logo: "/images/Figma-logo.svg" },
+    elementor: { name: "Elementor", logo: "/images/Elementor-Logo-Symbol-Red.svg" },
+    ghl: { name: "GoHighLevel", logo: "/images/GHL Logo.svg" },
+    hubspot: { name: "HubSpot", logo: "https://www.vectorlogo.zone/logos/hubspot/hubspot-icon.svg" },
+    va: { name: "Virtual Assistant", text: "VA" },
+};
+
+const ITEMS_PER_PAGE = 9;
 
 export default function PortfolioPage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const ITEMS_PER_PAGE = 6;
-    const projectsGridRef = React.useRef<HTMLDivElement>(null);
+    const gridRef = React.useRef<HTMLDivElement>(null);
 
-    // Calculate pagination
     const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    const currentProjects = projects.slice(startIndex, endIndex);
-    const showPagination = projects.length > ITEMS_PER_PAGE;
+    const currentProjects = projects.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
-    // Scroll to projects grid when page changes
-    const handlePageChange = (newPage: number) => {
-        setCurrentPage(newPage);
-        // Scroll with offset to account for fixed navbar
-        setTimeout(() => {
-            const element = projectsGridRef.current;
-            if (element) {
-                const yOffset = -130; // Navbar height + extra spacing
-                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-        }, 0);
+    const goToPage = (p: number) => {
+        const page = Math.min(Math.max(p, 1), totalPages);
+        setCurrentPage(page);
+        const el = gridRef.current;
+        if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY - 120; // clear the fixed navbar
+            window.scrollTo({ top: y, behavior: "smooth" });
+        }
     };
 
+    // Lock background page scroll while the lightbox is open.
+    React.useEffect(() => {
+        if (!selectedImage) return;
+        const html = document.documentElement;
+        const scrollbarW = window.innerWidth - html.clientWidth;
+        const prevOverflow = html.style.overflow;
+        const prevPad = document.body.style.paddingRight;
+        html.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+        if (scrollbarW > 0) document.body.style.paddingRight = `${scrollbarW}px`;
+        return () => {
+            html.style.overflow = prevOverflow;
+            document.body.style.overflow = "";
+            document.body.style.paddingRight = prevPad;
+        };
+    }, [selectedImage]);
+
     return (
-        <main className="space-y-6 pb-12 pt-28 md:pt-24">
+        <main className="pb-20 pt-28 md:pt-32">
             <Navbar />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-grid items-start">
-                {/* Left Column - Sticky Profile Card */}
-                <div className="lg:col-span-4 lg:sticky lg:top-28">
-                    <ProfileCard />
+            {/* ── Heading ── */}
+            <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div className="max-w-[60ch]">
+                    <p className="text-primary font-semibold text-sm uppercase tracking-widest">Portfolio</p>
+                    <h1 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
+                        Selected Work &amp; <span className="text-primary">Projects</span>
+                    </h1>
+                    <p className="mt-4 text-muted-foreground leading-relaxed max-w-[50ch]">
+                        A collection of WordPress, Shopify, and web projects I&apos;ve designed and built for clients worldwide.
+                    </p>
                 </div>
 
-                {/* Right Column - Content */}
-                <div className="lg:col-span-8">
-                    {/* Consolidated Content Card */}
-                    <Card className="p-6 md:p-12 space-y-12 md:space-y-16">
-                        {/* Portfolio Section */}
-                        <section className="space-y-12">
-                            <div className="flex flex-col gap-4">
-                                <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                                    My Latest <span className="text-primary">Projects</span>
-                                </h2>
-                                <p className="text-lg text-muted-foreground leading-relaxed max-w-[50ch]">
-                                    A collection of projects where I&apos;ve blended <span className="text-foreground font-semibold">Technical Excellence</span> with <span className="text-foreground font-semibold">User-Centric Design</span>. Each piece represents a unique challenge solved with precision and passion.
+                <Button href="/contact" icon={<ArrowUpRight className="w-5 h-5" />} className="shrink-0 self-start md:self-auto">
+                    Hire Me
+                </Button>
+            </header>
+
+            {/* ── Grid ── */}
+            <div ref={gridRef} className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 scroll-mt-28">
+                {currentProjects.map((project) => (
+                    <button
+                        key={project.title}
+                        onClick={() => setSelectedImage(project.image)}
+                        className="group text-left cursor-pointer"
+                    >
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-[8px] border border-border/60 bg-muted/30 shadow-sm">
+                            <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                quality={85}
+                                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            />
+                        </div>
+                        <div className="mt-3 flex items-center justify-between gap-3">
+                            <div className="min-w-0">
+                                <p className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                                    {project.title}
                                 </p>
+                                <p className="text-xs text-muted-foreground">{project.category}</p>
                             </div>
 
-                            <div ref={projectsGridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 pb-8">
-                                {currentProjects.map((project, i) => (
-                                    <PortfolioProjectCard
-                                        key={i}
-                                        project={project}
-                                        onClick={(img: string) => setSelectedImage(img)}
-                                        priority={i < 4}
-                                    />
-                                ))}
-                            </div>
-
-                            {/* Pagination Controls */}
-                            {showPagination && (
-                                <div className="flex items-center justify-center gap-2 pt-8">
-                                    <button
-                                        onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
-                                        disabled={currentPage === 1}
-                                        className="px-4 py-2 rounded-sm border border-border/40 bg-muted/30 hover:bg-muted/50 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-colors font-medium text-sm"
-                                    >
-                                        Previous
-                                    </button>
-
-                                    <div className="flex items-center gap-2">
-                                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                                            <button
-                                                key={page}
-                                                onClick={() => handlePageChange(page)}
-                                                className={`w-10 h-10 rounded-sm border transition-colors font-medium text-sm cursor-pointer ${currentPage === page
-                                                    ? 'bg-primary text-primary-foreground border-primary'
-                                                    : 'border-border/40 bg-muted/30 hover:bg-muted/50'
-                                                    }`}
+                            {/* Tools used */}
+                            {project.tools && project.tools.length > 0 && (
+                                <div className="flex items-center gap-1.5 shrink-0">
+                                    {project.tools.map((t) => {
+                                        const meta = TOOL_META[t];
+                                        if (!meta) return null;
+                                        if (meta.text) {
+                                            return (
+                                                <span
+                                                    key={t}
+                                                    title={meta.name}
+                                                    className="w-7 h-7 rounded-md bg-foreground text-background text-[10px] font-bold flex items-center justify-center"
+                                                >
+                                                    {meta.text}
+                                                </span>
+                                            );
+                                        }
+                                        return (
+                                            <span
+                                                key={t}
+                                                title={meta.name}
+                                                className="w-7 h-7 rounded-md border border-border/60 bg-card flex items-center justify-center p-1"
                                             >
-                                                {page}
-                                            </button>
-                                        ))}
-                                    </div>
-
-                                    <button
-                                        onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
-                                        disabled={currentPage === totalPages}
-                                        className="px-4 py-2 rounded-sm border border-border/40 bg-muted/30 hover:bg-muted/50 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-colors font-medium text-sm"
-                                    >
-                                        Next
-                                    </button>
+                                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                <img
+                                                    src={meta.logo}
+                                                    alt={meta.name}
+                                                    className="max-w-full max-h-full object-contain"
+                                                    loading="lazy"
+                                                />
+                                            </span>
+                                        );
+                                    })}
                                 </div>
                             )}
-                        </section>
-
-                        {/* Marquee Section */}
-                        <Marquee
-                            items={marqueeItems}
-                        />
-                    </Card>
-                </div>
+                        </div>
+                    </button>
+                ))}
             </div>
 
-            {/* Lightbox */}
+            {/* ── Pagination ── */}
+            {totalPages > 1 && (
+                <div className="mt-14 flex items-center justify-center gap-2">
+                    <button
+                        onClick={() => goToPage(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        className="px-4 py-2 rounded-[8px] border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                    >
+                        Previous
+                    </button>
+
+                    <div className="flex items-center gap-1.5">
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                            <button
+                                key={page}
+                                onClick={() => goToPage(page)}
+                                aria-current={currentPage === page ? "page" : undefined}
+                                className={cn(
+                                    "w-10 h-10 rounded-[8px] border text-sm font-medium transition-colors cursor-pointer",
+                                    currentPage === page
+                                        ? "bg-primary text-primary-foreground border-primary"
+                                        : "border-border/60 hover:bg-muted/50"
+                                )}
+                            >
+                                {page}
+                            </button>
+                        ))}
+                    </div>
+
+                    <button
+                        onClick={() => goToPage(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                        className="px-4 py-2 rounded-[8px] border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                    >
+                        Next
+                    </button>
+                </div>
+            )}
+
+            {/* ── Lightbox ── */}
             <AnimatePresence>
                 {selectedImage && (
                     <motion.div
@@ -129,27 +194,25 @@ export default function PortfolioPage() {
                         className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
                         onClick={() => setSelectedImage(null)}
                     >
-                        <motion.button
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[110]"
+                        <button
+                            onClick={() => setSelectedImage(null)}
+                            aria-label="Close"
+                            className="fixed top-4 right-4 z-[120] w-11 h-11 rounded-full bg-black/60 text-white ring-1 ring-white/30 backdrop-blur-sm flex items-center justify-center hover:bg-black/80 transition-colors cursor-pointer"
                         >
-                            <X className="w-8 h-8" />
-                        </motion.button>
+                            <X className="w-5 h-5" />
+                        </button>
                         <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
+                            initial={{ scale: 0.96, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            className="relative max-w-7xl w-full h-[85vh] flex items-center justify-center p-2"
+                            exit={{ scale: 0.96, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl ring-1 ring-white/10 bg-white cursor-default"
                         >
-                            <Image
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
                                 src={selectedImage}
-                                alt="Project Screenshot"
-                                fill
-                                quality={90}
-                                sizes="90vw"
-                                className="object-contain rounded-lg shadow-2xl ring-1 ring-white/10"
-                                priority
+                                alt="Project screenshot"
+                                className="w-full h-auto block"
                             />
                         </motion.div>
                     </motion.div>

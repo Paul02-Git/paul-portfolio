@@ -67,7 +67,7 @@ export const ProfileCard = ({ className }: { className?: string }) => {
                     {[
                         { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/" },
                         { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/paul-puzon-932b86303/" },
-                        { icon: Discord, label: "Discord", href: "https://discord.gg/6kcnz2c7" },
+                        { icon: Discord, label: "Discord", href: "https://discord.gg/8pRQWSETW" },
                         { icon: Whatsapp, label: "Whatsapp", href: "https://wa.me/639914075808" },
                         { icon: Github, label: "Github", href: "https://github.com/Paul02-Git" },
                     ].map((social, i) => (

@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -33,7 +33,7 @@ const buildServices = [
         num: "02",
         title: "Shopify & Printify Stores",
         description: "Custom Shopify store builds, product listing and optimisation, and Printify print-on-demand integration. Done-for-you catalogues, mockups, and product pages built to turn browsers into buyers.",
-        image: "/images/shopify-theme-store.png",
+        image: "/images/shopify-theme-store.webp",
     },
     {
         num: "03",
@@ -51,7 +51,7 @@ const buildServices = [
         num: "05",
         title: "SEO & Speed Optimisation",
         description: "Technical SEO audits, Core Web Vitals fixes, structured data markup, and server-level tuning. Built to rank. Built to stay there. Built to be found by the right people.",
-        image: "https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg",
+        image: "https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
 ];
 
@@ -69,7 +69,6 @@ const steps = [
     { num: "04", title: "Test & Launch", desc: "Rigorous testing for speed, security, and bugs — then a smooth launch that's ready to grow with you." },
 ];
 
-const ctaWords = ["Let's Talk", "Book A Call", "Get Started", "View My Work"];
 
 const serviceSchema = {
     "@context": "https://schema.org",
@@ -106,17 +105,17 @@ export default function ServicesPage() {
             <main className="pb-20 pt-28 md:pt-32">
                 <Navbar />
 
-                {/* ── HERO ── */}
+                {/* ── HERO (static — paints immediately) ── */}
                 <section>
-                    <motion.div {...fadeUp()}>
-                                            <Eyebrow>What We Offer</Eyebrow>
-                                        </motion.div>
+                    <div>
+                        <Eyebrow>What We Offer</Eyebrow>
+                    </div>
                     <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 lg:gap-12 items-center mt-4 md:mt-2">
-                        <motion.h1 {...fadeUp()} className="leading-[1.05] tracking-tight max-w-[20ch]">
+                        <h1 className="leading-[1.05] tracking-tight max-w-[20ch]">
                             Innovation Meets Expertise In My Range Of <span className="text-primary">Services</span>
-                        </motion.h1>
+                        </h1>
 
-                        <motion.div {...fadeUp(0.1)} className="space-y-6">
+                        <div className="space-y-6">
                             <p className="text-muted-foreground leading-relaxed">
                                 From fast WordPress builds to complete GoHighLevel systems — everything you need to turn your website into your hardest-working sales tool.
                             </p>
@@ -128,13 +127,13 @@ export default function ServicesPage() {
                                     Get In Touch
                                 </Button>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                     <div className="mt-10 relative left-1/2 -translate-x-1/2 w-screen">
-                        <motion.div {...fadeUp(0.1)} className="relative h-[200px] sm:h-[280px] lg:h-[500px] overflow-hidden">
+                        <div className="relative h-[200px] sm:h-[280px] lg:h-[500px] overflow-hidden">
                             <Image
-                                src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+                                src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600"
                                 alt="Paul Puzon collaborating on a web development project"
                                 fill
                                 priority
@@ -142,7 +141,7 @@ export default function ServicesPage() {
                                 sizes="100vw"
                                 className="object-cover"
                             />
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
 
@@ -261,7 +260,7 @@ export default function ServicesPage() {
                     <div className="relative left-1/2 -translate-x-1/2 w-screen">
                         <motion.div {...fadeUp()} className="relative h-[200px] sm:h-[280px] lg:h-[500px] overflow-hidden">
                             <Image
-                                src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg"
+                                src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1600"
                                 alt="Building and developing a custom website"
                                 fill
                                 quality={90}
@@ -317,7 +316,7 @@ export default function ServicesPage() {
 
                 {/* ── CTA + closing marquee ── */}
                 <motion.section {...fadeUp()} className="text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold leading-tight max-w-[20ch] mx-auto">
+                    <h2 className="leading-tight max-w-[20ch] mx-auto">
                         Have A Project In Mind? Let&apos;s Make It Happen.
                     </h2>
                     <div className="mt-8 flex justify-center">

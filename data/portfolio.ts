@@ -29,72 +29,129 @@ export const tools: Tool[] = [
 
 export const projects: Project[] = [
     {
+        title: "Rescue Paws Club",
+        category: "Shopify Development",
+        image: "/images/rescuepawsclub.webp",
+        link: "https://rescuepawsclub.com",
+        tools: ["shopify", "klaviyo"],
+    },
+    {
+        title: "Kinda Fit Club",
+        category: "Shopify Development",
+        image: "/images/kindafitclub.webp",
+        link: "https://kindafitclub.com",
+        tools: ["shopify", "klaviyo"],
+    },
+    {
+        title: "Hollywood Custom Cabinetry",
+        category: "Web Development",
+        image: "/images/hollywood-custom-cabinetry.webp",
+        tools: ["elementor"],
+    },
+      {
+        title: "Rose Gold Reserve",
+        category: "Web Development",
+        image: "/images/The Rosegold.webp",
+        tools: ["elementor"],
+    },
+    {
+        title: "Colts Fan Cruise",
+        category: "Web Development",
+        image: "/images/colts-fan-cruise.webp",
+        tools: ["figma", "hubspot", "elementor"],
+    },
+      {
         title: "Jets Fan Cruise",
         category: "Web Development",
         image: "/images/Jets-Fan-Cruise-1.webp",
-
+        tools: ["figma", "elementor", "hubspot"],
+    },
+     {
+        title: "Pinnacle Nutra Labs",
+        category: "Web Development",
+        image: "/images/pinnacle.webp",
+        tools: ["elementor", "ghl"],
+    },
+  
+    {
+        title: "Raiders Fan Cruise",
+        category: "Web Development",
+        image: "/images/raiders-fan-cruise.webp",
+        tools: ["figma", "hubspot", "elementor"],
+    },
+   
+    {
+        title: "Steelers Fan Cruise",
+        category: "Web Development",
+        image: "/images/steelers-fancruise.webp",
+        tools: ["figma", "hubspot", "elementor"],
     },
     {
         title: "Consult with Che",
         category: "Web Development",
         image: "/images/consultwithche-com-Homelessness-wp.webp",
-
+        tools: ["figma", "elementor"],
     },
+   
     {
         title: "Ichiban Go",
         category: "Web Development",
-        image: "/images/IchibanGO.png",
+        image: "/images/IchibanGO.webp",
+        tools: ["elementor"],
     },
     {
         title: "Health Optimization GT3",
         category: "Web Development",
-        image: "/images/GT3Health.png",
-
+        image: "/images/GT3Health.webp",
+        tools: ["elementor", "ghl"],
     },
     {
         title: "Evident Elements",
         category: "Web Development",
-        image: "/images/EvidentElements.png",
+        image: "/images/EvidentElements.webp",
+        tools: ["elementor", "ghl"],
     },
     {
         title: "ForeverLawn Central Florida",
         category: "Web Development",
-        image: "/images/Foreverlawn.png",
+        image: "/images/Foreverlawn.webp",
+        tools: ["elementor", "ghl"],
     },
     {
         title: "K9 Grass Synthetic Turf",
         category: "Landing Page",
-        image: "/images/K9Grass FLCL.png",
+        image: "/images/K9Grass FLCL.webp",
+        tools: ["elementor", "ghl"],
     },
     {
         title: "Winning Tax Strategies",
         category: "Mockup Development",
-        image: "/images/WinningTaxStrategies.png",
-
+        image: "/images/WinningTaxStrategies.webp",
+        tools: ["elementor", "figma"],
     },
     {
         title: "Landscape Synthetic Turf",
         category: "Landing Page",
-        image: "/images/Landspace Synthetic Turf.png",
-
+        image: "/images/Landspace Synthetic Turf.webp",
+        tools: ["elementor", "ghl"],
     },
     {
         title: "Dr. Precious Diaz",
         category: "Web Development",
-        image: "/images/Precious Diaz.png",
-
+        image: "/images/Precious Diaz.webp",
+        tools: ["elementor"],
     },
     {
         title: "Techloq",
         category: "Virtual Assistant",
         image: "/images/Techloq-Filter.png",
-
+        tools: ["va"],
     },
     {
         title: "24Task",
         category: "Virtual Assistant",
-        image: "/images/24task-Va.png",
-
+        image: "/images/24task-Va.webp",
+        tools: ["va"],
     },
 ];
 

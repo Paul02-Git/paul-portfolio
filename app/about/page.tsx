@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { motion } from "framer-motion";
 import {
     Award,
     Eye,
@@ -118,21 +118,18 @@ export default function AboutPage() {
             <main className="pt-28 md:pt-32">
                 <Navbar />
 
-                {/* ── HERO — Who I Am ── */}
+                {/* ── HERO — Who I Am (static — paints immediately) ── */}
                 <section>
-                    <motion.div {...fadeUp()}>
+                    <div>
                         <Eyebrow>Who I Am</Eyebrow>
-                    </motion.div>
+                    </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center mt-4 md:mt-2">
-                        <motion.h1
-                            {...fadeUp(0.05)}
-                            className="lg:col-span-7 leading-[1.05] tracking-tight max-w-[20ch]"
-                        >
+                        <h1 className="lg:col-span-7 leading-[1.05] tracking-tight max-w-[20ch]">
                             I&apos;m A Specialist In <span className="text-primary">Web Design &amp; Development</span>
-                        </motion.h1>
+                        </h1>
 
-                        <motion.div {...fadeUp(0.12)} className="lg:col-span-5 space-y-6">
+                        <div className="lg:col-span-5 space-y-6">
                             <p className="text-muted-foreground leading-relaxed">
                                 My work covers a wide range of digital needs — from fast WordPress builds and conversion-ready Shopify stores to GoHighLevel funnels, SEO, and automation.
                             </p>
@@ -143,16 +140,13 @@ export default function AboutPage() {
                                 <Button href="/contact" variant="outline">
                                     Contact Us <ArrowUpRight className="w-4 h-4" />
                                 </Button>
-                                
+
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                     {/* hero image */}
-                    <motion.div
-                        {...fadeUp(0.18)}
-                        className="mt-10 relative aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden "
-                    >
+                    <div className="mt-10 relative aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden ">
                         <Image
                             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
                             alt="Paul Puzon working with a client on a web project"
@@ -162,7 +156,7 @@ export default function AboutPage() {
                             sizes="100vw"
                             className="object-cover"
                         />
-                    </motion.div>
+                    </div>
                 </section>
 
                 {/* ── Services marquee band ── */}

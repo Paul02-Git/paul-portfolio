@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local image originals backup (pre-optimization)
+/image-backup
+
+# Claude Code local config
+/.claude

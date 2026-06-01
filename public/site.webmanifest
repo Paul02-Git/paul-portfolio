@@ -1,0 +1,14 @@
+{
+  "name": "Paul Puzon | WordPress & GoHighLevel Specialist",
+  "short_name": "Paul Puzon",
+  "description": "Conversion-focused WordPress, Shopify & GoHighLevel development for businesses worldwide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#108a00",
+  "icons": [
+    { "src": "/images/favicon-96x96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/images/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

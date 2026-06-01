@@ -4,26 +4,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   Calendar,
-  Mail,
   ArrowUpRight,
   CheckCircle2,
   Star,
-  MapPin,
   Zap,
   Code2,
   BarChart3,
   Search,
   ArrowRight,
-  Facebook,
-  Linkedin,
-  Github,
+  ShoppingBag,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { testimonials, projects, brands, blogPosts, faqs } from "@/data/portfolio";
 
@@ -46,25 +41,19 @@ export default function Home() {
           <div className="space-y-7 order-2 lg:order-1">
 
 
-            <motion.h1
-              {...fadeUp(0.08)}
-              className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight leading-[1.06]"
-            >
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight leading-[1.06]">
               Your Business Is Legit.{" "}
               <span className="text-primary">Your Website Isn&apos;t Selling It.</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              {...fadeUp(0.15)}
-              className="text-lg text-muted-foreground max-w-[46ch] leading-relaxed"
-            >
+            <p className="text-lg text-muted-foreground max-w-[46ch] leading-relaxed">
               I build fast, professional WordPress websites that make your business look the part, and turn visitors into real leads. No cookie-cutter templates. No cutting corners.
-            </motion.p>
+            </p>
 
             
 
             {/* CTAs */}
-            <motion.div {...fadeUp(0.25)} className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 icon={<Calendar className="w-5 h-5" />}
                 iconPosition="left"
@@ -82,17 +71,14 @@ export default function Home() {
               >
                 Ask a Question
               </Button>
-            </motion.div>
+            </div>
 
-            <motion.p {...fadeUp(0.3)} className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Free 30-min call · No commitment · Honest advice
-            </motion.p>
+            </p>
 
             {/* Stats */}
-            <motion.div
-              {...fadeUp(0.35)}
-              className="grid grid-cols-4 gap-4 pt-6 border-t border-border/40 max-w-sm"
-            >
+            <div className="grid grid-cols-4 gap-4 pt-6 border-t border-border/40 max-w-sm">
               {[
                 { value: "4+",  label: "Years"     },
                 { value: "50+", label: "Projects"  },
@@ -104,12 +90,11 @@ export default function Home() {
                   <span className="text-xs text-muted-foreground">{s.label}</span>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Right — Avatar + floating tags */}
-          <motion.div
-            {...fadeUp(0.1)}
+          <div
             className="relative flex items-center justify-center order-1 lg:order-2 pt-12 lg:pt-0"
           >
             {/* Soft background blob */}
@@ -145,9 +130,9 @@ export default function Home() {
               </div>
 
               {/* Floating tag — left */}
-              <div className="absolute top-1/2 -left-10 -translate-y-1/2 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-1">
-                <Search className="w-3.5 h-3.5 text-green-500" />
-                Shopify Dev
+              <div className="absolute top-1/2 -left-14 -translate-y-1/2 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
+                <ShoppingBag className="w-3.5 h-3.5 text-green-500" />
+                Shopify | Printify
               </div>
 
               <div className="absolute top-1/2 -right-10 -translate-y-1/2 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
@@ -171,7 +156,7 @@ export default function Home() {
                 Elementor Pro
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </section>
 
@@ -214,10 +199,10 @@ export default function Home() {
               <div className="space-y-4">
                 <p className="text-primary font-semibold text-sm uppercase tracking-widest">The Real Problem</p>
                 <h2 className="max-w-[20ch]">
-                  If Your Website Isn't Bringing In Leads, It's Costing You Every Day
+                  If Your Website Isn&apos;t Bringing In Leads, It&apos;s Costing You Every Day
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Most service businesses have a website. Very few have one that actually works. Here's what's usually broken — and what I fix.
+                  Most service businesses have a website. Very few have one that actually works. Here&apos;s what&apos;s usually broken — and what I fix.
                 </p>
               </div>
 
@@ -253,7 +238,7 @@ export default function Home() {
               {/* Image */}
               <div className="relative w-full max-w-sm lg:max-w-none aspect-[3/2] rounded-sm overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.pexels.com/photos/36764792/pexels-photo-36764792.jpeg"
+                  src="https://images.pexels.com/photos/36764792/pexels-photo-36764792.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt="Stressed business owner at his desk because his website isn't bringing in leads"
                   fill
                   className="object-cover object-center"
@@ -300,7 +285,7 @@ export default function Home() {
                 num: "02",
                 title: "Shopify & Printify Stores",
                 description: "Custom Shopify store builds, product listing and optimisation, and Printify print-on-demand integration. Done-for-you catalogues, mockups, and product pages built to turn browsers into buyers.",
-                image: "/images/shopify-theme-store.png",
+                image: "/images/shopify-theme-store.webp",
                 href: "/services",
               },
               {
@@ -322,7 +307,7 @@ export default function Home() {
                 num: "05",
                 title: "SEO & Speed Optimisation",
                 description: "Technical SEO audits, Core Web Vitals fixes, structured data markup, and server-level tuning. Built to rank. Built to stay there. Built to be found by the right people.",
-                image: "https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg",
+                image: "https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg?auto=compress&cs=tinysrgb&w=1600",
                 href: "/services",
               },
             ].slice(0, 3).map((service, i) => (
@@ -413,7 +398,7 @@ export default function Home() {
 
           {/* Background image */}
           <Image
-            src="https://images.pexels.com/photos/30690786/pexels-photo-30690786.jpeg"
+            src="https://images.pexels.com/photos/30690786/pexels-photo-30690786.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="A designer working late at a multi-monitor desk setup"
             fill
             quality={90}
@@ -598,10 +583,10 @@ export default function Home() {
               <div className="flex flex-col items-start gap-2.5 sm:flex-row sm:items-center sm:gap-3 min-w-0">
                 <div className="flex -space-x-2.5 shrink-0">
                   {[
-                    { src: "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg", name: "Client" },
-                    { src: "https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg", name: "Client" },
-                    { src: "https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg", name: "Client" },
-                    { src: "https://images.pexels.com/photos/30198184/pexels-photo-30198184.jpeg", name: "Client" },
+                    { src: "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&w=1600", name: "Client" },
+                    { src: "https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg?auto=compress&cs=tinysrgb&w=1600", name: "Client" },
+                    { src: "https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg?auto=compress&cs=tinysrgb&w=1600", name: "Client" },
+                    { src: "https://images.pexels.com/photos/30198184/pexels-photo-30198184.jpeg?auto=compress&cs=tinysrgb&w=1600", name: "Client" },
                   ].map((a, i) => (
                     <span key={i} className="relative w-9 h-9 rounded-full overflow-hidden ring-2 ring-card bg-muted">
                       <Image src={a.src} alt={a.name} fill sizes="36px" className="object-cover" />
@@ -656,10 +641,10 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2.5">
                   {[
-                    "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg",
-                    "https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg",
-                    "https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg",
-                    "https://images.pexels.com/photos/30198184/pexels-photo-30198184.jpeg",
+                    "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "https://images.pexels.com/photos/30198184/pexels-photo-30198184.jpeg?auto=compress&cs=tinysrgb&w=1600",
                   ].map((src, i) => (
                     <span key={i} className="relative w-9 h-9 rounded-full overflow-hidden ring-2 ring-card bg-muted">
                       <Image src={src} alt="Client" fill sizes="36px" className="object-cover" />
@@ -720,7 +705,7 @@ export default function Home() {
         </section>
 
         {/* ── LATEST INSIGHTS (BLOG) — dark band ── */}
-        <section className="section-y relative left-1/2 -translate-x-1/2 w-screen overflow-hidden bg-primary/90">
+        <section className="section-y relative left-1/2 -translate-x-1/2 w-screen overflow-hidden bg-foreground">
           {/* Soft, minimal glow for depth */}
           
           <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6">

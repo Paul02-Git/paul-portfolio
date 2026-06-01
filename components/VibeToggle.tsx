@@ -22,6 +22,10 @@ export const VibeToggle = ({
      * After mount, sync with localStorage
      */
     useEffect(() => {
+        // Mount-gate for hydration safety: the server and first client render show a
+        // static placeholder (see `if (!isMounted)` below), then we reveal the
+        // localStorage-driven UI. This is the intended, safe use of setState-in-effect.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMounted(true);
 
         const saved = localStorage.getItem("selected-vibe");

@@ -1,16 +1,20 @@
 import type { NextConfig } from "next";
 
+// 'unsafe-eval' and websocket connections are only needed by the dev server
+// (React Refresh / HMR). Production gets the tighter policy.
+const isDev = process.env.NODE_ENV !== "production";
+
 const contentSecurityPolicy = `
   default-src 'self';
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'none';
   img-src 'self' data: blob: https:;
-  font-src 'self' data: https:;
-  style-src 'self' 'unsafe-inline' https:;
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;
-  connect-src 'self' https: ws: wss:;
-  frame-src 'self' https:;
+  font-src 'self' data:;
+  style-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
+  connect-src 'self' https:${isDev ? " ws: wss:" : ""};
+  frame-src 'self' https://www.google.com;
   object-src 'none';
   upgrade-insecure-requests;
 `

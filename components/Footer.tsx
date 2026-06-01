@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Facebook, Linkedin, Github, Youtube, ArrowRight, Calendar } from "lucide-react";
+import { Facebook, Linkedin, Github, ArrowRight, Calendar } from "lucide-react";
 import { Whatsapp } from "./icons/Whatsapp";
 import { Discord } from "./icons/Discord";
 
@@ -22,7 +22,7 @@ const linkColumns = [
             { label: "About", href: "/about" },
             { label: "Portfolio", href: "/portfolio" },
             { label: "Blog", href: "/blog" },
-            { label: "Hire Me", href: "/hire" },
+            { label: "Hire Me", href: "/contact" },
         ],
     },
     {
@@ -39,7 +39,7 @@ const socials = [
     { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/" },
     { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/paul-puzon-932b86303/" },
     { Icon: Github, label: "GitHub", href: "https://github.com/Paul02-Git" },
-   { Icon: Discord, label: "Discord", href: "https://discord.gg/6kcnz2c7" },
+   { Icon: Discord, label: "Discord", href: "https://discord.gg/8pRQWSETW" },
     { Icon: Whatsapp, label: "WhatsApp", href: "https://wa.me/639914075808" },
 ];
 
@@ -126,7 +126,7 @@ export const Footer = () => {
                         />
                         <button
                             type="submit"
-                            className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground font-bold rounded-[8px] px-5 py-2.5 text-sm hover:bg-primary/90 transition-colors duration-200 shrink-0"
+                            className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground font-bold rounded-[8px] px-5 py-2.5 text-sm hover:bg-primary/90 transition-colors duration-200 shrink-0 cursor-pointer"
                         >
                             Subscribe <ArrowRight className="w-4 h-4" />
                         </button>
