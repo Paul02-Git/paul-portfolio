@@ -69,7 +69,7 @@ export const projects: Project[] = [
      {
         title: "Pinnacle Nutra Labs",
         category: "Web Development",
-        image: "/images/pinnacle.webp",
+        image: "/images/Pinnacle.webp",
         tools: ["elementor", "ghl"],
     },
   
