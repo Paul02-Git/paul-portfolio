@@ -31,15 +31,21 @@ export default function PortfolioPage() {
     const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
     const currentProjects = projects.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
+    // Only scroll on an actual pagination action — never on initial page load.
+    const hasPaginated = React.useRef(false);
+
     const goToPage = (p: number) => {
-        const page = Math.min(Math.max(p, 1), totalPages);
-        setCurrentPage(page);
-        const el = gridRef.current;
-        if (el) {
-            const y = el.getBoundingClientRect().top + window.scrollY - 120; // clear the fixed navbar
-            window.scrollTo({ top: y, behavior: "smooth" });
-        }
+        hasPaginated.current = true;
+        setCurrentPage(Math.min(Math.max(p, 1), totalPages));
     };
+
+    // Scroll to the grid AFTER the new page renders (grid has `scroll-mt-28` to clear
+    // the navbar). Running it post-render avoids overshooting into the footer when the
+    // last page is short and the document shrinks.
+    React.useEffect(() => {
+        if (!hasPaginated.current) return;
+        gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, [currentPage]);
 
     // Lock background page scroll while the lightbox is open.
     React.useEffect(() => {
@@ -66,7 +72,7 @@ export default function PortfolioPage() {
             <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div className="max-w-[60ch]">
                     <p className="text-primary font-semibold text-sm uppercase tracking-widest">Portfolio</p>
-                    <h1 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
+                    <h1 className="mt-3 font-bold tracking-tight">
                         Selected Work &amp; <span className="text-primary">Projects</span>
                     </h1>
                     <p className="mt-4 text-muted-foreground leading-relaxed max-w-[50ch]">

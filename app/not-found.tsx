@@ -11,7 +11,7 @@ export default function NotFound() {
                 <p className="mt-4 text-muted-foreground leading-relaxed">
                     The page you&apos;re looking for doesn&apos;t exist or has been moved.
                 </p>
-                <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+                <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 cursor-pointer">
                     <Button href="/">Back Home</Button>
                     <Button href="/contact" variant="outline">Get In Touch</Button>
                 </div>

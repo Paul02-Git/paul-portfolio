@@ -3,9 +3,8 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { faqs } from "@/data/portfolio";
-import { Send, Mail, MapPin, Facebook, Linkedin, Github } from "lucide-react";
+import { Send, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 import { Whatsapp } from "@/components/icons/Whatsapp";
-import { Discord } from "@/components/icons/Discord";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
@@ -39,8 +38,6 @@ const businessHours = [
 const socials = [
     { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/" },
     { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/paul-puzon-932b86303/" },
-    { Icon: Github, label: "GitHub", href: "https://github.com/Paul02-Git" },
-    { Icon: Discord, label: "Discord", href: "https://discord.gg/8pRQWSETW" },
     { Icon: Whatsapp, label: "WhatsApp", href: "https://wa.me/639914075808" },
 ];
 

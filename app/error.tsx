@@ -25,7 +25,7 @@ export default function Error({
                 <p className="mt-4 text-muted-foreground leading-relaxed">
                     An unexpected error occurred. Please try again — if it keeps happening, get in touch.
                 </p>
-                <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+                <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 cursor-pointer">
                     <Button onClick={reset}>Try Again</Button>
                     <Button href="/" variant="outline">Back Home</Button>
                 </div>

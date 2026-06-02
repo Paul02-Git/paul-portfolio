@@ -2,9 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Facebook, Linkedin, Github, ArrowRight, Calendar } from "lucide-react";
+import { Facebook, Linkedin, ArrowRight, Calendar } from "lucide-react";
 import { Whatsapp } from "./icons/Whatsapp";
-import { Discord } from "./icons/Discord";
 
 const linkColumns = [
     {
@@ -20,6 +19,7 @@ const linkColumns = [
         title: "Company",
         links: [
             { label: "About", href: "/about" },
+            { label: "Pricing", href: "/pricing" },
             { label: "Portfolio", href: "/portfolio" },
             { label: "Blog", href: "/blog" },
             { label: "Hire Me", href: "/contact" },
@@ -38,8 +38,6 @@ const linkColumns = [
 const socials = [
     { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/" },
     { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/paul-puzon-932b86303/" },
-    { Icon: Github, label: "GitHub", href: "https://github.com/Paul02-Git" },
-   { Icon: Discord, label: "Discord", href: "https://discord.gg/8pRQWSETW" },
     { Icon: Whatsapp, label: "WhatsApp", href: "https://wa.me/639914075808" },
 ];
 
@@ -186,8 +184,9 @@ export const Footer = () => {
                         © {new Date().getFullYear()} <span className="font-semibold text-foreground">Paul Puzon</span>. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <Link href="/contact" className="hover:text-primary transition-colors">Privacy</Link>
-                        <Link href="/contact" className="hover:text-primary transition-colors">Terms</Link>
+                        <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+                        <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
+                        <Link href="/sitemap.xml" className="hover:text-primary transition-colors">Sitemap</Link>
                         <span className="text-muted-foreground/60">Based in the Philippines 🇵🇭</span>
                     </div>
                 </div>

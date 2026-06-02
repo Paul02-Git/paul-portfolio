@@ -90,7 +90,7 @@ const serviceSchema = {
 };
 function Eyebrow({ children }: { children: React.ReactNode }) {
     return (
-        <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+        <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-primary">
            
             {children}
         </span>
@@ -148,13 +148,13 @@ export default function ServicesPage() {
                 {/* ── WHAT I BUILD (from homepage) ── */}
                 <section className="section-y">
                     {/* Header */}
-                    <motion.div {...fadeUp()} className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <motion.div {...fadeUp()} className="flex flex-col md:flex-row md:items-end justify-between gap-3">
                         <div className="space-y-3 max-w-[30ch] md:max-w-[40ch]">
                             <p className="text-primary font-semibold text-sm uppercase tracking-widest">What I Build</p>
                             <h2>Built to Convert. Designed to Scale.</h2>
                         </div>
-                        <div className="flex flex-col gap-3 md:items-end md:text-right max-w-[32ch]">
-                            <p className="text-muted-foreground leading-relaxed text-md">
+                        <div className="flex flex-col gap-6 md:items-end md:text-right max-w-[40ch]">
+                            <p className="text-muted-foreground leading-relaxed ">
                                 Every service is engineered with one goal: getting your business more clients.
                             </p>
                             <Link
@@ -195,7 +195,7 @@ export default function ServicesPage() {
                                     <p className="text-muted-foreground leading-relaxed max-w-lg">{service.description}</p>
                                     <Link
                                         href="/contact"
-                                        className="inline-flex items-center gap-1.5 text-md font-semibold text-foreground border border-border/60 px-4 py-2 hover:border-primary hover:text-primary transition-all duration-200"
+                                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground border border-border/60 px-4 py-2 hover:border-primary hover:text-primary transition-all duration-200"
                                     >
                                         Contact Us <ArrowRight className="w-4 h-4" />
                                     </Link>

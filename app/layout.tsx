@@ -113,9 +113,7 @@ const personSchema = {
   ],
   sameAs: [
     "https://www.linkedin.com/in/paul-puzon-932b86303/",
-    "https://github.com/Paul02-Git/",
     "https://www.facebook.com/paul.puzon73/",
-    "https://discord.gg/8pRQWSETW",
     "https://www.youtube.com/@paulpuzon73",
     "https://wa.me/639914075808"
 

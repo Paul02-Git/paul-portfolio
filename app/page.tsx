@@ -12,12 +12,12 @@ import {
   BarChart3,
   Search,
   ArrowRight,
-  ShoppingBag,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import Navbar from "@/components/Navbar";
+import { HeroBuildIllustration } from "@/components/HeroBuildIllustration";
 import { Button } from "@/components/Button";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { testimonials, projects, brands, blogPosts, faqs } from "@/data/portfolio";
@@ -35,19 +35,24 @@ export default function Home() {
       <Navbar />
 
         {/* ── HERO ── */}
-        <section className="section-yb grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <section className="section-yb grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
 
           {/* Left — Text */}
-          <div className="space-y-7 order-2 lg:order-1">
+          <div className="space-y-6 order-2 lg:order-1">
 
+
+            {/* Eyebrow — primary keyword */}
+            <p className="text-foreground font-semibold text-sm uppercase tracking-widest pt-6 md:pt-0">
+              WordPress Website Developer
+            </p>
 
             <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight leading-[1.06]">
               Your Business Is Legit.{" "}
-              <span className="text-primary">Your Website Isn&apos;t Selling It.</span>
+              <span className="text-primary">Your Website Should Be Too.</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-[46ch] leading-relaxed">
-              I build fast, professional WordPress websites that make your business look the part, and turn visitors into real leads. No cookie-cutter templates. No cutting corners.
+              I build fast, professional websites that make your business look the part, and turn visitors into real leads.
             </p>
 
             
@@ -73,10 +78,6 @@ export default function Home() {
               </Button>
             </div>
 
-            <p className="text-sm text-muted-foreground">
-              Free 30-min call · No commitment · Honest advice
-            </p>
-
             {/* Stats */}
             <div className="grid grid-cols-4 gap-4 pt-6 border-t border-border/40 max-w-sm">
               {[
@@ -93,67 +94,60 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — Avatar + floating tags */}
-          <div
-            className="relative flex items-center justify-center order-1 lg:order-2 pt-12 lg:pt-0"
-          >
-            {/* Soft background blob */}
-            <div className="absolute w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-primary/8 blur-3xl" />
+          {/* Right — Dashboard cards */}
+          <div className="relative order-1 lg:order-2 w-full pt-6 lg:pt-0">
 
-            {/* Avatar container */}
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
+            {/* Soft glow */}
+            <div className="pointer-events-none absolute -z-10 right-0 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-primary/10 blur-3xl" />
 
-              {/* Circular card bg */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-card via-card to-primary/5 border border-border/40 shadow-xl" />
+            <div className="relative mx-auto w-full max-w-[34rem] py-4">
 
-              {/* Avatar image */}
-              <div className="absolute inset-4">
-                <Image
-                  src="/images/Paul-Dev.svg"
-                  alt="Paul Puzon — WordPress Developer & GoHighLevel Specialist"
-                  fill
-                  priority
-                  className="object-contain drop-shadow-lg"
-                />
-              </div>
+              {/* Vector illustration (accent follows brand color) */}
+              <HeroBuildIllustration className="text-foreground w-full" />
 
-              {/* Floating tag — top left */}
-              <div className="absolute -top-4 -left-6 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-3">
+              {/* Brand tag — top left (WordPress) */}
+              <div className="absolute top-[8%] left-[7%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-3">
                 <Code2 className="w-3.5 h-3.5 text-blue-500" />
                 WordPress Dev
               </div>
 
-              {/* Floating tag — top right */}
-              <div className="absolute -top-3 -right-6 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
+              {/* Brand tag — top right (GHL) */}
+              <div className="absolute top-[6%] right-[7%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
                 <Zap className="w-3.5 h-3.5 text-amber-500" />
                 GHL Specialist
               </div>
 
-              {/* Floating tag — left */}
-              <div className="absolute top-1/2 -left-14 -translate-y-1/2 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
-                <ShoppingBag className="w-3.5 h-3.5 text-green-500" />
-                Shopify | Printify
-              </div>
-
-              <div className="absolute top-1/2 -right-10 -translate-y-1/2 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
+              {/* Brand tag — upper left (Available) */}
+              <div className="absolute top-[31%] left-[2%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
                 <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-              </span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                </span>
                 Available
               </div>
-          
 
-              {/* Floating tag — bottom right */}
-              <div className="absolute -bottom-3 -right-6 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-3">
-                <BarChart3 className="w-3.5 h-3.5 text-purple-500" />
-                CRO & Analytics
+              {/* Brand tag — upper right (Klaviyo) */}
+              <div className="absolute top-[34%] right-[2%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-3">
+                <span className="relative h-3.5 w-3.5"><Image src="/images/klaviyo.svg" alt="Klaviyo" fill sizes="14px" className="object-contain" /></span>
+                Klaviyo
               </div>
 
-              {/* Floating tag — bottom left */}
-              <div className="absolute -bottom-4 -left-4 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+              {/* Brand tag — lower left (Shopify) */}
+              <div className="absolute top-[66%] left-[6%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
+                <span className="relative h-3.5 w-3.5"><Image src="/images/shopify.svg" alt="Shopify" fill sizes="14px" className="object-contain" /></span>
+                Shopify
+              </div>
+
+              {/* Brand tag — lower right (Elementor) */}
+              <div className="absolute top-[59%] right-[5%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-foreground" />
                 Elementor Pro
+              </div>
+
+              {/* Brand tag — bottom center (Printify) */}
+              <div className="absolute bottom-[13%] left-[37%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
+                <span className="relative h-3.5 w-3.5"><Image src="/images/printify.svg" alt="Printify" fill sizes="14px" className="object-contain" /></span>
+                Printify
               </div>
             </div>
           </div>
@@ -258,8 +252,8 @@ export default function Home() {
               <p className="text-primary font-semibold text-sm uppercase tracking-widest">What I Build</p>
               <h2>Built to Convert. Designed to Scale.</h2>
             </div>
-            <div className="flex flex-col gap-3 md:items-end md:text-right max-w-[32ch]">
-              <p className="text-muted-foreground leading-relaxed text-md">
+            <div className="flex flex-col gap-3 md:items-end md:text-right max-w-[45ch]">
+              <p className="text-muted-foreground leading-relaxed text-lg">
                 Every service is engineered with one goal: getting your business more clients.
               </p>
               <Link
@@ -337,7 +331,7 @@ export default function Home() {
                   <p className="text-muted-foreground leading-relaxed max-w-lg">{service.description}</p>
                   <Link
                     href={service.href}
-                    className="inline-flex items-center gap-1.5 text-md font-semibold text-foreground border border-border/60 px-4 py-2 hover:border-primary hover:text-primary transition-all duration-200"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground border border-border/60 px-4 py-2 hover:border-primary hover:text-primary transition-all duration-200"
                   >
                     Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -441,13 +435,13 @@ export default function Home() {
           {/* Header */}
           <motion.div
             {...fadeUp()}
-            className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10"
+            className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-10"
           >
-            <div className="space-y-5">
-              <p className="text-primary text-xs font-semibold uppercase tracking-widest">Portfolio</p>
+            <div className="space-y-4">
+              <p className="text-primary font-semibold text-sm uppercase tracking-widest">Portfolio</p>
               <h2 className="max-w-[16ch]">Explore My Portfolio</h2>
             </div>
-            <p className="text-muted-foreground text-sm max-w-[34ch] lg:text-right">
+            <p className="text-muted-foreground max-w-[34ch] lg:text-right">
               A look at the websites and systems I&apos;ve built to help businesses grow.
             </p>
           </motion.div>
@@ -535,7 +529,7 @@ export default function Home() {
           <motion.div {...fadeUp()}>
             {/* Header */}
             <div className="flex items-center gap-2 mb-4">
-<p className="text-primary text-xs font-semibold uppercase tracking-widest">The Process</p>
+<p className="text-primary font-semibold text-sm uppercase tracking-widest">The Process</p>
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-10 md:mb-14">
               <h2 className="max-w-[15ch] shrink-0">
