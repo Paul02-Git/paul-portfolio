@@ -1,4 +1,7 @@
 import { Metadata } from 'next';
+import { ogImage } from '@/lib/og';
+
+const OG = ogImage({ eyebrow: 'About', title: "I'm a Specialist in Web Design & Development" });
 
 export const metadata: Metadata = {
     title: 'About Paul | WordPress & GHL Specialist',
@@ -16,9 +19,11 @@ export const metadata: Metadata = {
         title: 'About Paul | WordPress & GHL Specialist',
         description: 'Learn about Paul Puzon, a passionate WordPress specialist with 4+ years of experience.',
         type: 'profile',
+        images: [OG],
     },
     twitter: {
         card: 'summary_large_image',
+        images: [OG.url],
         title: 'About Paul | WordPress & GHL Specialist',
         description: 'Learn about Paul Puzon, a passionate WordPress specialist with 4+ years of experience.',
     },

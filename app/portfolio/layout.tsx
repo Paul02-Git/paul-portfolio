@@ -1,4 +1,7 @@
 import { Metadata } from 'next';
+import { ogImage } from '@/lib/og';
+
+const OG = ogImage({ eyebrow: 'Portfolio', title: 'Selected Work & Projects' });
 
 export const metadata: Metadata = {
     title: 'Portfolio | WordPress & Web Development Projects',
@@ -18,9 +21,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Portfolio | WordPress & Web Development Projects',
         description: 'View my latest WordPress, Elementor, and web development projects. High-quality websites built for clients worldwide with technical excellence and user-centric design.',
+        images: [OG],
     },
     twitter: {
         card: 'summary_large_image',
+        images: [OG.url],
         title: 'Portfolio | WordPress & Web Development Projects',
         description: 'View my latest WordPress, Elementor, and web development projects.',
     },

@@ -1,4 +1,7 @@
 import { Metadata } from 'next';
+import { ogImage } from '@/lib/og';
+
+const OG = ogImage({ eyebrow: 'Blog', title: 'WordPress, GHL & Marketing Insights' });
 
 export const metadata: Metadata = {
     title: 'Blog | WordPress, GHL & Marketing Insights',
@@ -20,9 +23,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Blog | WordPress, GHL & Marketing Insights',
         description: 'Expert insights on WordPress development, GoHighLevel automation, and marketing strategies. Learn how to build high-converting websites and automate your business.',
+        images: [OG],
     },
     twitter: {
         card: 'summary_large_image',
+        images: [OG.url],
         title: 'Blog | WordPress, GHL & Web Development Tips',
         description: 'Read the latest tutorials, guides, and insights on WordPress, Elementor, GoHighLevel, and web development.',
     },

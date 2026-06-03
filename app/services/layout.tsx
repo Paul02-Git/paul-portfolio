@@ -1,4 +1,7 @@
 import { Metadata } from 'next';
+import { ogImage } from '@/lib/og';
+
+const OG = ogImage({ eyebrow: 'Services', title: 'WordPress, GHL & Web Development' });
 
 export const metadata: Metadata = {
     title: 'Services | WordPress, GHL & Web Development',
@@ -17,9 +20,11 @@ export const metadata: Metadata = {
         title: 'Services | WordPress, GHL & Web Development',
         description: 'Professional WordPress development, GoHighLevel setup, and web development services.',
         type: 'website',
+        images: [OG],
     },
     twitter: {
         card: 'summary_large_image',
+        images: [OG.url],
         title: 'Services | WordPress, GHL & Web Development',
         description: 'Professional WordPress development, GoHighLevel setup, and web development services.',
     },

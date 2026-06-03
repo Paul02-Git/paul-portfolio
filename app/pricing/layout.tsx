@@ -1,4 +1,7 @@
 import { Metadata } from 'next';
+import { ogImage } from '@/lib/og';
+
+const OG = ogImage({ eyebrow: 'Pricing', title: "Simple Pricing That's Built to Convert" });
 
 export const metadata: Metadata = {
     title: 'Pricing | WordPress Website Packages & Rates',
@@ -17,9 +20,11 @@ export const metadata: Metadata = {
         title: 'Pricing | WordPress Website Packages & Rates',
         description: 'Simple, transparent pricing for custom WordPress & Elementor websites — fixed scope, fixed price, no surprise invoices.',
         type: 'website',
+        images: [OG],
     },
     twitter: {
         card: 'summary_large_image',
+        images: [OG.url],
         title: 'Pricing | WordPress Website Packages & Rates',
         description: 'Simple, transparent pricing for custom WordPress & Elementor websites — fixed scope, fixed price, no surprise invoices.',
     },

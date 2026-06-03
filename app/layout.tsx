@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: `${siteUrl}/images/og-image.png`,
+        url: `${siteUrl}/api/og`,
         width: 1200,
         height: 630,
         alt: "Paul Puzon - WordPress & GHL Specialist",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Paul | Get More Leads & Booked Calls With WordPress & GHL",
     description: siteDescription,
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/api/og`],
     creator: "@paulpuzon",
   },
   robots: {

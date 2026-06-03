@@ -18,6 +18,8 @@ import Link from "next/link";
 
 import Navbar from "@/components/Navbar";
 import { HeroBuildIllustration } from "@/components/HeroBuildIllustration";
+import { TechStackMarquee } from "@/components/TechStackMarquee";
+import { Eyebrow } from "@/components/Eyebrow";
 import { Button } from "@/components/Button";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { testimonials, projects, brands, blogPosts, faqs } from "@/data/portfolio";
@@ -191,7 +193,7 @@ export default function Home() {
             {/* Left — Text (order-2 on mobile, order-1 on desktop) */}
             <motion.div {...fadeUp()} className="space-y-8 order-2 lg:order-1">
               <div className="space-y-4">
-                <p className="text-primary font-semibold text-sm uppercase tracking-widest">The Real Problem</p>
+                <Eyebrow>The Real Problem</Eyebrow>
                 <h2 className="max-w-[20ch]">
                   If Your Website Isn&apos;t Bringing In Leads, It&apos;s Costing You Every Day
                 </h2>
@@ -249,7 +251,7 @@ export default function Home() {
           {/* Header */}
           <motion.div {...fadeUp()} className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-0 border-t border-border/50 pt-12">
             <div className="space-y-3 max-w-[30ch] md:max-w-[40ch]">
-              <p className="text-primary font-semibold text-sm uppercase tracking-widest">What I Build</p>
+              <Eyebrow>What I Build</Eyebrow>
               <h2>Built to Convert. Designed to Scale.</h2>
             </div>
             <div className="flex flex-col gap-3 md:items-end md:text-right max-w-[45ch]">
@@ -343,48 +345,7 @@ export default function Home() {
 
         {/* ── TOOLS / TECH STACK ── */}
         <section className="section-y">
-          <div className="relative max-w-[1100px] mx-auto">
-            <motion.h3
-              {...fadeUp()}
-              className="text-center tracking-wide mb-8"
-            >
-              The trusted tools I use to build, automate &amp; scale your business
-            </motion.h3>
-
-            {/* Two-row marquee — opposite directions */}
-            <div className="relative overflow-hidden py-1">
-              {/* Edge fades */}
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-background to-transparent z-10" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-background to-transparent z-10" />
-
-              <div className="space-y-4">
-                {[
-                  { list: brands, reverse: false },
-                  { list: [...brands.slice(7), ...brands.slice(0, 7)], reverse: true },
-                ].map((row, rowIdx) => (
-                  <div
-                    key={rowIdx}
-                    className="flex items-center gap-4 w-max"
-                    style={{ animation: `marquee 75s linear infinite${row.reverse ? " reverse" : ""}` }}
-                  >
-                    {[...row.list, ...row.list].map((brand, i) => (
-                      <div
-                        key={i}
-                        className="inline-flex items-center gap-2.5 rounded-[8px] border border-border/70 bg-card px-6 py-3 shrink-0 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
-                      >
-                        <div className="relative w-7 h-7 shrink-0">
-                          <Image src={brand.logo} alt={brand.name} fill sizes="28px" className="object-contain" />
-                        </div>
-                        <span className="text-foreground/90 font-semibold text-base whitespace-nowrap tracking-tight">
-                          {brand.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <TechStackMarquee items={brands} />
         </section>
 
         {/* ── FULL-BLEED CTA ── */}
@@ -409,7 +370,7 @@ export default function Home() {
               {...fadeUp()}
               className="flex flex-col items-center text-center space-y-6"
             >
-              <p className="text-white font-semibold text-sm uppercase tracking-widest">No Risk, No Pressure</p>
+              <Eyebrow className="text-white">No Risk, No Pressure</Eyebrow>
               <h2 className="text-white max-w-[25ch]">
                 Not Sure What Your Website Needs? Let&apos;s Figure It Out — Free.
               </h2>
@@ -438,7 +399,7 @@ export default function Home() {
             className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-10"
           >
             <div className="space-y-4">
-              <p className="text-primary font-semibold text-sm uppercase tracking-widest">Portfolio</p>
+              <Eyebrow>Portfolio</Eyebrow>
               <h2 className="max-w-[16ch]">Explore My Portfolio</h2>
             </div>
             <p className="text-muted-foreground max-w-[34ch] lg:text-right">
@@ -529,7 +490,7 @@ export default function Home() {
           <motion.div {...fadeUp()}>
             {/* Header */}
             <div className="flex items-center gap-2 mb-4">
-<p className="text-primary font-semibold text-sm uppercase tracking-widest">The Process</p>
+<Eyebrow>The Process</Eyebrow>
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-10 md:mb-14">
               <h2 className="max-w-[15ch] shrink-0">
@@ -616,7 +577,7 @@ export default function Home() {
         {/* ── TESTIMONIALS ── */}
         <section className="section-y">
           <motion.div {...fadeUp()} className="text-center mx-auto mb-12 space-y-4">
-            <p className="text-primary font-semibold text-sm uppercase tracking-widest">Social Proof</p>
+            <Eyebrow>Social Proof</Eyebrow>
             <h2>Clients Who Made the Switch</h2>
             <p className="text-muted-foreground leading-relaxed">
               Real results from real businesses. Here&apos;s what working together actually looks like.
@@ -705,7 +666,7 @@ export default function Home() {
           <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6">
             <motion.div {...fadeUp()} className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
               <div className="space-y-3 max-w-[30ch] md:max-w-[40ch]">
-                <p className="text-white/60 font-semibold text-sm uppercase tracking-widest">Latest Insights</p>
+                <Eyebrow className="text-white/60">Latest Insights</Eyebrow>
                 <h2 className="text-white">Tips to Grow Your Business Online</h2>
               </div>
               <Link

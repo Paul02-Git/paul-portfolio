@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import { Eyebrow } from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Paul Puzon",
@@ -71,7 +72,7 @@ export default function PrivacyPage() {
       <Navbar />
 
       <section className="section-yb max-w-3xl">
-        <p className="text-primary font-semibold text-sm uppercase tracking-widest">Legal</p>
+        <Eyebrow>Legal</Eyebrow>
         <h1 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05]">
           Privacy Policy
         </h1>

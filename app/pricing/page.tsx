@@ -13,6 +13,8 @@ import {
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/Button";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { TechStackMarquee } from "@/components/TechStackMarquee";
+import { Eyebrow } from "@/components/Eyebrow";
 import { cn } from "@/lib/utils";
 
 const fadeUp = (delay = 0) => ({
@@ -130,7 +132,7 @@ export default function PricingPage() {
       <section className="section-yb">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="space-y-4 max-w-3xl">
-            <p className="text-primary font-semibold text-sm uppercase tracking-widest">Pricing</p>
+            <Eyebrow>Pricing</Eyebrow>
             <h1 className="tracking-tight leading-[1.05] max-w-[20ch] ">
               Simple pricing for a website that{" "}
               <span className="text-primary">actually sells.</span>
@@ -235,22 +237,11 @@ export default function PricingPage() {
           ))}
         </div>
 
-        {/* Logo strip */}
-        <motion.div {...fadeUp(0.1)} className="mt-12">
-          <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-6">
-            Built with the tools trusted by modern businesses
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5">
-            {tools.map((b) => (
-              <div key={b.name} className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
-                <span className="relative h-6 w-6">
-                  <Image src={b.logo} alt={b.name} fill sizes="24px" className="object-contain" />
-                </span>
-                <span className="text-sm font-semibold text-foreground/80">{b.name}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+      </section>
+
+      {/* ── TRUSTED TOOLS ── */}
+      <section className="section-yb">
+        <TechStackMarquee items={tools} />
       </section>
 
       {/* ── FAQ ── */}
@@ -269,7 +260,7 @@ export default function PricingPage() {
           {...fadeUp()}
           className="rounded-3xl text-center flex flex-col items-center gap-5"
         >
-          <p className="text-primary font-semibold text-sm uppercase tracking-widest">No risk, no pressure</p>
+          <Eyebrow>No risk, no pressure</Eyebrow>
           <h2 className="text-foreground  max-w-[24ch] font-bold leading-tight">
             Not sure which plan fits? Let&apos;s figure it out — free.
           </h2>

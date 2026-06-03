@@ -179,17 +179,38 @@ export const Footer = () => {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 py-6 border-t border-border/60">
-                    <p className="text-sm text-muted-foreground">
-                        © {new Date().getFullYear()} <span className="font-semibold text-foreground">Paul Puzon</span>. All rights reserved.
-                    </p>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
-                        <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
-                        <Link href="/sitemap.xml" className="hover:text-primary transition-colors">Sitemap</Link>
-                        <span className="text-muted-foreground/60">Based in the Philippines 🇵🇭</span>
-                    </div>
-                </div>
+               <div className="flex flex-col sm:flex-row items-center justify-between gap-3 py-6 border-t border-border/60">
+    <p className="text-sm text-muted-foreground">
+        © {new Date().getFullYear()}{" "}
+        <span className="font-semibold text-foreground">
+            Paul Puzon
+        </span>
+        . All rights reserved.
+    </p>
+
+    <nav
+  aria-label="Footer navigation"
+  className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 text-sm text-muted-foreground"
+>
+  <Link href="/privacy" className="transition-colors hover:text-primary">
+    Privacy
+  </Link>
+
+  <Link href="/terms" className="transition-colors hover:text-primary">
+    Terms
+  </Link>
+
+  <Link href="/sitemap.xml" className="transition-colors hover:text-primary">
+    Sitemap
+  </Link>
+
+  <span className="text-muted-foreground/80">
+    Based in the Philippines 🇵🇭
+  </span>
+</nav>
+
+    
+</div>
             </div>
             </div>
         </footer>

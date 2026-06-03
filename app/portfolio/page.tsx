@@ -7,6 +7,7 @@ import { projects } from "@/data/portfolio";
 import type { ToolKey } from "@/types/portfolio";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/Button";
+import { Eyebrow } from "@/components/Eyebrow";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
 
@@ -71,7 +72,7 @@ export default function PortfolioPage() {
             {/* ── Heading ── */}
             <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div className="max-w-[60ch]">
-                    <p className="text-primary font-semibold text-sm uppercase tracking-widest">Portfolio</p>
+                    <Eyebrow>Portfolio</Eyebrow>
                     <h1 className="mt-3 font-bold tracking-tight">
                         Selected Work &amp; <span className="text-primary">Projects</span>
                     </h1>

@@ -9,6 +9,8 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/Button";
+import { TechStackMarquee } from "@/components/TechStackMarquee";
+import { Eyebrow } from "@/components/Eyebrow";
 import { brands } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
@@ -88,14 +90,6 @@ const serviceSchema = {
         })),
     },
 };
-function Eyebrow({ children }: { children: React.ReactNode }) {
-    return (
-        <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-primary">
-           
-            {children}
-        </span>
-    );
-}
 
 export default function ServicesPage() {
     return (
@@ -108,7 +102,7 @@ export default function ServicesPage() {
                 {/* ── HERO (static — paints immediately) ── */}
                 <section>
                     <div>
-                        <Eyebrow>What We Offer</Eyebrow>
+                        <Eyebrow className="text-primary">What We Offer</Eyebrow>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 lg:gap-12 items-center mt-4 md:mt-2">
                         <h1 className="leading-[1.05] tracking-tight max-w-[20ch]">
@@ -150,7 +144,7 @@ export default function ServicesPage() {
                     {/* Header */}
                     <motion.div {...fadeUp()} className="flex flex-col md:flex-row md:items-end justify-between gap-3">
                         <div className="space-y-3 max-w-[30ch] md:max-w-[40ch]">
-                            <p className="text-primary font-semibold text-sm uppercase tracking-widest">What I Build</p>
+                            <Eyebrow>What I Build</Eyebrow>
                             <h2>Built to Convert. Designed to Scale.</h2>
                         </div>
                         <div className="flex flex-col gap-6 md:items-end md:text-right max-w-[40ch]">
@@ -273,45 +267,7 @@ export default function ServicesPage() {
 
                 {/* ── TOOLS / TECH STACK (from homepage) ── */}
                 <section className="section-y">
-                    <div className="relative max-w-[1100px] mx-auto">
-                        <motion.h3 {...fadeUp()} className="text-center tracking-wide mb-8">
-                            The trusted tools I use to build, automate &amp; scale your business
-                        </motion.h3>
-
-                        {/* Two-row marquee — opposite directions */}
-                        <div className="relative overflow-hidden py-1">
-                            {/* Edge fades */}
-                            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-background to-transparent z-10" />
-                            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-background to-transparent z-10" />
-
-                            <div className="space-y-4">
-                                {[
-                                    { list: brands, reverse: false },
-                                    { list: [...brands.slice(7), ...brands.slice(0, 7)], reverse: true },
-                                ].map((row, rowIdx) => (
-                                    <div
-                                        key={rowIdx}
-                                        className="flex items-center gap-4 w-max"
-                                        style={{ animation: `marquee 75s linear infinite${row.reverse ? " reverse" : ""}` }}
-                                    >
-                                        {[...row.list, ...row.list].map((brand, i) => (
-                                            <div
-                                                key={i}
-                                                className="inline-flex items-center gap-2.5 rounded-[8px] border border-border/70 bg-card px-6 py-3 shrink-0 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
-                                            >
-                                                <div className="relative w-7 h-7 shrink-0">
-                                                    <Image src={brand.logo} alt={brand.name} fill sizes="28px" className="object-contain" />
-                                                </div>
-                                                <span className="text-foreground/90 font-semibold text-base whitespace-nowrap tracking-tight">
-                                                    {brand.name}
-                                                </span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                    <TechStackMarquee items={brands} />
                 </section>
 
                 {/* ── CTA + closing marquee ── */}

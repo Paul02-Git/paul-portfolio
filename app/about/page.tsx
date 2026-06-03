@@ -17,6 +17,7 @@ import {
 
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/Button";
+import { Eyebrow } from "@/components/Eyebrow";
 import { cn } from "@/lib/utils";
 
 const siteUrl = "https://paul-portfolio-drab.vercel.app";
@@ -101,14 +102,6 @@ const aboutSchema = {
     },
 };
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-    return (
-        <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-primary">
-           
-            {children}
-        </span>
-    );
-}
 
 export default function AboutPage() {
     return (
@@ -121,7 +114,7 @@ export default function AboutPage() {
                 {/* ── HERO — Who I Am (static — paints immediately) ── */}
                 <section>
                     <div>
-                        <Eyebrow>Who I Am</Eyebrow>
+                        <Eyebrow className="text-primary">Who I Am</Eyebrow>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center mt-4 md:mt-2">
