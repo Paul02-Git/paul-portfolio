@@ -59,6 +59,7 @@ export function DiscoveryCallForm() {
                 setStatus("success");
                 setFormData(initialForm);
                 setServices([]);
+                window.scrollTo({ top: 0, behavior: "smooth" });
             } else {
                 setStatus("error");
             }
