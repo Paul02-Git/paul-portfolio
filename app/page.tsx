@@ -33,7 +33,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function Home() {
   return (
-    <main className="pt-14 md:pt-36">
+    <main className="pt-14 md:pt-32">
       <Navbar />
 
         {/* ── HERO ── */}
@@ -189,7 +189,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
             {/* Left — Text (order-2 on mobile, order-1 on desktop) */}
-            <motion.div {...fadeUp()} className="space-y-8 order-2 lg:order-1">
+            <div className="space-y-8 order-2 lg:order-1">
               <div className="space-y-4">
                 <Eyebrow>The Real Problem</Eyebrow>
                 <h2 className="max-w-[20ch]">
@@ -222,13 +222,13 @@ export default function Home() {
               >
                 Book A Call
               </Button>
-            </motion.div>
+            </div>
 
             {/* Right — Image with offset accent (order-1 on mobile, order-2 on desktop) */}
-            <motion.div {...fadeUp(0.15)} className="relative flex justify-center lg:justify-end order-1 lg:order-2">
+            <motion.div {...fadeUp(0.15)} className="relative flex justify-start lg:justify-end order-1 lg:order-2">
                
               {/* Image */}
-              <div className="relative w-full max-w-sm lg:max-w-none aspect-[3/2] rounded-sm overflow-hidden shadow-lg">
+              <div className="relative w-full max-w-full lg:max-w-none aspect-[3/2] rounded-sm overflow-hidden shadow-lg">
                 <Image
                   src="https://images.pexels.com/photos/36764792/pexels-photo-36764792.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt="Stressed business owner at his desk because his website isn't bringing in leads"

@@ -42,8 +42,8 @@ export default function Navbar() {
                         
                         </Link>
 
-                        {/* Desktop Links — centered */}
-                        <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+                        {/* Desktop Links — centered (lg+; tablet uses the hamburger) */}
+                        <div className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.label}
@@ -71,9 +71,9 @@ export default function Navbar() {
                                 Book A Call
                             </Button>
 
-                            {/* Mobile Menu Button */}
+                            {/* Mobile/Tablet Menu Button */}
                             <button
-                                className="md:hidden p-2 rounded-full hover:bg-gray-100 transition-colors"
+                                className="lg:hidden p-2 rounded-full hover:bg-gray-100 transition-colors"
                                 onClick={() => setIsOpen(!isOpen)}
                                 aria-label="Toggle menu"
                             >
@@ -86,7 +86,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Overlay */}
             {isOpen && (
-                <div className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden animate-in fade-in slide-in-from-top-10 duration-200">
+                <div className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 lg:hidden animate-in fade-in slide-in-from-top-10 duration-200">
                     <div className="flex flex-col items-center gap-6 text-xl font-medium">
                         {navLinks.map((link) => (
                             <Link
