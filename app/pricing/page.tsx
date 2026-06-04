@@ -24,7 +24,7 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, ease: "easeOut" as const, delay },
 });
 
-const CALENDLY = "https://calendly.com/paulpuzon0007/30min";
+const CALENDLY = "/book-a-call";
 
 /* ───────────────────────────────────────────────
    PRICING DATA — edit the numbers/copy here.
@@ -206,8 +206,6 @@ export default function PricingPage() {
               {/* CTA */}
               <Button
                 href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
                 icon={<Calendar className="w-5 h-5" />}
                 iconPosition="left"
                 className={cn(
@@ -270,8 +268,6 @@ export default function PricingPage() {
           <div className="flex flex-col sm:flex-row gap-3 pt-2 w-full sm:w-auto">
             <Button
               href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
               icon={<Calendar className="w-5 h-5" />}
               iconPosition="left"
               className="w-full sm:w-auto"

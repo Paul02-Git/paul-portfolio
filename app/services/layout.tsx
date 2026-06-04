@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         description: 'Professional WordPress development, GoHighLevel setup, and web development services.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio-drab.vercel.app/services'
+        canonical: '/services'
     }
 };
 

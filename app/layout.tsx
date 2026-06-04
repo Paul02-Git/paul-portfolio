@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeManager } from "@/components/ThemeManager";
 import { ThemeScript } from "@/components/ThemeScript";
 import { Footer } from "@/components/Footer";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -11,16 +12,18 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = "https://paul-portfolio-drab.vercel.app";
-const siteName = "Paul Puzon | WordPress & GHL Specialist";
+const siteUrl = SITE_URL;
+const siteName = SITE_NAME;
 const siteDescription = "I build conversion-focused WordPress websites and GoHighLevel systems that automate follow-ups and increase client acquisition.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   icons: {
     icon: [
+      { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/images/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      { url: "/images/favicon.svg", type: "image/svg+xml" },
       { url: "/images/favicon.ico", rel: "shortcut icon" },
     ],
     apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180" }],
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
     default: "Paul Puzon | WordPress Developer Philippines | Hire Elementor Expert",
     template: "%s | Paul Puzon"
   },
-  description: "Hire a WordPress developer with 4+ years experience. 50+ projects delivered. Elementor & GoHighLevel specialist based in Philippines. Free consultation available.",
+  description: "Hire a WordPress developer with 7+ years experience & 50+ projects delivered — Elementor & GoHighLevel specialist based in the Philippines.",
   keywords: [
     "WordPress Developer",
     "WordPress Developer Philippines",
@@ -129,7 +132,7 @@ const organizationSchema = {
   "@type": "ProfessionalService",
   name: siteName,
   url: siteUrl,
-  logo: `${siteUrl}/app/favicon.ico`,
+  logo: `${siteUrl}/images/paul_logo.png`,
   description: siteDescription,
   founder: {
     "@type": "Person",

@@ -5,7 +5,7 @@ const OG = ogImage({ eyebrow: 'About', title: "I'm a Specialist in Web Design & 
 
 export const metadata: Metadata = {
     title: 'About Paul | WordPress & GHL Specialist',
-    description: 'Learn about Paul Puzon, a passionate WordPress specialist with 4+ years of experience building high-performing, accessible websites for clients worldwide.',
+    description: 'Learn about Paul Puzon, a passionate WordPress specialist with 7+ years of experience building high-performing, accessible websites for clients worldwide.',
     keywords: [
         'Paul Puzon',
         'WordPress Specialist',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         title: 'About Paul | WordPress & GHL Specialist',
-        description: 'Learn about Paul Puzon, a passionate WordPress specialist with 4+ years of experience.',
+        description: 'Learn about Paul Puzon, a passionate WordPress specialist with 7+ years of experience.',
         type: 'profile',
         images: [OG],
     },
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         images: [OG.url],
         title: 'About Paul | WordPress & GHL Specialist',
-        description: 'Learn about Paul Puzon, a passionate WordPress specialist with 4+ years of experience.',
+        description: 'Learn about Paul Puzon, a passionate WordPress specialist with 7+ years of experience.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio-drab.vercel.app/about'
+        canonical: '/about'
     }
 };
 

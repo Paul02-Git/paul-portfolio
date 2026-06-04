@@ -5,7 +5,7 @@ const OG = ogImage({ eyebrow: 'Portfolio', title: 'Selected Work & Projects' });
 
 export const metadata: Metadata = {
     title: 'Portfolio | WordPress & Web Development Projects',
-    description: 'View my latest WordPress, Elementor, and web development projects. High-quality websites built for clients worldwide with technical excellence and user-centric design.',
+    description: 'View my latest WordPress, Elementor, and web development projects — high-quality websites built for clients worldwide.',
     keywords: [
         'WordPress Portfolio',
         'Web Development Projects',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         title: 'Portfolio | WordPress & Web Development Projects',
-        description: 'View my latest WordPress, Elementor, and web development projects. High-quality websites built for clients worldwide with technical excellence and user-centric design.',
+        description: 'View my latest WordPress, Elementor, and web development projects — high-quality websites built for clients worldwide.',
         images: [OG],
     },
     twitter: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         description: 'View my latest WordPress, Elementor, and web development projects.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio-drab.vercel.app/portfolio'
+        canonical: '/portfolio'
     }
 };
 

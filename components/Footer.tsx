@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Linkedin, ArrowRight, Calendar } from "lucide-react";
 import { Whatsapp } from "./icons/Whatsapp";
+import { NewsletterForm } from "./NewsletterForm";
 
 const linkColumns = [
     {
@@ -29,7 +31,7 @@ const linkColumns = [
         title: "Get in Touch",
         links: [
             { label: "Contact", href: "/contact" },
-            { label: "Book a Call", href: "https://calendly.com/paulpuzon0007/30min" },
+            { label: "Book a Call", href: "/book-a-call" },
             { label: "Email Me", href: "mailto:paulpuzon0007@gmail.com" },
         ],
     },
@@ -78,9 +80,7 @@ export const Footer = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 pt-3">
                         <Link
-                            href="https://calendly.com/paulpuzon0007/30min"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="/book-a-call"
                             className="inline-flex items-center justify-between gap-3 bg-white text-black font-bold rounded-[8px] pl-5 pr-2 py-2 hover:bg-white/90 transition-colors duration-200"
                         >
                             Book a Discovery Call
@@ -112,31 +112,21 @@ export const Footer = () => {
                             WordPress, GoHighLevel & SEO insights — no spam, just value.
                         </p>
                     </div>
-                    <form
-                        className="flex w-full md:w-auto gap-2"
-                        action="/contact"
-                    >
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            aria-label="Email address"
-                            className="flex-1 md:w-64 rounded-[8px] border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary transition-colors"
-                        />
-                        <button
-                            type="submit"
-                            className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground font-bold rounded-[8px] px-5 py-2.5 text-sm hover:bg-primary/90 transition-colors duration-200 shrink-0 cursor-pointer"
-                        >
-                            Subscribe <ArrowRight className="w-4 h-4" />
-                        </button>
-                    </form>
+                    <NewsletterForm className="w-full md:w-auto md:min-w-[320px]" />
                 </div>
 
                 {/* Main columns */}
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-8 py-12">
                     {/* Brand */}
                     <div className="col-span-2 space-y-4">
-                        <Link href="/" className="text-xl font-bold tracking-tight">
-                            Paul <span className="text-primary">Puzon</span>
+                        <Link href="/" className="inline-block" aria-label="Paul Puzon home">
+                            <Image
+                                src="/images/paul_logo.png"
+                                alt="Paul Puzon"
+                                width={2000}
+                                height={2000}
+                                className="h-12 w-auto object-contain"
+                            />
                         </Link>
                         <p className="text-muted-foreground text-sm leading-relaxed max-w-[34ch]">
                             WordPress developer & GoHighLevel specialist building conversion-focused
@@ -181,7 +171,7 @@ export const Footer = () => {
                 {/* Bottom bar */}
                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 py-6 border-t border-border/60">
     <p className="text-sm text-muted-foreground">
-        © {new Date().getFullYear()}{" "}
+        © <span suppressHydrationWarning>{new Date().getFullYear()}</span>{" "}
         <span className="font-semibold text-foreground">
             Paul Puzon
         </span>

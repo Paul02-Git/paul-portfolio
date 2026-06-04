@@ -6,7 +6,9 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Facebook, Twitter, Link2, Check } from "lucide-react";
 import { blogPosts } from "@/data/portfolio";
 import Navbar from "@/components/Navbar";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import { cn } from "@/lib/utils";
+import { SITE_URL } from "@/lib/site";
 
 type TocItem = { id: string; text: string; level: number };
 
@@ -123,7 +125,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
     ].slice(0, 3);
 
     // Breadcrumb structured data for SEO.
-    const siteUrl = "https://paul-portfolio-drab.vercel.app";
+    const siteUrl = SITE_URL;
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -249,21 +251,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                         {/* Newsletter */}
                         <div className="rounded-[8px] border border-border/60 bg-muted/30 p-5">
                             <p className="text-sm font-bold leading-snug">Subscribe to newsletter</p>
-                            <form action="/contact" className="mt-4 space-y-2">
-                                <input
-                                    type="email"
-                                    required
-                                    placeholder="Enter your email"
-                                    aria-label="Email address"
-                                    className="w-full rounded-[8px] border border-border bg-background px-3 py-2 text-sm outline-none focus:border-primary transition-colors"
-                                />
-                                <button
-                                    type="submit"
-                                    className="w-full inline-flex items-center justify-center gap-1.5 bg-primary text-primary-foreground font-bold rounded-[8px] px-4 py-2 text-sm hover:bg-primary/90 transition-colors cursor-pointer"
-                                >
-                                    Subscribe <ArrowRight className="w-4 h-4" />
-                                </button>
-                            </form>
+                            <NewsletterForm layout="stacked" className="mt-4" />
                         </div>
                     </div>
                 </aside>
@@ -325,24 +313,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                             Get practical WordPress, GoHighLevel &amp; SEO insights in your inbox — no spam, just value.
                         </p>
                     </div>
-                    <form
-                        action="/contact"
-                        className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
-                    >
-                        <input
-                            type="email"
-                            required
-                            placeholder="Enter your email"
-                            aria-label="Email address"
-                            className="flex-1 rounded-[8px] border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary transition-colors"
-                        />
-                        <button
-                            type="submit"
-                            className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-[8px] px-6 py-3 text-sm hover:bg-primary/90 transition-colors shrink-0 cursor-pointer"
-                        >
-                            Subscribe <ArrowRight className="w-4 h-4" />
-                        </button>
-                    </form>
+                    <NewsletterForm className="max-w-md mx-auto" />
                 </div>
             </article>
                 </div>

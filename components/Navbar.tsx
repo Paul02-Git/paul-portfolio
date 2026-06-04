@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -30,13 +31,15 @@ export default function Navbar() {
 
                         {/* Logo — left */}
                         <Link href="/" className="flex items-center gap-2.5 group shrink-0" aria-label="Paul Puzon Home">
-                            <div className="flex items-center text-foreground group-hover:text-primary transition-colors">
-                                <svg className="w-7 h-7" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 20L40 90L55 55" />
-                                    <path d="M45 55L60 90L90 20" />
-                                </svg>
-                            </div>
-                            <span className="font-bold text-lg hidden sm:block">W!P</span>
+                            <Image
+                                src="/images/paul_logo.png"
+                                alt="Paul Puzon"
+                                width={505}
+                                height={522}
+                                priority
+                                className="h-11 w-auto object-contain"
+                            />
+                        
                         </Link>
 
                         {/* Desktop Links — centered */}
@@ -63,9 +66,9 @@ export default function Navbar() {
                                 size="sm"
                                 className="group shadow-lg shadow-black/5"
                                 icon={<ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />}
-                                href="/contact"
+                                href="/book-a-call"
                             >
-                                Let&apos;s Connect
+                                Book A Call
                             </Button>
 
                             {/* Mobile Menu Button */}

@@ -13,8 +13,9 @@ import { TechStackMarquee } from "@/components/TechStackMarquee";
 import { Eyebrow } from "@/components/Eyebrow";
 import { brands } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
+import { SITE_URL } from "@/lib/site";
 
-const siteUrl = "https://paul-portfolio-drab.vercel.app";
+const siteUrl = SITE_URL;
 const INNER = "max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6";
 
 const fadeUp = (delay = 0) => ({
@@ -60,7 +61,7 @@ const buildServices = [
 const stats = [
     { value: "50+", label: "Projects Completed" },
     { value: "100%", label: "Client Satisfaction" },
-    { value: "4+", label: "Years of Experience" },
+    { value: "7+", label: "Years of Experience" },
     { value: "20+", label: "Happy Clients" },
 ];
 
@@ -114,7 +115,7 @@ export default function ServicesPage() {
                                 From fast WordPress builds to complete GoHighLevel systems — everything you need to turn your website into your hardest-working sales tool.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <Button href="https://calendly.com/paulpuzon0007/30min" target="_blank" rel="noopener noreferrer" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
+                                <Button href="/book-a-call" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
                                     Book A Call
                                 </Button>
                                 <Button href="/contact" variant="outline" icon={<ArrowRight className="w-5 h-5" />}>
@@ -228,7 +229,7 @@ export default function ServicesPage() {
                             Simple Steps To Complete Your Project
                         </motion.h2>
                         <motion.div {...fadeUp(0.1)} className="shrink-0">
-                            <Button href="https://calendly.com/paulpuzon0007/30min" target="_blank" rel="noopener noreferrer" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
+                            <Button href="/book-a-call" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
                                 Start Your Project
                             </Button>
                         </motion.div>
@@ -276,7 +277,7 @@ export default function ServicesPage() {
                         Have A Project In Mind? Let&apos;s Make It Happen.
                     </h2>
                     <div className="mt-8 flex justify-center">
-                        <Button href="https://calendly.com/paulpuzon0007/30min" target="_blank" rel="noopener noreferrer" size="lg" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
+                        <Button href="/book-a-call" size="lg" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
                             Book A Free Call
                         </Button>
                     </div>

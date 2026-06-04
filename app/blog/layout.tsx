@@ -5,7 +5,7 @@ const OG = ogImage({ eyebrow: 'Blog', title: 'WordPress, GHL & Marketing Insight
 
 export const metadata: Metadata = {
     title: 'Blog | WordPress, GHL & Marketing Insights',
-    description: 'Expert insights on WordPress development, GoHighLevel automation, and marketing strategies. Learn how to build high-converting websites and automate your business.',
+    description: 'Expert insights on WordPress development, GoHighLevel automation, and marketing to build high-converting websites.',
     keywords: [
         'WordPress Blog',
         'GoHighLevel Tutorials',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         title: 'Blog | WordPress, GHL & Marketing Insights',
-        description: 'Expert insights on WordPress development, GoHighLevel automation, and marketing strategies. Learn how to build high-converting websites and automate your business.',
+        description: 'Expert insights on WordPress development, GoHighLevel automation, and marketing to build high-converting websites.',
         images: [OG],
     },
     twitter: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         description: 'Read the latest tutorials, guides, and insights on WordPress, Elementor, GoHighLevel, and web development.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio-drab.vercel.app/blog'
+        canonical: '/blog'
     }
 };
 

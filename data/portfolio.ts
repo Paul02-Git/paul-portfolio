@@ -164,7 +164,7 @@ export const services: Service[] = [
 ];
 
 export const stats = [
-    { label: "Years of Experience", value: "4+" },
+    { label: "Years of Experience", value: "7+" },
     { label: "Project Completed", value: "50+" },
     { label: "Happy Clients", value: "20+" },
 ];
@@ -318,7 +318,7 @@ export const fullServices: Service[] = [
 
 export const blogPosts: BlogPost[] = [
     {
-        title: "Seamless Power: How to Integrate GoHighLevel with WordPress & Elementor",
+        title: "How to Integrate GoHighLevel with WordPress & Elementor",
         excerpt: "Stop manual lead entry! Learn the exact steps to sync your Elementor forms with GHL CRM for automated follow-ups that convert.",
         date: "Feb 15, 2026",
         category: "GHL",

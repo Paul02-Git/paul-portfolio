@@ -3,10 +3,10 @@ import Navbar from "@/components/Navbar";
 import { Eyebrow } from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Paul Puzon",
+  title: "Privacy Policy",
   description:
     "How Paul Puzon collects, uses, and protects your information when you use this website or get in touch.",
-  alternates: { canonical: "https://paul-portfolio-drab.vercel.app/privacy" },
+  alternates: { canonical: "/privacy" },
 };
 
 const LAST_UPDATED = "June 3, 2026";

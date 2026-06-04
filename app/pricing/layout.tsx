@@ -5,7 +5,7 @@ const OG = ogImage({ eyebrow: 'Pricing', title: "Simple Pricing That's Built to 
 
 export const metadata: Metadata = {
     title: 'Pricing | WordPress Website Packages & Rates',
-    description: 'Simple, transparent pricing for custom WordPress & Elementor websites. Fixed scope, fixed price, no surprise invoices — packages built to turn visitors into leads.',
+    description: 'Simple, transparent pricing for custom WordPress & Elementor websites. Fixed scope, fixed price, no surprise invoices.',
     keywords: [
         'WordPress Website Pricing',
         'WordPress Developer Rates',
@@ -29,8 +29,26 @@ export const metadata: Metadata = {
         description: 'Simple, transparent pricing for custom WordPress & Elementor websites — fixed scope, fixed price, no surprise invoices.',
     },
     alternates: {
-        canonical: 'https://paul-portfolio-drab.vercel.app/pricing'
+        canonical: '/pricing'
     }
+};
+
+const pricingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "WordPress Website Development",
+    serviceType: "Web Development",
+    provider: { "@type": "Person", name: "Paul Puzon" },
+    areaServed: "Worldwide",
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "WordPress Website Packages",
+        itemListElement: [
+            { "@type": "Offer", name: "Launch", price: "750", priceCurrency: "USD", itemOffered: { "@type": "Service", name: "Launch plan" } },
+            { "@type": "Offer", name: "Growth", price: "1800", priceCurrency: "USD", itemOffered: { "@type": "Service", name: "Growth plan" } },
+            { "@type": "Offer", name: "Scale", price: "3500", priceCurrency: "USD", itemOffered: { "@type": "Service", name: "Scale plan" } },
+        ],
+    },
 };
 
 export default function PricingLayout({
@@ -38,5 +56,13 @@ export default function PricingLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return children;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
+            />
+            {children}
+        </>
+    );
 }

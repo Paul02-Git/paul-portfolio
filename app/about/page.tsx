@@ -19,8 +19,9 @@ import Navbar from "@/components/Navbar";
 import { Button } from "@/components/Button";
 import { Eyebrow } from "@/components/Eyebrow";
 import { cn } from "@/lib/utils";
+import { SITE_URL } from "@/lib/site";
 
-const siteUrl = "https://paul-portfolio-drab.vercel.app";
+const siteUrl = SITE_URL;
 const INNER = "max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6";
 
 const fadeUp = (delay = 0) => ({
@@ -65,7 +66,7 @@ function MarqueeBand() {
 }
 
 const stats = [
-    { label: "Years Experience", value: "4+" },
+    { label: "Years Experience", value: "7+" },
     { label: "Projects Delivered", value: "50+" },
     { label: "Happy Clients", value: "20+" },
     { label: "Countries Served", value: "24+" },
@@ -75,7 +76,7 @@ const values = [
     {
         Icon: Award,
         title: "Proven Expertise",
-        desc: "4+ years of WordPress, Shopify & GoHighLevel builds for clients across 24+ countries — never cookie-cutter templates.",
+        desc: "7+ years of WordPress, Shopify & GoHighLevel builds for clients across 24+ countries — never cookie-cutter templates.",
     },
     {
         Icon: Eye,
@@ -97,7 +98,7 @@ const aboutSchema = {
         name: "Paul Puzon",
         jobTitle: "WordPress Developer & GoHighLevel Specialist",
         url: `${siteUrl}/about`,
-        image: `${siteUrl}/images/profile.png`,
+        image: `${siteUrl}/images/og-image.png`,
         address: { "@type": "PostalAddress", addressLocality: "Manila", addressCountry: "PH" },
     },
 };
@@ -127,7 +128,7 @@ export default function AboutPage() {
                                 My work covers a wide range of digital needs — from fast WordPress builds and conversion-ready Shopify stores to GoHighLevel funnels, SEO, and automation.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <Button href="https://calendly.com/paulpuzon0007/30min" target="_blank" rel="noopener noreferrer" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
+                                <Button href="/book-a-call" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
                                     Free Consultation
                                 </Button>
                                 <Button href="/contact" variant="outline">

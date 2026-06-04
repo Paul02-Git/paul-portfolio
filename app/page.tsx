@@ -64,9 +64,7 @@ export default function Home() {
               <Button
                 icon={<Calendar className="w-5 h-5" />}
                 iconPosition="left"
-                href="https://calendly.com/paulpuzon0007/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book-a-call"
               >
                 Book A Call
               </Button>
@@ -83,7 +81,7 @@ export default function Home() {
             {/* Stats */}
             <div className="grid grid-cols-4 gap-4 pt-6 border-t border-border/40 max-w-sm">
               {[
-                { value: "4+",  label: "Years"     },
+                { value: "7+",  label: "Years"     },
                 { value: "50+", label: "Projects"  },
                 { value: "20+", label: "Clients"   },
                 { value: "5★",  label: "Rating"    },
@@ -220,9 +218,7 @@ export default function Home() {
               <Button
                 icon={<Calendar className="w-5 h-5" />}
                 iconPosition="left"
-                href="https://calendly.com/paulpuzon0007/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book-a-call"
               >
                 Book A Call
               </Button>
@@ -379,9 +375,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Link
-                  href="https://calendly.com/paulpuzon0007/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/book-a-call"
                   className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-[8px] px-7 py-4 hover:bg-primary/90 transition-colors duration-200 shadow-lg shadow-primary/20"
                 >
                   <Calendar className="w-5 h-5" /> Book A Call
@@ -553,9 +547,7 @@ export default function Home() {
                 </p>
               </div>
               <Link
-                href="https://calendly.com/paulpuzon0007/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book-a-call"
                 className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold rounded-full pl-5 pr-2 py-2 hover:bg-primary/90 transition-colors duration-200 shrink-0"
               >
                 Book A Call
@@ -612,9 +604,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 shrink-0">
                 <Link
-                  href="https://calendly.com/paulpuzon0007/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/book-a-call"
                   className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-[8px] px-5 py-2.5 text-sm hover:bg-primary/90 transition-colors duration-200"
                 >
                   <Calendar className="w-4 h-4" /> Book A Call

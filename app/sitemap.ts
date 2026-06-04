@@ -1,62 +1,72 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/portfolio';
+import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://paul-portfolio-drab.vercel.app';
+    const baseUrl = SITE_URL;
+    // Fixed "last meaningful update" for static pages — avoids signalling that
+    // every page changed on every deploy (which erodes lastmod trust).
+    const lastUpdated = new Date('2026-06-01');
 
     // Static pages
     const staticPages = [
         {
             url: baseUrl,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'weekly' as const,
             priority: 1,
         },
         {
             url: `${baseUrl}/about`,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/services`,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'monthly' as const,
             priority: 0.9,
         },
         {
             url: `${baseUrl}/pricing`,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'monthly' as const,
             priority: 0.9,
         },
         {
             url: `${baseUrl}/portfolio`,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'weekly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/contact`,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'monthly' as const,
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/book-a-call`,
+            lastModified: lastUpdated,
+            changeFrequency: 'monthly' as const,
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/blog`,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'weekly' as const,
             priority: 0.9,
         },
         {
             url: `${baseUrl}/privacy`,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'yearly' as const,
             priority: 0.3,
         },
         {
             url: `${baseUrl}/terms`,
-            lastModified: new Date(),
+            lastModified: lastUpdated,
             changeFrequency: 'yearly' as const,
             priority: 0.3,
         },

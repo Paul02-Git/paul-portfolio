@@ -3,10 +3,10 @@ import Navbar from "@/components/Navbar";
 import { Eyebrow } from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Paul Puzon",
+  title: "Terms of Service",
   description:
     "The terms that apply when you use this website or work with Paul Puzon on a web development or automation project.",
-  alternates: { canonical: "https://paul-portfolio-drab.vercel.app/terms" },
+  alternates: { canonical: "/terms" },
 };
 
 const LAST_UPDATED = "June 3, 2026";

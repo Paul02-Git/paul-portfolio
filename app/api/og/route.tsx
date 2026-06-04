@@ -153,7 +153,7 @@ export async function GET(req: Request) {
             <span style={{ color: ACCENT, fontWeight: 700, marginRight: 6 }}>50+</span>
             <span style={{ color: "#0f172a", marginRight: 14 }}>Projects</span>
             <span style={{ color: "#cbd5e1", marginRight: 14 }}>|</span>
-            <span style={{ color: ACCENT, fontWeight: 700, marginRight: 6 }}>4+</span>
+            <span style={{ color: ACCENT, fontWeight: 700, marginRight: 6 }}>7+</span>
             <span style={{ color: "#0f172a", marginRight: 14 }}>Years</span>
             <span style={{ color: "#cbd5e1", marginRight: 14 }}>|</span>
             <span>Based in the Philippines</span>

@@ -20,12 +20,9 @@ function singleLine(input: string): string {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Field length caps — reject oversized payloads / abuse.
-const LIMITS = { name: 100, email: 254, phone: 40, subject: 150, budget: 60, comment: 5000 };
+const LIMITS = { name: 100, email: 254, business: 150, website: 300, projectType: 60, budget: 60, description: 5000, service: 60 };
 
-// ── Best-effort in-memory rate limiter ──
-// Caps requests per IP on a warm serverless instance. State is per-instance and
-// resets on cold start, so it is not a hard cross-fleet guarantee. For durable,
-// distributed limiting, swap this for @upstash/ratelimit backed by Upstash Redis.
+// ── Best-effort in-memory rate limiter (per warm serverless instance) ──
 const RATE_LIMIT = { max: 5, windowMs: 60_000 };
 const ipHits = new Map<string, number[]>();
 
@@ -44,7 +41,6 @@ function isRateLimited(ip: string): boolean {
     }
     recent.push(now);
     ipHits.set(ip, recent);
-    // Opportunistic cleanup so the map can't grow unbounded across many IPs.
     if (ipHits.size > 5000) {
         for (const [key, times] of ipHits) {
             if (times.every((t) => now - t >= RATE_LIMIT.windowMs)) ipHits.delete(key);
@@ -57,11 +53,10 @@ export async function POST(req: Request) {
     try {
         const apiKey = process.env.RESEND_API_KEY;
         if (!apiKey) {
-            console.error('RESEND_API_KEY is not set. Add it to .env.local (local) and your Vercel env vars (production).');
+            console.error('RESEND_API_KEY is not set. Add it to .env.local and your Vercel env vars.');
             return NextResponse.json({ error: 'Email service is not configured.' }, { status: 503 });
         }
 
-        // Rate limit by client IP.
         if (isRateLimited(getClientIp(req))) {
             return NextResponse.json(
                 { error: 'Too many requests. Please wait a minute and try again.' },
@@ -69,7 +64,6 @@ export async function POST(req: Request) {
             );
         }
 
-        // Parse body defensively.
         let body: unknown;
         try {
             body = await req.json();
@@ -82,13 +76,17 @@ export async function POST(req: Request) {
 
         const name = str(data.name);
         const email = str(data.email);
-        const phone = str(data.phone);
-        const subject = str(data.subject);
+        const business = str(data.business);
+        const website = str(data.website);
+        const projectType = str(data.projectType);
+        const description = str(data.description);
         const budget = str(data.budget);
-        const comment = str(data.comment);
+        const services = Array.isArray(data.services)
+            ? data.services.filter((s): s is string => typeof s === 'string').map((s) => s.trim()).filter(Boolean).slice(0, 10)
+            : [];
 
-        // Validation
-        if (!name || !email || !comment) {
+        // Validation — required fields per the form.
+        if (!name || !email || !description) {
             return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
         }
         if (!EMAIL_RE.test(email) || email.length > LIMITS.email) {
@@ -96,82 +94,87 @@ export async function POST(req: Request) {
         }
         if (
             name.length > LIMITS.name ||
-            phone.length > LIMITS.phone ||
-            subject.length > LIMITS.subject ||
+            business.length > LIMITS.business ||
+            website.length > LIMITS.website ||
+            projectType.length > LIMITS.projectType ||
             budget.length > LIMITS.budget ||
-            comment.length > LIMITS.comment
+            description.length > LIMITS.description ||
+            services.some((s) => s.length > LIMITS.service)
         ) {
             return NextResponse.json({ error: 'One or more fields exceed the maximum length.' }, { status: 400 });
         }
 
         const resend = new Resend(apiKey);
+        const servicesText = services.join(', ');
 
         // HTML-escape every interpolated value before it goes into the email markup.
         const s = {
             name: escapeHtml(name),
             email: escapeHtml(email),
-            phone: escapeHtml(phone),
-            subject: escapeHtml(subject),
+            business: escapeHtml(business),
+            website: escapeHtml(website),
+            projectType: escapeHtml(projectType),
+            services: escapeHtml(servicesText),
             budget: escapeHtml(budget),
-            comment: escapeHtml(comment),
+            description: escapeHtml(description),
         };
 
         const { data: sent, error } = await resend.emails.send({
-            from: 'Portfolio Contact Form <onboarding@resend.dev>',
+            from: 'Discovery Call Request <onboarding@resend.dev>',
             to: ['paulpuzon0007@gmail.com'],
-            subject: singleLine(`New Inquiry from ${name}${subject ? `: ${subject}` : ''}`).slice(0, 200),
+            subject: singleLine(`New Discovery Call Request from ${name}`).slice(0, 200),
             replyTo: email,
             html: `
                 <div style="font-family: sans-serif; padding: 20px; color: #333;">
-                    <h2 style="color: #108a00;">New Inquiry from ${s.name}</h2>
+                    <h2 style="color: #108a00;">Discovery Call Request</h2>
+                    <p><strong>Name:</strong> ${s.name}</p>
                     <p><strong>Email:</strong> ${s.email}</p>
-                    ${s.phone ? `<p><strong>Phone:</strong> ${s.phone}</p>` : ''}
-                    ${s.subject ? `<p><strong>Subject:</strong> ${s.subject}</p>` : ''}
+                    ${s.business ? `<p><strong>Business:</strong> ${s.business}</p>` : ''}
+                    ${s.website ? `<p><strong>Website:</strong> ${s.website}</p>` : ''}
+                    ${s.projectType ? `<p><strong>Project Type:</strong> ${s.projectType}</p>` : ''}
+                    ${s.services ? `<p><strong>Services:</strong> ${s.services}</p>` : ''}
                     ${s.budget ? `<p><strong>Budget:</strong> ${s.budget}</p>` : ''}
                     <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                    <p style="white-space: pre-wrap;">${s.comment}</p>
+                    <p style="white-space: pre-wrap;">${s.description}</p>
                 </div>
             `,
         });
 
         if (error) {
-            // Log the detail server-side, return a generic message to the client.
             console.error('Resend Error:', error);
-            return NextResponse.json({ error: 'Failed to send message. Please try again later.' }, { status: 502 });
+            return NextResponse.json({ error: 'Failed to send request. Please try again later.' }, { status: 502 });
         }
 
-        // Best-effort: also capture the lead in Klaviyo. Never block or fail the
-        // contact submission on a Klaviyo error — the email already went through.
+        // Best-effort: capture the lead in Klaviyo. Never block the request on a failure.
         const klaviyoKey = process.env.KLAVIYO_PRIVATE_API_KEY;
         const leadsListId = process.env.KLAVIYO_LEADS_LIST_ID || process.env.KLAVIYO_LIST_ID;
         if (klaviyoKey && leadsListId) {
             const [firstName, ...rest] = name.split(/\s+/);
             const lastName = rest.join(' ');
-            const leadProperties: Record<string, string> = { 'Lead Source': 'Contact Form' };
-            if (subject) leadProperties['Inquiry Subject'] = subject;
+            const leadProperties: Record<string, string> = { 'Lead Source': 'Discovery Call Request' };
+            if (website) leadProperties['Website URL'] = website;
+            if (projectType) leadProperties['Project Type'] = projectType;
+            if (servicesText) leadProperties['Services'] = servicesText;
             if (budget) leadProperties['Budget'] = budget;
-            if (comment) leadProperties['Message'] = comment;
-            if (phone) leadProperties['Phone'] = phone;
+            if (description) leadProperties['Project Description'] = description;
 
             try {
-                // Add to the list with email-marketing consent.
                 const subRes = await subscribeToKlaviyoList({
                     apiKey: klaviyoKey,
                     listId: leadsListId,
                     email,
-                    source: 'Contact Form',
+                    source: 'Discovery Call Request',
                 });
                 if (!subRes.ok) {
                     console.error('Klaviyo subscribe failed:', subRes.status, await subRes.text().catch(() => ''));
                 }
 
-                // Upsert the full profile (name, phone, inquiry details).
                 const upRes = await upsertKlaviyoProfile({
                     apiKey: klaviyoKey,
                     email,
                     firstName: firstName || undefined,
                     lastName: lastName || undefined,
-                    phone: phone || undefined,
+                    organization: business || undefined,
                     properties: leadProperties,
                 });
                 if (!upRes.ok) {
@@ -184,7 +187,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json({ success: true, id: sent?.id });
     } catch (err) {
-        console.error('Contact API Error:', err);
+        console.error('Book Call API Error:', err);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
