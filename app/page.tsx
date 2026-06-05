@@ -329,10 +329,9 @@ export default function Home() {
                   <p className="text-muted-foreground leading-relaxed max-w-lg">{service.description}</p>
                   <Link
                     href={service.href}
-                    aria-label={`Learn more about ${service.title}`}
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground border border-border/60 px-4 py-2 hover:border-primary hover:text-primary transition-all duration-200"
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
+                    Learn More<span className="sr-only"> about {service.title}</span> <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </motion.div>
