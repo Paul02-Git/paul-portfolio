@@ -48,7 +48,7 @@ export default function Home() {
               WordPress Website Developer
             </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight leading-[1.06]">
+            <h1 className="max-w-[15ch] text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]  font-bold tracking-tight leading-[1.06]">
               Your Business Is Legit.{" "}
               <span className="text-primary">Your Website Should Be Too.</span>
             </h1>

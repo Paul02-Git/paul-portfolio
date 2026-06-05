@@ -75,7 +75,7 @@ export const Footer = () => {
                     <h2 className="text-white text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
                         Let&apos;s Get In Touch.
                     </h2>
-                    <p className="text-white/80 leading-relaxed max-w-[56ch]">
+                    <p className="text-white leading-relaxed max-w-[56ch]">
                         Every day without a conversion-focused website is a day your competitors get the call instead. Let&apos;s fix that — free, and no obligation.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 pt-3">
