@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { blogPosts } from "@/data/portfolio";
+import { cn } from "@/lib/utils";
 import { LayoutGrid } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
@@ -15,7 +16,27 @@ const fadeUp = (delay = 0) => ({
     transition: { duration: 0.55, ease: "easeOut" as const, delay },
 });
 
+const POSTS_PER_PAGE = 6;
+
 export default function BlogPage() {
+    const [currentPage, setCurrentPage] = React.useState(1);
+    const gridRef = React.useRef<HTMLDivElement>(null);
+    const hasPaginated = React.useRef(false);
+
+    const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
+    const currentPosts = blogPosts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+
+    const goToPage = (p: number) => {
+        hasPaginated.current = true;
+        setCurrentPage(Math.min(Math.max(p, 1), totalPages));
+    };
+
+    // Scroll back to the grid after the new page renders (grid has scroll-mt-28 to clear the navbar).
+    React.useEffect(() => {
+        if (!hasPaginated.current) return;
+        gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, [currentPage]);
+
     return (
         <main className="pb-20 pt-28 md:pt-32">
             <Navbar />
@@ -48,11 +69,11 @@ export default function BlogPage() {
             </div>
 
             {/* Grid */}
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-                {blogPosts.map((post, i) => (
+            <div ref={gridRef} className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 scroll-mt-28">
+                {currentPosts.map((post, i) => (
                     <motion.article key={post.slug} {...fadeUp((i % 2) * 0.08)}>
                         <Link href={`/blog/${post.slug}`} className="group block">
-                            <div className="relative aspect-[3/2] rounded-[8px] overflow-hidden mb-5 bg-muted/30">
+                            <div className="relative aspect-[3/2] rounded-2xl overflow-hidden mb-5 bg-muted/30">
                                 <Image
                                     src={post.image}
                                     alt={post.title}
@@ -76,6 +97,45 @@ export default function BlogPage() {
                     </motion.article>
                 ))}
             </div>
+
+            {/* ── Pagination ── */}
+            {totalPages > 1 && (
+                <div className="mt-14 flex items-center justify-center gap-2">
+                    <button
+                        onClick={() => goToPage(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        className="px-4 py-2 rounded-[8px] border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                    >
+                        Previous
+                    </button>
+
+                    <div className="flex items-center gap-1.5">
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                            <button
+                                key={page}
+                                onClick={() => goToPage(page)}
+                                aria-current={currentPage === page ? "page" : undefined}
+                                className={cn(
+                                    "w-10 h-10 rounded-[8px] border text-sm font-medium transition-colors cursor-pointer",
+                                    currentPage === page
+                                        ? "bg-primary text-primary-foreground border-primary"
+                                        : "border-border/60 hover:bg-muted/50"
+                                )}
+                            >
+                                {page}
+                            </button>
+                        ))}
+                    </div>
+
+                    <button
+                        onClick={() => goToPage(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                        className="px-4 py-2 rounded-[8px] border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                    >
+                        Next
+                    </button>
+                </div>
+            )}
         </main>
     );
 }

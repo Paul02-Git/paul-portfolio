@@ -194,7 +194,7 @@ export const Footer = () => {
     Sitemap
   </Link>
 
-  <span className="text-muted-foreground/80">
+  <span className="text-muted-foreground">
     Based in the Philippines 🇵🇭
   </span>
 </nav>

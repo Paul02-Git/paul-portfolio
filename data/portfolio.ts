@@ -2,7 +2,7 @@ import { Layout, Zap, Code2, Headset, Puzzle, Palette, Search, Gauge, Bot, Shiel
 import { Experience, Tool, Project, Service, Testimonial, FAQItem, BlogPost } from "@/types/portfolio";
 
 export const vibes = [
-    { name: "Professional", color: "#108a00", secondaryColor: "#56AB2F", icon: ShieldCheck, label: "Trust & Growth" },
+    { name: "Professional", color: "#0a7a00", secondaryColor: "#56AB2F", icon: ShieldCheck, label: "Trust & Growth" },
     { name: "Creative", color: "#000000", secondaryColor: "#334155", icon: Palette, label: "Innovation & Design" },
     { name: "Premium", color: "#f06431", secondaryColor: "#fbbf24", icon: Sparkles, label: "Excellence & Quality" },
     { name: "Visionary", color: "#2563eb", secondaryColor: "#7dd3fc", icon: Globe, label: "Global Reach" },
@@ -317,6 +317,311 @@ export const fullServices: Service[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "How Much Does a Professional Website Cost in the Philippines in 2026?",
+        excerpt: "How much does a website cost in the Philippines in 2026? A clear breakdown of DIY, freelancer, and agency pricing — and what a professional site should include.",
+        date: "Jun 5, 2026",
+        category: "Web Design Investment",
+        image: "/images/blog/website-design-cost-philippines.webp",
+        slug: "website-design-cost-philippines",
+        author: "Paul Puzon",
+        authorRole: "WordPress & Conversion Specialist",
+        content: `
+            <div class="space-y-6">
+                <p>Ask 10 web designers "how much does a website cost?" and you'll get 10 different answers, 3 follow-up questions, and at least one dramatic pause. It's the pricing equivalent of asking "how much does a car cost?" — are we talking a second-hand hatchback or a fully-loaded SUV?</p>
+
+                <p>It's one of the first questions every business owner asks, and it's a smart one. But the honest answer about <strong>website design cost in the Philippines</strong> is: it depends — on your goals, the complexity, and what the site actually needs to do. Let's break down the real numbers, from DIY builders to agencies, so you can budget with confidence (and spot a too-good-to-be-true quote when you see one).</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why Website Prices Vary So Much</h2>
+                <p>A website isn't one fixed product — it's closer to a custom build. Independent pricing guides put the global range anywhere from about $10 to $30,000 or more (<a href="https://www.webfx.com/web-design/pricing/website-costs/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">WebFX</a>), and two sites can look similar on the surface yet cost wildly different amounts underneath, depending on what they're built to achieve.</p>
+                <p>The main things that move the price:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Number of pages (a 5-page site vs a 30-page one)</li>
+                    <li>Custom design vs a ready-made template</li>
+                    <li>E-commerce functionality (a <a href="/services" class="text-primary font-semibold hover:underline">Shopify or WooCommerce store</a> adds real complexity)</li>
+                    <li>Booking or appointment systems</li>
+                    <li>Integrations (CRM, email, payment gateways)</li>
+                    <li>Content creation (copywriting and photos)</li>
+                    <li>SEO setup so people can actually find you</li>
+                </ul>
+                <p>Not every website is built to reach the same goal. A simple "we exist, here's our number" page and a full lead-generating machine are very different projects — even if they both technically count as "a website."</p>
+
+                <p>Here's the quick version of the website development cost in the Philippines before we dig into each option:</p>
+                <div class="overflow-x-auto my-8">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-border text-left">
+                                <th class="py-3 pr-4 font-bold text-foreground">Option</th>
+                                <th class="py-3 pr-4 font-bold text-foreground">Typical Cost (USD)</th>
+                                <th class="py-3 font-bold text-foreground">Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-border/60">
+                                <td class="py-3 pr-4 font-semibold text-foreground">DIY builder</td>
+                                <td class="py-3 pr-4">$0–$500 / year</td>
+                                <td class="py-3 text-muted-foreground">Testing an idea on a tight budget</td>
+                            </tr>
+                            <tr class="border-b border-border/60">
+                                <td class="py-3 pr-4 font-semibold text-foreground">Freelancer</td>
+                                <td class="py-3 pr-4">$500–$3,500</td>
+                                <td class="py-3 text-muted-foreground">Most small businesses wanting a real, lead-ready site</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 pr-4 font-semibold text-foreground">Agency</td>
+                                <td class="py-3 pr-4">$5,000–$25,000+</td>
+                                <td class="py-3 text-muted-foreground">Larger brands and complex builds</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-muted-foreground">Ranges are indicative for 2026 and vary with scope, features, and experience.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">DIY Website Builders</h2>
+                <p>Platforms like Wix, Squarespace, and WordPress.com let you build a site yourself by dragging blocks around. The upfront cost is the lowest of any option — usually just a subscription and a domain.</p>
+                <img src="/images/blog/diy-website-builders.webp" alt="A laptop on a blanket showing a web design app — the casual, do-it-yourself approach" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p><strong>Typical cost:</strong> roughly $0–$500 per year in subscriptions and domain fees.</p>
+                <p><strong>Pros:</strong> affordable, quick to start, no developer needed.</p>
+                <p><strong>Cons:</strong> limited customization and often less effective at actually generating leads.</p>
+                <p>DIY is genuinely great for testing an idea or a side hustle. The "free" part is real — but it's paid for in your time, and your time isn't free either. It's less ideal when your website is meant to be your hardest-working salesperson.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Hiring a Freelancer</h2>
+                <p>This is the sweet spot for most small businesses — and where small business website pricing gets the most bang for the peso. A good freelancer gives you a custom, professionally built site without the overhead (and price tag) of a big agency.</p>
+                <p><strong>Typical cost:</strong> around $500–$3,500 for a small-business website, depending on pages, design, and features.</p>
+                <p>What's usually included: custom design, mobile responsiveness, basic SEO, contact forms, and a site built around your actual business goals — not just a pretty template. You can see what that looks like in my <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>.</p>
+                <p><strong>Pros:</strong> personal attention, flexible, cost-effective, and direct communication with the person actually building your site.</p>
+                <p><strong>Cons:</strong> one person has finite hours, so very large or complex projects can stretch timelines.</p>
+                <p>The key is finding someone who understands both design <em>and</em> business — anyone can make something look nice; the goal is a site that brings in leads through smart <a href="/services" class="text-primary font-semibold hover:underline">web design and WordPress development</a>. (This is, full disclosure, the camp I happen to live in.)</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Hiring an Agency</h2>
+                <p>Agencies bring a full team — designers, developers, project managers, sometimes marketers — under one roof. That's more horsepower, and more cost.</p>
+                <img src="/images/blog/hiring-an-agency.webp" alt="A creative agency team working together on computers in an office" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p><strong>Typical cost:</strong> $5,000–$25,000+, depending on scope.</p>
+                <p>You're paying for capacity and process: larger teams, more comprehensive services, and the ability to handle big, complex builds.</p>
+                <p>An agency makes sense when you're a larger brand, need a complex platform (think custom e-commerce or many integrations), or want one vendor managing lots of moving parts. For a typical small business website, though, it's often more firepower than the job requires — a bit like hiring a moving company to carry a single chair.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">What Should Be Included in a Professional Website?</h2>
+                <p>Here's where the gap between "cheap" and "professional website cost" usually hides. Whatever you pay, a professional website should include:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Mobile responsiveness</strong> — it looks and works great on phones</li>
+                    <li><strong>Fast performance</strong> — pages load quickly</li>
+                    <li><strong>SEO foundations</strong> — so Google can find and rank it</li>
+                    <li><strong>Conversion-focused design</strong> — built to turn visitors into inquiries</li>
+                    <li><strong>Contact forms</strong> that actually deliver to your inbox</li>
+                    <li><strong>Analytics setup</strong> so you can see what's working</li>
+                    <li><strong>Security best practices</strong> — SSL, backups, and updates</li>
+                </ul>
+                <p>If a quote doesn't mention any of these, that's usually why it's cheap. These features are exactly what separate a <a href="/services" class="text-primary font-semibold hover:underline">professionally built website</a> from a bargain one that looks fine and quietly underperforms.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Real Cost of a Cheap Website</h2>
+                <p>A cheap website rarely stays cheap. The sticker price is low; the hidden bill just arrives later.</p>
+                <img src="/images/blog/real-cost-cheap-website.webp" alt="Coins stacked with a small plant growing — a website as an investment, not just a cost" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>Here's what a bargain build often costs you down the line:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Lost leads</strong> — visitors who leave because the site is confusing or slow</li>
+                    <li><strong>Poor user experience</strong> that quietly sends customers to your competitors</li>
+                    <li><strong>Slow loading times</strong> — more than half of mobile visitors abandon a page that takes longer than 3 seconds to load</li>
+                    <li><strong>A full redesign later</strong> — meaning you pay twice for one website</li>
+                </ul>
+                <p>That's the part that stings: the cheapest option often becomes the most expensive one. A website isn't a cost to minimize — it's an investment that should pay you back in leads and credibility.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">What's the Real Website Design Cost in the Philippines?</h2>
+                <p>Let's bring it together. The cheapest website is rarely the most cost-effective one. Here's the quick guide to website design cost in the Philippines in 2026:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>DIY builder</strong> ($0–$500 / year) — fine for testing an idea</li>
+                    <li><strong>Freelancer</strong> ($500–$3,500) — the sweet spot for most small businesses</li>
+                    <li><strong>Agency</strong> ($5,000–$25,000+) — for larger, more complex brands</li>
+                </ul>
+                <p>Whatever you choose, judge it by what it does for your business, not just the number on the invoice. A professional website should help you generate leads, build trust, and support long-term growth — that's where the real return lives.</p>
+                <p>If you're planning a new website and want guidance on the best approach for your business, feel free to <a href="/contact" class="text-primary font-semibold hover:underline">get in touch</a> — or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a>, and we'll map out the right scope and budget for your goals. No pressure, no jargon.</p>
+            </div>
+        `
+    },
+    {
+        title: "Does Your Business Really Need a Website in 2026?",
+        excerpt: "Relying only on Facebook and Instagram? Here's why your business needs a website in 2026 — you own it, it builds trust, ranks on Google, and works 24/7.",
+        date: "Jun 5, 2026",
+        category: "Business Growth",
+        image: "/images/blog/does-my-business-need-a-website.webp",
+        slug: "does-my-business-need-a-website",
+        author: "Paul Puzon",
+        authorRole: "WordPress & Conversion Specialist",
+        content: `
+            <div class="space-y-6">
+                <p>Be honest: your "website" right now might be a Facebook page and an Instagram grid you update whenever you remember. And hey — it's working. You've got followers, the occasional DM rolls in, business is fine. So does your business <em>really</em> need a website in 2026, or is that just something web developers say to sell websites?</p>
+
+                <p>Fair question. Social media is genuinely valuable, and nobody's telling you to delete your accounts. But leaning on it as your <em>only</em> online presence is like building your house on rented land — perfectly comfy, right up until the landlord changes the rules. A website is the one part of your online presence you actually own. Here are 5 reasons that matters more than ever.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">1. You Don't Own Social Media Platforms</h2>
+                <p>This is the big one. Your Facebook page, your Instagram following, your hard-won reach — none of it is actually yours. You're a tenant, and the platform is the landlord who can rewrite the lease whenever it likes (and occasionally just loses your keys for a week with no explanation).</p>
+                <img src="/images/blog/own-social-media.webp" alt="A smartphone home screen showing a folder of social media apps — platforms you rent, not own" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>That dependency quietly costs you:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Algorithm changes</strong> that can slash your reach overnight — no warning, no appeal</li>
+                    <li><strong>Account restrictions or bans</strong>, where one mistaken flag wipes out your audience</li>
+                    <li><strong>Shrinking organic reach</strong> that nudges you toward paying for ads just to reach your own followers</li>
+                    <li><strong>Total platform dependency</strong> — if the app goes down or out of fashion, so does your storefront</li>
+                </ul>
+                <p>A website you own doesn't get suspended, throttled, or trend its way into irrelevance. It's yours.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">2. Customers Expect a Website</h2>
+                <p>When someone hears about your business, the first thing they do is look you up. And when the trail ends at a profile with no website, a quiet little voice asks, "...is this legit?" The data agrees: studies have found that <strong>84% of consumers consider a business with a website more credible than one with only social media</strong>.</p>
+                <img src="/images/blog/customers-expect-website.webp" alt="A professional working at a laptop in an office — the credibility customers expect from a real business" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>A real website signals three things a social profile can't fully fake:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Credibility</strong> — you're an established business, not a weekend experiment</li>
+                    <li><strong>Professional appearance</strong> — you control the layout, the message, and the first impression</li>
+                    <li><strong>Trust</strong> — services, testimonials, and policies, all in one place you own</li>
+                </ul>
+                <p>For a <a href="/services" class="text-primary font-semibold hover:underline">small business website</a>, closing that credibility gap is often the difference between "I'll book them" and "eh, I'll keep looking."</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">3. A Website Works While You Sleep</h2>
+                <p>You have to switch off eventually. Your social presence mostly works when you're actively posting — but a website keeps working at 2 a.m., on weekends, and during the one holiday you finally managed to take.</p>
+                <img src="/images/blog/works-while-you-sleep.webp" alt="A laptop glowing in a dark room — a website quietly working while you sleep" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>While you're off the clock, a well-built website:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Captures leads through contact and booking forms</li>
+                    <li>Answers your most common questions before anyone has to ask</li>
+                    <li>Generates inquiries 24/7, across every timezone your customers live in</li>
+                </ul>
+                <p>It's the one employee who never calls in sick, never asks for a raise, and never needs a coffee break.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">4. Websites Help You Show Up on Google</h2>
+                <p>Here's something social media simply can't do: rank on Google. When someone types "plumber near me" or "best bakery in town," social profiles rarely surface — websites do. And that's a big deal, because BrightLocal found that <strong>80% of consumers search online for local businesses every week</strong> (<a href="https://www.brightlocal.com/resources/local-seo-statistics/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">BrightLocal</a>).</p>
+                <img src="/images/blog/show-up-on-google.webp" alt="The Google homepage open on a laptop — where customers search for local businesses" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>A website for a local business is your ticket to:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Local SEO</strong> — showing up when nearby customers search for exactly what you offer</li>
+                    <li><strong>Organic traffic</strong> — visitors who find you for free, no pay-per-click required</li>
+                    <li><strong>Long-term visibility</strong> — a solid page can rank for years</li>
+                </ul>
+                <p>A social post has the shelf life of a banana; a search ranking quietly compounds in the background for years.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">5. Your Website Becomes Your Digital Headquarters</h2>
+                <p>Think of your website as mission control. Your Instagram bio, your Google listing, your business card, your email signature — they're all roads, and your website is the destination they point to.</p>
+                <img src="/images/blog/digital-headquarters.webp" alt="A clean dual-monitor desk setup — your website as your digital headquarters" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>Your digital HQ pulls everything into one place:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>A <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a> that shows your best work in a single scroll</li>
+                    <li>Clear <a href="/services" class="text-primary font-semibold hover:underline">services</a> and pricing, presented on your terms</li>
+                    <li>Contact information that's always easy to find</li>
+                    <li>Lead generation built into every page</li>
+                </ul>
+                <p>Social media sends people somewhere. Your website is the somewhere.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">So, Does Your Business Need a Website?</h2>
+                <p>Let's bring it home. A website isn't a replacement for social media — your accounts are still brilliant for reach, personality, and staying top-of-mind. But they're the marketing; your website is the foundation everything else stands on.</p>
+                <p>A quick recap on the real business website benefits — and why businesses need websites in 2026:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>You <strong>own it</strong> — no algorithm or ban can take it away</li>
+                    <li>It makes you <strong>credible</strong> the moment a customer looks you up</li>
+                    <li>It <strong>works 24/7</strong>, capturing leads while you sleep</li>
+                    <li>It helps you <strong>show up on Google</strong> for the long haul</li>
+                    <li>It's your <strong>digital headquarters</strong>, tying every channel together</li>
+                </ul>
+                <p>So if you've been quietly wondering whether your business needs a website, here's the honest version: social media rents you an audience, but a website lets you build something you actually keep.</p>
+                <p>Thinking about building your first website? <a href="/contact" class="text-primary font-semibold hover:underline">Let's discuss your business goals</a> — or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a>, and we'll map out exactly what your business needs (and, just as usefully, what it doesn't).</p>
+            </div>
+        `
+    },
+    {
+        title: "Why Most Small Business Websites Fail to Generate Leads (And How to Fix Them)",
+        excerpt: "Got traffic but no leads? These 5 common small business website mistakes quietly kill your conversions — here's how to spot and fix each one.",
+        date: "Jun 5, 2026",
+        category: "Website Strategy",
+        image: "/images/blog/small-business-website-mistakes.webp",
+        slug: "small-business-website-mistakes",
+        author: "Paul Puzon",
+        authorRole: "WordPress & Conversion Specialist",
+        content: `
+            <div class="space-y-6">
+                <p>Here's an uncomfortable truth nobody warns you about: you can pour 3 months and a small fortune into a gorgeous website, hit "launch" with the confidence of someone who definitely read the instructions, and then... nothing. No calls. No form fills. Just the soft chirping of crickets and an analytics graph flatter than week-old soda.</p>
+
+                <p>If that's your site right now, you're in good company — and the problem usually isn't your business. It's the website <em>experience</em>. Most <strong>small business website mistakes</strong> have nothing to do with how a site looks and everything to do with how it works. A website can be drop-dead gorgeous and still be completely useless at turning visitors into leads. (Think of it as a sports car with no engine: stunning in the driveway, going absolutely nowhere.)</p>
+
+                <p>The good news? Every one of these problems is fixable — usually faster and cheaper than you'd expect. Consider this your no-jargon list of small business website tips: the 5 most common reasons your website isn't getting leads, and exactly how to fix each one.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">1. There's No Clear Call-to-Action</h2>
+                <p>Picture walking into a store where nobody greets you, there are no signs, and the checkout is hidden in the back behind the mops. That's what a website with no clear call-to-action (CTA) feels like. Visitors land, glance around, shrug, and leave. (Narrator: they did not come back.)</p>
+                <img src="/images/blog/cta-clear.webp" alt="A hand pointing directly at a laptop screen, showing visitors exactly where to take the next action" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>Visitors should know exactly what to do within roughly 3 seconds of landing — not "maybe email us, or call, or fill this out, or just scroll for a while and see what the universe provides."</p>
+                <p>The usual culprits:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Too many buttons all shouting at once (when everything is important, nothing is)</li>
+                    <li>Weak, forgettable CTAs — "Submit" has never once made a human excited to submit anything</li>
+                    <li>No CTA above the fold, so your one job for the visitor is buried under 3 scrolls of stock photos</li>
+                </ul>
+                <p>Swap vague buttons for specific, benefit-driven ones: <strong>Request a Quote</strong>, <strong>Schedule a Free Consultation</strong>, or <strong>Get a Free Estimate</strong>. Removing guesswork is the entire heart of <a href="/services" class="text-primary font-semibold hover:underline">website conversion optimization</a> — give people one obvious next step and a surprising number of them take it.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">2. Your Website Loads Too Slowly</h2>
+                <p>Online, patience is measured in milliseconds. Portent's analysis of over 100 million pageviews found that a site loading in <strong>1 second converts up to 3× higher than one that takes 5 seconds</strong> (<a href="https://portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Portent</a>). Every extra second is basically money walking out the door — and it's not coming back for a redemption arc.</p>
+                <img src="/images/blog/slow-loading.webp" alt="A person sitting at a laptop, a familiar scene whenever a website loads too slowly" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>The usual suspects:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Giant, unoptimized images (that 8MB hero photo is helping precisely no one)</li>
+                    <li>Too many plugins, each doing a little and slowing things down a lot</li>
+                    <li>Cheap, overcrowded hosting (the digital equivalent of 40 people sharing one Wi-Fi router)</li>
+                    <li>Bloated, messy code held together with hope and duct tape</li>
+                </ul>
+                <p>Slow speed quietly hurts you 3 ways at once: visitors bounce, Google ranks you lower, and you lose leads you never even knew existed. A fast <a href="/services" class="text-primary font-semibold hover:underline">website design for small business</a> isn't a luxury — it's the price of admission.</p>
+
+                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
+                    <h4 class="text-lg font-bold text-primary mb-2">Quick Win: Fix One Leak This Week</h4>
+                    <p class="text-sm">You don't need a full teardown to see results. Find the single biggest leak — usually a weak CTA or a painfully slow page — and fix just that. Small, focused improvements compound surprisingly fast (and unlike your gym membership, this one actually pays off).</p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">3. The Mobile Experience Is Painful</h2>
+                <p>Over half of all web traffic now comes from phones. Your visitors are on the couch, half-watching TV, judging your business with a single thumb. If your site fights that thumb, they'll bail without a second thought — and they will not be leaving a forwarding address.</p>
+                <img src="/images/blog/mobile-experience.webp" alt="A person browsing a website on a smartphone, where most visitors now judge your business" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>Mobile dealbreakers include:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Text so tiny it requires a pinch-to-zoom workout</li>
+                    <li>Navigation that turns finding your services into a scavenger hunt</li>
+                    <li>Buttons crammed so close together you need a surgeon's steady hands to tap the right one</li>
+                    <li>Contact forms that feel roughly as fun as filing taxes</li>
+                </ul>
+                <p>When mobile usability is bad, inquiries quietly ghost you. Smoothing out the phone experience is one of the simplest ways to <a href="/services" class="text-primary font-semibold hover:underline">improve website conversions</a> — often without changing a single word of your copy.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">4. There Are No Trust Signals</h2>
+                <p>Here's the thing: people almost never contact a business the first time they visit. They're skeptical, they're comparison-shopping, and the internet has trained them to assume everyone is mildly sketchy until proven otherwise. In fact, Stanford researchers found that <strong>75% of users judge a company's credibility based on its website design</strong>. Translation: your site is your handshake before the handshake.</p>
+                <img src="/images/blog/trust-signals.webp" alt="Happy clients smiling together in a meeting, the kind of trust your website needs to convey" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>Trust has to be earned right there on the page. Show it with:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Real client testimonials — with names and faces, not "J.D., Satisfied Customer"</li>
+                    <li>Reviews and star ratings</li>
+                    <li>Case studies and a genuine <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio of past work</a></li>
+                    <li>Certifications, awards, or partner badges</li>
+                    <li>Clean, professional branding (a logo built in 2009 quietly whispers "we may also be stuck in 2009")</li>
+                </ul>
+                <p>Every trust signal you add chips away at a visitor's hesitation — and less hesitation means more leads.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">5. You're Not Tracking Anything</h2>
+                <p>This is the silent killer. Plenty of business owners genuinely have no idea where their leads come from. Ask "what's actually working?" and the honest answer is a confident shrug. Running marketing without tracking is like driving with the speedometer, fuel gauge, and windshield all taped over — technically you're moving, but good luck.</p>
+                <img src="/images/blog/analytics-tracking.webp" alt="A laptop showing an analytics dashboard with charts, used to track where website leads come from" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>If you're not measuring it, you're guessing — and guessing is an expensive way to run a budget. At a bare minimum, track:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Contact form submissions</li>
+                    <li>Phone-number clicks</li>
+                    <li>Booking and quote requests</li>
+                </ul>
+                <p>Once you can see which pages and channels actually drive inquiries, you stop pouring money into the stuff that doesn't. Good tracking turns "I think the site's doing okay?" into decisions backed by real numbers — and it's usually the fastest way to finally understand why your website is not getting leads.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">How to Fix These Small Business Website Mistakes</h2>
+                <p>Let's recap, because that's a lot of ways for a perfectly nice website to quietly let you down. A site can look stunning and still fail to bring in a single lead. Looks get people through the door; strategy is what makes them stay and actually reach out.</p>
+                <p>The websites that consistently generate leads nail 6 things on purpose:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Clear messaging</strong> that says what you do in seconds</li>
+                    <li><strong>One obvious call-to-action</strong> on every page</li>
+                    <li><strong>Fast performance</strong> that respects the 3-second rule</li>
+                    <li><strong>A frustration-free mobile experience</strong></li>
+                    <li><strong>Visible trust signals</strong> that lower hesitation</li>
+                    <li><strong>Conversion tracking</strong> so you know what's working</li>
+                </ul>
+                <p>Miss a few of these and even great traffic quietly leaks away. Nail them, and your website finally starts pulling its weight. Fixing the most common small business website mistakes is rarely about a bigger budget — it's about a smarter, conversion-focused approach.</p>
+                <p>If your website isn't generating the leads you expected, it might be time for a professional audit and a conversion-focused redesign. <a href="/contact" class="text-primary font-semibold hover:underline">Get in touch</a> or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a>, and let's turn your site into the hardest-working salesperson on your team — minus the commission.</p>
+            </div>
+        `
+    },
     {
         title: "How to Integrate GoHighLevel with WordPress & Elementor",
         excerpt: "Stop manual lead entry! Learn the exact steps to sync your Elementor forms with GHL CRM for automated follow-ups that convert.",

@@ -329,6 +329,7 @@ export default function Home() {
                   <p className="text-muted-foreground leading-relaxed max-w-lg">{service.description}</p>
                   <Link
                     href={service.href}
+                    aria-label={`Learn more about ${service.title}`}
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground border border-border/60 px-4 py-2 hover:border-primary hover:text-primary transition-all duration-200"
                   >
                     Learn More <ArrowRight className="w-4 h-4" />
@@ -650,18 +651,18 @@ export default function Home() {
         </section>
 
         {/* ── LATEST INSIGHTS (BLOG) — dark band ── */}
-        <section className="section-y relative left-1/2 -translate-x-1/2 w-screen overflow-hidden bg-foreground">
+        <section className="section-y relative left-1/2 -translate-x-1/2 w-screen overflow-hidden bg-muted">
           {/* Soft, minimal glow for depth */}
           
           <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6">
             <motion.div {...fadeUp()} className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
               <div className="space-y-3 max-w-[30ch] md:max-w-[40ch]">
-                <Eyebrow className="text-white/60">Latest Insights</Eyebrow>
-                <h2 className="text-white">Tips to Grow Your Business Online</h2>
+                <Eyebrow className="text-primary/80">Latest Insights</Eyebrow>
+                <h2 className="text-foreground">Tips to Grow Your Business Online</h2>
               </div>
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-white"
+                className="inline-flex items-center gap-1.5 text-lg font-medium text-foreground"
               >
                 Read the blog <ArrowUpRight className="w-4 h-4" />
               </Link>
@@ -672,9 +673,9 @@ export default function Home() {
                 <motion.div key={post.slug} {...fadeUp(i * 0.1)}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="group flex flex-col h-full rounded-2xl overflow-hidden transition-all duration-300 "
+                    className="group flex flex-col h-full rounded-2xl overflow-hidden transition-all duration-300 border border-border/60"
                   >
-                    <div className="relative aspect-[16/9] overflow-hidden bg-card">
+                    <div className="relative aspect-[16/9] overflow-hidden">
                       <Image
                         src={post.image}
                         alt={post.title}
