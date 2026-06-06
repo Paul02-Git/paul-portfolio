@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import { Send } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/gtm";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 const PROJECT_TYPES = ["New Website", "Website Redesign", "E-commerce Store", "Landing Page", "Other"];
-const SERVICES = ["WordPress & Elementor", "GHL Specialist", "Web Development", "Virtual Assistant", "Shopify & Printify", "Marketing Integrations"];
+const SERVICES = ["Wordpress & Elementor", "Shopify & Printify", "Marketing Integrations", "GHL Specialist", "Virtual Assistant", "Other"];
 const BUDGETS = ["Under $1,000", "$1,000–$3,000", "$3,000–$5,000", "$5,000+"];
 
 const inputClass =
@@ -32,6 +33,7 @@ export function DiscoveryCallForm() {
     };
     const [formData, setFormData] = useState(initialForm);
     const [services, setServices] = useState<string[]>([]);
+    const [servicesError, setServicesError] = useState(false);
     const [status, setStatus] = useState<Status>("idle");
 
     const handleChange = (
@@ -41,6 +43,7 @@ export function DiscoveryCallForm() {
     };
 
     const toggleService = (service: string) => {
+        setServicesError(false);
         setServices((prev) =>
             prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]
         );
@@ -48,6 +51,10 @@ export function DiscoveryCallForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (services.length === 0) {
+            setServicesError(true);
+            return;
+        }
         setStatus("loading");
         try {
             const res = await fetch("/api/book-call", {
@@ -57,6 +64,7 @@ export function DiscoveryCallForm() {
             });
             if (res.ok) {
                 setStatus("success");
+                trackEvent("generate_lead", { form_name: "book_a_call" });
                 setFormData(initialForm);
                 setServices([]);
                 window.scrollTo({ top: 0, behavior: "smooth" });
@@ -106,15 +114,15 @@ export function DiscoveryCallForm() {
             </div>
 
             <div>
-                <label htmlFor="projectType" className={labelClass}>Project Type</label>
-                <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange} className={cn(inputClass, "cursor-pointer appearance-none pr-10")} style={selectStyle}>
+                <label htmlFor="projectType" className={labelClass}>Project Type*</label>
+                <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange} required className={cn(inputClass, "cursor-pointer appearance-none pr-10")} style={selectStyle}>
                     <option value="" disabled>Select project type</option>
                     {PROJECT_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
             </div>
 
             <div>
-                <span className={labelClass}>Services You Need</span>
+                <span className={labelClass}>Services You Need*</span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {SERVICES.map((service) => {
                         const checked = services.includes(service);
@@ -139,6 +147,9 @@ export function DiscoveryCallForm() {
                         );
                     })}
                 </div>
+                {servicesError && (
+                    <p className="mt-2 text-sm font-medium text-red-600">Please select at least one service.</p>
+                )}
             </div>
 
             <div>
@@ -147,8 +158,8 @@ export function DiscoveryCallForm() {
             </div>
 
             <div>
-                <label htmlFor="budget" className={labelClass}>Budget Range</label>
-                <select id="budget" name="budget" value={formData.budget} onChange={handleChange} className={cn(inputClass, "cursor-pointer appearance-none pr-10")} style={selectStyle}>
+                <label htmlFor="budget" className={labelClass}>Budget Range*</label>
+                <select id="budget" name="budget" value={formData.budget} onChange={handleChange} required className={cn(inputClass, "cursor-pointer appearance-none pr-10")} style={selectStyle}>
                     <option value="" disabled>Select budget range</option>
                     {BUDGETS.map((b) => <option key={b} value={b}>{b}</option>)}
                 </select>

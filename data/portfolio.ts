@@ -300,7 +300,7 @@ export const faqs: FAQItem[] = [
     },
     {
         question: "How do we get started?",
-        answer: "You can <a href='https://calendly.com/paulpuzon0007/30min' target='_blank' rel='noopener noreferrer'>book a call</a> or <a href='/contact' rel='noopener noreferrer'>send a message</a> with your project details. I’ll review your requirements and provide a clear plan and timeline within 24–48 hours."
+        answer: "You can <a href='/book-a-call'>book a call</a> or <a href='/contact' rel='noopener noreferrer'>send a message</a> with your project details. I’ll review your requirements and provide a clear plan and timeline within 24–48 hours."
     }
 
 ];
@@ -597,7 +597,7 @@ export const blogPosts: BlogPost[] = [
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">5. You're Not Tracking Anything</h2>
                 <p>This is the silent killer. Plenty of business owners genuinely have no idea where their leads come from. Ask "what's actually working?" and the honest answer is a confident shrug. Running marketing without tracking is like driving with the speedometer, fuel gauge, and windshield all taped over — technically you're moving, but good luck.</p>
-                <img src="/images/blog/analytics-tracking.webp" alt="A laptop showing an analytics dashboard with charts, used to track where website leads come from" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <img src="/images/blog/Analytics_tracking.webp" alt="A laptop displaying a Google Analytics dashboard on a desk, used to track where website leads come from" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
                 <p>If you're not measuring it, you're guessing — and guessing is an expensive way to run a budget. At a bare minimum, track:</p>
                 <ul class="list-disc pl-6 space-y-2">
                     <li>Contact form submissions</li>

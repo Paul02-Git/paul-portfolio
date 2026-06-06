@@ -7,6 +7,7 @@ import { Send, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 import { Whatsapp } from "@/components/icons/Whatsapp";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/gtm";
 import Script from "next/script";
 
 // FAQ Schema for SEO
@@ -63,6 +64,7 @@ export default function ContactPage() {
             });
             if (response.ok) {
                 setStatus("success");
+                trackEvent("generate_lead", { form_name: "contact" });
                 setFormData(initialForm);
                 setTimeout(() => setStatus("idle"), 5000);
             } else {

@@ -4,6 +4,11 @@ import type { NextConfig } from "next";
 // (React Refresh / HMR). Production gets the tighter policy.
 const isDev = process.env.NODE_ENV !== "production";
 
+// Hosts for Google Tag Manager, GA4 (gtag) and Microsoft Clarity — required so the
+// CSP doesn't block gtm.js / analytics scripts. connect-src already allows https:.
+const analyticsScriptHosts =
+  "https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms";
+
 const contentSecurityPolicy = `
   default-src 'self';
   base-uri 'self';
@@ -12,7 +17,7 @@ const contentSecurityPolicy = `
   img-src 'self' data: blob: https:;
   font-src 'self' data:;
   style-src 'self' 'unsafe-inline';
-  script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
+  script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} ${analyticsScriptHosts};
   connect-src 'self' https:${isDev ? " ws: wss:" : ""};
   frame-src 'self' https://www.google.com;
   object-src 'none';

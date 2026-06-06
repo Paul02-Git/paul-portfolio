@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/gtm";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -37,6 +38,7 @@ export function NewsletterForm({ layout = "inline", className }: NewsletterFormP
             const data = (await res.json().catch(() => ({}))) as { error?: string };
             if (res.ok) {
                 setStatus("success");
+                trackEvent("newsletter_signup");
                 setEmail("");
             } else {
                 setStatus("error");

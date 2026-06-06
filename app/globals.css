@@ -1,7 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
-  --background: #F8FAFC;
+  --background: #FAFAFA;
   --foreground: #181818;
   --card: #ffffff;
   --card-foreground: #0F172A;
@@ -11,6 +12,11 @@
   --muted: #F1F5F9;
   --muted-foreground: #595959;
   --border: #e1e1e1;
+  --popover: #ffffff;
+  --popover-foreground: #0F172A;
+  --accent: #F1F5F9;
+  --accent-foreground: #181818;
+  --ring: #cbd5e1;
   --radius: 1.125rem;
   --grid-gap: 1.125rem;
   --card-padding: 1.5rem;
@@ -29,6 +35,11 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
   --spacing-grid: var(--grid-gap);
   --spacing-card: var(--card-padding);
   --spacing-card-sm: var(--card-padding-sm);
@@ -135,27 +146,6 @@ body {
     }
   }
 
-  .mask-fade-v {
-    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-  }
-
-  @keyframes carousel-scroll {
-    0% {
-      transform: translateY(0);
-    }
-
-    100% {
-      transform: translateY(-50%);
-    }
-  }
-
-  @keyframes ctaScrollLeft {
-    to {
-      transform: translateX(-500px);
-    }
-  }
-
   @keyframes marquee {
     0% {
       transform: translateX(0);
@@ -166,116 +156,7 @@ body {
     }
   }
 
-  @keyframes bounce-subtle {
-
-    0%,
-    100% {
-      transform: translateY(0) rotate(0);
-    }
-
-    50% {
-      transform: translateY(-5px) rotate(5deg);
-    }
-  }
-
-  .carousel-scroll {
-    animation: carousel-scroll 60s linear infinite;
-  }
-
-  .carousel-scroll:hover {
-    animation-play-state: paused;
-  }
-
   .animate-marquee {
     animation: marquee 40s linear infinite;
   }
-
-  .animate-marquee-reverse {
-    animation: marquee 40s linear infinite reverse;
-  }
-
-  .animate-bounce-subtle {
-    animation: bounce-subtle 2s ease-in-out infinite;
-  }
-
-  .cta-marquee-wrapper {
-    width: 100%;
-    position: relative;
-    height: 120px;
-    overflow: hidden;
-    mask-image: linear-gradient(to right,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 1) 15%,
-        rgba(0, 0, 0, 1) 85%,
-        rgba(0, 0, 0, 0));
-  }
-
-  .cta-marquee-item {
-    width: 500px;
-    height: 100%;
-    position: absolute;
-    left: max(calc(500px * 8), 100%);
-    will-change: transform;
-    animation: ctaScrollLeft 40s linear infinite;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-  }
-
-  .cta-marquee-item:nth-child(1) {
-    animation-delay: calc(40s / 8 * (8 - 1) * -1);
-  }
-
-  .cta-marquee-item:nth-child(2) {
-    animation-delay: calc(40s / 8 * (8 - 2) * -1);
-  }
-
-  .cta-marquee-item:nth-child(3) {
-    animation-delay: calc(40s / 8 * (8 - 3) * -1);
-  }
-
-  .cta-marquee-item:nth-child(4) {
-    animation-delay: calc(40s / 8 * (8 - 4) * -1);
-  }
-
-  .cta-marquee-item:nth-child(5) {
-    animation-delay: calc(40s / 8 * (8 - 5) * -1);
-  }
-
-  .cta-marquee-item:nth-child(6) {
-    animation-delay: calc(40s / 8 * (8 - 6) * -1);
-  }
-
-  .cta-marquee-item:nth-child(7) {
-    animation-delay: calc(40s / 8 * (8 - 7) * -1);
-  }
-
-  .cta-marquee-item:nth-child(8) {
-    animation-delay: calc(40s / 8 * (8 - 8) * -1);
-  }
-}
-
-@layer base {
-  * {
-    border-color: var(--border);
-  }
-}
-
-/* Enhanced Grain Effect */
-.bg-grain-refined {
-  position: relative;
-}
-
-.bg-grain-refined::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 1;
-  /* Powerful grain intensity */
-  filter: contrast(100%) brightness(100%);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

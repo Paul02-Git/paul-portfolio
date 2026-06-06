@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeManager } from "@/components/ThemeManager";
 import { ThemeScript } from "@/components/ThemeScript";
@@ -15,6 +16,9 @@ const spaceGrotesk = Space_Grotesk({
 const siteUrl = SITE_URL;
 const siteName = SITE_NAME;
 const siteDescription = "I build conversion-focused WordPress websites and GoHighLevel systems that automate follow-ups and increase client acquisition.";
+
+// Google Tag Manager — container ID is public (rendered in page HTML). Override via env per environment.
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-PV257VBJ";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -157,6 +161,14 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} overflow-x-clip`} suppressHydrationWarning>
       <head>
         <ThemeScript />
+        {/* Google Tag Manager */}
+        <Script id="gtm-base" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
         {/* JSON-LD Schema Markup */}
         <script
           type="application/ld+json"
@@ -172,6 +184,16 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-background relative overflow-x-clip" suppressHydrationWarning>
+        {/* Google Tag Manager (noscript) — fallback for JS-disabled clients */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <ThemeManager />
 
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6 pt-6 relative z-10">

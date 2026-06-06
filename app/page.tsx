@@ -79,7 +79,7 @@ export default function Home() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-4 gap-4 pt-6 border-t border-border/40 max-w-sm">
+            <div className="grid grid-cols-4 gap-4 pt-6 border-t border-border/40 max-w-xs">
               {[
                 { value: "7+",  label: "Years"     },
                 { value: "50+", label: "Projects"  },
@@ -233,6 +233,7 @@ export default function Home() {
                   src="https://images.pexels.com/photos/36764792/pexels-photo-36764792.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt="Stressed business owner at his desk because his website isn't bringing in leads"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center"
                 />
               </div>
@@ -245,12 +246,12 @@ export default function Home() {
         <section>
 
           {/* Header */}
-          <motion.div {...fadeUp()} className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-0 border-t border-border/50 pt-12">
+          <motion.div {...fadeUp()} className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-0 border-t border-border/50 pt-12">
             <div className="space-y-3 max-w-[30ch] md:max-w-[40ch]">
               <Eyebrow>What I Build</Eyebrow>
               <h2>Built to Convert. Designed to Scale.</h2>
             </div>
-            <div className="flex flex-col gap-3 md:items-end md:text-right max-w-[45ch]">
+            <div className="flex flex-col gap-6 md:items-end md:text-right max-w-[45ch]">
               <p className="text-muted-foreground leading-relaxed text-lg">
                 Every service is engineered with one goal: getting your business more clients.
               </p>
@@ -314,6 +315,7 @@ export default function Home() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -568,7 +570,7 @@ export default function Home() {
 
         {/* ── TESTIMONIALS ── */}
         <section className="section-y">
-          <motion.div {...fadeUp()} className="text-center mx-auto mb-12 space-y-4">
+          <motion.div {...fadeUp()} className="text-center mx-auto mb-12 space-y-4 max-w-[27ch] md:max-w-[35ch]">
             <Eyebrow>Social Proof</Eyebrow>
             <h2>Clients Who Made the Switch</h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -679,6 +681,7 @@ export default function Home() {
                         src={post.image}
                         alt={post.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover transition-transform duration-500 ease-out scale-101 group-hover:scale-105 will-change-transform"
                       />
                       <div className="absolute top-4 left-4">
