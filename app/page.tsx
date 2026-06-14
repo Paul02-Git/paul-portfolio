@@ -272,28 +272,28 @@ export default function Home() {
                 title: "WordPress & Elementor",
                 description: "Fast, custom, pixel-perfect websites built for performance and conversion. Not templates. Not shortcuts. Sites that load under 3 seconds and guide every visitor toward a single action.",
                 image: "/images/blog/Landing Pages.webp",
-                href: "/services",
+                href: "/portfolio",
               },
               {
                 num: "02",
                 title: "Shopify & Printify Stores",
                 description: "Custom Shopify store builds, product listing and optimisation, and Printify print-on-demand integration. Done-for-you catalogues, mockups, and product pages built to turn browsers into buyers.",
                 image: "/images/shopify-theme-store.webp",
-                href: "/services",
+                href: "/portfolio",
               },
               {
                 num: "03",
                 title: "GoHighLevel Systems",
                 description: "Full CRM setup, SMS and email automation, follow-up sequences, and calendar booking flows. Your lead pipeline runs 24/7 — even when you're with a client or asleep.",
                 image: "/images/blog/gohighlevel-workflow.webp",
-                href: "/services",
+                href: "/portfolio",
               },
               {
                 num: "04",
                 title: "Marketing Integrations",
                 description: "GA4, GTM, Microsoft Clarity, and CRM sync — full attribution tracking so you know exactly which channels bring in paying clients and which ones to cut.",
                 image: "/images/blog/GA4 and GTM.webp",
-                href: "/services",
+                href: "/portfolio",
               },
               
               {
@@ -301,7 +301,7 @@ export default function Home() {
                 title: "SEO & Speed Optimisation",
                 description: "Technical SEO audits, Core Web Vitals fixes, structured data markup, and server-level tuning. Built to rank. Built to stay there. Built to be found by the right people.",
                 image: "https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg?auto=compress&cs=tinysrgb&w=1600",
-                href: "/services",
+                href: "/portfolio",
               },
             ].slice(0, 3).map((service, i) => (
               <motion.div
