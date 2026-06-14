@@ -318,6 +318,110 @@ export const fullServices: Service[] = [
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "How to Speed Up a Slow WordPress Website in 2026 (Core Web Vitals Guide)",
+        excerpt: "Is a slow WordPress site quietly costing you leads? This 2026 Core Web Vitals guide shows you how to speed up your website — fix LCP, INP & CLS, optimize images, and pass Google's test.",
+        date: "Jun 14, 2026",
+        category: "SEO & Speed Optimization",
+        image: "/images/blog/website-speed-core-web-vitals.webp",
+        slug: "speed-up-wordpress-website-core-web-vitals",
+        author: "Paul Puzon",
+        authorRole: "WordPress & Speed Optimization Specialist",
+        content: `
+            <div class="space-y-6">
+                <p>Your website has roughly the same attention span to work with as a goldfish at a fireworks show. If a page takes too long to load, visitors don't wait politely — they hit the back button and go straight to your competitor. Analytics agency Portent analyzed over 100 million page views and found that a site loading in 1 second converts <strong>3x higher</strong> than one loading in 5 seconds (<a href="https://portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Portent</a>).</p>
+
+                <p>The good news: a slow <strong>WordPress website</strong> is one of the most fixable problems in all of web design. After years of dragging client sites from sluggish to snappy, I've found the wins almost always come from the same short list. This is the 2026 guide I wish every business owner had — what Core Web Vitals actually are, how to test your site, and the practical fixes that move the needle.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why Website Speed Actually Matters in 2026</h2>
+                <p>Speed isn't a vanity metric for developers to brag about at parties (we are a thrilling bunch). It hits your business in three very real places:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Lost leads</strong> — every extra second of load time chips away at conversions and sales.</li>
+                    <li><strong>Lower Google rankings</strong> — page speed and Core Web Vitals are confirmed ranking signals.</li>
+                    <li><strong>Damaged trust</strong> — a slow site feels cheap and unprofessional, even if your service is world-class.</li>
+                </ul>
+                <img src="/images/blog/slow-website-frustrated-user.webp" alt="A frustrated woman waiting at her laptop for a slow website to load" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>Here's the part that stings: most owners have no idea their site is slow, because on their own phone — on home wifi, with the site already cached — it loads instantly. Your visitors, on a mid-range phone over patchy mobile data, are having a very different experience. Speed is invisible to you and painfully obvious to them.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The 3 Core Web Vitals You Need to Know</h2>
+                <p>Core Web Vitals are Google's way of scoring the real-world experience of your page. There are three, and despite the intimidating acronyms, each measures something delightfully human: <em>Is it loaded? Does it respond? Does it sit still?</em></p>
+                <div class="overflow-x-auto my-8">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-border text-left">
+                                <th class="py-3 pr-4 font-bold text-foreground">Metric</th>
+                                <th class="py-3 pr-4 font-bold text-foreground">What It Measures</th>
+                                <th class="py-3 font-bold text-foreground">Good Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-border/60">
+                                <td class="py-3 pr-4 font-semibold text-foreground">LCP</td>
+                                <td class="py-3 pr-4 text-muted-foreground">Largest Contentful Paint — how fast the main content loads</td>
+                                <td class="py-3">Under 2.5s</td>
+                            </tr>
+                            <tr class="border-b border-border/60">
+                                <td class="py-3 pr-4 font-semibold text-foreground">INP</td>
+                                <td class="py-3 pr-4 text-muted-foreground">Interaction to Next Paint — how quickly the page responds to clicks/taps</td>
+                                <td class="py-3">Under 200ms</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 pr-4 font-semibold text-foreground">CLS</td>
+                                <td class="py-3 pr-4 text-muted-foreground">Cumulative Layout Shift — how much the page jumps around as it loads</td>
+                                <td class="py-3">Under 0.1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-muted-foreground">Thresholds per Google's official <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Core Web Vitals</a> guidance.</p>
+                <p>CLS is the one everyone's felt: you go to tap a button, an ad loads, everything shifts down, and you accidentally tap the wrong thing. That tiny flash of rage? Google counts it — and so do your customers.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">How to Test Your Site's Speed (Free)</h2>
+                <p>Before you fix anything, get a baseline — optimizing blind is like dieting without ever stepping on a scale. Run your homepage through Google's free <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">PageSpeed Insights</a>. It grades both mobile and desktop, shows your Core Web Vitals, and — most usefully — hands you a prioritized list of exactly what's dragging the page down.</p>
+                <img src="/images/blog/test-website-speed-audit.webp" alt="A magnifying glass over a laptop examining data charts — auditing website speed" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>Two tips: always check the <strong>mobile</strong> score first (it's where most of your traffic lives and where sites struggle most), and don't panic over a single red number. You're looking for the big offenders, not perfection. A 100/100 score is lovely but rarely the difference between a winning site and a losing one.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">7 Ways to Speed Up a Slow WordPress Website</h2>
+                <p>Here's the short list that does most of the heavy lifting. You don't need all seven to see a difference — even the first three will usually turn a sluggish site into a quick one.</p>
+
+                <h3 class="text-xl font-bold text-foreground mt-6">1. Optimize and compress your images</h3>
+                <p>Oversized images are the number one cause of slow WordPress sites — it's almost always the culprit, like checking the couch cushions first when you've lost the remote. That gorgeous 5MB hero photo straight off the camera is forcing every visitor to download a small art gallery. Resize images to the dimensions they're actually displayed at, then serve them in next-gen formats like <strong>WebP</strong>. A plugin like ShortPixel or Imagify can compress your whole library on autopilot.</p>
+
+                <h3 class="text-xl font-bold text-foreground mt-6">2. Install a caching plugin</h3>
+                <p>Caching saves a ready-made version of your pages so the server stops rebuilding them from scratch on every single visit. It's one of the biggest speed wins for the least effort. WP Rocket (premium) or the free LiteSpeed Cache will handle this beautifully.</p>
+
+                <h3 class="text-xl font-bold text-foreground mt-6">3. Choose quality, lightweight hosting</h3>
+                <p>That $2/month shared hosting plan is the digital equivalent of a studio apartment with 400 roommates — your site shares limited resources with hundreds of others. Decent managed WordPress hosting (SiteGround, Cloudways, Kinsta) is one of the highest-impact upgrades you can make. You get what you pay for, and your visitors feel the difference.</p>
+
+                <h3 class="text-xl font-bold text-foreground mt-6">4. Use a Content Delivery Network (CDN)</h3>
+                <p>A CDN stores copies of your site on servers around the world, so a visitor loads it from the one nearest them instead of one server on the other side of the planet. Cloudflare offers a generous free tier that takes about ten minutes to set up.</p>
+
+                <h3 class="text-xl font-bold text-foreground mt-6">5. Minify CSS, JavaScript, and HTML</h3>
+                <p>Your site's code is full of spaces and line breaks that humans need to read it and browsers couldn't care less about. Minifying strips all that out, shrinking file sizes. Most caching plugins (WP Rocket, LiteSpeed) do this with a single checkbox.</p>
+
+                <h3 class="text-xl font-bold text-foreground mt-6">6. Audit your plugins ruthlessly</h3>
+                <p>Every plugin adds weight, and a few notoriously heavy ones can single-handedly tank your speed. Deactivate and delete anything you're not actively using. Be honest — that social-sharing plugin you installed in 2021 and forgot about is not pulling its weight.</p>
+
+                <h3 class="text-xl font-bold text-foreground mt-6">7. Keep WordPress, themes, and plugins updated</h3>
+                <p>Updates aren't just about security — they regularly ship performance improvements too. A neglected, out-of-date site is both slower and a sitting duck. (For more on keeping a site healthy and visible, see my <a href="/blog/wordpress-seo-checklist-2026" class="text-primary font-semibold hover:underline">2026 WordPress SEO checklist</a>.)</p>
+
+                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
+                    <h4 class="text-lg font-bold text-primary mb-2">The Elementor Speed Myth</h4>
+                    <p class="text-sm">"Page builders are slow" is the most repeated half-truth in WordPress. A bloated Elementor site is slow; a disciplined one regularly scores 90+. The secret is a lightweight base theme and only loading the assets each page actually needs — more on that in my guide to <a href="/blog/elementor-high-converting-landing-pages" class="text-primary font-semibold hover:underline">high-converting Elementor landing pages</a>.</p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Don't Forget Mobile</h2>
+                <p>The majority of your visitors are on a phone, and Google judges your site primarily on its mobile performance — this is "mobile-first" indexing, and it's been the rule for a while now. A site that flies on your desktop but crawls on a phone is, as far as Google is concerned, a slow site.</p>
+                <img src="/images/blog/mobile-first-speed.webp" alt="A person using a smartphone outdoors, tapping the touchscreen" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>So test on mobile, optimize for mobile, and ideally borrow a friend's older phone to see how the other half browses. It's humbling, and it's the single best reality check you can give your website.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">When to Call in a Professional</h2>
+                <p>The fixes above will take most sites from slow to genuinely fast. But if you've worked through the list and your scores are still stuck in the red — or you'd simply rather spend your time running your business than wrestling with caching settings at 11pm — that's exactly the kind of thing I do.</p>
+                <p>A fast website isn't a luxury; it's the baseline for ranking on Google, converting visitors, and being taken seriously in 2026. If you want a professional to handle the heavy lifting, take a look at my <a href="/services" class="text-primary font-semibold hover:underline">web design and speed optimization services</a> or see real results in my <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>.</p>
+                <p>Ready to find out what's slowing you down? <a href="/contact" class="text-primary font-semibold hover:underline">Get in touch</a> or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a> — I'll run a quick audit and show you the fastest path to a faster site. No jargon, no pressure.</p>
+            </div>
+        `
+    },
+    {
         title: "How Much Does a Professional Website Cost in the Philippines in 2026?",
         excerpt: "How much does a website cost in the Philippines in 2026? A clear breakdown of DIY, freelancer, and agency pricing — and what a professional site should include.",
         date: "Jun 5, 2026",

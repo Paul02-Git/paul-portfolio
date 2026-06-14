@@ -64,7 +64,7 @@ export interface BlogPost {
     title: string;
     excerpt: string;
     date: string;
-    category: 'WordPress' | 'Marketing' | 'GHL' | 'SEO' | 'Web Design Investment' | 'Business Growth' | 'Website Strategy';
+    category: 'WordPress' | 'Marketing' | 'GHL' | 'SEO' | 'SEO & Speed Optimization' | 'Web Design Investment' | 'Business Growth' | 'Website Strategy';
     image: string;
     slug: string;
     content: string;
