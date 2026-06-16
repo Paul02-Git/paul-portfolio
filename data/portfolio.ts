@@ -3,9 +3,9 @@ import { Experience, Tool, Project, Service, Testimonial, FAQItem, BlogPost } fr
 
 export const vibes = [
     { name: "Professional", color: "#0a7a00", secondaryColor: "#56AB2F", icon: ShieldCheck, label: "Trust & Growth" },
-    { name: "Creative", color: "#000000", secondaryColor: "#334155", icon: Palette, label: "Innovation & Design" },
-    { name: "Premium", color: "#f06431", secondaryColor: "#fbbf24", icon: Sparkles, label: "Excellence & Quality" },
-    { name: "Visionary", color: "#2563eb", secondaryColor: "#7dd3fc", icon: Globe, label: "Global Reach" },
+    { name: "Creative", color: "#B22222", secondaryColor: "#334155", icon: Palette, label: "Innovation & Design" },
+    { name: "Premium", color: "#e35336", secondaryColor: "#fbbf24", icon: Sparkles, label: "Excellence & Quality" },
+    { name: "Visionary", color: "#0047AB", secondaryColor: "#7dd3fc", icon: Globe, label: "Global Reach" },
     { name: "Modern", color: "#854836", secondaryColor: "#d97706", icon: Activity, label: "Dynamic & Bold" }
 ];
 

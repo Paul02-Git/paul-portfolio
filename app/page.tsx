@@ -18,6 +18,7 @@ import Link from "next/link";
 
 import Navbar from "@/components/Navbar";
 import { HeroBuildIllustration } from "@/components/HeroBuildIllustration";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { TechStackMarquee } from "@/components/TechStackMarquee";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Button } from "@/components/Button";
@@ -37,27 +38,23 @@ export default function Home() {
       <Navbar />
 
         {/* ── HERO ── */}
-        <section className="section-yb grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
+        <section className="section-yb grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 items-center">
 
           {/* Left — Text */}
           <div className="space-y-6 order-2 lg:order-1">
-
-
             {/* Eyebrow — primary keyword */}
-            <p className="text-foreground font-semibold text-sm uppercase tracking-widest pt-6 md:pt-0">
-              WordPress Website Developer
+            <p className="text-foreground font-semibold text-sm uppercase tracking-widest">
+              WordPress & GoHighLevel Specialist
             </p>
 
-            <h1 className="max-w-[15ch] text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]  font-bold tracking-tight leading-[1.06]">
-              Your Business Is Legit.{" "}
-              <span className="text-primary">Your Website Should Be Too.</span>
+            <h1 className="max-w-[22ch] text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]  font-bold tracking-tight leading-[1.06]">
+              Hire a WordPress Developer Who Builds Sites {" "}
+              <span className="text-primary">That Convert.</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-[46ch] leading-relaxed">
-              I build fast, professional websites that make your business look the part, and turn visitors into real leads.
+              WordPress and Elementor sites built to convert, plus GHL automation that follows up 24/7. Stop losing clients to a website that just sits there.
             </p>
-
-            
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
@@ -79,14 +76,14 @@ export default function Home() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-4 gap-4 pt-6 border-t border-border/40 max-w-xs">
+            <div className="grid grid-cols-4 gap-4 pt-6 border-t border-border/40 max-w-xs mx-auto md:mx-0">
               {[
                 { value: "7+",  label: "Years"     },
                 { value: "50+", label: "Projects"  },
                 { value: "20+", label: "Clients"   },
                 { value: "5★",  label: "Rating"    },
               ].map((s) => (
-                <div key={s.label} className="flex flex-col gap-0.5">
+                <div key={s.label} className="flex flex-col gap-0.5 items-center md:items-start">
                   <span className="text-2xl font-bold text-foreground">{s.value}</span>
                   <span className="text-xs text-muted-foreground">{s.label}</span>
                 </div>
@@ -145,9 +142,25 @@ export default function Home() {
               </div>
 
               {/* Brand tag — bottom center (Printify) */}
-              <div className="absolute bottom-[13%] left-[37%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
-                <span className="relative h-3.5 w-3.5"><Image src="/images/printify.svg" alt="Printify" fill sizes="14px" className="object-contain" /></span>
-                Printify
+             {/* Social-proof pill — client avatars */}
+              <div className="absolute bottom-4 md:bottom-10 left-1/2 z-30 -translate-x-1/2 flex items-center gap-2.5 bg-white border border-border/60 rounded-full pl-2 pr-4 py-1.5 shadow-xl whitespace-nowrap">
+                <div className="flex -space-x-2.5">
+                  {[
+                    { src: "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&w=120", name: "Client" },
+                    { src: "https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg?auto=compress&cs=tinysrgb&w=120", name: "Client" },
+                    { src: "https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg?auto=compress&cs=tinysrgb&w=120", name: "Client" },
+                    { src: "https://images.pexels.com/photos/30198184/pexels-photo-30198184.jpeg?auto=compress&cs=tinysrgb&w=120", name: "Client" },
+                  ].map((c, i) => (
+                    <Avatar key={i} className="h-7 w-7 ring-2 ring-white">
+                      <AvatarImage src={c.src} alt={c.name} className="object-cover" />
+                      <AvatarFallback>{c.name[0]}</AvatarFallback>
+                    </Avatar>
+                  ))}
+                </div>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-xs font-bold text-foreground">20+ Happy Clients</span>
+                  <span className="text-[10px] text-muted-foreground">★★★★★ Rated 5.0</span>
+                </div>
               </div>
             </div>
           </div>
