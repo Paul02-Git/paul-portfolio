@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 :root {
-  --background: #FAFAFA;
+  --background: #ffffff;
   --foreground: #181818;
   --card: #ffffff;
   --card-foreground: #0F172A;
@@ -23,6 +23,21 @@
   --card-padding-sm: 1rem;
   --card-padding-md: 1.2rem;
   --card-padding-lg: 1.5rem;
+
+  /* ── Primary button sizing — MOBILE values (py = height, px = width, font = text size).
+     Desktop overrides live in the @media block below. Edit here to resize buttons site-wide. */
+  --btn-sm-py: 0.75rem;  --btn-sm-px: 1.75rem;  --btn-sm-font: 1rem;
+  --btn-md-py: 1.125rem;     --btn-md-px: 2.25rem;  --btn-md-font: 1rem;
+  --btn-lg-py: 1.5rem;  --btn-lg-px: 2.75rem;  --btn-lg-font: 1.25rem;
+}
+
+/* ── Primary button sizing — DESKTOP values (≥ 640px). ── */
+@media (min-width: 640px) {
+  :root {
+    --btn-sm-py: 0.625rem; --btn-sm-px: 1.5rem;  --btn-sm-font: 0.875rem;
+    --btn-md-py: 1rem;  --btn-md-px: 2rem;     --btn-md-font: 1rem;
+    --btn-lg-py: 1rem;     --btn-lg-px: 2.5rem;   --btn-lg-font: 1.125rem;
+  }
 }
 
 @theme inline {
@@ -51,39 +66,41 @@
   --radius-xl: calc(var(--radius) + 2px);
   --radius-2xl: calc(var(--radius) + 4px);
   --radius-3xl: calc(var(--radius) + 6px);
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 @layer base {
   /* Global heading transform — set to none to revert to normal case */
   h1, h2, h3, h4, h5, h6 {
-    text-transform: Capitalize;
+    font-family: var(--font-belanosima), ui-sans-serif, system-ui, sans-serif;
+    text-transform: uppercase;
   }
 
   h1 {
-    font-size: 2.2rem;
-    font-weight: 900;
+    font-size: 2.1rem;
+    font-weight: 600;
     color: var(--foreground);
     line-height: 1.06;
-    letter-spacing: -0.025em;
-    @media (min-width: 768px)  { font-size: 2.25rem;  }
-    @media (min-width: 1024px) { font-size: 3rem;     }
+    letter-spacing: -0.0225em;
+    @media (min-width: 768px)  { font-size: 2.5rem;  }
+    @media (min-width: 1024px) { font-size: 3.2rem;     }
   }
 
   h2 {
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--foreground);
     line-height: 1.2;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.0225em;
     @media (min-width: 768px)  { font-size: 2rem;     }
     @media (min-width: 1024px) { font-size: 2.5rem;   }
   }
@@ -93,7 +110,7 @@ body {
     font-weight: 600;
     color: var(--foreground);
     line-height: 1.35;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.001em;
     @media (min-width: 768px)  { font-size: 1.625rem; }
   }
 
@@ -102,6 +119,7 @@ body {
     font-weight: 600;
     color: var(--foreground);
     line-height: 1.4;
+    letter-spacing: -0.0325em;
     @media (min-width: 768px)  { font-size: 1.375rem; }
   }
 
@@ -109,7 +127,7 @@ body {
     font-size: 1rem;
     font-weight: 600;
     color: var(--foreground);
-    letter-spacing: 0.025em;
+    letter-spacing: -0.0325em;
   }
 
   h6 {
@@ -117,7 +135,7 @@ body {
     font-weight: 600;
     color: var(--foreground);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.0325em;
   }
 
   * {
@@ -130,20 +148,36 @@ body {
      .section-y  = identical top + bottom padding on every block.
      .section-yb = bottom-only (used by the hero, whose top is the navbar clearance). */
   .section-y {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   .section-yb {
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
   }
   @media (min-width: 768px) {
     .section-y {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
     }
     .section-yb {
-      padding-bottom: 5rem;
+      padding-bottom: 6rem;
     }
+  }
+
+  /* ── Full-bleed ── break an element out of the centred max-w container so it
+     spans the whole viewport width. (Body has overflow-x-clip, so no scrollbar.) */
+  .full-bleed {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+  }
+
+  /* ── Outlined "line" text ── hollow headline style used in the blog masthead and
+     the services hero. Override thickness per-use with --text-stroke-width. */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: var(--text-stroke-width, 1.5px) var(--foreground);
   }
 
   @keyframes marquee {
@@ -158,5 +192,24 @@ body {
 
   .animate-marquee {
     animation: marquee 40s linear infinite;
+  }
+
+  /* ── Button "roll-up" text ── each character slides up on hover while a
+     text-shadow copy rises into its place, staggered per letter. Paired with
+     `.btn-roll` on the button (drives the hover trigger + lift). */
+  .btn-roll-text {
+    display: flex;
+    overflow: hidden;
+    line-height: 1;
+    text-shadow: 0 1em 0 currentColor;
+  }
+  .btn-roll-text > span {
+    display: block;
+    backface-visibility: hidden;
+    transform: translateY(0) translateZ(0);
+    transition: transform 0.44s ease;
+  }
+  .btn-roll:hover .btn-roll-text > span {
+    transform: translateY(-1em) translateZ(0);
   }
 }

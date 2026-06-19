@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 import {
   Calendar,
   ArrowUpRight,
-  CheckCircle2,
   Star,
   Zap,
-  Code2,
   BarChart3,
   Search,
   ArrowRight,
+  Code2Icon,
+  CheckCircle2,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -47,9 +47,9 @@ export default function Home() {
               WordPress & GoHighLevel Specialist
             </p>
 
-            <h1 className="max-w-[22ch] text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]  font-bold tracking-tight leading-[1.06]">
-              Hire a WordPress Developer Who Builds Sites {" "}
-              <span className="text-primary">That Convert.</span>
+            <h1 className="max-w-[24ch]">
+              Hire a WordPress Developer Who Helps You {" "}
+              <span className="text-primary">Grow Online</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-[46ch] leading-relaxed">
@@ -59,8 +59,7 @@ export default function Home() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
-                icon={<Calendar className="w-5 h-5" />}
-                iconPosition="left"
+                icon={<ArrowUpRight className="w-5 h-5" />}
                 href="/book-a-call"
               >
                 Book A Call
@@ -81,7 +80,7 @@ export default function Home() {
                 { value: "7+",  label: "Years"     },
                 { value: "50+", label: "Projects"  },
                 { value: "20+", label: "Clients"   },
-                { value: "5★",  label: "Rating"    },
+                { value: "5.0",  label: "Rating"    },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col gap-0.5 items-center md:items-start">
                   <span className="text-2xl font-bold text-foreground">{s.value}</span>
@@ -102,20 +101,20 @@ export default function Home() {
               {/* Vector illustration (accent follows brand color) */}
               <HeroBuildIllustration className="text-foreground w-full" />
 
-              {/* Brand tag — top left (WordPress) */}
-              <div className="absolute top-[8%] left-[7%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-3">
-                <Code2 className="w-3.5 h-3.5 text-blue-500" />
+              {/* Benefit tag — top left */}
+              <div className="absolute top-[2%] left-[1%] sm:top-[8%] sm:left-[7%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-3">
+                <Code2Icon className="w-3.5 h-3.5 text-primary" />
                 WordPress Dev
               </div>
 
-              {/* Brand tag — top right (GHL) */}
-              <div className="absolute top-[6%] right-[7%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
+              {/* Benefit tag — top right */}
+              <div className="absolute top-[20%] right-[1%] sm:top-[6%] sm:right-[7%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
                 <Zap className="w-3.5 h-3.5 text-amber-500" />
                 GHL Specialist
-              </div>
+                </div>
 
-              {/* Brand tag — upper left (Available) */}
-              <div className="absolute top-[31%] left-[2%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
+              {/* Benefit tag — upper left (hidden on mobile to reduce crowding) */}
+              <div className="absolute top-[31%] left-[2%] z-20 flex sm:flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
@@ -123,27 +122,27 @@ export default function Home() {
                 Available
               </div>
 
-              {/* Brand tag — upper right (Klaviyo) */}
-              <div className="absolute top-[34%] right-[2%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-3">
+              {/* Benefit tag — upper right (hidden on mobile to reduce crowding) */}
+              <div className="absolute top-[34%] right-[2%] z-20 hidden sm:flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-3">
                 <span className="relative h-3.5 w-3.5"><Image src="/images/klaviyo.svg" alt="Klaviyo" fill sizes="14px" className="object-contain" /></span>
                 Klaviyo
               </div>
 
-              {/* Brand tag — lower left (Shopify) */}
-              <div className="absolute top-[66%] left-[6%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
+              {/* Benefit tag — lower left */}
+              <div className="absolute top-[60%] left-[1%] sm:top-[66%] sm:left-[6%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
                 <span className="relative h-3.5 w-3.5"><Image src="/images/shopify.svg" alt="Shopify" fill sizes="14px" className="object-contain" /></span>
                 Shopify
               </div>
 
-              {/* Brand tag — lower right (Elementor) */}
-              <div className="absolute top-[59%] right-[5%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
+              {/* Benefit tag — lower right */}
+              <div className="absolute top-[48%] right-[1%] sm:top-[59%] sm:right-[5%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-foreground" />
                 Elementor Pro
               </div>
 
               {/* Brand tag — bottom center (Printify) */}
              {/* Social-proof pill — client avatars */}
-              <div className="absolute bottom-4 md:bottom-10 left-1/2 z-30 -translate-x-1/2 flex items-center gap-2.5 bg-white border border-border/60 rounded-full pl-2 pr-4 py-1.5 shadow-xl whitespace-nowrap">
+              <div className="absolute bottom-4 md:bottom-10 left-1/2 z-30 -translate-x-1/2 flex items-center gap-2.5 bg-white border border-border/60 rounded-full pl-2 pr-4 py-1.5 shadow-sm whitespace-nowrap">
                 <div className="flex -space-x-2.5">
                   {[
                     { src: "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&w=120", name: "Client" },
@@ -229,8 +228,7 @@ export default function Home() {
               </ul>
 
               <Button
-                icon={<Calendar className="w-5 h-5" />}
-                iconPosition="left"
+                icon={<ArrowUpRight className="w-5 h-5" />}
                 href="/book-a-call"
               >
                 Book A Call
@@ -268,12 +266,15 @@ export default function Home() {
               <p className="text-muted-foreground leading-relaxed text-lg">
                 Every service is engineered with one goal: getting your business more clients.
               </p>
-              <Link
+              <Button
                 href="/services"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary border border-primary/40 rounded-full px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 self-start md:self-auto"
+                variant="outline"
+                size="sm"
+                className="self-start md:self-auto"
+                icon={<ArrowRight className="w-4 h-4" />}
               >
-                See All Services <ArrowRight className="w-4 h-4" />
-              </Link>
+                See All Services
+              </Button>
             </div>
           </motion.div>
 
@@ -285,28 +286,28 @@ export default function Home() {
                 title: "WordPress & Elementor",
                 description: "Fast, custom, pixel-perfect websites built for performance and conversion. Not templates. Not shortcuts. Sites that load under 3 seconds and guide every visitor toward a single action.",
                 image: "/images/blog/Landing Pages.webp",
-                href: "/portfolio",
+                href: "/book-a-call",
               },
               {
                 num: "02",
                 title: "Shopify & Printify Stores",
                 description: "Custom Shopify store builds, product listing and optimisation, and Printify print-on-demand integration. Done-for-you catalogues, mockups, and product pages built to turn browsers into buyers.",
                 image: "/images/shopify-theme-store.webp",
-                href: "/portfolio",
+                href: "/book-a-call",
               },
               {
                 num: "03",
                 title: "GoHighLevel Systems",
                 description: "Full CRM setup, SMS and email automation, follow-up sequences, and calendar booking flows. Your lead pipeline runs 24/7 — even when you're with a client or asleep.",
                 image: "/images/blog/gohighlevel-workflow.webp",
-                href: "/portfolio",
+                href: "/book-a-call",
               },
               {
                 num: "04",
                 title: "Marketing Integrations",
                 description: "GA4, GTM, Microsoft Clarity, and CRM sync — full attribution tracking so you know exactly which channels bring in paying clients and which ones to cut.",
                 image: "/images/blog/GA4 and GTM.webp",
-                href: "/portfolio",
+                href: "/book-a-call",
               },
               
               {
@@ -314,7 +315,7 @@ export default function Home() {
                 title: "SEO & Speed Optimisation",
                 description: "Technical SEO audits, Core Web Vitals fixes, structured data markup, and server-level tuning. Built to rank. Built to stay there. Built to be found by the right people.",
                 image: "https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg?auto=compress&cs=tinysrgb&w=1600",
-                href: "/portfolio",
+                href: "/book-a-call",
               },
             ].slice(0, 3).map((service, i) => (
               <motion.div
@@ -336,18 +337,20 @@ export default function Home() {
                 {/* Content */}
                 <div className="space-y-4">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="leading-snug">{service.title}</h3>
+                    <h3>{service.title}</h3>
                     <span className="text-black/90 font-mono text-2xl md:text-3xl font-bold shrink-0 leading-none">
                       [{service.num}]
                     </span>
                   </div>
                   <p className="text-muted-foreground leading-relaxed max-w-lg">{service.description}</p>
-                  <Link
+                  <Button
                     href={service.href}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground border border-border/60 px-4 py-2 hover:border-primary hover:text-primary transition-all duration-200"
+                    variant="outline"
+                    size="sm"
+                    icon={<ArrowRight className="w-4 h-4" />}
                   >
-                    Learn More<span className="sr-only"> about {service.title}</span> <ArrowRight className="w-4 h-4" />
-                  </Link>
+                    Get a quote<span className="sr-only"> about {service.title}</span>
+                  </Button>
                 </div>
               </motion.div>
             ))}
@@ -360,7 +363,7 @@ export default function Home() {
         </section>
 
         {/* ── FULL-BLEED CTA ── */}
-        <section className="section-y relative left-1/2 -translate-x-1/2 w-screen overflow-hidden">
+        <section className="min-h-[70vh] flex flex-col items-center justify-center relative left-1/2 -translate-x-1/2 w-screen overflow-hidden">
 
           {/* Background image */}
           <Image
@@ -382,19 +385,16 @@ export default function Home() {
               className="flex flex-col items-center text-center space-y-6"
             >
               <Eyebrow className="text-white">No Risk, No Pressure</Eyebrow>
-              <h2 className="text-white max-w-[25ch]">
+              <h2 className="text-white max-w-[32ch]">
                 Not Sure What Your Website Needs? Let&apos;s Figure It Out — Free.
               </h2>
               <p className="text-white/75 text-lg leading-relaxed max-w-[60ch]">
                 Book a free 30-minute strategy call. I&apos;ll review your current site and show you exactly what&apos;s holding back your leads — whether you hire me or not.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link
-                  href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-[8px] px-7 py-4 hover:bg-primary/90 transition-colors duration-200 shadow-lg shadow-primary/20"
-                >
-                  <Calendar className="w-5 h-5" /> Book A Call
-                </Link>
+                <Button href="/book-a-call" size="lg" icon={<ArrowUpRight className="w-5 h-5" />}>
+                  Book A Call
+                </Button>
               </div>
             </motion.div>
           </div>
@@ -443,7 +443,7 @@ export default function Home() {
                       <span className="inline-block px-2.5 py-1 mb-2 rounded-[4px] bg-foreground text-[10px] font-semibold uppercase tracking-wider text-white">
                         {project.category}
                       </span>
-                      <h3 className="text-white text-base font-bold leading-snug">
+                      <h3 className="text-white text-base">
                         {project.title}
                       </h3>
                     </div>
@@ -458,12 +458,9 @@ export default function Home() {
 
           {/* View all */}
           <motion.div {...fadeUp(0.1)} className="flex justify-center mt-10">
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground border border-border/70 rounded-[8px] px-5 py-2.5 hover:border-primary hover:text-primary transition-all duration-200"
-            >
-              See All Projects <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            <Button href="/portfolio" variant="outline" size="sm" icon={<ArrowUpRight className="w-4 h-4" />}>
+              See All Projects
+            </Button>
           </motion.div>
         </section>
 
@@ -502,7 +499,7 @@ export default function Home() {
 <Eyebrow>The Process</Eyebrow>
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-10 md:mb-14">
-              <h2 className="max-w-[15ch] shrink-0">
+              <h2 className="max-w-[18ch] shrink-0">
                 From First Call to a Live Site in 3 Steps
               </h2>
               <div className="hidden md:block flex-1 h-px bg-border" />
@@ -536,7 +533,7 @@ export default function Home() {
                   className="group rounded-xl bg-card border border-border/60 p-6 hover:border-primary/30 hover:shadow-md transition-all duration-300 flex flex-col"
                 >
                   <span className="text-primary text-5xl font-bold leading-none mb-4">{step.step}</span>
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                  <h3 className="text-xl mb-3">{step.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
@@ -561,15 +558,9 @@ export default function Home() {
                   Align with businesses that <span className="font-semibold text-foreground">choose quality</span>
                 </p>
               </div>
-              <Link
-                href="/book-a-call"
-                className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold rounded-full pl-5 pr-2 py-2 hover:bg-primary/90 transition-colors duration-200 shrink-0"
-              >
+              <Button href="/book-a-call" className="shrink-0" icon={<ArrowUpRight className="w-5 h-5" />}>
                 Book A Call
-                <span className="w-8 h-8 rounded-full bg-white/25 flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
+              </Button>
             </div>
           </motion.div>
         </section>
@@ -618,18 +609,12 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-                <Link
-                  href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-[8px] px-5 py-2.5 text-sm hover:bg-primary/90 transition-colors duration-200"
-                >
-                  <Calendar className="w-4 h-4" /> Book A Call
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 border border-border text-foreground font-bold rounded-[8px] px-5 py-2.5 text-sm hover:bg-muted/40 transition-colors duration-200"
-                >
-                  Contact Me <ArrowUpRight className="w-4 h-4" />
-                </Link>
+                <Button href="/book-a-call" size="sm" icon={<ArrowUpRight className="w-4 h-4" />}>
+                  Book A Call
+                </Button>
+                <Button href="/contact" variant="outline" size="sm" icon={<ArrowUpRight className="w-4 h-4" />}>
+                  Contact Me
+                </Button>
               </div>
             </div>
 
@@ -708,7 +693,7 @@ export default function Home() {
                         <Calendar className="w-3.5 h-3.5" />
                         {post.date}
                       </div>
-                      <h3 className="text-lg font-bold text-black leading-tight group-hover:text-primary/80 transition-colors line-clamp-2">
+                      <h3 className="text-lg font-bold text-black group-hover:text-primary/80 transition-colors line-clamp-2">
                         {post.title}
                       </h3>
                       <p className="text-sm text-black/60 leading-relaxed line-clamp-2">

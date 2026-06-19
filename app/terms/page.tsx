@@ -83,7 +83,7 @@ export default function TermsPage() {
 
       <section className="section-yb max-w-3xl">
         <Eyebrow>Legal</Eyebrow>
-        <h1 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05]">
+        <h1 className="mt-3 text-4xl sm:text-5xl">
           Terms of Service
         </h1>
         <p className="mt-4 text-sm text-muted-foreground">Last updated: {LAST_UPDATED}</p>
@@ -91,7 +91,7 @@ export default function TermsPage() {
         <div className="mt-10 space-y-10">
           {sections.map((s) => (
             <div key={s.title} className="space-y-3">
-              <h2 className="text-xl font-bold text-foreground">{s.title}</h2>
+              <h2 className="text-xl text-foreground">{s.title}</h2>
               {s.paragraphs?.map((p, i) => (
                 <p key={i} className="text-muted-foreground leading-relaxed">
                   {p}

@@ -7,7 +7,7 @@ export default function NotFound() {
             <Navbar />
             <div className="mx-auto max-w-[50ch] text-center">
                 <p className="text-primary font-bold uppercase tracking-widest text-sm">404</p>
-                <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight">Page Not Found</h1>
+                <h1 className="mt-4 text-4xl sm:text-5xl">Page Not Found</h1>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
                     The page you&apos;re looking for doesn&apos;t exist or has been moved.
                 </p>

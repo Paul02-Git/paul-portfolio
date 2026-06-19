@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Inter, Belanosima } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeManager } from "@/components/ThemeManager";
@@ -7,10 +7,27 @@ import { ThemeScript } from "@/components/ThemeScript";
 import { Footer } from "@/components/Footer";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
+  // Pin only the weights we use instead of the full variable axis — a much
+  // smaller woff2 that arrives inside the "optional" window, so no flash.
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  // "optional" = no visible swap/flash: the browser uses the font only if it's
+  // ready within ~100ms, otherwise it keeps the matched fallback for that pageview.
+  display: "optional",
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ["system-ui", "arial"],
+});
+
+const belanosima = Belanosima({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-belanosima",
+  display: "optional",
+  adjustFontFallback: true,
+  fallback: ["system-ui", "arial"],
 });
 
 const siteUrl = SITE_URL;
@@ -158,7 +175,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} overflow-x-clip`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${belanosima.variable} overflow-x-clip`} suppressHydrationWarning>
       <head>
         <ThemeScript />
         {/* Google Tag Manager */}

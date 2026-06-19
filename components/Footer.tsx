@@ -3,9 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Linkedin, ArrowRight, Calendar } from "lucide-react";
+import { Facebook, Linkedin, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Whatsapp } from "./icons/Whatsapp";
 import { NewsletterForm } from "./NewsletterForm";
+import { Button } from "./Button";
 
 const linkColumns = [
     {
@@ -72,31 +73,25 @@ export const Footer = () => {
 
                 {/* Content */}
                 <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6 space-y-5">
-                    <h2 className="text-white text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+                    <h2 className="text-white text-4xl md:text-6xl">
                         Let&apos;s Get In Touch.
                     </h2>
                     <p className="text-white leading-relaxed max-w-[56ch]">
                         Every day without a conversion-focused website is a day your competitors get the call instead. Let&apos;s fix that — free, and no obligation.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 pt-3">
-                        <Link
-                            href="/book-a-call"
-                            className="inline-flex items-center justify-between gap-3 bg-white text-black font-bold rounded-[8px] pl-5 pr-2 py-2 hover:bg-white/90 transition-colors duration-200"
-                        >
+                        <Button className="text-foreground shadow-sm bg-muted " href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
                             Book a Discovery Call
-                            <span className="w-8 h-8 rounded-full flex items-center justify-center shrink-0">
-                                <Calendar className="w-4 h-4" />
-                            </span>
-                        </Link>
-                        <Link
+                        </Button>
+                        <Button
                             href="/contact"
-                            className="inline-flex items-center justify-between gap-3 bg-foreground text-white font-bold rounded-[8px] pl-5 pr-2 py-2 hover:bg-foreground/90 transition-colors duration-200"
+                            variant="outline"
+                            className="text-white"
+                            icon={<ArrowRight className="w-5 h-5" />}
+                            iconPosition="right"
                         >
                             Send a Message
-                            <span className="w-8 h-8 rounded-full flex items-center justify-center shrink-0">
-                                <ArrowRight className="w-4 h-4" />
-                            </span>
-                        </Link>
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -107,7 +102,7 @@ export const Footer = () => {
                 {/* Newsletter row */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 py-10 border-b border-border/60">
                     <div className="space-y-1">
-                        <h3 className="text-lg font-bold">Get website & lead-gen tips in your inbox</h3>
+                        <h3 className="text-lg">Get website & lead-gen tips in your inbox</h3>
                         <p className="text-muted-foreground text-sm">
                             WordPress, GoHighLevel & SEO insights — no spam, just value.
                         </p>

@@ -49,9 +49,9 @@ export default function BlogPage() {
             </p>
 
             {/* Masthead */}
-            <h1 className="mt-5 text-center font-bold tracking-tighter text-5xl sm:text-6xl lg:text-[6rem] uppercase">
+            <h1 className="mt-5 text-center text-5xl sm:text-6xl lg:text-[6rem] uppercase">
                 <span className="text-foreground">Ideas </span>
-                <span className="text-transparent [-webkit-text-stroke:1.5px_var(--foreground)]">That </span>
+                <span className="text-outline">That </span>
                 <span className="text-primary">Inspire</span>
             </h1>
 
@@ -86,7 +86,7 @@ export default function BlogPage() {
                                     {post.category}
                                 </span>
                             </div>
-                            <h3 className="line-clamp-2 text-lg md:text-xl font-bold leading-snug text-foreground group-hover:text-primary transition-colors">
+                            <h3 className="line-clamp-2 text-lg md:text-xl text-foreground group-hover:text-primary transition-colors">
                                 {post.title}
                             </h3>
                             <p className="mt-2 text-sm text-muted-foreground">

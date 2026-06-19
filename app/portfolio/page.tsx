@@ -71,9 +71,9 @@ export default function PortfolioPage() {
 
             {/* ── Heading ── */}
             <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div className="max-w-[60ch]">
+                <div>
                     <Eyebrow>Portfolio</Eyebrow>
-                    <h1 className="mt-3 font-bold tracking-tight">
+                    <h1 className="mt-3">
                         Selected Work &amp; <span className="text-primary">Projects</span>
                     </h1>
                     <p className="mt-4 text-muted-foreground leading-relaxed max-w-[50ch]">

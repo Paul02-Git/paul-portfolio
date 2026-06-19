@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import {
   Check,
-  Calendar,
+  ArrowUpRight,
   ArrowRight,
   Star,
 } from "lucide-react";
@@ -133,7 +133,7 @@ export default function PricingPage() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="space-y-4 max-w-3xl">
             <Eyebrow>Pricing</Eyebrow>
-            <h1 className="tracking-tight leading-[1.05] max-w-[20ch] ">
+            <h1 className="max-w-[24ch]">
               Simple pricing for a website that{" "}
               <span className="text-primary">actually sells.</span>
             </h1>
@@ -144,7 +144,7 @@ export default function PricingPage() {
 
           {/* Mini social proof */}
           <motion.div {...fadeUp(0.1)} className="flex items-center gap-3 shrink-0">
-            <div className="flex -space-x-2.5">
+            <div className="flex -spwwace-x-2.5">
               {[
                 "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&w=1600",
                 "https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -183,7 +183,7 @@ export default function PricingPage() {
             >
               {/* Header */}
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold text-foreground">{plan.name} plan</h3>
+                <h3 className="text-lg text-foreground">{plan.name} plan</h3>
                 {plan.popular && (
                   <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-bold text-primary">
                     Popular
@@ -206,8 +206,7 @@ export default function PricingPage() {
               {/* CTA */}
               <Button
                 href={CALENDLY}
-                icon={<Calendar className="w-5 h-5" />}
-                iconPosition="left"
+                icon={<ArrowUpRight className="w-5 h-5" />}
                 className={cn(
                   "mt-5 w-full",
                   !plan.popular && "bg-foreground text-white hover:bg-foreground/90 shadow-md shadow-black/5"
@@ -259,7 +258,7 @@ export default function PricingPage() {
           className="rounded-3xl text-center flex flex-col items-center gap-5"
         >
           <Eyebrow>No risk, no pressure</Eyebrow>
-          <h2 className="text-foreground  max-w-[24ch] font-bold leading-tight">
+          <h2 className="text-foreground  max-w-[24ch]">
             Not sure which plan fits? Let&apos;s figure it out — free.
           </h2>
           <p className="text-foreground/75 leading-relaxed max-w-[55ch]">
@@ -268,8 +267,7 @@ export default function PricingPage() {
           <div className="flex flex-col sm:flex-row gap-3 pt-2 w-full sm:w-auto">
             <Button
               href={CALENDLY}
-              icon={<Calendar className="w-5 h-5" />}
-              iconPosition="left"
+              icon={<ArrowUpRight className="w-5 h-5" />}
               className="w-full sm:w-auto"
             >
               Book A Call

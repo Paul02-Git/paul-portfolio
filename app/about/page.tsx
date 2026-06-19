@@ -3,16 +3,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import Script from "next/script";
 import {
     Award,
     Eye,
     MessagesSquare,
     ArrowUpRight,
-    Calendar,
     Asterisk,
-    ArrowRight,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -46,13 +43,13 @@ const services = [
 function MarqueeBand() {
     return (
         <div className="relative left-1/2 -translate-x-1/2 w-screen">
-            <div className="bg-foreground py-12">
+            <div className="bg-foreground py-8">
                 <div className="overflow-hidden">
                     <div className="flex items-center animate-marquee w-max ">
                         {[...Array(2)].flatMap(() => services).map((item, i) => (
                             <span
                                 key={i}
-                                className="inline-flex items-center gap-8 px-4 text-white font-bold text-2xl uppercase tracking-widest whitespace-nowrap"
+                                className="inline-flex items-center gap-8 px-4 text-white font-bold text-lg uppercase tracking-widest whitespace-nowrap"
                             >
                                 {item}
                                 <Asterisk className="w-7 h-7 text-white/80" />
@@ -112,66 +109,63 @@ export default function AboutPage() {
             <main className="pt-28 md:pt-32">
                 <Navbar />
 
-                {/* ── HERO — Who I Am (static — paints immediately) ── */}
-                <section>
-                    <div>
-                        <Eyebrow className="text-primary">Who I Am</Eyebrow>
-                    </div>
+                {/* ── HERO — copy + image (static — paints immediately) ── */}
+                <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center mt-4 md:mt-2">
-                        <h1 className="lg:col-span-7 leading-[1.05] tracking-tight max-w-[20ch]">
-                            I&apos;m A Specialist In <span className="text-primary">Web Design &amp; Development</span>
+                    {/* Left — copy */}
+                    <div className="space-y-6">
+                       <Eyebrow>Who am I?</Eyebrow>
+                        <h1 className="max-w-[24ch]">
+                            I&apos;m A Web Designer & Developer Focused on <span className="text-primary">Business Growth</span>
                         </h1>
 
-                        <div className="lg:col-span-5 space-y-6">
-                            <p className="text-muted-foreground leading-relaxed">
-                                My work covers a wide range of digital needs — from fast WordPress builds and conversion-ready Shopify stores to GoHighLevel funnels, SEO, and automation.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <Button href="/book-a-call" icon={<Calendar className="w-5 h-5" />} iconPosition="left">
-                                    Free Consultation
-                                </Button>
-                                <Button href="/contact" variant="outline">
-                                    Contact Us <ArrowUpRight className="w-4 h-4" />
-                                </Button>
+                        <p className="text-muted-foreground leading-relaxed max-w-[60ch]">
+                            I design and build modern websites, Shopify stores, and high-converting funnels that help businesses establish credibility and grow online, turning visitors into customers and opportunities into long-term growth.
+                        </p>
 
-                            </div>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Button href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
+                                Free Consultation
+                            </Button>
+                            <Button href="/contact" variant="outline" icon={<ArrowUpRight className="w-4 h-4" />} iconPosition="right">
+                                Contact Us
+                            </Button>
                         </div>
                     </div>
 
-                    {/* hero image */}
-                    <div className="mt-10 relative aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden ">
+                    {/* Right — image */}
+                    <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
                         <Image
-                            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+                            src="/images/about-hero.jpg"
                             alt="Paul Puzon working with a client on a web project"
                             fill
                             priority
                             quality={90}
-                            sizes="100vw"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>
                 </section>
 
                 {/* ── Services marquee band ── */}
-                <div className="mt-14 md:mt-16">
+                <div className="mt-20 md:mt-28">
                     <MarqueeBand />
                 </div>
 
                 {/* ── START WITH ME — muted band + stats ── */}
                 <section className="relative left-1/2 -translate-x-1/2 w-screen bg-muted/40">
                     <div className={cn(INNER, "section-y")}>
-                        <motion.div {...fadeUp()}>
+                        <div>
                             <Eyebrow>Start With Me</Eyebrow>
-                        </motion.div>
+                        </div>
 
                         <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-                            <motion.h2
-                                {...fadeUp(0.05)}
-                                className="lg:col-span-5 text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight tracking-tight"
+                            <h2
+                                
+                                className="lg:col-span-5"
                             >
                                 Straightforward Web Solutions With No Hidden Surprises
-                            </motion.h2>
+                            </h2>
 
                             <motion.div {...fadeUp(0.12)} className="lg:col-span-7 space-y-4 text-muted-foreground leading-relaxed">
                                 <p>
@@ -207,7 +201,7 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                         <motion.div {...fadeUp()} className="lg:col-span-6">
                             <Eyebrow>Why Work With Me</Eyebrow>
-                            <h2 className="mt-5 text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight tracking-tight">
+                            <h2 className="mt-5">
                                 I Build Your Trust And Handle Your Project
                             </h2>
                         </motion.div>
@@ -226,7 +220,7 @@ export default function AboutPage() {
                                 <span className="inline-flex w-12 h-12 rounded-xl bg-primary/10 items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
                                     <v.Icon className="w-5 h-5 text-primary" />
                                 </span>
-                                <h3 className="text-lg font-bold mb-2">{v.title}</h3>
+                                <h3 className="text-lg mb-2">{v.title}</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
                             </motion.div>
                         ))}
@@ -238,17 +232,19 @@ export default function AboutPage() {
                         >
                             <div>
                                 <Asterisk className="w-7 h-7 text-white/80 mb-4" />
-                                <h3 className="text-xl font-bold text-white leading-snug">Let&apos;s Work Together!</h3>
+                                <h3 className="text-xl text-white">Let&apos;s Work Together!</h3>
                                 <p className="mt-2 text-sm text-white/80 leading-relaxed">
                                     Exciting projects await. Tell me about yours.
                                 </p>
                             </div>
-                            <Link
+                            <Button
                                 href="/contact"
-                                className="mt-5 inline-flex items-center justify-center gap-2 rounded-[8px] bg-white text-foreground font-bold px-5 py-3 hover:bg-white/90 transition-colors"
+                                size="md"
+                                className="bg-white text-black"
+                                icon={<ArrowUpRight className="w-4 h-4" />}
                             >
-                                Get In Touch <ArrowRight className="w-4 h-4" />
-                            </Link>
+                                Get In Touch
+                            </Button>
                         </motion.div>
                     </div>
                 </section>

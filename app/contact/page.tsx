@@ -94,7 +94,7 @@ export default function ContactPage() {
 
                 {/* Header — masthead */}
                 <div className="text-center mb-12">
-                    <h1 className="font-bold tracking-tighter text-5xl sm:text-6xl lg:text-[6rem] uppercase">
+                    <h1 className="text-5xl sm:text-6xl lg:text-[6rem] uppercase">
                         <span className="text-foreground">Contact </span>
                         <span className="text-transparent [-webkit-text-stroke:1.5px_var(--foreground)]">Us</span>
                     </h1>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                     {/* Left — Form */}
                     <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
                         <div className={cardHeader}>
-                            <h2 className="text-lg font-bold">Get In Touch</h2>
+                            <h2 className="text-lg">Get In Touch</h2>
                         </div>
                         <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -188,7 +188,7 @@ export default function ContactPage() {
                         {/* Contact information */}
                         <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
                             <div className={cardHeader}>
-                                <h2 className="text-lg font-bold">Contact Information</h2>
+                                <h2 className="text-lg">Contact Information</h2>
                             </div>
                             <div className="p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {contactInfo.map(({ Icon, label, value, href }) => (
@@ -214,7 +214,7 @@ export default function ContactPage() {
                         {/* Business hours */}
                         <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
                             <div className={cardHeader}>
-                                <h2 className="text-lg font-bold">Business Hours</h2>
+                                <h2 className="text-lg">Business Hours</h2>
                             </div>
                             <div className="p-6 md:p-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
                                 {businessHours.map(({ day, hours }) => (
@@ -228,7 +228,7 @@ export default function ContactPage() {
 
                         {/* Social media */}
                         <div className="rounded-2xl border border-border/60 bg-card px-6 md:px-8 py-5 flex flex-wrap items-center justify-between gap-4">
-                            <h2 className="text-lg font-bold">Follow Me</h2>
+                            <h2 className="text-lg">Follow Me</h2>
                             <div className="flex flex-wrap gap-3">
                                 {socials.map(({ Icon, label, href }) => (
                                     <a

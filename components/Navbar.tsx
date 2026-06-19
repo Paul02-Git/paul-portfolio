@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, Facebook, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -174,8 +174,8 @@ export default function Navbar() {
 
                             <Button
                                 size="sm"
-                                className="group shadow-lg shadow-black/5"
-                                icon={<ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />}
+                                className="shadow-lg shadow-black/5"
+                                icon={<ArrowUpRight className="w-4 h-4" />}
                                 href="/book-a-call"
                             >
                                 Book A Call
@@ -196,8 +196,8 @@ export default function Navbar() {
 
             {/* Mobile Menu — luxury minimalist panel below the header */}
             {isOpen && (
-                <div className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-card lg:hidden animate-in fade-in duration-150">
-                    <nav className="flex flex-col px-6 pt-4 pb-16">
+                <div className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col overflow-y-auto bg-card lg:hidden animate-in fade-in duration-150">
+                    <nav className="flex flex-col px-6 pt-4">
                         {mobileNavLinks.map((link, i) => {
                             const active = pathname === link.href;
                             return (
@@ -216,6 +216,44 @@ export default function Navbar() {
                             );
                         })}
                     </nav>
+
+                    {/* Connect — social links */}
+                    <div
+                        style={{ animationDelay: `${mobileNavLinks.length * 20}ms` }}
+                        className="relative mt-20 flex flex-col items-center text-center fill-mode-both duration-150 animate-in fade-in slide-in-from-bottom-2"
+                    >
+                        {/* Faded illustration sitting behind the Connect content */}
+                        <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+                            <Image
+                                src="/images/message-sent.svg"
+                                alt=""
+                                aria-hidden="true"
+                                width={500}
+                                height={400}
+                                className="w-[100%] max-w-[150px] h-auto select-none opacity-[0.1]"
+                            />
+                        </div>
+
+                        <p className="relative z-10 mb-4 text-sm font-bold uppercase tracking-widest text-muted-foreground">Let&apos;s Connect</p>
+                        <div className="relative z-10 flex items-center gap-6">
+                            {[
+                                { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/", external: true },
+                                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/paul-puzon-932b86303/", external: true },
+                                { Icon: Mail, label: "Email", href: "mailto:paulpuzon0007@gmail.com", external: false },
+                            ].map(({ Icon, label, href, external }) => (
+                                <a
+                                    key={label}
+                                    href={href}
+                                    aria-label={label}
+                                    onClick={() => setIsOpen(false)}
+                                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                    className="flex h-11 w-11 items-center justify-center rounded-full border bg-primary text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+                                >
+                                    <Icon className="h-5 w-5" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             )}
         </>

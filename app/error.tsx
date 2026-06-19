@@ -21,7 +21,7 @@ export default function Error({
             <Navbar />
             <div className="mx-auto max-w-[50ch] text-center">
                 <p className="text-primary font-bold uppercase tracking-widest text-sm">Error</p>
-                <h1 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight">Something Went Wrong</h1>
+                <h1 className="mt-4 text-3xl sm:text-4xl">Something Went Wrong</h1>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
                     An unexpected error occurred. Please try again — if it keeps happening, get in touch.
                 </p>

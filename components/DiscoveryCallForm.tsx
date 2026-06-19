@@ -81,7 +81,7 @@ export function DiscoveryCallForm() {
         return (
             <div className="rounded-2xl border border-border/60 bg-card p-8 md:p-10 text-center space-y-3">
                 <div className="mx-auto w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-2xl">✅</div>
-                <h2 className="text-xl font-bold">Request received!</h2>
+                <h2 className="text-xl">Request received!</h2>
                 <p className="text-muted-foreground max-w-md mx-auto">
                     Thanks for reaching out — I&apos;ll review your project and get back to you shortly to schedule your free discovery call.
                 </p>
