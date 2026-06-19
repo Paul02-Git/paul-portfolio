@@ -2,11 +2,11 @@ import { Layout, Zap, Code2, Headset, Puzzle, Palette, Search, Gauge, Bot, Shiel
 import { Experience, Tool, Project, Service, Testimonial, FAQItem, BlogPost } from "@/types/portfolio";
 
 export const vibes = [
+    { name: "Modern", color: "#101720", secondaryColor: "#d97706", icon: Activity, label: "Dynamic & Bold" },
     { name: "Professional", color: "#0a7a00", secondaryColor: "#56AB2F", icon: ShieldCheck, label: "Trust & Growth" },
     { name: "Creative", color: "#B22222", secondaryColor: "#334155", icon: Palette, label: "Innovation & Design" },
     { name: "Premium", color: "#e35336", secondaryColor: "#fbbf24", icon: Sparkles, label: "Excellence & Quality" },
-    { name: "Visionary", color: "#0047AB", secondaryColor: "#7dd3fc", icon: Globe, label: "Global Reach" },
-    { name: "Modern", color: "#854836", secondaryColor: "#d97706", icon: Activity, label: "Dynamic & Bold" }
+    { name: "Visionary", color: "#0047AB", secondaryColor: "#7dd3fc", icon: Globe, label: "Global Reach" }
 ];
 
 export const experiences: Experience[] = [

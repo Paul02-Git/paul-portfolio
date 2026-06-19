@@ -48,8 +48,8 @@ export default function Home() {
             </p>
 
             <h1 className="max-w-[24ch]">
-              Hire a WordPress Developer Who Helps You {" "}
-              <span className="text-primary">Grow Online</span>
+              WordPress Websites Built for Better{" "}
+              <span className="text-primary">Business Growth</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-[46ch] leading-relaxed">
@@ -379,20 +379,20 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/20 via-foreground/40 to-foreground/60" />
 
           {/* Content */}
-          <div className="relative mx-auto px-4 sm:px-6 lg:px-6">
+          <div className="relative mx-auto px-4 pt-14 pb-14 sm:px-6 lg:px-6">
             <motion.div
               {...fadeUp()}
               className="flex flex-col items-center text-center space-y-6"
             >
               <Eyebrow className="text-white">No Risk, No Pressure</Eyebrow>
-              <h2 className="text-white max-w-[32ch]">
+              <h2 className="text-white text-[2rem] md:text-[3.5rem] max-w-[32ch]">
                 Not Sure What Your Website Needs? Let&apos;s Figure It Out — Free.
               </h2>
-              <p className="text-white/75 text-lg leading-relaxed max-w-[60ch]">
+              <p className="text-white text-lg leading-relaxed max-w-[60ch]">
                 Book a free 30-minute strategy call. I&apos;ll review your current site and show you exactly what&apos;s holding back your leads — whether you hire me or not.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Button href="/book-a-call" size="lg" icon={<ArrowUpRight className="w-5 h-5" />}>
+                <Button className="border" href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
                   Book A Call
                 </Button>
               </div>

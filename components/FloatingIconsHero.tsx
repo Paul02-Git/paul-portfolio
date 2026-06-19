@@ -185,7 +185,7 @@ const FloatingIconsHero = React.forwardRef<
                 {eyebrow && (
                     <p className="mb-6 text-primary font-semibold text-sm uppercase tracking-widest">{eyebrow}</p>
                 )}
-                <h1 className="max-w-[24ch] mx-auto text-foreground">
+                <h1 className="max-w-[25ch] mx-auto text-foreground">
                     {title}
                 </h1>
                 <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">{subtitle}</p>

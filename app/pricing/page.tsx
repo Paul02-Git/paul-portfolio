@@ -133,9 +133,9 @@ export default function PricingPage() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="space-y-4 max-w-3xl">
             <Eyebrow>Pricing</Eyebrow>
-            <h1 className="max-w-[24ch]">
-              Simple pricing for a website that{" "}
-              <span className="text-primary">actually sells.</span>
+            <h1 className="max-w-[18ch]">
+              Simple pricing for your {" "}
+              <span className="text-primary">business website</span>
             </h1>
             <p className="text-muted-foreground max-w-[52ch] leading-relaxed">
               Fixed scope. Fixed price. No retainers to get started and no surprise invoices — just a clear plan that turns visitors into leads.
