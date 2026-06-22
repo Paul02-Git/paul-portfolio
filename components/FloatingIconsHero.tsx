@@ -6,7 +6,7 @@ import { motion, useMotionValue, useMotionTemplate, useReducedMotion, useSpring 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/Button";
 
-/* ── Tunable motion config — single place to adjust the feel of the hero ── */
+/* ── Tunable motion config, single place to adjust the feel of the hero ── */
 const REPEL_RADIUS = 140; // px: how close the cursor must be to push a tile
 const REPEL_STRENGTH = 42; // px: maximum distance a tile is pushed
 const SPRING_CONFIG = { stiffness: 300, damping: 20 } as const;
@@ -149,7 +149,7 @@ const FloatingIconsHero = React.forwardRef<
             className={cn("group section-y full-bleed overflow-hidden bg-background flex flex-col items-center justify-center", className)}
             {...props}
         >
-            {/* Dot-pattern background — base grid + cursor-reactive indigo highlight. */}
+            {/* Dot-pattern background, base grid + cursor-reactive indigo highlight. */}
             <div
                 className="absolute inset-0 pointer-events-none opacity-70"
                 style={dotPattern("rgb(230, 230, 230)")}
@@ -163,10 +163,10 @@ const FloatingIconsHero = React.forwardRef<
                 }}
             />
 
-            {/* Soft warm glow — a quiet luxury accent behind the headline. */}
+            {/* Soft warm glow, a quiet luxury accent behind the headline. */}
             <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[45%] h-[50%] rounded-full bg-primary/[0.02] blur-3xl" />
 
-            {/* Floating logo layer — decorative. Per-icon classes control mobile visibility. */}
+            {/* Floating logo layer, decorative. Per-icon classes control mobile visibility. */}
             <div className="absolute inset-0 pointer-events-none">
                 {icons.map((iconData, index) => (
                     <Icon

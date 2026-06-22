@@ -17,7 +17,7 @@ import {
     NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 
-// Desktop top-level links — Portfolio / Blog / Contact live inside the About mega menu.
+// Desktop top-level links, Portfolio / Blog / Contact live inside the About mega menu.
 const navLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
@@ -132,10 +132,10 @@ export default function Navbar() {
     return (
         <>
             <header className="fixed top-0 left-0 right-0 z-50 bg-card border-b border-border/60">
-                <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6">
+                <div className="container-page">
                     <nav className="relative flex items-center justify-between h-16">
 
-                        {/* Logo — left */}
+                        {/* Logo, left */}
                         <Link href="/" className="flex items-center gap-2.5 group shrink-0" aria-label="Paul Puzon Home">
                             <Image
                                 src="/images/paul_logo.png"
@@ -148,7 +148,7 @@ export default function Navbar() {
 
                         </Link>
 
-                        {/* Desktop Links — centered (lg+; tablet uses the hamburger) */}
+                        {/* Desktop Links, centered (lg+; tablet uses the hamburger) */}
                         <div className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
                             {navLinks.map((link) =>
                                 link.label === "About" ? (
@@ -168,7 +168,7 @@ export default function Navbar() {
                             )}
                         </div>
 
-                        {/* Right — actions */}
+                        {/* Right, actions */}
                         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                             <VibeToggle className="cursor-pointer" />
 
@@ -194,7 +194,7 @@ export default function Navbar() {
                 </div>
             </header>
 
-            {/* Mobile Menu — luxury minimalist panel below the header */}
+            {/* Mobile Menu, luxury minimalist panel below the header */}
             {isOpen && (
                 <div className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col overflow-y-auto bg-card lg:hidden animate-in fade-in duration-150">
                     <nav className="flex flex-col px-6 pt-4">
@@ -217,7 +217,7 @@ export default function Navbar() {
                         })}
                     </nav>
 
-                    {/* Connect — social links */}
+                    {/* Connect, social links */}
                     <div
                         style={{ animationDelay: `${mobileNavLinks.length * 20}ms` }}
                         className="relative mt-20 flex flex-col items-center text-center fill-mode-both duration-150 animate-in fade-in slide-in-from-bottom-2"

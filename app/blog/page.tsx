@@ -38,7 +38,7 @@ export default function BlogPage() {
     }, [currentPage]);
 
     return (
-        <main className="pb-20 pt-28 md:pt-32">
+        <main className="pb-20 page-top">
             <Navbar />
 
             {/* Breadcrumb */}
@@ -73,7 +73,7 @@ export default function BlogPage() {
                 {currentPosts.map((post, i) => (
                     <motion.article key={post.slug} {...fadeUp((i % 2) * 0.08)}>
                         <Link href={`/blog/${post.slug}`} className="group block">
-                            <div className="relative aspect-[3/2] rounded-2xl overflow-hidden mb-5 bg-muted/30">
+                            <div className="relative aspect-[3/2] rounded-md overflow-hidden mb-5 bg-muted/30">
                                 <Image
                                     src={post.image}
                                     alt={post.title}
@@ -104,7 +104,7 @@ export default function BlogPage() {
                     <button
                         onClick={() => goToPage(currentPage - 1)}
                         disabled={currentPage === 1}
-                        className="px-4 py-2 rounded-[8px] border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                        className="px-4 py-2 rounded-sm border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
                     >
                         Previous
                     </button>
@@ -116,7 +116,7 @@ export default function BlogPage() {
                                 onClick={() => goToPage(page)}
                                 aria-current={currentPage === page ? "page" : undefined}
                                 className={cn(
-                                    "w-10 h-10 rounded-[8px] border text-sm font-medium transition-colors cursor-pointer",
+                                    "w-10 h-10 rounded-sm border text-sm font-medium transition-colors cursor-pointer",
                                     currentPage === page
                                         ? "bg-primary text-primary-foreground border-primary"
                                         : "border-border/60 hover:bg-muted/50"
@@ -130,7 +130,7 @@ export default function BlogPage() {
                     <button
                         onClick={() => goToPage(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                        className="px-4 py-2 rounded-[8px] border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                        className="px-4 py-2 rounded-sm border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
                     >
                         Next
                     </button>

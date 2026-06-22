@@ -13,7 +13,7 @@ export async function GET(req: Request) {
   const title = searchParams.get("title") ?? "Websites that turn visitors into real leads.";
   const subtitle =
     searchParams.get("subtitle") ??
-    "WordPress, Shopify & web projects designed and built to convert — for clients worldwide.";
+    "WordPress, Shopify & web projects designed and built to convert, for clients worldwide.";
 
   return new ImageResponse(
     (
@@ -44,7 +44,7 @@ export async function GET(req: Request) {
           }}
         />
 
-        {/* Right — browser mockup */}
+        {/* Right, browser mockup */}
         <div style={{ position: "absolute", right: -70, top: 130, display: "flex" }}>
           <div
             style={{
@@ -86,7 +86,7 @@ export async function GET(req: Request) {
           </div>
         </div>
 
-        {/* Header — logo + name */}
+        {/* Header, logo + name */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <div
             style={{
@@ -113,7 +113,7 @@ export async function GET(req: Request) {
           </div>
         </div>
 
-        {/* Middle — eyebrow + title + subtitle */}
+        {/* Middle, eyebrow + title + subtitle */}
         <div style={{ display: "flex", flexDirection: "column", maxWidth: 640 }}>
           <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: 6, color: ACCENT, display: "flex", marginBottom: 14 }}>
             {eyebrow}
@@ -126,7 +126,7 @@ export async function GET(req: Request) {
           </div>
         </div>
 
-        {/* Bottom — pills + stats */}
+        {/* Bottom, pills + stats */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", marginBottom: 22 }}>
             {PILLS.map((p) => (

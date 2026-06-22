@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         title: 'Pricing | WordPress Website Packages & Rates',
-        description: 'Simple, transparent pricing for custom WordPress & Elementor websites — fixed scope, fixed price, no surprise invoices.',
+        description: 'Simple, transparent pricing for custom WordPress & Elementor websites, fixed scope, fixed price, no surprise invoices.',
         type: 'website',
         images: [OG],
     },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         images: [OG.url],
         title: 'Pricing | WordPress Website Packages & Rates',
-        description: 'Simple, transparent pricing for custom WordPress & Elementor websites — fixed scope, fixed price, no surprise invoices.',
+        description: 'Simple, transparent pricing for custom WordPress & Elementor websites, fixed scope, fixed price, no surprise invoices.',
     },
     alternates: {
         canonical: '/pricing'

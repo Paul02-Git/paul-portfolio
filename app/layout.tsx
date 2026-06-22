@@ -9,7 +9,7 @@ import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
-  // Pin only the weights we use instead of the full variable axis — a much
+  // Pin only the weights we use instead of the full variable axis, a much
   // smaller woff2 that arrives inside the "optional" window, so no flash.
   weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
@@ -34,7 +34,7 @@ const siteUrl = SITE_URL;
 const siteName = SITE_NAME;
 const siteDescription = "I build conversion-focused WordPress websites and GoHighLevel systems that automate follow-ups and increase client acquisition.";
 
-// Google Tag Manager — container ID is public (rendered in page HTML). Override via env per environment.
+// Google Tag Manager, container ID is public (rendered in page HTML). Override via env per environment.
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-PV257VBJ";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     default: "Paul Puzon | WordPress Developer Philippines | Hire Elementor Expert",
     template: "%s | Paul Puzon"
   },
-  description: "Hire a WordPress developer with 7+ years experience & 50+ projects delivered — Elementor & GoHighLevel specialist based in the Philippines.",
+  description: "Hire a WordPress developer with 7+ years experience & 50+ projects delivered, Elementor & GoHighLevel specialist based in the Philippines.",
   keywords: [
     "WordPress Developer",
     "WordPress Developer Philippines",
@@ -201,7 +201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </head>
       <body className="font-sans antialiased bg-background relative overflow-x-clip" suppressHydrationWarning>
-        {/* Google Tag Manager (noscript) — fallback for JS-disabled clients */}
+        {/* Google Tag Manager (noscript), fallback for JS-disabled clients */}
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
@@ -213,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <ThemeManager />
 
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6 pt-6 relative z-10">
+        <div className="container-page pt-6 relative z-10">
           {children}
         </div>
         <Footer />

@@ -27,14 +27,14 @@ const fadeUp = (delay = 0) => ({
 const CALENDLY = "/book-a-call";
 
 /* ───────────────────────────────────────────────
-   PRICING DATA — edit the numbers/copy here.
+   PRICING DATA, edit the numbers/copy here.
    Prices are USD "starting at" figures (one-time builds).
 ─────────────────────────────────────────────── */
 const plans = [
   {
     name: "Launch",
     price: "$750",
-    blurb: "A focused 1–3 page site to get you online and converting — fast.",
+    blurb: "A focused 1–3 page site to get you online and converting, fast.",
     featuresLabel: "What's included",
     features: [
       "Up to 3 custom pages",
@@ -94,12 +94,12 @@ const pricingFaqs = [
   {
     question: "How long does a project take?",
     answer:
-      "Most Launch sites go live in 1–2 weeks, Growth sites in 2–4 weeks, and Scale projects in 4–6 weeks — depending on how ready your content is. You'll get a clear timeline in your proposal before we start.",
+      "Most Launch sites go live in 1–2 weeks, Growth sites in 2–4 weeks, and Scale projects in 4–6 weeks, depending on how ready your content is. You'll get a clear timeline in your proposal before we start.",
   },
   {
     question: "What do I need to provide?",
     answer:
-      "Your logo, brand colours (if you have them), and any copy or images you'd like to use. No assets yet? No problem — I'll guide the content and recommend stock or AI-assisted options.",
+      "Your logo, brand colours (if you have them), and any copy or images you'd like to use. No assets yet? No problem, I'll guide the content and recommend stock or AI-assisted options.",
   },
   {
     question: "How many revisions are included?",
@@ -109,7 +109,7 @@ const pricingFaqs = [
   {
     question: "What if I need something that isn't listed?",
     answer:
-      "Almost anything is possible. Add-ons cover the common extras, and anything custom gets scoped and priced upfront on our call — never a surprise invoice.",
+      "Almost anything is possible. Add-ons cover the common extras, and anything custom gets scoped and priced upfront on our call, never a surprise invoice.",
   },
   {
     question: "Do you offer payment plans?",
@@ -119,13 +119,13 @@ const pricingFaqs = [
   {
     question: "Do I own my website?",
     answer:
-      "100%. Once the final payment clears, the site, domain, and all accounts are fully yours — no lock-in, no hostage hosting.",
+      "100%. Once the final payment clears, the site, domain, and all accounts are fully yours, no lock-in, no hostage hosting.",
   },
 ];
 
 export default function PricingPage() {
   return (
-    <main className="pt-28 md:pt-32">
+    <main className="page-top">
       <Navbar />
 
       {/* ── HERO ── */}
@@ -138,13 +138,13 @@ export default function PricingPage() {
               <span className="text-primary">business website</span>
             </h1>
             <p className="text-muted-foreground max-w-[52ch] leading-relaxed">
-              Fixed scope. Fixed price. No retainers to get started and no surprise invoices — just a clear plan that turns visitors into leads.
+              Fixed scope. Fixed price. No retainers to get started and no surprise invoices, just a clear plan that turns visitors into leads.
             </p>
           </div>
 
           {/* Mini social proof */}
           <motion.div {...fadeUp(0.1)} className="flex items-center gap-3 shrink-0">
-            <div className="flex -spwwace-x-2.5">
+            <div className="flex -space-x-3">
               {[
                 "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&w=1600",
                 "https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -237,32 +237,34 @@ export default function PricingPage() {
       </section>
 
       {/* ── TRUSTED TOOLS ── */}
-      <section className="section-yb">
+      <section>
         <TechStackMarquee items={tools} />
       </section>
 
       {/* ── FAQ ── */}
-      <section className="section-y max-w-screen mx-auto bg-foreground/3 rounded-3xl px-6 py-12 sm:px-12 sm:py-16 ">
-        <FaqAccordion
-          items={pricingFaqs}
-          eyebrow="Pricing FAQ"
-          heading="Everything you might be wondering"
-          description="Clear answers before we start — timelines, revisions, payments, and ownership."
-        />
+      <section className="section-y">
+        <div className="max-w-screen mx-auto bg-foreground/3 rounded-3xl px-6 py-12 sm:px-12 sm:py-16">
+          <FaqAccordion
+            items={pricingFaqs}
+            eyebrow="Pricing FAQ"
+            heading="Everything you might be wondering"
+            description="Clear answers before we start, timelines, revisions, payments, and ownership."
+          />
+        </div>
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="section-y">
+      <section className="section-yb">
         <motion.div
           {...fadeUp()}
           className="rounded-3xl text-center flex flex-col items-center gap-5"
         >
           <Eyebrow>No risk, no pressure</Eyebrow>
           <h2 className="text-foreground  max-w-[24ch]">
-            Not sure which plan fits? Let&apos;s figure it out — free.
+            Not sure which plan fits? Let&apos;s figure it out, free.
           </h2>
           <p className="text-foreground/75 leading-relaxed max-w-[55ch]">
-            Book a free 30-minute call. I&apos;ll review your goals and recommend the right scope and price — whether you hire me or not.
+            Book a free 30-minute call. I&apos;ll review your goals and recommend the right scope and price, whether you hire me or not.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 pt-2 w-full sm:w-auto">
             <Button

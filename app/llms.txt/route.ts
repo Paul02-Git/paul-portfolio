@@ -1,7 +1,7 @@
 import { blogPosts } from "@/data/portfolio";
 import { SITE_URL } from "@/lib/site";
 
-// Served at /llms.txt — a curated, LLM-friendly map of the site's key content
+// Served at /llms.txt, a curated, LLM-friendly map of the site's key content
 // (https://llmstxt.org/). Derives its base URL from SITE_URL and auto-includes
 // blog posts, so it stays in sync on a domain change just like sitemap/robots.
 export const dynamic = "force-static";
@@ -28,7 +28,7 @@ export function GET() {
         .map((post) => `- [${post.title}](${base}/blog/${post.slug}): ${post.excerpt}`)
         .join("\n");
 
-    const body = `# Paul Puzon — WordPress Developer & GoHighLevel Specialist
+    const body = `# Paul Puzon, WordPress Developer & GoHighLevel Specialist
 
 > Freelance WordPress (Elementor) developer and GoHighLevel specialist based in the Philippines, building fast, conversion-focused websites and marketing-automation systems for small businesses worldwide.
 

@@ -40,9 +40,9 @@ export default function Home() {
         {/* ── HERO ── */}
         <section className="section-yb grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 items-center">
 
-          {/* Left — Text */}
+          {/* Left, Text */}
           <div className="space-y-6 order-2 lg:order-1">
-            {/* Eyebrow — primary keyword */}
+            {/* Eyebrow, primary keyword */}
             <p className="text-foreground font-semibold text-sm uppercase tracking-widest">
               WordPress & GoHighLevel Specialist
             </p>
@@ -90,7 +90,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — Dashboard cards */}
+          {/* Right, Dashboard cards */}
           <div className="relative order-1 lg:order-2 w-full pt-6 lg:pt-0">
 
             {/* Soft glow */}
@@ -101,19 +101,19 @@ export default function Home() {
               {/* Vector illustration (accent follows brand color) */}
               <HeroBuildIllustration className="text-foreground w-full" />
 
-              {/* Benefit tag — top left */}
+              {/* Benefit tag, top left */}
               <div className="absolute top-[2%] left-[1%] sm:top-[8%] sm:left-[7%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-3">
                 <Code2Icon className="w-3.5 h-3.5 text-primary" />
                 WordPress Dev
               </div>
 
-              {/* Benefit tag — top right */}
+              {/* Benefit tag, top right */}
               <div className="absolute top-[20%] right-[1%] sm:top-[6%] sm:right-[7%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
                 <Zap className="w-3.5 h-3.5 text-amber-500" />
                 GHL Specialist
                 </div>
 
-              {/* Benefit tag — upper left (hidden on mobile to reduce crowding) */}
+              {/* Benefit tag, upper left (hidden on mobile to reduce crowding) */}
               <div className="absolute top-[31%] left-[2%] z-20 flex sm:flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap -rotate-2">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
@@ -122,26 +122,26 @@ export default function Home() {
                 Available
               </div>
 
-              {/* Benefit tag — upper right (hidden on mobile to reduce crowding) */}
+              {/* Benefit tag, upper right (hidden on mobile to reduce crowding) */}
               <div className="absolute top-[34%] right-[2%] z-20 hidden sm:flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-3">
                 <span className="relative h-3.5 w-3.5"><Image src="/images/klaviyo.svg" alt="Klaviyo" fill sizes="14px" className="object-contain" /></span>
                 Klaviyo
               </div>
 
-              {/* Benefit tag — lower left */}
+              {/* Benefit tag, lower left */}
               <div className="absolute top-[60%] left-[1%] sm:top-[66%] sm:left-[6%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
                 <span className="relative h-3.5 w-3.5"><Image src="/images/shopify.svg" alt="Shopify" fill sizes="14px" className="object-contain" /></span>
                 Shopify
               </div>
 
-              {/* Benefit tag — lower right */}
+              {/* Benefit tag, lower right */}
               <div className="absolute top-[48%] right-[1%] sm:top-[59%] sm:right-[5%] z-20 flex items-center gap-1.5 bg-white border border-border/60 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg whitespace-nowrap rotate-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-foreground" />
                 Elementor Pro
               </div>
 
-              {/* Brand tag — bottom center (Printify) */}
-             {/* Social-proof pill — client avatars */}
+              {/* Brand tag, bottom center (Printify) */}
+             {/* Social-proof pill, client avatars */}
               <div className="absolute bottom-4 md:bottom-10 left-1/2 z-30 -translate-x-1/2 flex items-center gap-2.5 bg-white border border-border/60 rounded-full pl-2 pr-4 py-1.5 shadow-sm whitespace-nowrap">
                 <div className="flex -space-x-2.5">
                   {[
@@ -166,11 +166,11 @@ export default function Home() {
 
         </section>
 
-        {/* ── DOUBLE MARQUEE BAND — full viewport width ── */}
+        {/* ── DOUBLE MARQUEE BAND, full viewport width ── */}
         <div className="relative left-1/2 -translate-x-1/2 w-screen">
           <div className="bg-foreground py-8 space-y-3">
 
-            {/* Row 1 — scrolls left */}
+            {/* Row 1, scrolls left */}
             <div className="overflow-hidden">
               <div className="flex items-center animate-marquee w-max">
                 {[...Array(2)].flatMap(() => [
@@ -200,7 +200,7 @@ export default function Home() {
         <section className="section-y">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
-            {/* Left — Text (order-2 on mobile, order-1 on desktop) */}
+            {/* Left, Text (order-2 on mobile, order-1 on desktop) */}
             <div className="space-y-8 order-2 lg:order-1">
               <div className="space-y-4">
                 <Eyebrow>The Real Problem</Eyebrow>
@@ -208,13 +208,13 @@ export default function Home() {
                   If Your Website Isn&apos;t Bringing In Leads, It&apos;s Costing You Every Day
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Most service businesses have a website. Very few have one that actually works. Here&apos;s what&apos;s usually broken — and what I fix.
+                  Most service businesses have a website. Very few have one that actually works. Here&apos;s what&apos;s usually broken, and what I fix.
                 </p>
               </div>
 
               <ul className="space-y-4">
                 {[
-                  { Icon: Search,    text: "You're invisible on Google — your competitors aren't." },
+                  { Icon: Search,    text: "You're invisible on Google, your competitors aren't." },
                   { Icon: BarChart3, text: "Visitors land on your site and leave without contacting you." },
                   { Icon: Zap,       text: "Leads go cold because there's no automated follow-up." },
                 ].map(({ Icon, text }, i) => (
@@ -235,11 +235,11 @@ export default function Home() {
               </Button>
             </div>
 
-            {/* Right — Image with offset accent (order-1 on mobile, order-2 on desktop) */}
+            {/* Right, Image with offset accent (order-1 on mobile, order-2 on desktop) */}
             <motion.div {...fadeUp(0.15)} className="relative flex justify-start lg:justify-end order-1 lg:order-2">
                
               {/* Image */}
-              <div className="relative w-full max-w-full lg:max-w-none aspect-[3/2] rounded-sm overflow-hidden shadow-lg">
+              <div className="relative w-full max-w-full lg:max-w-none aspect-[3/2] rounded-md overflow-hidden shadow-lg">
                 <Image
                   src="https://images.pexels.com/photos/36764792/pexels-photo-36764792.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt="Stressed business owner at his desk because his website isn't bringing in leads"
@@ -298,14 +298,14 @@ export default function Home() {
               {
                 num: "03",
                 title: "GoHighLevel Systems",
-                description: "Full CRM setup, SMS and email automation, follow-up sequences, and calendar booking flows. Your lead pipeline runs 24/7 — even when you're with a client or asleep.",
+                description: "Full CRM setup, SMS and email automation, follow-up sequences, and calendar booking flows. Your lead pipeline runs 24/7, even when you're with a client or asleep.",
                 image: "/images/blog/gohighlevel-workflow.webp",
                 href: "/book-a-call",
               },
               {
                 num: "04",
                 title: "Marketing Integrations",
-                description: "GA4, GTM, Microsoft Clarity, and CRM sync — full attribution tracking so you know exactly which channels bring in paying clients and which ones to cut.",
+                description: "GA4, GTM, Microsoft Clarity, and CRM sync, full attribution tracking so you know exactly which channels bring in paying clients and which ones to cut.",
                 image: "/images/blog/GA4 and GTM.webp",
                 href: "/book-a-call",
               },
@@ -324,7 +324,7 @@ export default function Home() {
                 className="group grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-6 md:gap-10 items-center border-t border-border/50 py-8 hover:border-primary/50 transition-colors duration-300 "
               >
                 {/* Image */}
-                <div className="relative aspect-[16/9] overflow-hidden rounded-sm bg-muted/30">
+                <div className="relative aspect-[16/9] overflow-hidden rounded-md bg-muted/30">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -386,10 +386,10 @@ export default function Home() {
             >
               <Eyebrow className="text-white">No Risk, No Pressure</Eyebrow>
               <h2 className="text-white text-[2rem] md:text-[3.5rem] max-w-[32ch]">
-                Not Sure What Your Website Needs? Let&apos;s Figure It Out — Free.
+                Not Sure What Your Website Needs? Let&apos;s Figure It Out, Free.
               </h2>
               <p className="text-white text-lg leading-relaxed max-w-[60ch]">
-                Book a free 30-minute strategy call. I&apos;ll review your current site and show you exactly what&apos;s holding back your leads — whether you hire me or not.
+                Book a free 30-minute strategy call. I&apos;ll review your current site and show you exactly what&apos;s holding back your leads, whether you hire me or not.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Button className="border" href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
@@ -423,7 +423,7 @@ export default function Home() {
                 <Link
                   href="/portfolio"
                   aria-label={`View ${project.title}`}
-                  className="group relative block aspect-[3/2] rounded-[8px] overflow-hidden bg-muted shadow-sm"
+                  className="group relative block aspect-[3/2] rounded-md overflow-hidden bg-muted shadow-sm"
                 >
                   <Image
                     src={project.image}
@@ -440,7 +440,7 @@ export default function Home() {
                   {/* Hover content */}
                   <div className="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                     <div className="min-w-0">
-                      <span className="inline-block px-2.5 py-1 mb-2 rounded-[4px] bg-foreground text-[10px] font-semibold uppercase tracking-wider text-white">
+                      <span className="inline-block px-2.5 py-1 mb-2 rounded-sm bg-foreground text-[10px] font-semibold uppercase tracking-wider text-white">
                         {project.category}
                       </span>
                       <h3 className="text-white text-base">
@@ -512,7 +512,7 @@ export default function Home() {
                   step: "01.",
                   title: "Book A Call",
                   description:
-                    "Tell me about your business, your goals, and what's not working. 30 minutes — no sales pitch, no pressure, just honest advice you can use either way.",
+                    "Tell me about your business, your goals, and what's not working. 30 minutes, no sales pitch, no pressure, just honest advice you can use either way.",
                 },
                 {
                   step: "02.",
@@ -524,7 +524,7 @@ export default function Home() {
                   step: "03.",
                   title: "Launch & Grow",
                   description:
-                    "We build, test, and launch a site that converts — with automation that follows up. 30 days of post-launch support included.",
+                    "We build, test, and launch a site that converts, with automation that follows up. 30 days of post-launch support included.",
                 },
               ].map((step, i) => (
                 <motion.div
@@ -649,11 +649,11 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* ── LATEST INSIGHTS (BLOG) — dark band ── */}
+        {/* ── LATEST INSIGHTS (BLOG), dark band ── */}
         <section className="section-y relative left-1/2 -translate-x-1/2 w-screen overflow-hidden bg-muted">
           {/* Soft, minimal glow for depth */}
           
-          <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6">
+          <div className="relative container-page">
             <motion.div {...fadeUp()} className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
               <div className="space-y-3 max-w-[30ch] md:max-w-[40ch]">
                 <Eyebrow className="text-primary/80">Latest Insights</Eyebrow>

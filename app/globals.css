@@ -17,12 +17,18 @@
   --accent: #F1F5F9;
   --accent-foreground: #181818;
   --ring: #cbd5e1;
-  --radius: 1.125rem;
-  --grid-gap: 1.125rem;
-  --card-padding: 1.5rem;
-  --card-padding-sm: 1rem;
-  --card-padding-md: 1.2rem;
-  --card-padding-lg: 1.5rem;
+  /* ── Border radius — Airtable scale. --radius is the base "lg" (12px), the
+     max content radius in the system. Derived steps live in @theme inline below. */
+  --radius: 0.75rem;          /* 12px */
+
+  /* ── Spacing scale (Airtable, 4px base). Card/grid tokens snap to 4-multiples.
+     General spacing uses Tailwind's default 4px scale (p-1=4 … p-24=96), which
+     already matches Airtable's xxs4 · xs8 · sm12 · md16 · lg24 · xl32 · xxl48 · section96. */
+  --grid-gap: 1.5rem;         /* 24px — gutter between cards in grids */
+  --card-padding: 2rem;       /* 32px — standard card */
+  --card-padding-sm: 1rem;    /* 16px — dense / demo-grid cards */
+  --card-padding-md: 1.5rem;  /* 24px — callout / content cards */
+  --card-padding-lg: 2rem;    /* 32px — feature / pricing cards */
 
   /* ── Primary button sizing — MOBILE values (py = height, px = width, font = text size).
      Desktop overrides live in the @media block below. Edit here to resize buttons site-wide. */
@@ -60,12 +66,29 @@
   --spacing-card-sm: var(--card-padding-sm);
   --spacing-card-md: var(--card-padding-md);
   --spacing-card-lg: var(--card-padding-lg);
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: calc(var(--radius) - 4px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 2px);
-  --radius-2xl: calc(var(--radius) + 4px);
-  --radius-3xl: calc(var(--radius) + 6px);
+  /* ── Border radius scale (Airtable). Hierarchical; 12px is the system max for
+     content surfaces. rounded-xl/2xl/3xl are intentionally capped at 12px so
+     large cards read editorial, not bubbly. rounded-full stays a true pill. */
+  --radius-xs: 0.125rem;   /* 2px  — inline / legal chips */
+  --radius-sm: 0.375rem;   /* 6px  — inputs, small controls */
+  --radius-md: 0.625rem;   /* 10px — content cards, article cards */
+  --radius-lg: 0.75rem;    /* 12px — primary CTAs, large signature cards */
+  --radius-xl: 0.75rem;    /* 12px — capped at Airtable max */
+  --radius-2xl: 0.75rem;   /* 12px — capped at Airtable max */
+  --radius-3xl: 0.75rem;   /* 12px — capped at Airtable max */
+
+  /* ── Elevation & depth (Airtable) — "color-block first, shadow second".
+     Shadows are deliberately minimal and low-alpha; depth comes from surface
+     contrast and 1px hairline borders, not heavy drop shadows. Tinted with the
+     ink tone (24 29 38) for a neutral, editorial feel. */
+  --shadow-2xs: 0 1px 1px rgb(24 29 38 / 0.03);
+  --shadow-xs:  0 1px 2px rgb(24 29 38 / 0.04);
+  --shadow-sm:  0 1px 2px rgb(24 29 38 / 0.05);
+  --shadow-md:  0 2px 6px rgb(24 29 38 / 0.06);
+  --shadow-lg:  0 6px 16px rgb(24 29 38 / 0.07);
+  --shadow-xl:  0 12px 28px rgb(24 29 38 / 0.08);
+  --shadow-2xl: 0 20px 40px rgb(24 29 38 / 0.10);
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui;
 }
 
@@ -144,15 +167,45 @@ body {
 }
 
 @layer utilities {
+  /* ── Page container ── single source of truth for content width + horizontal
+     gutters. Replaces the copy-pasted `max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6`. */
+  .container-page {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1rem;          /* 16px */
+  }
+  @media (min-width: 640px) {
+    .container-page {
+      padding-inline: 1.5rem;      /* 24px */
+    }
+  }
+
+  /* ── Page top clearance ── space below the fixed navbar at the top of a page.
+     Single source of truth for the previously-scattered `pt-28 md:pt-32`. */
+  .page-top {
+    padding-top: 7rem;             /* 112px */
+  }
+  @media (min-width: 768px) {
+    .page-top {
+      padding-top: 8rem;           /* 128px */
+    }
+  }
+
   /* ── Global section rhythm ── single source of truth for vertical spacing.
-     .section-y  = identical top + bottom padding on every block.
-     .section-yb = bottom-only (used by the hero, whose top is the navbar clearance). */
+     .section-y    = identical top + bottom padding on every block (96px desktop).
+     .section-yb   = bottom-only (used by the hero, whose top is the navbar clearance).
+     .section-y-sm = a lighter step for sub-sections that want less than full rhythm. */
   .section-y {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
   .section-yb {
     padding-bottom: 5rem;
+  }
+  .section-y-sm {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   @media (min-width: 768px) {
     .section-y {
@@ -161,6 +214,10 @@ body {
     }
     .section-yb {
       padding-bottom: 6rem;
+    }
+    .section-y-sm {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
 

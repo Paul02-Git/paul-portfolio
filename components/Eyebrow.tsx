@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Section eyebrow — the small uppercase label above a heading.
+ * Section eyebrow, the small uppercase label above a heading.
  * Standardizes the style in one place; pass the wording as children.
  * Override colour for dark bands via className (e.g. "text-white").
  */

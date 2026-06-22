@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 import { SITE_URL } from "@/lib/site";
 
 const siteUrl = SITE_URL;
-const INNER = "max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6";
+const INNER = "container-page";
 
 const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 24 },
@@ -39,7 +39,7 @@ const services = [
     "Branding",
 ];
 
-/** Full-bleed marquee band — matches the homepage dark band, keeps the services copy. */
+/** Full-bleed marquee band, matches the homepage dark band, keeps the services copy. */
 function MarqueeBand() {
     return (
         <div className="relative left-1/2 -translate-x-1/2 w-screen">
@@ -73,7 +73,7 @@ const values = [
     {
         Icon: Award,
         title: "Proven Expertise",
-        desc: "7+ years of WordPress, Shopify & GoHighLevel builds for clients across 24+ countries — never cookie-cutter templates.",
+        desc: "7+ years of WordPress, Shopify & GoHighLevel builds for clients across 24+ countries, never cookie-cutter templates.",
     },
     {
         Icon: Eye,
@@ -106,13 +106,13 @@ export default function AboutPage() {
         <>
             <Script id="about-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
 
-            <main className="pt-28 md:pt-32">
+            <main className="page-top">
                 <Navbar />
 
-                {/* ── HERO — copy + image (static — paints immediately) ── */}
+                {/* ── HERO, copy + image (static, paints immediately) ── */}
                 <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
-                    {/* Left — copy */}
+                    {/* Left, copy */}
                     <div className="space-y-6">
                        <Eyebrow>Who am I?</Eyebrow>
                         <h1 className="max-w-[24ch]">
@@ -133,8 +133,8 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    {/* Right — image */}
-                    <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
+                    {/* Right, image */}
+                    <div className="relative aspect-[4/3] rounded-md overflow-hidden shadow-sm">
                         <Image
                             src="/images/about-hero.jpg"
                             alt="Paul Puzon working with a client on a web project"
@@ -152,7 +152,7 @@ export default function AboutPage() {
                     <MarqueeBand />
                 </div>
 
-                {/* ── START WITH ME — muted band + stats ── */}
+                {/* ── START WITH ME, muted band + stats ── */}
                 <section className="relative left-1/2 -translate-x-1/2 w-screen bg-muted/40">
                     <div className={cn(INNER, "section-y")}>
                         <div>
@@ -172,7 +172,7 @@ export default function AboutPage() {
                                     I believe in clear, transparent work you can actually trust. Whether you&apos;re launching a brand-new site, rescuing a slow one, or scaling a store, I deliver personalized solutions and simplify the process so it&apos;s easy to understand every step of the way.
                                 </p>
                                 <p>
-                                    Every project is built for results — fast, accessible, and optimized to convert — all while building a long-term relationship focused on the outcomes that matter most to your business.
+                                    Every project is built for results, fast, accessible, and optimized to convert, all while building a long-term relationship focused on the outcomes that matter most to your business.
                                 </p>
                             </motion.div>
                         </div>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* ── WHY WORK WITH ME — cards + CTA ── */}
+                {/* ── WHY WORK WITH ME, cards + CTA ── */}
                 <section className="section-y">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                         <motion.div {...fadeUp()} className="lg:col-span-6">
@@ -206,7 +206,7 @@ export default function AboutPage() {
                             </h2>
                         </motion.div>
                         <motion.p {...fadeUp(0.1)} className="lg:col-span-6 text-muted-foreground leading-relaxed self-end">
-                            I pride myself on being a dependable partner, ready to guide you through complex digital challenges with genuine expertise and care — from first call to final launch.
+                            I pride myself on being a dependable partner, ready to guide you through complex digital challenges with genuine expertise and care, from first call to final launch.
                         </motion.p>
                     </div>
 

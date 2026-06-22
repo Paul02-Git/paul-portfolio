@@ -20,7 +20,7 @@ export default function BookACallPage() {
                 <h1 className="mx-auto">Book a Free Discovery Call</h1>
                 <p className="mt-5 text-muted-foreground leading-relaxed max-w-[70ch] mx-auto">
                     Share a few details about your project and I&apos;ll get back to you to schedule your free
-                    discovery call — we&apos;ll map out the right scope and next steps, whether you hire me or not.
+                    discovery call, we&apos;ll map out the right scope and next steps, whether you hire me or not.
                 </p>
             </div>
 

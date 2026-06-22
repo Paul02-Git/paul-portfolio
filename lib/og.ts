@@ -13,6 +13,6 @@ export function ogImage(opts: { title?: string; eyebrow?: string; subtitle?: str
     url: `/api/og${qs ? `?${qs}` : ""}`,
     width: 1200,
     height: 630,
-    alt: opts.title ? `${opts.title} — Paul Puzon` : "Paul Puzon — WordPress & GoHighLevel Specialist",
+    alt: opts.title ? `${opts.title}, Paul Puzon` : "Paul Puzon, WordPress & GoHighLevel Specialist",
   };
 }

@@ -32,7 +32,7 @@ export default function PortfolioPage() {
     const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
     const currentProjects = projects.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
-    // Only scroll on an actual pagination action — never on initial page load.
+    // Only scroll on an actual pagination action, never on initial page load.
     const hasPaginated = React.useRef(false);
 
     const goToPage = (p: number) => {
@@ -66,7 +66,7 @@ export default function PortfolioPage() {
     }, [selectedImage]);
 
     return (
-        <main className="pb-20 pt-28 md:pt-32">
+        <main className="pb-20 page-top">
             <Navbar />
 
             {/* ── Heading ── */}
@@ -94,7 +94,7 @@ export default function PortfolioPage() {
                         onClick={() => setSelectedImage(project.image)}
                         className="group text-left cursor-pointer"
                     >
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-[8px] border border-border/60 bg-muted/30 shadow-sm">
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border/60 bg-muted/30 shadow-sm">
                             <Image
                                 src={project.image}
                                 alt={project.title}
@@ -158,7 +158,7 @@ export default function PortfolioPage() {
                     <button
                         onClick={() => goToPage(currentPage - 1)}
                         disabled={currentPage === 1}
-                        className="px-4 py-2 rounded-[8px] border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                        className="px-4 py-2 rounded-sm border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
                     >
                         Previous
                     </button>
@@ -170,7 +170,7 @@ export default function PortfolioPage() {
                                 onClick={() => goToPage(page)}
                                 aria-current={currentPage === page ? "page" : undefined}
                                 className={cn(
-                                    "w-10 h-10 rounded-[8px] border text-sm font-medium transition-colors cursor-pointer",
+                                    "w-10 h-10 rounded-sm border text-sm font-medium transition-colors cursor-pointer",
                                     currentPage === page
                                         ? "bg-primary text-primary-foreground border-primary"
                                         : "border-border/60 hover:bg-muted/50"
@@ -184,7 +184,7 @@ export default function PortfolioPage() {
                     <button
                         onClick={() => goToPage(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                        className="px-4 py-2 rounded-[8px] border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                        className="px-4 py-2 rounded-sm border border-border/60 text-sm font-medium hover:bg-muted/50 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
                     >
                         Next
                     </button>

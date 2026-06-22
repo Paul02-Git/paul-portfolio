@@ -5,7 +5,7 @@ const OG = ogImage({ eyebrow: 'Portfolio', title: 'Selected Work & Projects' });
 
 export const metadata: Metadata = {
     title: 'Portfolio | WordPress & Web Development Projects',
-    description: 'View my latest WordPress, Elementor, and web development projects — high-quality websites built for clients worldwide.',
+    description: 'View my latest WordPress, Elementor, and web development projects, high-quality websites built for clients worldwide.',
     keywords: [
         'WordPress Portfolio',
         'Web Development Projects',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         title: 'Portfolio | WordPress & Web Development Projects',
-        description: 'View my latest WordPress, Elementor, and web development projects — high-quality websites built for clients worldwide.',
+        description: 'View my latest WordPress, Elementor, and web development projects, high-quality websites built for clients worldwide.',
         images: [OG],
     },
     twitter: {

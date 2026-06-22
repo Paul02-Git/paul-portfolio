@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 
 export default function NotFound() {
     return (
-        <main className="pt-28 md:pt-32 pb-20 min-h-[70vh] flex items-center">
+        <main className="page-top pb-20 min-h-[70vh] flex items-center">
             <Navbar />
             <div className="mx-auto max-w-[50ch] text-center">
                 <p className="text-primary font-bold uppercase tracking-widest text-sm">404</p>

@@ -1,6 +1,9 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import { subscribeToKlaviyoList, upsertKlaviyoProfile } from '@/lib/klaviyo';
+import { renderLeadEmail, type EmailRow } from '@/lib/email';
+import { hasDeliverableDomain } from '@/lib/validate-email';
+import { looksLikeSpam } from '@/lib/antispam';
 
 /** Escape HTML special characters to prevent HTML injection in the email body. */
 function escapeHtml(input: string): string {
@@ -19,7 +22,7 @@ function singleLine(input: string): string {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Field length caps — reject oversized payloads / abuse.
+// Field length caps, reject oversized payloads / abuse.
 const LIMITS = { name: 100, email: 254, business: 150, website: 300, projectType: 60, budget: 60, description: 5000, service: 60 };
 
 // ── Best-effort in-memory rate limiter (per warm serverless instance) ──
@@ -72,6 +75,12 @@ export async function POST(req: Request) {
         }
 
         const data = (body ?? {}) as Record<string, unknown>;
+
+        // Anti-spam: honeypot + time-trap. Silently succeed so bots learn nothing.
+        if (looksLikeSpam({ honeypot: data.company, elapsedMs: data.elapsedMs })) {
+            return NextResponse.json({ success: true });
+        }
+
         const str = (v: unknown) => (typeof v === 'string' ? v.trim() : '');
 
         const name = str(data.name);
@@ -85,12 +94,15 @@ export async function POST(req: Request) {
             ? data.services.filter((s): s is string => typeof s === 'string').map((s) => s.trim()).filter(Boolean).slice(0, 10)
             : [];
 
-        // Validation — required fields per the form.
+        // Validation, required fields per the form.
         if (!name || !email || !description) {
             return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
         }
         if (!EMAIL_RE.test(email) || email.length > LIMITS.email) {
             return NextResponse.json({ error: 'Invalid email address.' }, { status: 400 });
+        }
+        if (!(await hasDeliverableDomain(email))) {
+            return NextResponse.json({ error: 'That email domain doesn’t exist. Please use a real email address.' }, { status: 400 });
         }
         if (
             name.length > LIMITS.name ||
@@ -119,25 +131,29 @@ export async function POST(req: Request) {
             description: escapeHtml(description),
         };
 
+        const rows: EmailRow[] = [
+            { label: 'Name', value: s.name },
+            { label: 'Email', value: s.email, href: `mailto:${s.email}` },
+        ];
+        if (s.business) rows.push({ label: 'Business', value: s.business });
+        if (s.website) rows.push({ label: 'Website', value: s.website });
+        if (s.projectType) rows.push({ label: 'Project Type', value: s.projectType });
+        if (s.services) rows.push({ label: 'Services', value: s.services });
+        if (s.budget) rows.push({ label: 'Budget', value: s.budget });
+
         const { data: sent, error } = await resend.emails.send({
             from: 'Discovery Call Request <onboarding@resend.dev>',
             to: ['paulpuzon0007@gmail.com'],
             subject: singleLine(`New Discovery Call Request from ${name}`).slice(0, 200),
             replyTo: email,
-            html: `
-                <div style="font-family: sans-serif; padding: 20px; color: #333;">
-                    <h2 style="color: #108a00;">Discovery Call Request</h2>
-                    <p><strong>Name:</strong> ${s.name}</p>
-                    <p><strong>Email:</strong> ${s.email}</p>
-                    ${s.business ? `<p><strong>Business:</strong> ${s.business}</p>` : ''}
-                    ${s.website ? `<p><strong>Website:</strong> ${s.website}</p>` : ''}
-                    ${s.projectType ? `<p><strong>Project Type:</strong> ${s.projectType}</p>` : ''}
-                    ${s.services ? `<p><strong>Services:</strong> ${s.services}</p>` : ''}
-                    ${s.budget ? `<p><strong>Budget:</strong> ${s.budget}</p>` : ''}
-                    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                    <p style="white-space: pre-wrap;">${s.description}</p>
-                </div>
-            `,
+            html: renderLeadEmail({
+                heading: 'New Discovery Call Request',
+                subheading: `from ${s.name}`,
+                badge: 'Discovery Call',
+                rows,
+                message: s.description ? { label: 'Project details', value: s.description } : undefined,
+                cta: { label: `Reply to ${s.name} →`, href: `mailto:${s.email}` },
+            }),
         });
 
         if (error) {

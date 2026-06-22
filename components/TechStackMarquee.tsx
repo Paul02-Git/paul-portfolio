@@ -36,7 +36,7 @@ export function TechStackMarquee({
         {heading}
       </motion.h3>
 
-      {/* Two-row marquee — opposite directions */}
+      {/* Two-row marquee, opposite directions */}
       <div className="relative overflow-hidden py-1">
         {/* Edge fades */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-background to-transparent z-10" />
@@ -52,7 +52,7 @@ export function TechStackMarquee({
               {[...row.list, ...row.list].map((brand, i) => (
                 <div
                   key={i}
-                  className="inline-flex items-center gap-2.5 rounded-[8px] border border-border/70 bg-card px-6 py-3 shrink-0 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+                  className="inline-flex items-center gap-2.5 rounded-sm border border-border/70 bg-card px-6 py-3 shrink-0 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
                 >
                   <div className="relative w-7 h-7 shrink-0">
                     <Image src={brand.logo} alt={brand.name} fill sizes="28px" className="object-contain" />

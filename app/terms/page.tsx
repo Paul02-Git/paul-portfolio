@@ -27,7 +27,7 @@ const sections: { title: string; paragraphs?: string[]; bullets?: string[] }[] =
   {
     title: "Scope & Payments",
     bullets: [
-      "Each project is quoted with a fixed scope and price — no surprise invoices.",
+      "Each project is quoted with a fixed scope and price, no surprise invoices.",
       "Payments are typically split 50% to start and 50% on launch, unless otherwise agreed.",
       "Work outside the agreed scope is quoted separately before it's carried out.",
     ],
@@ -78,7 +78,7 @@ const sections: { title: string; paragraphs?: string[]; bullets?: string[] }[] =
 
 export default function TermsPage() {
   return (
-    <main className="pt-28 md:pt-32">
+    <main className="page-top">
       <Navbar />
 
       <section className="section-yb max-w-3xl">

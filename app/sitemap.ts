@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = SITE_URL;
-    // Fixed "last meaningful update" for static pages — avoids signalling that
+    // Fixed "last meaningful update" for static pages, avoids signalling that
     // every page changed on every deploy (which erodes lastmod trust).
     const lastUpdated = new Date('2026-06-01');
 

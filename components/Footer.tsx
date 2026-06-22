@@ -72,12 +72,12 @@ export const Footer = () => {
                 </div>
 
                 {/* Content */}
-                <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6 space-y-5">
+                <div className="relative container-page space-y-5">
                     <h2 className="text-white text-4xl md:text-6xl">
                         Let&apos;s Get In Touch.
                     </h2>
                     <p className="text-white leading-relaxed max-w-[56ch]">
-                        Every day without a conversion-focused website is a day your competitors get the call instead. Let&apos;s fix that — free, and no obligation.
+                        Every day without a conversion-focused website is a day your competitors get the call instead. Let&apos;s fix that, free, and no obligation.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 pt-3">
                         <Button className="text-foreground shadow-sm bg-muted " href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
@@ -97,14 +97,14 @@ export const Footer = () => {
             </div>
 
             <div className="bg-card border-t border-border/60">
-            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6">
+            <div className="container-page">
 
                 {/* Newsletter row */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 py-10 border-b border-border/60">
                     <div className="space-y-1">
                         <h3 className="text-lg">Get website & lead-gen tips in your inbox</h3>
                         <p className="text-muted-foreground text-sm">
-                            WordPress, GoHighLevel & SEO insights — no spam, just value.
+                            WordPress, GoHighLevel & SEO insights, no spam, just value.
                         </p>
                     </div>
                     <NewsletterForm className="w-full md:w-auto md:min-w-[320px]" />

@@ -1,6 +1,9 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import { subscribeToKlaviyoList, upsertKlaviyoProfile } from '@/lib/klaviyo';
+import { renderLeadEmail, type EmailRow } from '@/lib/email';
+import { hasDeliverableDomain } from '@/lib/validate-email';
+import { looksLikeSpam } from '@/lib/antispam';
 
 /** Escape HTML special characters to prevent HTML injection in the email body. */
 function escapeHtml(input: string): string {
@@ -19,7 +22,7 @@ function singleLine(input: string): string {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Field length caps — reject oversized payloads / abuse.
+// Field length caps, reject oversized payloads / abuse.
 const LIMITS = { name: 100, email: 254, phone: 40, subject: 150, budget: 60, comment: 5000 };
 
 // ── Best-effort in-memory rate limiter ──
@@ -78,6 +81,12 @@ export async function POST(req: Request) {
         }
 
         const data = (body ?? {}) as Record<string, unknown>;
+
+        // Anti-spam: honeypot + time-trap. Silently succeed so bots learn nothing.
+        if (looksLikeSpam({ honeypot: data.company, elapsedMs: data.elapsedMs })) {
+            return NextResponse.json({ success: true });
+        }
+
         const str = (v: unknown) => (typeof v === 'string' ? v.trim() : '');
 
         const name = str(data.name);
@@ -93,6 +102,9 @@ export async function POST(req: Request) {
         }
         if (!EMAIL_RE.test(email) || email.length > LIMITS.email) {
             return NextResponse.json({ error: 'Invalid email address.' }, { status: 400 });
+        }
+        if (!(await hasDeliverableDomain(email))) {
+            return NextResponse.json({ error: 'That email domain doesn’t exist. Please use a real email address.' }, { status: 400 });
         }
         if (
             name.length > LIMITS.name ||
@@ -116,22 +128,27 @@ export async function POST(req: Request) {
             comment: escapeHtml(comment),
         };
 
+        const rows: EmailRow[] = [
+            { label: 'Name', value: s.name },
+            { label: 'Email', value: s.email, href: `mailto:${s.email}` },
+        ];
+        if (s.phone) rows.push({ label: 'Phone', value: s.phone });
+        if (s.subject) rows.push({ label: 'Subject', value: s.subject });
+        if (s.budget) rows.push({ label: 'Budget', value: s.budget });
+
         const { data: sent, error } = await resend.emails.send({
             from: 'Portfolio Contact Form <onboarding@resend.dev>',
             to: ['paulpuzon0007@gmail.com'],
             subject: singleLine(`New Inquiry from ${name}${subject ? `: ${subject}` : ''}`).slice(0, 200),
             replyTo: email,
-            html: `
-                <div style="font-family: sans-serif; padding: 20px; color: #333;">
-                    <h2 style="color: #108a00;">New Inquiry from ${s.name}</h2>
-                    <p><strong>Email:</strong> ${s.email}</p>
-                    ${s.phone ? `<p><strong>Phone:</strong> ${s.phone}</p>` : ''}
-                    ${s.subject ? `<p><strong>Subject:</strong> ${s.subject}</p>` : ''}
-                    ${s.budget ? `<p><strong>Budget:</strong> ${s.budget}</p>` : ''}
-                    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                    <p style="white-space: pre-wrap;">${s.comment}</p>
-                </div>
-            `,
+            html: renderLeadEmail({
+                heading: 'New Contact Inquiry',
+                subheading: `from ${s.name}`,
+                badge: 'Contact Form',
+                rows,
+                message: { label: 'Message', value: s.comment },
+                cta: { label: `Reply to ${s.name} →`, href: `mailto:${s.email}` },
+            }),
         });
 
         if (error) {
@@ -141,7 +158,7 @@ export async function POST(req: Request) {
         }
 
         // Best-effort: also capture the lead in Klaviyo. Never block or fail the
-        // contact submission on a Klaviyo error — the email already went through.
+        // contact submission on a Klaviyo error, the email already went through.
         const klaviyoKey = process.env.KLAVIYO_PRIVATE_API_KEY;
         const leadsListId = process.env.KLAVIYO_LEADS_LIST_ID || process.env.KLAVIYO_LIST_ID;
         if (klaviyoKey && leadsListId) {

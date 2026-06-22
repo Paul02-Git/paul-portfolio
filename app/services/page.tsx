@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 import { SITE_URL } from "@/lib/site";
 
 const siteUrl = SITE_URL;
-const INNER = "max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-6";
+const INNER = "container-page";
 
 const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 24 },
@@ -29,25 +29,25 @@ const buildServices = [
     {
         num: "01",
         title: "WordPress & Elementor",
-        description: "Fast, custom, pixel-perfect websites built for performance and conversion — sites that load under 3 seconds and guide every visitor toward a single action.",
+        description: "Fast, custom, pixel-perfect websites built for performance and conversion, sites that load under 3 seconds and guide every visitor toward a single action.",
         image: "/images/blog/Landing Pages.webp",
     },
     {
         num: "02",
         title: "Shopify & Printify Stores",
-        description: "Custom Shopify builds, product optimisation, and Printify print-on-demand — catalogues and product pages built to turn browsers into buyers.",
+        description: "Custom Shopify builds, product optimisation, and Printify print-on-demand, catalogues and product pages built to turn browsers into buyers.",
         image: "/images/shopify-theme-store.webp",
     },
     {
         num: "03",
         title: "GoHighLevel Systems",
-        description: "Full CRM setup, SMS and email automation, follow-up sequences, and calendar booking flows. Your lead pipeline runs 24/7 — even while you sleep.",
+        description: "Full CRM setup, SMS and email automation, follow-up sequences, and calendar booking flows. Your lead pipeline runs 24/7, even while you sleep.",
         image: "/images/blog/gohighlevel-workflow.webp",
     },
     {
         num: "04",
         title: "Marketing Integrations",
-        description: "GA4, GTM, Microsoft Clarity, and CRM sync — full attribution tracking so you know exactly which channels bring in paying clients.",
+        description: "GA4, GTM, Microsoft Clarity, and CRM sync, full attribution tracking so you know exactly which channels bring in paying clients.",
         image: "/images/blog/GA4 and GTM.webp",
     },
     {
@@ -59,7 +59,7 @@ const buildServices = [
     {
         num: "06",
         title: "Care Plans & Maintenance",
-        description: "Ongoing updates, backups, security monitoring, and quick edits — so your site stays fast, safe, and always online.",
+        description: "Ongoing updates, backups, security monitoring, and quick edits, so your site stays fast, safe, and always online.",
         image: "https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
 ];
@@ -67,12 +67,12 @@ const buildServices = [
 // Trusted-tool logos floated around the hero (sourced from `brands` so they stay in sync).
 const logo = (name: string) => brands.find((b) => b.name === name)?.logo ?? "";
 const heroIcons: FloatingIcon[] = [
-    // Core five — visible on every breakpoint, scattered around the headline.
+    // Core five, visible on every breakpoint, scattered around the headline.
     { id: 1, name: "Wordpress", logo: logo("Wordpress"), className: "top-[10%] left-[20%]" },
     { id: 2, name: "Shopify", logo: logo("Shopify"), className: "top-[10%] right-[15%]" },
     { id: 4, name: "Klaviyo", logo: logo("Klaviyo"), className: "bottom-[2%] left-[15%] md:bottom-[20%]" },
     { id: 5, name: "Elementor", logo: logo("Elementor"), className: "bottom-[33%] right-[20%] md:bottom-[20%]"},
-    // Desktop-only extras — mid bands, hidden on mobile to keep the five clean.
+    // Desktop-only extras, mid bands, hidden on mobile to keep the five clean.
     { id: 6, name: "GHL", logo: logo("GHL"), className: "top-[34%] right-[25%] hidden md:block" },
     { id: 7, name: "Google Analytics", logo: logo("Google Analytics"), className: "top-[44%] left-[8%] hidden md:block" },
     { id: 8, name: "Printify", logo: logo("Printify"), className: "top-[46%] left-[24%] hidden lg:block" },
@@ -88,11 +88,10 @@ const stats = [
 
 const steps = [
     { num: "01", title: "Discovery", desc: "I learn your business, goals, and audience to map a clear, focused plan before any design begins." },
-    { num: "02", title: "Plan & Design", desc: "A design that fits your brand identity — user-friendly, polished, and built from the ground up to convert." },
-    { num: "03", title: "Development", desc: "A fast, responsive, SEO-ready build with obsessive attention to every detail and interaction." },
-    { num: "04", title: "Test & Launch", desc: "Rigorous testing for speed, security, and bugs — then a smooth launch that's ready to grow with you." },
+    { num: "02", title: "Plan & Design", desc: "A design that fits your brand identity, user-friendly, polished, and built from the ground up to convert." },
+    { num: "03", title: "Development", desc: "A fast, responsive, SEO-ready website crafted with precision, performance, and attention to every interaction." },
+    { num: "04", title: "Test & Launch", desc: "Rigorous testing for speed, security, and bugs, then a smooth launch that's ready to grow with you." },
 ];
-
 
 const serviceSchema = {
     "@context": "https://schema.org",
@@ -155,7 +154,7 @@ export default function ServicesPage() {
                             </div>
                     </motion.div>
 
-                    {/* Service cards — image on top, 3 across */}
+                    {/* Service cards, image on top, 3 across */}
                     <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                         {buildServices.map((service, i) => (
                             <motion.div
@@ -164,7 +163,7 @@ export default function ServicesPage() {
                                 className="group flex flex-col h-full"
                             >
                                 {/* Image */}
-                                <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted/30">
+                                <div className="relative aspect-[16/10] overflow-hidden rounded-md bg-muted/30">
                                     <Image
                                         src={service.image}
                                         alt={service.title}
@@ -200,7 +199,7 @@ export default function ServicesPage() {
 
                 {/* ── STATS BAND ── */}
                 <section className="full-bleed bg-muted/40">
-                    <div className={cn(INNER, "py-12 md:py-16")}>
+                    <div className={cn(INNER, "section-y-sm")}>
                         <div className="grid grid-cols-2 md:grid-cols-4">
                             {stats.map((s, i) => (
                                 <motion.div
@@ -222,10 +221,13 @@ export default function ServicesPage() {
 
                 {/* ── SIMPLE STEPS ── */}
                 <section className="section-y">
+                    {/* Header, full width (h2 + copy left, CTA right) */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                        <motion.h2 {...fadeUp()} className="max-w-[20ch]">
-                            Simple Steps To Complete Your Project
-                        </motion.h2>
+                        <div className="space-y-4">
+                            <motion.h2 {...fadeUp()} className="max-w-[20ch]">
+                                Simple Steps To Complete Your Project
+                            </motion.h2>
+                            </div>
                         <motion.div {...fadeUp(0.1)} className="shrink-0">
                             <Button href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
                                 Start Your Project
@@ -249,7 +251,7 @@ export default function ServicesPage() {
                 </section>
 
                 {/* ── SHOWCASE (full-bleed image) ── */}
-                <section className="pb-4">
+                <section>
                     <div className="full-bleed">
                         <motion.div {...fadeUp()} className="relative h-[200px] sm:h-[280px] lg:h-[500px] overflow-hidden">
                             <Image

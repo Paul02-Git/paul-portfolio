@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Send } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, isValidEmail } from "@/lib/utils";
 import { trackEvent } from "@/lib/gtm";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -12,7 +12,7 @@ const SERVICES = ["Wordpress & Elementor", "Shopify & Printify", "Marketing Inte
 const BUDGETS = ["Under $1,000", "$1,000–$3,000", "$3,000–$5,000", "$5,000+"];
 
 const inputClass =
-    "w-full px-4 py-3 rounded-[8px] border border-border bg-background text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-colors";
+    "w-full px-4 py-3 rounded-sm border border-border bg-background text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-colors";
 const labelClass = "block text-xs font-bold uppercase tracking-wider text-foreground mb-2";
 const selectStyle: React.CSSProperties = {
     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23707070' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
@@ -34,11 +34,16 @@ export function DiscoveryCallForm() {
     const [formData, setFormData] = useState(initialForm);
     const [services, setServices] = useState<string[]>([]);
     const [servicesError, setServicesError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [emailErrorMsg, setEmailErrorMsg] = useState("Please enter a valid email address.");
     const [status, setStatus] = useState<Status>("idle");
+    const hpRef = React.useRef<HTMLInputElement>(null);
+    const startedAt = React.useRef<number>(Date.now());
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
+        if (e.target.name === "email") setEmailError(false);
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
@@ -51,6 +56,11 @@ export function DiscoveryCallForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!isValidEmail(formData.email)) {
+            setEmailError(true);
+            setEmailErrorMsg("Please enter a valid email address.");
+            return;
+        }
         if (services.length === 0) {
             setServicesError(true);
             return;
@@ -60,7 +70,12 @@ export function DiscoveryCallForm() {
             const res = await fetch("/api/book-call", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...formData, services }),
+                body: JSON.stringify({
+                    ...formData,
+                    services,
+                    company: hpRef.current?.value ?? "",
+                    elapsedMs: Date.now() - startedAt.current,
+                }),
             });
             if (res.ok) {
                 setStatus("success");
@@ -68,6 +83,11 @@ export function DiscoveryCallForm() {
                 setFormData(initialForm);
                 setServices([]);
                 window.scrollTo({ top: 0, behavior: "smooth" });
+            } else if (res.status === 400) {
+                const data = (await res.json().catch(() => ({}))) as { error?: string };
+                setEmailError(true);
+                setEmailErrorMsg(data?.error || "Please enter a valid email address.");
+                setStatus("idle");
             } else {
                 setStatus("error");
             }
@@ -83,7 +103,7 @@ export function DiscoveryCallForm() {
                 <div className="mx-auto w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-2xl">✅</div>
                 <h2 className="text-xl">Request received!</h2>
                 <p className="text-muted-foreground max-w-md mx-auto">
-                    Thanks for reaching out — I&apos;ll review your project and get back to you shortly to schedule your free discovery call.
+                    Thanks for reaching out, I&apos;ll review your project and get back to you shortly to schedule your free discovery call.
                 </p>
             </div>
         );
@@ -91,6 +111,12 @@ export function DiscoveryCallForm() {
 
     return (
         <form onSubmit={handleSubmit} className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 space-y-5">
+            {/* Honeypot — hidden from real users; bots that fill it are silently dropped. */}
+            <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+                <label>Company (leave this empty)
+                    <input ref={hpRef} type="text" name="company" tabIndex={-1} autoComplete="off" defaultValue="" />
+                </label>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label htmlFor="name" className={labelClass}>Name*</label>
@@ -98,7 +124,20 @@ export function DiscoveryCallForm() {
                 </div>
                 <div>
                     <label htmlFor="email" className={labelClass}>Email*</label>
-                    <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="you@email.com" className={inputClass} required />
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="you@email.com"
+                        aria-invalid={emailError}
+                        className={cn(inputClass, emailError && "border-red-500 focus:border-red-500 focus:ring-red-500/15")}
+                        required
+                    />
+                    {emailError && (
+                        <p className="mt-2 text-sm font-medium text-red-600">{emailErrorMsg}</p>
+                    )}
                 </div>
             </div>
 
@@ -130,7 +169,7 @@ export function DiscoveryCallForm() {
                             <label
                                 key={service}
                                 className={cn(
-                                    "flex items-center gap-2.5 rounded-[8px] border px-3.5 py-2.5 text-sm cursor-pointer transition-colors",
+                                    "flex items-center gap-2.5 rounded-sm border px-3.5 py-2.5 text-sm cursor-pointer transition-colors",
                                     checked ? "border-primary bg-primary/5 text-foreground font-medium" : "border-border bg-background text-muted-foreground hover:border-primary/40"
                                 )}
                             >
@@ -169,14 +208,14 @@ export function DiscoveryCallForm() {
                 type="submit"
                 disabled={status === "loading"}
                 className={cn(
-                    "w-full font-bold py-3.5 px-6 rounded-[8px] flex items-center justify-center gap-2 uppercase tracking-wide text-sm transition-colors cursor-pointer",
+                    "w-full font-bold py-3.5 px-6 rounded-lg flex items-center justify-center gap-2 uppercase tracking-wide text-sm transition-colors cursor-pointer",
                     status === "loading" ? "bg-muted text-muted-foreground cursor-not-allowed" :
                         status === "error" ? "bg-red-600 text-white" :
                             "bg-primary text-primary-foreground hover:bg-primary/90"
                 )}
             >
                 {status === "loading" ? "Sending…" :
-                    status === "error" ? "Error — Try Again" :
+                    status === "error" ? "Error, Try Again" :
                         <>Request a Discovery Call <Send className="w-4 h-4" /></>}
             </button>
 

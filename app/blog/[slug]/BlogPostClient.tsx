@@ -12,7 +12,7 @@ import { SITE_URL } from "@/lib/site";
 
 type TocItem = { id: string; text: string; level: number };
 
-/** WhatsApp brand glyph — lucide-react has no WhatsApp icon, so we inline it. */
+/** WhatsApp brand glyph, lucide-react has no WhatsApp icon, so we inline it. */
 function WhatsappIcon({ className }: { className?: string }) {
     return (
         <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -121,7 +121,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
         window.open(url, "_blank", "noopener,noreferrer");
     };
 
-    // Social share targets — add/remove entries here to change the share row.
+    // Social share targets, add/remove entries here to change the share row.
     const socialShares: {
         label: string;
         Icon: React.ComponentType<{ className?: string }>;
@@ -152,7 +152,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
         try {
             await navigator.share({ title: post.title, text: post.excerpt, url: shareUrl() });
         } catch {
-            /* user dismissed the share sheet, or it's unsupported — ignore */
+            /* user dismissed the share sheet, or it's unsupported, ignore */
         }
     };
 
@@ -161,7 +161,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
     const wordCount = post.content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
     const readTime = Math.max(1, Math.round(wordCount / 200));
 
-    // Related posts — same category first, then fill with the most recent others.
+    // Related posts, same category first, then fill with the most recent others.
     const related = [
         ...blogPosts.filter((p) => p.slug !== slug && p.category === post.category),
         ...blogPosts.filter((p) => p.slug !== slug && p.category !== post.category),
@@ -213,7 +213,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                     </p>
 
                     {/* Featured image */}
-                    <div className="mt-10 relative aspect-[16/9] sm:aspect-[2/1] w-full mx-auto overflow-hidden rounded-2xl bg-muted/30">
+                    <div className="mt-10 relative aspect-[16/9] sm:aspect-[2/1] w-full mx-auto overflow-hidden rounded-md bg-muted/30">
                         <Image
                             src={post.image}
                             alt={post.title}
@@ -239,7 +239,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                         <div className="flex flex-wrap items-center gap-2">
                             <button
                                 onClick={copyLink}
-                                className="cursor-pointer inline-flex items-center gap-1.5 rounded-[8px] border border-border/60 px-3.5 py-2 text-xs font-semibold text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                                className="cursor-pointer inline-flex items-center gap-1.5 rounded-sm border border-border/60 px-3.5 py-2 text-xs font-semibold text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
                             >
                                 {copied ? <Check className="w-3.5 h-3.5 text-primary" /> : <Link2 className="w-3.5 h-3.5" />}
                                 {copied ? "Copied" : "Copy link"}
@@ -297,7 +297,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                         )}
 
                         {/* Newsletter */}
-                        <div className="rounded-[8px] border border-border/60 bg-muted/30 p-5">
+                        <div className="rounded-md border border-border/60 bg-muted/30 p-5">
                             <p className="text-sm font-bold leading-snug">Subscribe to newsletter</p>
                             <NewsletterForm layout="stacked" className="mt-4" />
                         </div>
@@ -353,12 +353,12 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                     )}
                 </div>
 
-                {/* Subscribe CTA — mobile only (desktop uses the sidebar block) */}
-                <div className="lg:hidden mt-12 text-center rounded-[8px] border border-border/60 bg-muted/30 p-8 space-y-5">
+                {/* Subscribe CTA, mobile only (desktop uses the sidebar block) */}
+                <div className="lg:hidden mt-12 text-center rounded-md border border-border/60 bg-muted/30 p-8 space-y-5">
                     <div className="space-y-2">
                         <h3>Enjoyed this article?</h3>
                         <p className="text-muted-foreground max-w-md mx-auto">
-                            Get practical WordPress, GoHighLevel &amp; SEO insights in your inbox — no spam, just value.
+                            Get practical WordPress, GoHighLevel &amp; SEO insights in your inbox, no spam, just value.
                         </p>
                     </div>
                     <NewsletterForm className="max-w-md mx-auto" />
@@ -366,14 +366,14 @@ export default function BlogPostClient({ slug }: { slug: string }) {
             </article>
                 </div>
 
-                {/* ── Related Articles — full-width row below the body ── */}
+                {/* ── Related Articles, full-width row below the body ── */}
                 {related.length > 0 && (
                     <section className="mt-16 border-t border-border/60 pt-10">
                         <h2 className="text-2xl mb-8">Related Articles</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                             {related.map((rp) => (
                                 <Link key={rp.slug} href={`/blog/${rp.slug}`} className="group block">
-                                    <div className="relative aspect-[16/10] rounded-[8px] overflow-hidden mb-3 bg-muted/30">
+                                    <div className="relative aspect-[16/10] rounded-md overflow-hidden mb-3 bg-muted/30">
                                         <Image
                                             src={rp.image}
                                             alt={rp.title}

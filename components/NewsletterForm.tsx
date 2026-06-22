@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, isValidEmail } from "@/lib/utils";
 import { trackEvent } from "@/lib/gtm";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -16,24 +16,35 @@ interface NewsletterFormProps {
 
 /**
  * Newsletter signup wired to /api/subscribe (Klaviyo private API, server-side).
- * Single source of truth — used in the footer and on blog posts.
+ * Single source of truth, used in the footer and on blog posts.
  */
 export function NewsletterForm({ layout = "inline", className }: NewsletterFormProps) {
     const [email, setEmail] = useState("");
     const [status, setStatus] = useState<Status>("idle");
     const [message, setMessage] = useState("");
+    const hpRef = React.useRef<HTMLInputElement>(null);
+    const startedAt = React.useRef<number>(Date.now());
 
     const stacked = layout === "stacked";
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (status === "loading") return;
+        if (!isValidEmail(email)) {
+            setStatus("error");
+            setMessage("Please enter a valid email address.");
+            return;
+        }
         setStatus("loading");
         try {
             const res = await fetch("/api/subscribe", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
+                body: JSON.stringify({
+                    email,
+                    company: hpRef.current?.value ?? "",
+                    elapsedMs: Date.now() - startedAt.current,
+                }),
             });
             const data = (await res.json().catch(() => ({}))) as { error?: string };
             if (res.ok) {
@@ -53,7 +64,7 @@ export function NewsletterForm({ layout = "inline", className }: NewsletterFormP
     if (status === "success") {
         return (
             <p className={cn("inline-flex items-center gap-2 text-sm font-semibold text-primary", className)}>
-                <Check className="w-4 h-4 shrink-0" /> You&apos;re subscribed — check your inbox to confirm.
+                <Check className="w-4 h-4 shrink-0" /> You&apos;re subscribed, check your inbox to confirm.
             </p>
         );
     }
@@ -61,15 +72,24 @@ export function NewsletterForm({ layout = "inline", className }: NewsletterFormP
     return (
         <div className={className}>
             <form onSubmit={handleSubmit} className={cn(stacked ? "space-y-2" : "flex flex-col sm:flex-row gap-2")}>
+                {/* Honeypot — hidden from real users; bots that fill it are silently dropped. */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+                    <label>Company (leave this empty)
+                        <input ref={hpRef} type="text" name="company" tabIndex={-1} autoComplete="off" defaultValue="" />
+                    </label>
+                </div>
                 <input
                     type="email"
                     required
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (status === "error") setStatus("idle");
+                    }}
                     placeholder="Enter your email"
                     aria-label="Email address"
                     className={cn(
-                        "rounded-[8px] border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary transition-colors",
+                        "rounded-sm border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary transition-colors",
                         stacked ? "w-full" : "flex-1 min-w-0"
                     )}
                 />
@@ -77,7 +97,7 @@ export function NewsletterForm({ layout = "inline", className }: NewsletterFormP
                     type="submit"
                     disabled={status === "loading"}
                     className={cn(
-                        "inline-flex items-center justify-center gap-1.5 bg-primary text-primary-foreground font-bold rounded-[8px] px-5 py-2.5 text-sm hover:bg-primary/90 transition-colors duration-200 shrink-0 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed",
+                        "inline-flex items-center justify-center gap-1.5 bg-primary text-primary-foreground font-bold rounded-sm px-5 py-2.5 text-sm hover:bg-primary/90 transition-colors duration-200 shrink-0 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed",
                         stacked && "w-full"
                     )}
                 >

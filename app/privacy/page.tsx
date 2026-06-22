@@ -15,15 +15,15 @@ const sections: { title: string; paragraphs?: string[]; bullets?: string[] }[] =
   {
     title: "Overview",
     paragraphs: [
-      "This Privacy Policy explains what information is collected when you visit this website or contact me (Paul Puzon), how it is used, and the choices you have. I keep things minimal — I only collect what's needed to respond to you and to understand how the site is performing.",
+      "This Privacy Policy explains what information is collected when you visit this website or contact me (Paul Puzon), how it is used, and the choices you have. I keep things minimal, I only collect what's needed to respond to you and to understand how the site is performing.",
     ],
   },
   {
     title: "Information I Collect",
     paragraphs: ["I may collect the following:"],
     bullets: [
-      "Information you provide — your name, email address, and any details you include when you submit the contact form or book a call.",
-      "Usage data — basic, anonymised analytics such as pages visited, device type, and referral source, collected through tools like Google Analytics 4, Google Tag Manager, and Microsoft Clarity.",
+      "Information you provide, your name, email address, and any details you include when you submit the contact form or book a call.",
+      "Usage data, basic, anonymised analytics such as pages visited, device type, and referral source, collected through tools like Google Analytics 4, Google Tag Manager, and Microsoft Clarity.",
     ],
   },
   {
@@ -37,7 +37,7 @@ const sections: { title: string; paragraphs?: string[]; bullets?: string[] }[] =
   {
     title: "Cookies & Analytics",
     paragraphs: [
-      "This site uses cookies and similar technologies to measure traffic and improve performance. These analytics tools may set cookies in your browser. You can disable cookies in your browser settings at any time — the site will still work, though some measurement may be limited.",
+      "This site uses cookies and similar technologies to measure traffic and improve performance. These analytics tools may set cookies in your browser. You can disable cookies in your browser settings at any time, the site will still work, though some measurement may be limited.",
     ],
   },
   {
@@ -68,7 +68,7 @@ const sections: { title: string; paragraphs?: string[]; bullets?: string[] }[] =
 
 export default function PrivacyPage() {
   return (
-    <main className="pt-28 md:pt-32">
+    <main className="page-top">
       <Navbar />
 
       <section className="section-yb max-w-3xl">

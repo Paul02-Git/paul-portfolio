@@ -54,10 +54,10 @@ export async function subscribeToKlaviyoList(params: {
 /**
  * Create or update (upsert) a Klaviyo profile with name, phone and custom
  * properties. Keyed by email, so it merges with the profile created by
- * subscribeToKlaviyoList(). Uses the bulk-import job (native upsert — no manual
+ * subscribeToKlaviyoList(). Uses the bulk-import job (native upsert, no manual
  * 409/PATCH handling). Returns the raw fetch Response.
  *
- * Note: this does NOT change email-marketing consent — pair it with
+ * Note: this does NOT change email-marketing consent, pair it with
  * subscribeToKlaviyoList() if you also want the profile subscribed.
  */
 export async function upsertKlaviyoProfile(params: {

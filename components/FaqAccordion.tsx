@@ -21,13 +21,13 @@ interface FaqAccordionProps {
 }
 
 /**
- * Minimal two-column FAQ accordion. Single source of truth — edit here to update everywhere.
+ * Minimal two-column FAQ accordion. Single source of truth, edit here to update everywhere.
  */
 export const FaqAccordion = ({
     items,
     eyebrow = "FAQ",
     heading = "We're Ready to Answer All Your Questions",
-    description = "Everything you need to know before we start working together — clear, upfront, no jargon.",
+    description = "Everything you need to know before we start working together, clear, upfront, no jargon.",
 }: FaqAccordionProps) => {
     const [open, setOpen] = useState<number | null>(0);
 

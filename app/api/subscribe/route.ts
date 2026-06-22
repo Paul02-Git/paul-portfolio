@@ -1,5 +1,19 @@
+import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { subscribeToKlaviyoList } from "@/lib/klaviyo";
+import { renderLeadEmail } from "@/lib/email";
+import { hasDeliverableDomain } from "@/lib/validate-email";
+import { looksLikeSpam } from "@/lib/antispam";
+
+/** Escape HTML special characters to prevent HTML injection in the email body. */
+function escapeHtml(input: string): string {
+    return input
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -55,12 +69,20 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
         }
 
-        const email = typeof (body as Record<string, unknown>)?.email === "string"
-            ? ((body as Record<string, string>).email).trim()
-            : "";
+        const sd = (body ?? {}) as Record<string, unknown>;
+
+        // Anti-spam: honeypot + time-trap. Silently succeed so bots learn nothing.
+        if (looksLikeSpam({ honeypot: sd.company, elapsedMs: sd.elapsedMs })) {
+            return NextResponse.json({ success: true });
+        }
+
+        const email = typeof sd.email === "string" ? sd.email.trim() : "";
 
         if (!EMAIL_RE.test(email) || email.length > 254) {
             return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+        }
+        if (!(await hasDeliverableDomain(email))) {
+            return NextResponse.json({ error: "That email domain doesn’t exist. Please use a real email address." }, { status: 400 });
         }
 
         const res = await subscribeToKlaviyoList({
@@ -78,6 +100,29 @@ export async function POST(req: Request) {
                 { error: "Could not subscribe right now. Please try again later." },
                 { status: 502 }
             );
+        }
+
+        // Best-effort: notify the admin of the new subscriber with a branded email.
+        const resendKey = process.env.RESEND_API_KEY;
+        if (resendKey) {
+            try {
+                const esc = escapeHtml(email);
+                await new Resend(resendKey).emails.send({
+                    from: "New Subscriber <onboarding@resend.dev>",
+                    to: ["paulpuzon0007@gmail.com"],
+                    subject: `New newsletter subscriber: ${email}`.slice(0, 200),
+                    replyTo: email,
+                    html: renderLeadEmail({
+                        heading: "New Newsletter Subscriber",
+                        subheading: "Someone just joined your list.",
+                        badge: "Newsletter",
+                        rows: [{ label: "Email", value: esc, href: `mailto:${esc}` }],
+                        cta: { label: "Reply to subscriber →", href: `mailto:${esc}` },
+                    }),
+                });
+            } catch (e) {
+                console.error("Subscriber notification email failed:", e);
+            }
         }
 
         return NextResponse.json({ success: true });

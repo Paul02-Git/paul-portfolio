@@ -6,7 +6,7 @@ import { faqs } from "@/data/portfolio";
 import { Send, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 import { Whatsapp } from "@/components/icons/Whatsapp";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { cn } from "@/lib/utils";
+import { cn, isValidEmail } from "@/lib/utils";
 import { trackEvent } from "@/lib/gtm";
 import Script from "next/script";
 
@@ -52,21 +52,39 @@ export default function ContactPage() {
     };
     const [formData, setFormData] = useState(initialForm);
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [emailError, setEmailError] = useState(false);
+    const [emailErrorMsg, setEmailErrorMsg] = useState("Please enter a valid email address.");
+    const hpRef = React.useRef<HTMLInputElement>(null);
+    const startedAt = React.useRef<number>(Date.now());
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!isValidEmail(formData.email)) {
+            setEmailError(true);
+            setEmailErrorMsg("Please enter a valid email address.");
+            return;
+        }
         setStatus("loading");
         try {
             const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    company: hpRef.current?.value ?? "",
+                    elapsedMs: Date.now() - startedAt.current,
+                }),
             });
             if (response.ok) {
                 setStatus("success");
                 trackEvent("generate_lead", { form_name: "contact" });
                 setFormData(initialForm);
                 setTimeout(() => setStatus("idle"), 5000);
+            } else if (response.status === 400) {
+                const data = (await response.json().catch(() => ({}))) as { error?: string };
+                setEmailError(true);
+                setEmailErrorMsg(data?.error || "Please enter a valid email address.");
+                setStatus("idle");
             } else {
                 setStatus("error");
             }
@@ -77,11 +95,12 @@ export default function ContactPage() {
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        if (e.target.name === "email") setEmailError(false);
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const inputClass =
-        "w-full px-4 py-3 rounded-[8px] border border-border bg-background text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-colors";
+        "w-full px-4 py-3 rounded-sm border border-border bg-background text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-colors";
     const labelClass = "block text-xs font-bold uppercase tracking-wider text-foreground mb-2";
     const cardHeader = "px-6 md:px-8 py-5 border-b border-border/60 bg-muted/30";
 
@@ -89,10 +108,10 @@ export default function ContactPage() {
         <>
             <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-            <main className="pb-20 pt-28 md:pt-32">
+            <main className="pb-20 page-top">
                 <Navbar />
 
-                {/* Header — masthead */}
+                {/* Header, masthead */}
                 <div className="text-center mb-12">
                     <h1 className="text-5xl sm:text-6xl lg:text-[6rem] uppercase">
                         <span className="text-foreground">Contact </span>
@@ -106,12 +125,18 @@ export default function ContactPage() {
                 {/* Form + Info */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-stretch">
 
-                    {/* Left — Form */}
+                    {/* Left, Form */}
                     <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
                         <div className={cardHeader}>
                             <h2 className="text-lg">Get In Touch</h2>
                         </div>
                         <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5">
+                            {/* Honeypot — hidden from real users; bots that fill it are silently dropped. */}
+                            <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+                                <label>Company (leave this empty)
+                                    <input ref={hpRef} type="text" name="company" tabIndex={-1} autoComplete="off" defaultValue="" />
+                                </label>
+                            </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label htmlFor="name" className={labelClass}>Name</label>
@@ -119,7 +144,20 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <label htmlFor="email" className={labelClass}>Email</label>
-                                    <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Enter your email*" className={inputClass} required />
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="Enter your email*"
+                                        aria-invalid={emailError}
+                                        className={cn(inputClass, emailError && "border-red-500 focus:border-red-500 focus:ring-red-500/15")}
+                                        required
+                                    />
+                                    {emailError && (
+                                        <p className="mt-2 text-sm font-medium text-red-600">{emailErrorMsg}</p>
+                                    )}
                                 </div>
                             </div>
 
@@ -161,7 +199,7 @@ export default function ContactPage() {
                                 type="submit"
                                 disabled={status === "loading"}
                                 className={cn(
-                                    "w-full font-bold py-3.5 px-6 rounded-[8px] flex items-center justify-center gap-2 uppercase tracking-wide text-sm transition-colors cursor-pointer",
+                                    "w-full font-bold py-3.5 px-6 rounded-sm flex items-center justify-center gap-2 uppercase tracking-wide text-sm transition-colors cursor-pointer",
                                     status === "loading" ? "bg-muted text-muted-foreground cursor-not-allowed" :
                                         status === "success" ? "bg-green-600 text-white" :
                                             status === "error" ? "bg-red-600 text-white" :
@@ -183,7 +221,7 @@ export default function ContactPage() {
                         </form>
                     </div>
 
-                    {/* Right — Info + Hours */}
+                    {/* Right, Info + Hours */}
                     <div className="flex flex-col gap-5 justify-between">
                         {/* Contact information */}
                         <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
@@ -248,7 +286,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Map */}
-                <div className="mt-5 overflow-hidden rounded-2xl border border-border/60 h-[360px] md:h-[420px]">
+                <div className="mt-5 overflow-hidden rounded-md border border-border/60 h-[360px] md:h-[420px]">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15442.279603348185!2d120.97059437153664!3d14.62319985923985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec387%3A0x69d1d5751069c11f!2sManila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1711234567890!5m2!1sen!2sph"
                         width="100%"
@@ -257,7 +295,7 @@ export default function ContactPage() {
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title="Location Map — Manila, Philippines"
+                        title="Location Map, Manila, Philippines"
                     />
                 </div>
 
