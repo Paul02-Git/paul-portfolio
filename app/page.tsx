@@ -348,6 +348,7 @@ export default function Home() {
                     variant="outline"
                     size="sm"
                     icon={<ArrowRight className="w-4 h-4" />}
+                    className="ml-0 sm:ml-0"
                   >
                     Get a quote<span className="sr-only"> about {service.title}</span>
                   </Button>
