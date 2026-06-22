@@ -9,13 +9,14 @@ import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
-  // Pin only the weights we use instead of the full variable axis, a much
-  // smaller woff2 that arrives inside the "optional" window, so no flash.
+  // Pin only the weights we use instead of the full variable axis (smaller woff2).
   weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
-  // "optional" = no visible swap/flash: the browser uses the font only if it's
-  // ready within ~100ms, otherwise it keeps the matched fallback for that pageview.
-  display: "optional",
+  // "swap" = show a fallback immediately, then swap to Inter as soon as it loads.
+  // This guarantees the real font renders for every user; adjustFontFallback keeps
+  // the swap from causing a layout shift. ("optional" was skipping the font entirely
+  // for any user whose connection didn't deliver it within ~100ms.)
+  display: "swap",
   preload: true,
   adjustFontFallback: true,
   fallback: ["system-ui", "arial"],
@@ -25,7 +26,8 @@ const belanosima = Belanosima({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-belanosima",
-  display: "optional",
+  display: "swap",
+  preload: true,
   adjustFontFallback: true,
   fallback: ["system-ui", "arial"],
 });
