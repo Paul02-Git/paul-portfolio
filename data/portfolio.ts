@@ -23,7 +23,7 @@ export const tools: Tool[] = [
     { name: "Wordpress", logo: "/images/WPLOGO.svg" },
     { name: "GHL", logo: "/images/GHL Logo.svg" },
     { name: "Elementor", logo: "/images/Elementor-Logo-Symbol-Red.svg" },
-    { name: "Antigravity", logo: "/images/G-AG.svg" },
+    { name: "Antigravity", logo: "/images/G-AG.webp" },
     { name: "GA4", logo: "https://www.vectorlogo.zone/logos/google_analytics/google_analytics-icon.svg" },
 ];
 

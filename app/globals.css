@@ -197,23 +197,23 @@ body {
      .section-yb   = bottom-only (used by the hero, whose top is the navbar clearance).
      .section-y-sm = a lighter step for sub-sections that want less than full rhythm. */
   .section-y {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
   .section-yb {
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
   }
   .section-y-sm {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
   @media (min-width: 768px) {
     .section-y {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
     }
     .section-yb {
-      padding-bottom: 6rem;
+      padding-bottom: 8rem;
     }
     .section-y-sm {
       padding-top: 4rem;
