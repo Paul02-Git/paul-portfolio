@@ -12,6 +12,9 @@ import {
   ArrowRight,
   Code2Icon,
   CheckCircle2,
+  MessageSquare,
+  Clock,
+  TrendingDown,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,17 +22,23 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { HeroBuildIllustration } from "@/components/HeroBuildIllustration";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { TechStackMarquee } from "@/components/TechStackMarquee";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Button } from "@/components/Button";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { testimonials, projects, brands, blogPosts, faqs } from "@/data/portfolio";
+import { testimonials, projects, blogPosts, faqs } from "@/data/portfolio";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" } as const,
   transition: { duration: 0.55, ease: "easeOut" as const, delay },
+});
+
+const popIn = (delay = 0) => ({
+  initial: { opacity: 0, scale: 0.85, y: 8 },
+  whileInView: { opacity: 1, scale: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" } as const,
+  transition: { duration: 0.4, ease: "easeOut" as const, delay },
 });
 
 export default function Home() {
@@ -201,7 +210,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
             {/* Left, Text (order-2 on mobile, order-1 on desktop) */}
-            <div className="space-y-8 order-2 lg:order-1">
+            <motion.div {...fadeUp()} className="space-y-8 order-2 lg:order-1">
               <div className="space-y-4">
                 <Eyebrow>The Real Problem</Eyebrow>
                 <h2 className="max-w-[20ch]">
@@ -218,12 +227,12 @@ export default function Home() {
                   { Icon: BarChart3, text: "Visitors land on your site and leave without contacting you." },
                   { Icon: Zap,       text: "Leads go cold because there's no automated follow-up." },
                 ].map(({ Icon, text }, i) => (
-                  <li key={i} className="flex items-start gap-3">
+                  <motion.li key={i} {...fadeUp(0.15 + i * 0.1)} className="flex items-start gap-3">
                     <span className="mt-0.5 w-6 h-6 rounded-full bg-primary flex items-center justify-center shrink-0">
                       <Icon className="w-3.5 h-3.5 text-white" />
                     </span>
                     <span className="text-foreground leading-relaxed">{text}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
 
@@ -233,31 +242,158 @@ export default function Home() {
               >
                 Book A Call
               </Button>
+            </motion.div>
+
+            {/* Right, Image collage (order-1 on mobile, order-2 on desktop) */}
+            <div className="relative order-1 lg:order-2 w-full max-w-[26rem] sm:max-w-[34rem] lg:max-w-none mx-auto lg:mx-0 lg:ml-auto">
+
+              {/* Frame */}
+              <div className="relative h-[300px] md:h-[450px]">
+
+                {/* Back image, top left */}
+                <motion.div
+                  {...fadeUp(0.1)}
+                  className="absolute top-0 left-0 w-[60%] h-[80%] rounded-3xl overflow-hidden shadow-xl"
+                >
+                  <Image
+                    src="/images/laptop-with-analytics.jpg"
+                    alt="Laptop showing website analytics with declining traffic and few leads"
+                    fill
+                    sizes="(max-width: 640px) 60vw, (max-width: 1024px) 40vw, 28vw"
+                    className="object-cover object-center"
+                  />
+                </motion.div>
+
+                {/* Front image, bottom right */}
+                <motion.div
+                  {...fadeUp(0.25)}
+                  className="absolute bottom-0 right-0 w-[64%] h-[88%] rounded-3xl overflow-hidden shadow-2xl"
+                >
+                  <Image
+                    src="https://images.pexels.com/photos/36764792/pexels-photo-36764792.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="Stressed business owner at his desk because his website isn't bringing in leads"
+                    fill
+                    sizes="(max-width: 640px) 64vw, (max-width: 1024px) 42vw, 30vw"
+                    className="object-cover object-center"
+                  />
+                </motion.div>
+
+                {/* Floating problem pill, top left */}
+                <motion.div {...popIn(0.4)} className="absolute top-6 -left-3 sm:left-2 z-30 flex items-center gap-2 bg-white border border-border/60 rounded-full px-3.5 py-2 shadow-lg -rotate-3">
+                  <TrendingDown className="w-4 h-4 text-red-500" />
+                  <span className="text-xs font-semibold text-foreground">Losing Leads Daily</span>
+                </motion.div>
+
+                {/* Floating problem pill, bottom right */}
+                <motion.div {...popIn(0.55)} className="absolute bottom-8 right-2 sm:right-3 z-30 flex items-center gap-2 bg-white border border-border/60 rounded-full px-3.5 py-2 shadow-lg rotate-3">
+                  <BarChart3 className="w-4 h-4 text-red-500" />
+                  <span className="text-xs font-semibold text-foreground">High Bounce Rate</span>
+                </motion.div>
+              </div>
             </div>
 
-            {/* Right, Image with offset accent (order-1 on mobile, order-2 on desktop) */}
-            <motion.div {...fadeUp(0.15)} className="relative flex justify-start lg:justify-end order-1 lg:order-2">
-               
-              {/* Image */}
-              <div className="relative w-full max-w-full lg:max-w-none aspect-[3/2] rounded-md overflow-hidden shadow-lg">
-                <Image
-                  src="https://images.pexels.com/photos/36764792/pexels-photo-36764792.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                  alt="Stressed business owner at his desk because his website isn't bringing in leads"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center"
-                />
+          </div>
+        </section>
+
+        {/* ── ANSWER: TURN VISITORS INTO BOOKED CALLS (left image, right copy) ── */}
+        <section className="section-yb">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+
+            {/* Right, Copy (order-2 on mobile and desktop) */}
+            <motion.div {...fadeUp()} className="space-y-8 order-2 lg:order-2">
+              <div className="space-y-4">
+                <Eyebrow>The Fix</Eyebrow>
+                <h2 className="max-w-[20ch]">
+                  A Website That Actually Brings In Leads
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Here&apos;s how I turn a site that just sits there into a system that wins trust, converts visitors, and follows up for you, around the clock.
+                </p>
               </div>
+
+              <ul className="space-y-4">
+                {[
+                  { Icon: CheckCircle2,  text: "A fast, professional site that builds instant trust." },
+                  { Icon: MessageSquare, text: "Pages built to convert, not just to look good." },
+                  { Icon: Clock,         text: "Automated follow-up so no lead goes cold." },
+
+                ].map(({ Icon, text }, i) => (
+                  <motion.li key={i} {...fadeUp(0.15 + i * 0.1)} className="flex items-start gap-3">
+                    <span className="mt-0.5 w-6 h-6 rounded-full bg-primary flex items-center justify-center shrink-0">
+                      <Icon className="w-3.5 h-3.5 text-white" />
+                    </span>
+                    <span className="text-foreground leading-relaxed">{text}</span>
+                  </motion.li>
+                ))}
+              </ul>
+
+              <Button
+                icon={<ArrowUpRight className="w-5 h-5" />}
+                href="/book-a-call"
+              >
+                Start Booking More Calls
+              </Button>
             </motion.div>
+
+            {/* Left, Image collage (order-1 on mobile and desktop) */}
+            <div className="relative order-1 lg:order-1 w-full max-w-[26rem] sm:max-w-[34rem] lg:max-w-none mx-auto lg:mx-0 lg:mr-auto">
+
+              {/* Frame */}
+              <div className="relative h-[300px] md:h-[450px]">
+
+                {/* Back image, top left */}
+                <motion.div
+                  {...fadeUp(0.1)}
+                  className="absolute top-0 left-0 w-[60%] h-[80%] rounded-3xl overflow-hidden shadow-xl"
+                >
+                  <Image
+                    src="https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="Building a fast, conversion-focused website in the studio"
+                    fill
+                    sizes="(max-width: 640px) 60vw, (max-width: 1024px) 40vw, 28vw"
+                    className="object-cover object-center"
+                  />
+                </motion.div>
+
+                {/* Front image, bottom right */}
+                <motion.div
+                  {...fadeUp(0.25)}
+                  className="absolute bottom-0 right-0 w-[64%] h-[88%] rounded-3xl overflow-hidden shadow-2xl"
+                >
+                  <Image
+                    src="https://images.pexels.com/photos/3760604/pexels-photo-3760604.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="Business owner taking a booked call generated by an automated follow-up system"
+                    fill
+                    sizes="(max-width: 640px) 64vw, (max-width: 1024px) 42vw, 30vw"
+                    className="object-cover object-center"
+                  />
+                </motion.div>
+
+                {/* Floating proof pill, top left */}
+                <motion.div {...popIn(0.4)} className="absolute top-6 -left-3 sm:left-2 z-30 flex items-center gap-2 bg-white border border-border/60 rounded-full px-3.5 py-2 shadow-lg -rotate-3">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-foreground">Built to Convert</span>
+                </motion.div>
+
+                {/* Floating proof pill, bottom right */}
+                <motion.div {...popIn(0.6)} className="absolute bottom-8 right-2 sm:right-4 z-30 flex items-center gap-2 bg-white border border-border/60 rounded-full px-3.5 py-2 shadow-lg rotate-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                  </span>
+                  <span className="text-xs font-semibold text-foreground">Following up 24/7</span>
+                </motion.div>
+              </div>
+            </div>
 
           </div>
         </section>
 
         {/* ── SERVICES ── */}
-        <section>
+        <section className="section-yb">
 
           {/* Header */}
-          <motion.div {...fadeUp()} className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-0 border-t border-border/50 pt-12">
+          <motion.div {...fadeUp()} className="flex flex-col md:flex-row md:items-end justify-between gap-3">
             <div className="space-y-3 max-w-[30ch] md:max-w-[40ch]">
               <Eyebrow>What I Build</Eyebrow>
               <h2>Built to Convert. Designed to Scale.</h2>
@@ -358,11 +494,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── TOOLS / TECH STACK ── */}
-        <section className="section-y">
-          <TechStackMarquee items={brands} />
-        </section>
-
+        
         {/* ── FULL-BLEED CTA ── */}
         <section className="min-h-[70vh] flex flex-col items-center justify-center relative left-1/2 -translate-x-1/2 w-screen overflow-hidden">
 
