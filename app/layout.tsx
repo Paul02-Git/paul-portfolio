@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Belanosima } from "next/font/google";
+import { Inter, Bricolage_Grotesque } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeManager } from "@/components/ThemeManager";
@@ -18,18 +18,22 @@ const inter = Inter({
   // for any user whose connection didn't deliver it within ~100ms.)
   display: "swap",
   preload: true,
+  // No explicit `fallback`: that lets next/font generate the metric-matched
+  // "Inter Fallback" face (size-adjust/ascent-override) that minimizes the
+  // swap's layout shift. Passing a fallback array suppresses it.
   adjustFontFallback: true,
-  fallback: ["system-ui", "arial"],
 });
 
-const belanosima = Belanosima({
+// Bricolage Grotesque — display font for headings. Weight axis tops out at 800
+// (no 900). Distinctive enough that the "swap" hand-off is briefly visible on a
+// cold cache; the auto metric-matched fallback keeps it from shifting layout.
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-belanosima",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-bricolage",
   display: "swap",
   preload: true,
   adjustFontFallback: true,
-  fallback: ["system-ui", "arial"],
 });
 
 const siteUrl = SITE_URL;
@@ -177,7 +181,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${belanosima.variable} overflow-x-clip`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${bricolage.variable} overflow-x-clip`} suppressHydrationWarning>
       <head>
         <ThemeScript />
         {/* Google Tag Manager */}

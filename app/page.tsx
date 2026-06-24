@@ -522,7 +522,7 @@ export default function Home() {
               className="flex flex-col items-center text-center space-y-6"
             >
               <Eyebrow className="text-white">No Risk, No Pressure</Eyebrow>
-              <h2 className="text-white text-[2rem] md:text-[3.5rem] max-w-[32ch]">
+              <h2 className="text-muted max-w-[32ch]">
                 Not Sure What Your Website Needs? Let&apos;s Figure It Out, Free.
               </h2>
               <p className="text-white text-lg leading-relaxed max-w-[60ch]">
@@ -711,7 +711,7 @@ export default function Home() {
 
         {/* ── TESTIMONIALS ── */}
         <section className="section-y">
-          <motion.div {...fadeUp()} className="text-center mx-auto mb-12 space-y-4 max-w-[27ch] md:max-w-[35ch]">
+          <motion.div {...fadeUp()} className="text-center mx-auto mb-12 space-y-4 max-w-[30ch] md:max-w-[40ch]">
             <Eyebrow>Social Proof</Eyebrow>
             <h2>Clients Who Made the Switch</h2>
             <p className="text-muted-foreground leading-relaxed">

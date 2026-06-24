@@ -318,6 +318,90 @@ export const fullServices: Service[] = [
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "7 Signs Your Business Website Needs a Redesign in 2026 (And When to Start Over)",
+        excerpt: "Not sure whether your business website needs a refresh or a full rebuild? Here are 7 honest signs it's time for a redesign, plus how to tell whether to fix what you've got or start from scratch.",
+        date: "Jun 24, 2026",
+        category: "Website Strategy",
+        image: "/images/blog/redesign-hero-wireframe.jpg",
+        slug: "signs-your-website-needs-a-redesign",
+        author: "Paul Puzon",
+        authorRole: "WordPress & Conversion Specialist",
+        content: `
+            <div class="space-y-6">
+                <p>Every business has that one thing it keeps meaning to deal with. The squeaky office chair. The "temporary" filing system from 2019. And, very often, the website, the one you built (or someone's nephew built) back when the business was brand new, and which now sits quietly in the corner of the internet making a first impression you'd rather it didn't.</p>
+
+                <p>Here's the tricky part: a website rarely fails loudly. It doesn't crash and demand attention. It just slowly stops pulling its weight, fewer enquiries, slower load times, a design that looks a little more dated each year, until one day you realise it's been costing you customers for ages. The question <a href="https://www.quora.com/How-do-I-know-if-my-business-needs-a-website-redesign" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">every owner eventually asks</a> is: <strong>does my website need a redesign, or is it time for a completely new one?</strong> Let's walk through the signs, then sort out which path is actually yours.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">1. It Looks Like It's Stuck in a Different Decade</h2>
+                <p>Design trends move fast, and visitors notice faster than you'd think. People form an opinion about your site in roughly the first 50 milliseconds, before they've read a single word. And nearly half of users say visual design is the number one thing they use to judge a company's credibility (<a href="https://credibility.stanford.edu/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Stanford Web Credibility Research</a>).</p>
+                <p>If your site has tiny text, clip-art-era icons, three competing fonts, or a layout that screams "free template, 2014," that's not just an aesthetic problem, it's a trust problem. Visitors quietly assume that a business with an outdated website is either out of touch or out of business. (Harsh, but your customers are not running a charity for nostalgic web design.)</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">2. It Loads Slower Than a Monday Morning</h2>
+                <p>Speed is the silent killer. A site that loads in one second converts up to three times better than one that takes five (<a href="https://www.portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Portent</a>). Every extra second is a slice of your audience tapping the back button before they ever see your offer.</p>
+                <p>Bloated themes, oversized images, and a pile of plugins added "just to try" all stack up over the years. If your site feels sluggish to you, it feels worse to a first-time visitor on mobile data. The good news is that speed is often fixable without a full rebuild, I cover the how in <a href="/blog/speed-up-wordpress-website-core-web-vitals" class="text-primary font-semibold hover:underline">speeding up a slow WordPress website</a>. But if the slowness is baked into how the whole thing was built, that's a redesign conversation.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">3. It Falls Apart on Phones</h2>
+                <p>More than half of all web traffic now comes from mobile devices (<a href="https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Statista</a>), which means your phone view <em>is</em> your website for most people. The desktop version is the understudy.</p>
+                <img src="/images/blog/redesign-mobile-app.jpg" alt="A clean, modern business website displayed on a smartphone screen" width="1200" height="675" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>Pull your site up on your own phone right now. Do you have to pinch and zoom to read anything? Do buttons sit too close together to tap? Does the menu do something weird? If you're squinting, so is every potential customer, and they're far less patient with your business than you are. A site that wasn't built mobile-first is one of the clearest signs it's time for a redesign.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">4. You're Getting Visitors but No Enquiries</h2>
+                <p>This one stings because the traffic looks fine. People are arriving, they're just leaving without doing anything. A website's actual job isn't to exist; it's to turn a visitor into a phone call, a form fill, or a booking. When that stops happening, the design is quietly working against you.</p>
+                <p>Usually it's a mix of unclear messaging, no obvious next step, hidden contact details, or calls-to-action that blend into the background. I broke down the most common culprits in <a href="/blog/small-business-website-mistakes" class="text-primary font-semibold hover:underline">why small business websites fail to generate leads</a>. If you're paying for traffic (or earning it the hard way through SEO) and it's evaporating on arrival, a conversion-focused redesign usually pays for itself.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">5. You Wince a Little Before Sending Someone the Link</h2>
+                <p>Here's the most honest test on this list, and it doesn't need a single analytics tool. When a potential client asks for your website, how do you feel? If there's a tiny internal "oh… right, that," that flinch is data.</p>
+                <p>Your website should be the team member you're proud to introduce, not the one you apologise for on the way in. If you've started leaning on your Instagram or a PDF brochure because they represent you better than your own site does, your website has quietly stopped doing its job. That's not a vibe; that's a sign.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">6. Updating Anything Is a Whole Ordeal</h2>
+                <p>A good website should be easy to keep current, swapping a phone number, adding a service, posting an update. If changing a single line of text means emailing a developer, waiting three days, and crossing your fingers, your site is working against you, not for you.</p>
+                <p>Often this is because the site was built on an awkward setup, or so heavily customised that nobody dares touch it. When the cost of small changes is "too much hassle," those changes never get made, and your site slowly drifts out of date. A modern build on a flexible platform (this is where well-structured <a href="/services" class="text-primary font-semibold hover:underline">WordPress development</a> earns its keep) hands that control back to you.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">7. Your Google Rankings Are Quietly Sliding</h2>
+                <p>If your traffic has been drifting downward and you can't point to why, the problem might be structural. Search in 2026 rewards fast load times, mobile-first design, clean code, and proper schema, the kind of foundations that are hard to bolt onto an old site after the fact.</p>
+                <img src="/images/blog/redesign-google-rankings.jpg" alt="The Google search page, where a business website's rankings rise or fall" width="1200" height="675" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>An ageing website often carries technical debt that holds back its rankings no matter how much content you publish. If you've been doing the SEO work and still slipping, the platform underneath may be the ceiling. (You can sanity-check the fundamentals against my <a href="/blog/wordpress-seo-checklist-2026" class="text-primary font-semibold hover:underline">2026 WordPress SEO checklist</a> before deciding.)</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Redesign or Rebuild? How to Tell Which You Need</h2>
+                <p>Spotting the signs is the easy bit. The real question, and <a href="https://www.quora.com/When-should-we-redesign-a-website-from-scratch-and-when-should-we-just-improve-it" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">one business owners debate constantly</a>, is whether you need a <strong>redesign</strong> (keep the foundations, refresh the look and structure) or a <strong>full rebuild</strong> (start fresh on a new platform). Here's the simple way to think about it:</p>
+                <div class="overflow-x-auto my-8">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-border text-left">
+                                <th class="py-3 pr-4 font-bold text-foreground">A redesign is enough when…</th>
+                                <th class="py-3 font-bold text-foreground">You need a new website when…</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-border/60">
+                                <td class="py-3 pr-4 text-muted-foreground">The bones are solid; it just looks dated</td>
+                                <td class="py-3 text-muted-foreground">It's slow no matter what you fix</td>
+                            </tr>
+                            <tr class="border-b border-border/60">
+                                <td class="py-3 pr-4 text-muted-foreground">Content is fine, layout needs work</td>
+                                <td class="py-3 text-muted-foreground">It's not mobile-friendly at its core</td>
+                            </tr>
+                            <tr class="border-b border-border/60">
+                                <td class="py-3 pr-4 text-muted-foreground">You can still edit it easily</td>
+                                <td class="py-3 text-muted-foreground">Nobody can safely make changes</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 pr-4 text-muted-foreground">You like the platform you're on</td>
+                                <td class="py-3 text-muted-foreground">The platform itself is the bottleneck</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <img src="/images/blog/redesign-wordpress.jpg" alt="The word WordPress typed on paper in a typewriter, representing a rebuild on WordPress" width="1200" height="675" loading="lazy" class="w-full rounded-2xl my-8" />
+                <p>As a rule of thumb: if one or two signs apply and the underlying site is healthy, a <strong>redesign</strong> gets you there faster and cheaper. If you ticked four or more, especially the speed, mobile, and "nobody can update it" ones, you're usually better off with a fresh build than endlessly patching the old one. (Sinking money into a fundamentally broken site is the web equivalent of repairing a car that's mostly rust.) If you're weighing the investment either way, my guide to <a href="/blog/website-design-cost-philippines" class="text-primary font-semibold hover:underline">what a professional website actually costs</a> lays out the numbers.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Bottom Line</h2>
+                <p>Your website is the one salesperson that works every hour of every day, and it never calls in sick. If it's slow, dated, awkward on phones, or quietly losing you enquiries, those aren't cosmetic gripes, they're lost customers. The signs above are your early-warning system; the worst move is to keep ignoring that squeaky chair until it costs you a deal.</p>
+                <p>Not sure whether yours needs a tidy-up or a fresh start? <a href="/book-a-call" class="text-primary font-semibold hover:underline">Book a free discovery call</a> and I'll give you an honest take, redesign or rebuild, no jargon and no pressure. And if it turns out your site just needs a little love rather than a teardown, I'll tell you that too. (Yes, even web developers occasionally talk themselves out of work.)</p>
+            </div>
+        `
+    },
+    {
         title: "How to Hire a WordPress Developer in 2026: A No-Jargon Guide for Business Owners",
         excerpt: "Ready to hire a WordPress developer but not sure where to start? This no-jargon 2026 guide covers freelancer vs agency, where to find one, the questions to ask, the red flags to avoid, and what it should actually cost.",
         date: "Jun 22, 2026",
