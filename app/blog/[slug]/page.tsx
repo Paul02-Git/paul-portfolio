@@ -41,6 +41,18 @@ function buildArticleSchema(post: BlogPost) {
     };
 }
 
+function buildBreadcrumbSchema(post: BlogPost) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+            { "@type": "ListItem", position: 3, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
+        ],
+    };
+}
+
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
@@ -91,10 +103,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     return (
         <>
             {post && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(buildArticleSchema(post)) }}
-                />
+                <>
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildArticleSchema(post)) }}
+                    />
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema(post)) }}
+                    />
+                </>
             )}
             <BlogPostClient slug={slug} />
         </>

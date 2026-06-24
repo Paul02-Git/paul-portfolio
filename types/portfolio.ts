@@ -70,4 +70,5 @@ export interface BlogPost {
     content: string;
     author?: string;
     authorRole?: string;
+    authorBio?: string;
 }
