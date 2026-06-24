@@ -9,7 +9,6 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/Button";
 import { FloatingIconsHero, type FloatingIcon } from "@/components/FloatingIconsHero";
-import { TechStackMarquee } from "@/components/TechStackMarquee";
 import { Eyebrow } from "@/components/Eyebrow";
 import { brands } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
@@ -64,6 +63,20 @@ const buildServices = [
     },
 ];
 
+// Soft pastel backgrounds cycled across the service cards (arbitrary hex so they
+// render regardless of the dynamic theme primary, and stay gentle/on-brand).
+const cardTints = [
+    "bg-[#f5f3ff]", // violet
+    "bg-[#ecfdf5]", // mint
+    "bg-[#fff7ed]", // peach
+    "bg-[#eff6ff]", // blue
+    "bg-[#fdf2f8]", // pink
+    "bg-[#f8fafc]", // slate
+];
+
+// Bento column spans for the 4 process steps (out of 5): 40/60 then 60/40.
+const stepSpans = ["md:col-span-4", "md:col-span-4", "md:col-span-4", "md:col-span-4"];
+
 // Trusted-tool logos floated around the hero (sourced from `brands` so they stay in sync).
 const logo = (name: string) => brands.find((b) => b.name === name)?.logo ?? "";
 const heroIcons: FloatingIcon[] = [
@@ -87,10 +100,10 @@ const stats = [
 ];
 
 const steps = [
-    { num: "01", title: "Discovery", desc: "I learn your business, goals, and audience to map a clear, focused plan before any design begins." },
-    { num: "02", title: "Plan & Design", desc: "A design that fits your brand identity, user-friendly, polished, and built from the ground up to convert." },
-    { num: "03", title: "Development", desc: "A fast, responsive, SEO-ready website crafted with precision, performance, and attention to every interaction." },
-    { num: "04", title: "Test & Launch", desc: "Rigorous testing for speed, security, and bugs, then a smooth launch that's ready to grow with you." },
+    { num: "01", title: "Discovery", desc: "I learn your business, goals, and audience to map a clear, focused plan before any design begins.", image: "/images/process/process-discovery.jpg" },
+    { num: "02", title: "Plan & Design", desc: "A design that fits your brand identity, user-friendly, polished, and built from the ground up to convert.", image: "/images/process/process-design.jpg" },
+    { num: "03", title: "Development", desc: "A fast, responsive, SEO-ready website crafted with precision, performance, and attention to every interaction.", image: "/images/process/process-webdev.jpg" },
+    { num: "04", title: "Test & Launch", desc: "Rigorous testing for speed, security, and bugs, then a smooth launch that's ready to grow with you.", image: "/images/process/process-launch.jpg" },
 ];
 
 const serviceSchema = {
@@ -198,7 +211,7 @@ export default function ServicesPage() {
                 </section>
 
                 {/* ── STATS BAND ── */}
-                <section className="full-bleed bg-muted/40">
+                <section className="full-bleed bg-muted/30">
                     <div className={cn(INNER, "section-y-sm")}>
                         <div className="grid grid-cols-2 md:grid-cols-4">
                             {stats.map((s, i) => (
@@ -219,15 +232,17 @@ export default function ServicesPage() {
                     </div>
                 </section>
 
-                {/* ── SIMPLE STEPS ── */}
+                {/* ── SIMPLE STEPS — full-width header + bento grid ── */}
                 <section className="section-y">
-                    {/* Header, full width (h2 + copy left, CTA right) */}
+                    {/* Header (single column) */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                        <div className="space-y-4">
-                            <motion.h2 {...fadeUp()} className="max-w-[20ch]">
-                                Simple Steps To Complete Your Project
-                            </motion.h2>
-                            </div>
+                        <motion.div {...fadeUp()} className="space-y-4 max-w-[50ch]">
+                            <Eyebrow>How It Works</Eyebrow>
+                            <h2 className="max-w-[20ch]">Simple Steps To Complete Your Project</h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                A clear, proven process, from the first conversation to launch day, so you always know what&apos;s happening and what comes next.
+                            </p>
+                        </motion.div>
                         <motion.div {...fadeUp(0.1)} className="shrink-0">
                             <Button href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
                                 Start Your Project
@@ -235,40 +250,35 @@ export default function ServicesPage() {
                         </motion.div>
                     </div>
 
-                    <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    {/* Bento grid — alternating wide / narrow cards */}
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-8 gap-5">
                         {steps.map((step, i) => (
                             <motion.div
                                 key={step.num}
-                                {...fadeUp(i * 0.08)}
-                                className="rounded-2xl border border-border/60 bg-card p-7 md:p-8 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all"
+                                {...fadeUp(i * 0.06)}
+                                className={cn(
+                                    "group flex flex-col rounded-xl p-6 md:p-10 transition-shadow hover:shadow-md hover:shadow-primary/5",
+                                    stepSpans[i % stepSpans.length],
+                                    cardTints[i % cardTints.length]
+                                )}
                             >
-                                <span className="text-5xl md:text-6xl font-bold text-primary/90">{step.num}</span>
-                                <h3 className="mt-4 text-xl">{step.title}</h3>
-                                <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-[48ch]">{step.desc}</p>
+                                <div className="flex items-center gap-2.5">
+                                    <span className="font-mono text-lg font-bold text-primary/70 leading-none">[{step.num}]</span>
+                                    <h3 className="text-2xl font-semibold leading-snug">{step.title}</h3>
+                                </div>
+                                <p className="mt-2 text-md text-muted-foreground leading-relaxed">{step.desc}</p>
+                                <div className="relative mt-4 flex-1 min-h-[250px] lg:min-h-[300px] overflow-hidden rounded-lg bg-background ring-1 ring-black/5">
+                                    <Image
+                                        src={step.image}
+                                        alt={step.title}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </div>
                             </motion.div>
                         ))}
                     </div>
-                </section>
-
-                {/* ── SHOWCASE (full-bleed image) ── */}
-                <section>
-                    <div className="full-bleed">
-                        <motion.div {...fadeUp()} className="relative h-[200px] sm:h-[280px] lg:h-[500px] overflow-hidden">
-                            <Image
-                                src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                                alt="Building and developing a custom website"
-                                fill
-                                quality={90}
-                                sizes="100vw"
-                                className="object-cover"
-                            />
-                        </motion.div>
-                    </div>
-                </section>
-
-                {/* ── TOOLS / TECH STACK (from homepage) ── */}
-                <section className="section-y">
-                    <TechStackMarquee items={brands} />
                 </section>
 
                 {/* ── CTA + closing marquee ── */}

@@ -133,7 +133,7 @@ export default function PricingPage() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="space-y-4 max-w-3xl">
             <Eyebrow>Pricing</Eyebrow>
-            <h1 className="max-w-[18ch]">
+            <h1 className="max-w-[20ch]">
               Simple pricing for your {" "}
               <span className="text-primary">business website</span>
             </h1>
@@ -236,13 +236,8 @@ export default function PricingPage() {
 
       </section>
 
-      {/* ── TRUSTED TOOLS ── */}
-      <section>
-        <TechStackMarquee items={tools} />
-      </section>
-
-      {/* ── FAQ ── */}
-      <section className="section-y">
+     {/* ── FAQ ── */}
+      <section className="section-yb">
         <div className="max-w-screen mx-auto bg-foreground/3 rounded-3xl px-6 py-12 sm:px-12 sm:py-16">
           <FaqAccordion
             items={pricingFaqs}
