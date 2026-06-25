@@ -35,7 +35,12 @@ export interface Testimonial {
     quote: string;
     name: string;
     role: string;
-
+    /**
+     * Optional client headshot. Use a LOCAL path under /public (e.g.
+     * "/images/clients/jane.webp") — remote URLs would need a host added to
+     * next.config `remotePatterns`. Falls back to initials if unset or it fails to load.
+     */
+    avatar?: string;
 }
 
 export interface Stat {

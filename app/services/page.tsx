@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Script from "next/script";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 
@@ -63,16 +64,8 @@ const buildServices = [
     },
 ];
 
-// Soft pastel backgrounds cycled across the service cards (arbitrary hex so they
-// render regardless of the dynamic theme primary, and stay gentle/on-brand).
-const cardTints = [
-    "bg-[#f5f3ff]", // violet
-    "bg-[#ecfdf5]", // mint
-    "bg-[#fff7ed]", // peach
-    "bg-[#eff6ff]", // blue
-    "bg-[#fdf2f8]", // pink
-    "bg-[#f8fafc]", // slate
-];
+// Soft pastel step-card backgrounds (dark text throughout).
+const stepCards = ["bg-[#f5f3ff]", "bg-[#ecfdf5]", "bg-[#fff7ed]", "bg-[#eff6ff]"];
 
 // Bento column spans for the 4 process steps (out of 5): 40/60 then 60/40.
 const stepSpans = ["md:col-span-4", "md:col-span-4", "md:col-span-4", "md:col-span-4"];
@@ -100,10 +93,10 @@ const stats = [
 ];
 
 const steps = [
-    { num: "01", title: "Discovery", desc: "I learn your business, goals, and audience to map a clear, focused plan before any design begins.", image: "/images/process/process-discovery.jpg" },
-    { num: "02", title: "Plan & Design", desc: "A design that fits your brand identity, user-friendly, polished, and built from the ground up to convert.", image: "/images/process/process-design.jpg" },
-    { num: "03", title: "Development", desc: "A fast, responsive, SEO-ready website crafted with precision, performance, and attention to every interaction.", image: "/images/process/process-webdev.jpg" },
-    { num: "04", title: "Test & Launch", desc: "Rigorous testing for speed, security, and bugs, then a smooth launch that's ready to grow with you.", image: "/images/process/process-launch.jpg" },
+    { num: "01", title: "Discovery", desc: "I learn your business, goals, and audience to map a clear, focused plan before any design begins.", image: "/images/process/ud-discovery.svg" },
+    { num: "02", title: "Plan & Design", desc: "A design that fits your brand identity, user-friendly, polished, and built from the ground up to convert.", image: "/images/process/ud-design.svg" },
+    { num: "03", title: "Development", desc: "A fast, responsive, SEO-ready website crafted with precision, performance, and attention to every interaction.", image: "/images/process/ud-development.svg" },
+    { num: "04", title: "Test & Launch", desc: "Rigorous testing for speed, security, and bugs, then a smooth launch that's ready to grow with you.", image: "/images/process/ud-launch.svg" },
 ];
 
 const serviceSchema = {
@@ -239,9 +232,6 @@ export default function ServicesPage() {
                         <motion.div {...fadeUp()} className="space-y-4 max-w-[50ch]">
                             <Eyebrow>How It Works</Eyebrow>
                             <h2 className="max-w-[20ch]">Simple Steps To Complete Your Project</h2>
-                            <p className="text-muted-foreground leading-relaxed">
-                                A clear, proven process, from the first conversation to launch day, so you always know what&apos;s happening and what comes next.
-                            </p>
                         </motion.div>
                         <motion.div {...fadeUp(0.1)} className="shrink-0">
                             <Button href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
@@ -251,31 +241,41 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Bento grid — alternating wide / narrow cards */}
-                    <div className="mt-12 grid grid-cols-1 md:grid-cols-8 gap-5">
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-8 gap-6">
                         {steps.map((step, i) => (
                             <motion.div
                                 key={step.num}
                                 {...fadeUp(i * 0.06)}
                                 className={cn(
-                                    "group flex flex-col rounded-xl p-6 md:p-10 transition-shadow hover:shadow-md hover:shadow-primary/5",
+                                    "group relative flex flex-col gap-2 overflow-hidden rounded-xl p-6 md:p-7 min-h-[150px] md:min-h-[170px] bg-no-repeat bg-right-bottom bg-[length:32%_auto]",
                                     stepSpans[i % stepSpans.length],
-                                    cardTints[i % cardTints.length]
+                                    stepCards[i % stepCards.length]
                                 )}
+                                style={{ backgroundImage: `url("${step.image}")` }}
                             >
-                                <div className="flex items-center gap-2.5">
-                                    <span className="font-mono text-lg font-bold text-primary/70 leading-none">[{step.num}]</span>
-                                    <h3 className="text-2xl font-semibold leading-snug">{step.title}</h3>
-                                </div>
-                                <p className="mt-2 text-md text-muted-foreground leading-relaxed">{step.desc}</p>
-                                <div className="relative mt-4 flex-1 min-h-[250px] lg:min-h-[300px] overflow-hidden rounded-lg bg-background ring-1 ring-black/5">
-                                    <Image
-                                        src={step.image}
-                                        alt={step.title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                </div>
+                                {/* Number */}
+                                <span className="font-mono text-sm font-bold text-primary/70 leading-none">[{step.num}]</span>
+
+                                {/* Title */}
+                                <h3 className="text-2xl font-semibold leading-snug">
+                                    {step.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className="text-sm text-muted-foreground leading-relaxed max-w-[30ch] md:max-w-[30ch]">
+                                    {step.desc}
+                                </p>
+
+                                {/* Learn more, bottom-left */}
+                                <Link
+                                    href="/book-a-call"
+                                    aria-label={"Book a call to start " + step.title}
+                                    className="mt-auto inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary"
+                                >
+                                    Book A Call
+                                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                </Link>
+
                             </motion.div>
                         ))}
                     </div>
