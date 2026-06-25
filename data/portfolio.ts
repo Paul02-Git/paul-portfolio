@@ -2,8 +2,8 @@ import { Layout, Zap, Code2, Headset, Puzzle, Palette, Search, Gauge, Bot, Shiel
 import { Experience, Tool, Project, Service, Testimonial, FAQItem, BlogPost } from "@/types/portfolio";
 
 export const vibes = [
+    { name: "Professional", color: "#108a00", secondaryColor: "#56AB2F", icon: ShieldCheck, label: "Trust & Growth" },
     { name: "Modern", color: "#101720", secondaryColor: "#d97706", icon: Activity, label: "Dynamic & Bold" },
-    { name: "Professional", color: "#0a7a00", secondaryColor: "#56AB2F", icon: ShieldCheck, label: "Trust & Growth" },
     { name: "Creative", color: "#B22222", secondaryColor: "#334155", icon: Palette, label: "Innovation & Design" },
     { name: "Premium", color: "#e35336", secondaryColor: "#fbbf24", icon: Sparkles, label: "Excellence & Quality" },
     { name: "Visionary", color: "#0047AB", secondaryColor: "#7dd3fc", icon: Globe, label: "Global Reach" }
@@ -196,64 +196,63 @@ export const testimonials: Testimonial[] = [
         quote: "I am genuinely grateful for having been recommended to WebCornerstone by a trusted colleague. I required a professional website to be developed very quickly,",
         name: "Mark P. Smith",
         role: "Owner, MPS & Associates, LLC",
-
-
+        avatar: "/images/clients/mark-smith.jpg",
     },
     {
         rating: 5,
         quote: "I've worked with dozens of developers over 15 years, but Paul truly stands out. He delivers top-notch WordPress solutions on time, on budget, and with impressive results.",
         name: "David Chen",
         role: "Founder & CEO",
-
+        avatar: "/images/clients/david-chen.jpg",
     },
     {
         rating: 5,
         quote: "Paul is a great developer. He is very skilled with Elementor. He understood the design quickly and executed it perfectly.",
         name: "Michael Johnson",
         role: "CEO",
-
+        avatar: "/images/clients/michael-johnson.jpg",
     },
     {
         rating: 5,
         quote: "Great communication and fast turnaround. My website is now optimized and running smoothly.",
         name: "James Wilson",
         role: "CEO",
-
+        avatar: "/images/clients/james-wilson.jpg",
     },
     {
         rating: 5,
         quote: "Helped us fix several WordPress issues and improved our site speed. Reliable and efficient.",
         name: "Robert Brown",
         role: "Operations Manager",
-
+        avatar: "/images/clients/robert-brown.jpg",
     },
     {
         rating: 5,
         quote: "Set up our pages in Elementor beautifully. Everything is responsive and looks great on mobile.",
         name: "Jessica Lee",
         role: "Marketing Manager",
-
+        avatar: "/images/clients/jessica-lee.jpg",
     },
     {
         rating: 5,
         quote: "Professional, detail-oriented, and easy to work with. Also helped with admin tasks beyond the website.",
         name: "Daniel Brooks",
         role: "Startup Founder",
-
+        avatar: "/images/clients/daniel-brooks.jpg",
     },
     {
         rating: 5,
         quote: "Handled our website updates and integrations without any problems. Smooth experience from start to finish.",
         name: "Olivia Martinez",
         role: "Startup Founder",
-
+        avatar: "/images/clients/olivia-martinez.jpg",
     },
     {
         rating: 5,
         quote: "Very dependable virtual assistant with strong technical skills in WordPress and website management.",
         name: "Kevin Rodriguez",
         role: "Small Business Owner",
-
+        avatar: "/images/clients/kevin-rodriguez.jpg",
     }
 ];
 
