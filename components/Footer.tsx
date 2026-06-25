@@ -123,7 +123,7 @@ export const Footer = () => {
                                 className="h-12 w-auto object-contain"
                             />
                         </Link>
-                        <p className="text-muted-foreground text-sm leading-relaxed max-w-[34ch]">
+                        <p className="text-muted-foreground text-sm leading-relaxed max-w-[42ch]">
                             WordPress developer & GoHighLevel specialist building conversion-focused
                             websites and automation for service businesses worldwide.
                         </p>

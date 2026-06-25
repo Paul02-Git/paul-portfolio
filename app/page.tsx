@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import {
   Calendar,
   ArrowUpRight,
-  Star,
   Zap,
   BarChart3,
   Search,
@@ -25,7 +24,16 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Button } from "@/components/Button";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { testimonials, projects, blogPosts, faqs } from "@/data/portfolio";
+import { ClientFeedback } from "@/components/ClientFeedback";
+import { projects, blogPosts, faqs } from "@/data/portfolio";
+
+// Logo bubbles embedded in the trust headline (WordPress mark matches the services hero).
+const trustLogos = [
+  { name: "WordPress", logo: "https://www.vectorlogo.zone/logos/wordpress/wordpress-icon.svg" },
+  { name: "Elementor", logo: "/images/Elementor-Logo-Symbol-Red.svg" },
+  { name: "GoHighLevel", logo: "/images/GHL Logo.svg" },
+  { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+];
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -499,8 +507,8 @@ export default function Home() {
         </section>
 
         
-        {/* ── FULL-BLEED CTA ── */}
-        <section className="min-h-[70vh] flex flex-col items-center justify-center relative left-1/2 -translate-x-1/2 w-screen overflow-hidden">
+        {/* ── TRUST / COMMUNITY STRIP (full-bleed) ── */}
+        <section className="relative left-1/2 -translate-x-1/2 w-screen overflow-hidden flex items-center justify-center">
 
           {/* Background image */}
           <Image
@@ -512,29 +520,47 @@ export default function Home() {
             className="object-cover"
           />
           {/* Dark overlays for legibility */}
-          <div className="absolute inset-0 bg-foreground/45" />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/20 via-foreground/40 to-foreground/60" />
+          <div className="absolute inset-0 bg-foreground/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/30 via-foreground/50 to-foreground/70" />
 
           {/* Content */}
-          <div className="relative mx-auto px-4 pt-14 pb-14 sm:px-6 lg:px-6">
-            <motion.div
-              {...fadeUp()}
-              className="flex flex-col items-center text-center space-y-6"
-            >
-              <Eyebrow className="text-white">No Risk, No Pressure</Eyebrow>
-              <h2 className="text-muted max-w-[32ch]">
-                Not Sure What Your Website Needs? Let&apos;s Figure It Out, Free.
-              </h2>
-              <p className="text-white text-lg leading-relaxed max-w-[60ch]">
-                Book a free 30-minute strategy call. I&apos;ll review your current site and show you exactly what&apos;s holding back your leads, whether you hire me or not.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Button className="border" href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
-                  Book A Call
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            {...fadeUp()}
+            className="relative flex flex-col items-center gap-8 text-center px-4 py-20 sm:px-6 sm:py-28"
+          >
+            {/* Eyebrow pill */}
+            <span className="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-foreground backdrop-blur-sm">
+              Trusted Toolkit
+            </span>
+
+            {/* Headline with inline logo bubbles */}
+            <h2 className="max-w-[25ch] leading-[1.15] text-[2.2rem] md:text-[3rem] text-white">
+              I build{" "}
+              <span className="inline-flex h-[0.85em] w-[0.85em] translate-y-[0.12em] items-center justify-center overflow-hidden rounded-full bg-white align-baseline ring-1 ring-white/30 p-[0.12em]">
+                <Image src={trustLogos[0].logo} alt="" width={48} height={48} className="h-full w-full object-contain" />
+              </span>{" "}
+              websites for growing{" "}
+              <span className="inline-flex h-[0.85em] w-[0.85em] translate-y-[0.12em] items-center justify-center overflow-hidden rounded-full bg-white align-baseline ring-1 ring-white/30 p-[0.12em]">
+                <Image src={trustLogos[1].logo} alt="" width={48} height={48} className="h-full w-full object-contain" />
+              </span>{" "}
+              businesses and the{" "}
+              <span className="inline-flex h-[0.85em] w-[0.85em] translate-y-[0.12em] items-center justify-center overflow-hidden rounded-full bg-white align-baseline ring-1 ring-white/30 p-[0.12em]">
+                <Image src={trustLogos[2].logo} alt="" width={48} height={48} className="h-full w-full object-contain" />
+              </span>{" "}
+              busy teams{" "}
+              <span className="inline-flex h-[0.85em] w-[0.85em] translate-y-[0.12em] items-center justify-center overflow-hidden rounded-full bg-white align-baseline ring-1 ring-white/30 p-[0.12em]">
+                <Image src={trustLogos[3].logo} alt="" width={48} height={48} className="h-full w-full object-contain" />
+              </span>{" "}
+              behind them
+            </h2>
+
+            {/* CTA */}
+            <div>
+              <Button className="border bg-primary text-muted hover:bg-primary/90" href="/book-a-call" icon={<ArrowUpRight className="w-5 h-5" />}>
+                Book A Call
+              </Button>
+            </div>
+          </motion.div>
         </section>
 
         {/* ── FEATURED WORK ── */}
@@ -710,84 +736,10 @@ export default function Home() {
         </div>
 
         {/* ── TESTIMONIALS ── */}
-        <section className="section-y">
-          <motion.div {...fadeUp()} className="text-center mx-auto mb-12 space-y-4 max-w-[30ch] md:max-w-[40ch]">
-            <Eyebrow>Social Proof</Eyebrow>
-            <h2>Clients Who Made the Switch</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Real results from real businesses. Here&apos;s what working together actually looks like.
-            </p>
-          </motion.div>
-
-          <motion.div
-            {...fadeUp(0.1)}
-            className="relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 sm:p-8 md:p-10"
-          >
-            {/* Warm gradient accent */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-primary/10 via-primary/[0.04] to-transparent" />
-
-            {/* Social-proof bar */}
-            <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-5 mb-10">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2.5">
-                  {[
-                    "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&w=1600",
-                    "https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg?auto=compress&cs=tinysrgb&w=1600",
-                    "https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg?auto=compress&cs=tinysrgb&w=1600",
-                    "https://images.pexels.com/photos/30198184/pexels-photo-30198184.jpeg?auto=compress&cs=tinysrgb&w=1600",
-                  ].map((src, i) => (
-                    <span key={i} className="relative w-9 h-9 rounded-full overflow-hidden ring-2 ring-card bg-muted">
-                      <Image src={src} alt="Client" fill sizes="36px" className="object-cover" />
-                    </span>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">20+ businesses</span> rated my work <span className="font-semibold text-foreground">5 stars</span>
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-                <Button href="/book-a-call" size="sm" icon={<ArrowUpRight className="w-4 h-4" />}>
-                  Book A Call
-                </Button>
-                <Button href="/contact" variant="outline" size="sm" icon={<ArrowUpRight className="w-4 h-4" />}>
-                  Contact Me
-                </Button>
-              </div>
-            </div>
-
-            {/* Testimonial grid */}
-            <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {testimonials.slice(0, 6).map((t, i) => {
-                return (
-                  <motion.div
-                    key={i}
-                    {...fadeUp((i % 3) * 0.08)}
-                    className="rounded-xl border border-border/60 bg-background/60 p-5 flex flex-col gap-3 hover:border-primary/30 transition-colors duration-300"
-                  >
-                    <div className="flex gap-0.5">
-                      {Array.from({ length: t.rating }).map((_, j) => (
-                        <Star key={j} className="w-3.5 h-3.5 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <p className="text-foreground/80 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
-                    <div className="flex items-center gap-2.5 pt-3 border-t border-border/40">
-                      <span className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center text-white text-xs font-bold shrink-0">
-                        {t.name.split(" ").map((n) => n[0]).slice(0, 2).join("")}
-                      </span>
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold text-foreground truncate">{t.name}</p>
-                        <p className="text-xs text-muted-foreground truncate">{t.role}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </section>
+        <ClientFeedback />
 
         {/* ── LATEST INSIGHTS (BLOG), dark band ── */}
-        <section className="section-y relative left-1/2 -translate-x-1/2 w-screen overflow-hidden bg-muted">
+        <section className="section-y relative left-1/2 -translate-x-1/2 w-screen overflow-hidden bg-muted/40">
           {/* Soft, minimal glow for depth */}
           
           <div className="relative container-page">
