@@ -312,6 +312,95 @@ export const fullServices: Service[] = [
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "How to Migrate from Wix or Squarespace to WordPress in 2026 (Without Losing Your SEO)",
+        excerpt: "Outgrowing Wix or Squarespace? Here's how to migrate to WordPress in 2026 without losing your Google rankings, the real reasons to switch, how the move works step by step, and how to keep your SEO intact.",
+        date: "Jun 26, 2026",
+        category: "WordPress",
+        image: "/images/blog/migrate-to-wordpress-hero.webp",
+        slug: "migrate-wix-squarespace-to-wordpress",
+        author: "Paul Puzon",
+        authorRole: "WordPress & Elementor Developer",
+        content: `
+            <div class="space-y-6">
+                <p>There's a very specific moment in a growing business's life when its website builder stops feeling like a helpful starter home and starts feeling like a studio flat you've quietly outgrown. You want to add a feature, it's not possible. You want to tweak something for SEO, the option doesn't exist. You go to move your site elsewhere and discover you can't really take it with you. If you've ever muttered "I think I've outgrown this" at your Wix or Squarespace dashboard, this one's for you.</p>
+
+                <p>Migrating to <strong>WordPress</strong> is how a lot of businesses graduate from "a website that exists" to "a website they actually control." But the move comes with one very loud fear, usually shouted in all caps: <em>WILL I LOSE MY GOOGLE RANKINGS?</em> The honest answer is "not if you do it properly," and this guide walks through exactly what "properly" looks like, why businesses make the switch, how the migration actually works, and how to keep every scrap of your hard-won SEO. I do these migrations for clients, so I'll keep it practical rather than scary.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why Businesses Outgrow Wix and Squarespace</h2>
+                <p>Let's be fair first: Wix and Squarespace are genuinely good at what they're for, getting a decent-looking site live quickly without touching code. For a brand-new business, that's perfect. The friction shows up later, once your business is bigger than the platform was designed for.</p>
+                <img src="/images/blog/frustrated-with-website-builder.webp" alt="A business owner looking frustrated at her laptop, having outgrown her website builder" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <p>The usual reasons people start eyeing the exit:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Limited flexibility.</strong> You can only do what the builder allows. When your idea lives outside that box, you're simply stuck.</li>
+                    <li><strong>SEO ceilings.</strong> You get less control over the technical details that help you rank, and that ceiling gets lower the more serious you are about traffic.</li>
+                    <li><strong>Costs that creep.</strong> Monthly fees, premium apps, and add-ons stack up, and you're renting the whole time.</li>
+                    <li><strong>The walled garden.</strong> Your content and design are tied to the platform. Leaving isn't a simple export, which is exactly how they'd like to keep it.</li>
+                </ul>
+                <p>None of this means you made a mistake starting on a builder, you didn't. It just means you've grown, which is the good kind of problem. (For the wider "is it time for a change?" question, I cover the signals in <a href="/blog/signs-your-website-needs-a-redesign" class="text-primary font-semibold hover:underline">7 signs your website needs a redesign</a>.)</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why WordPress, and What You're Actually Moving To</h2>
+                <p>WordPress powers around <strong>43% of every website on the internet</strong> (<a href="https://w3techs.com/technologies/overview/content_management" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">W3Techs</a>), and that popularity isn't an accident, it's what you get when a platform hands you the keys instead of renting you a room. Here's what actually changes when you move:</p>
+                <img src="/images/blog/wordpress-site-design-result.webp" alt="A modern website design displayed on a screen, representing a flexible WordPress build" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>You own everything.</strong> Your site, your content, your hosting, fully portable, no landlord.</li>
+                    <li><strong>Near-unlimited flexibility.</strong> With a builder like Elementor on top, you can design almost anything, and add features through plugins rather than waiting for permission.</li>
+                    <li><strong>Serious SEO control.</strong> Full access to the technical levers that builders hide, which matters if Google traffic is part of your plan (see my <a href="/blog/wordpress-seo-checklist-2026" class="text-primary font-semibold hover:underline">2026 WordPress SEO checklist</a>).</li>
+                    <li><strong>Room to grow.</strong> Bookings, e-commerce, memberships, CRM automation, WordPress scales with you instead of capping you.</li>
+                </ul>
+                <p>The trade-off is honesty time: WordPress asks for a little more setup and care than a drag-and-drop builder. That's the price of the freedom, and it's why a lot of people hand the move to a developer rather than wrestle it solo. More on that shortly.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">"Will I Lose My Google Rankings?" (The Big Fear)</h2>
+                <p>Here's the question that keeps people frozen on a platform they've outgrown. The fear is reasonable, a botched migration absolutely <em>can</em> tank your rankings. But a careful one doesn't, and the difference is entirely in the preparation, not luck.</p>
+                <img src="/images/blog/migration-seo-rankings.webp" alt="A laptop showing an analytics dashboard, representing preserved SEO rankings after migration" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <p>Your rankings survive when the migration protects the things Google already trusts about your site. In plain English, that means:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Keep your URLs the same</strong> where you can, so Google finds your pages exactly where it left them.</li>
+                    <li><strong>Set up 301 redirects</strong> for any URL that <em>has</em> to change, pointing the old address to the new one so visitors and rankings follow along.</li>
+                    <li><strong>Preserve your content and on-page SEO</strong>, page titles, meta descriptions, headings, and image alt text all carry over.</li>
+                    <li><strong>Submit a fresh sitemap</strong> in Google Search Console after launch so Google re-crawls the new site quickly.</li>
+                </ul>
+                <p>Do those and rankings typically hold steady, sometimes they even improve, because WordPress lets you fix the technical SEO and speed issues the old platform wouldn't. The horror stories you've heard almost always trace back to someone skipping the redirects. Don't skip the redirects.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">How the Migration Actually Works, Step by Step</h2>
+                <p>Migrations sound scary until you see them broken down. There's no magic "import everything" button between these platforms (they don't exactly want to make leaving easy), so a proper move is a methodical rebuild. Here's the shape of it:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li><strong>Audit what you have.</strong> List every page, your top-ranking URLs, and the content worth keeping. You can't protect what you haven't mapped.</li>
+                    <li><strong>Set up WordPress and hosting.</strong> Fresh install on quality hosting, in your name, on a staging site so the public never sees the work-in-progress.</li>
+                    <li><strong>Rebuild the design.</strong> Recreate your site in WordPress (Elementor makes this clean and fast), improving the bits that always bugged you while you're at it.</li>
+                    <li><strong>Move the content.</strong> Bring across your text, images, and pages, keeping titles, metas, and structure intact for SEO.</li>
+                    <li><strong>Map the redirects.</strong> Match every old URL to its new home with 301 redirects. This is the SEO safety net, and the step amateurs skip.</li>
+                    <li><strong>Test everything on staging.</strong> Links, forms, mobile, speed. Find the broken bits before the public does.</li>
+                    <li><strong>Launch and point the domain.</strong> Flip the switch, then keep the old site available just long enough to confirm nothing's missing.</li>
+                    <li><strong>Submit and monitor.</strong> Send the new sitemap to Search Console and watch your traffic for a few weeks to catch anything that slipped.</li>
+                </ol>
+                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
+                    <h4 class="text-lg font-bold text-primary mb-2">Quick Win: Don't Cancel the Old Site on Launch Day</h4>
+                    <p class="text-sm">The single most expensive migration mistake is deleting your Wix or Squarespace site the moment the new one goes live. Keep it active for a few weeks. It's your safety net, if a page, image, or redirect turns out to be missing, you've still got the original to check against. Cancelling early to save one month's fee, then discovering a gap you can't reference, is the website equivalent of burning the receipt before you're sure the thing works.</p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Should You DIY the Migration, or Hire Someone?</h2>
+                <p>Could you do this yourself? If you're technically confident, have a small site, and enjoy a weekend project with stakes, genuinely, yes. The pieces are all learnable. The catch is that migrations are unforgiving: the redirects, the SEO preservation, and the DNS switch are exactly the bits where a small mistake quietly costs you traffic for months before you notice.</p>
+                <p>That's why most businesses hand the move to a developer, not because it's impossible, but because the cost of getting the SEO part wrong dwarfs the cost of doing it right. If you'd rather not gamble your rankings on a first attempt, that's the kind of migration I handle for clients, you can see the kind of work in my <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>, and there's a no-jargon walkthrough of choosing the right person in <a href="/blog/how-to-hire-a-wordpress-developer" class="text-primary font-semibold hover:underline">how to hire a WordPress developer</a>. Hiring offshore to keep costs sensible is a perfectly good route too, I cover it in <a href="/blog/hire-wordpress-elementor-developer-philippines" class="text-primary font-semibold hover:underline">hiring a WordPress and Elementor developer in the Philippines</a>.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Migrating to WordPress: FAQs</h2>
+                <h3 class="text-xl font-bold text-foreground mt-6">Will migrating to WordPress hurt my SEO?</h3>
+                <p>Not if it's done carefully. Keep your URLs where possible, set up 301 redirects for any that change, preserve your titles and meta data, and submit a new sitemap. Done right, rankings hold steady, and often improve once you fix the technical SEO and speed your old platform limited.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Can I move my content automatically from Wix or Squarespace?</h3>
+                <p>Only partially. There's no clean one-click transfer between these platforms and WordPress, so a proper migration is a structured rebuild, recreating the design and moving content deliberately. That's actually a good thing: it's your chance to improve what wasn't working rather than copy the flaws across.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">How long does a migration take?</h3>
+                <p>It depends on size. A small site can move in a week or so; a larger site with lots of pages, products, or custom features takes longer. The biggest variable is usually content readiness, the rebuild moves fastest when your text and images are organised and to hand.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Will my website go offline during the move?</h3>
+                <p>It shouldn't. A proper migration is built on a separate staging site while your live site keeps running. You only switch the domain over once the new site is tested and ready, so visitors experience little to no downtime.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Is WordPress harder to manage than Wix or Squarespace?</h3>
+                <p>It asks for a little more involvement, but a well-built WordPress site with a page builder like Elementor is very manageable for day-to-day edits. And you can arrange a maintenance plan so updates and security are handled for you, freedom without the homework.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Ready to Make the Move?</h2>
+                <p>Outgrowing your website builder isn't a failure, it's a sign your business got bigger than its starter setup. Migrating to WordPress gives you back ownership, flexibility, and real control over your SEO, and done carefully, you keep every bit of the Google traffic you've earned. Map your URLs, protect them with redirects, rebuild deliberately, and don't bin the old site on day one.</p>
+                <p>If you'd rather have the move handled by someone who does migrations for a living, and keeps your rankings intact in the process, that's exactly what I do. Take a look at my <a href="/services" class="text-primary font-semibold hover:underline">services</a>, browse the <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>, or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a> and we'll map out your migration, no jargon, no pressure, and no lost rankings. Prefer to type? Just <a href="/contact" class="text-primary font-semibold hover:underline">send a message</a> and we'll take it from there.</p>
+            </div>
+        `
+    },
+    {
         title: "Klaviyo Email & SMS Flows Every Shopify Store Needs in 2026 (To Recover Lost Sales)",
         excerpt: "Most Shopify stores leave money on the table by skipping email automation. Here are the Klaviyo email and SMS flows every store needs in 2026, from abandoned cart to win-back, to recover sales on autopilot.",
         date: "Jun 26, 2026",
