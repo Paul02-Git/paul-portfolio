@@ -1,22 +1,20 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import { TimelineContent } from "@/components/ui/timeline-animation";
 import { Eyebrow } from "@/components/Eyebrow";
 import { testimonials } from "@/data/portfolio";
 import type { Testimonial } from "@/types/portfolio";
 
-const revealVariants = {
-  visible: (i: number) => ({
-    y: 0,
-    opacity: 1,
-    filter: "blur(0px)",
-    transition: { delay: i * 0.12, duration: 0.5, ease: "easeOut" as const },
-  }),
-  hidden: { filter: "blur(10px)", y: -20, opacity: 0 },
-};
+// Global entrance effect (matches fadeUp used across the site).
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" } as const,
+  transition: { duration: 0.55, ease: "easeOut" as const, delay },
+});
 
 const initials = (name: string) =>
   name
@@ -123,8 +121,6 @@ function Quote({
 }
 
 export function ClientFeedback() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
   // Card surfaces: light (grid), accent (primary). The middle column cycles the
   // soft pastel tints used on the services page steps grid — one per card.
   const lightCard =
@@ -140,88 +136,55 @@ export function ClientFeedback() {
   );
 
   return (
-    <section ref={sectionRef} className="section-y">
+    <section className="section-y">
       <div>
         {/* Header */}
         <div className="mx-auto text-center space-y-4 mb-12">
-          <TimelineContent
-            as="div"
-            animationNum={0}
-            customVariants={revealVariants}
-            timelineRef={sectionRef}
-          >
+          <motion.div {...fadeUp()}>
             <Eyebrow className="inline-block">Social Proof</Eyebrow>
-          </TimelineContent>
-          <TimelineContent
-            as="h2"
-            animationNum={1}
-            customVariants={revealVariants}
-            timelineRef={sectionRef}
-            className="max-w-[20ch] mx-auto"
-          >
+          </motion.div>
+          <motion.h2 {...fadeUp(0.08)} className="max-w-[20ch] mx-auto">
             Trusted by Businesses That Made the Switch
-          </TimelineContent>
+          </motion.h2>
         </div>
 
         {/* Bento grid */}
         <div className="lg:grid lg:grid-cols-3 gap-4 flex flex-col">
           {/* Column 1 */}
           <div className="flex flex-col gap-4 md:flex-row lg:flex-col h-full">
-            <TimelineContent
-              animationNum={0}
-              customVariants={revealVariants}
-              timelineRef={sectionRef}
-              className={`lg:flex-[7] flex-[6] ${lightCard}`}
-            >
+            <motion.div {...fadeUp()} className={`lg:flex-[7] flex-[6] ${lightCard}`}>
               {grid}
               <Quote testimonial={testimonials[1]} tone="light" />
-            </TimelineContent>
+            </motion.div>
 
-            <TimelineContent
-              animationNum={1}
-              customVariants={revealVariants}
-              timelineRef={sectionRef}
-              className={`lg:flex-[3] flex-[4] ${accentCard}`}
-            >
+            <motion.div {...fadeUp(0.1)} className={`lg:flex-[3] flex-[4] ${accentCard}`}>
               <Quote testimonial={testimonials[2]} tone="accent" />
-            </TimelineContent>
+            </motion.div>
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-4 md:flex-row lg:flex-col h-full">
             {[3, 4, 5].map((idx, i) => (
-              <TimelineContent
+              <motion.div
                 key={idx}
-                animationNum={2 + i}
-                customVariants={revealVariants}
-                timelineRef={sectionRef}
+                {...fadeUp(0.1 + i * 0.08)}
                 className={`flex-1 ${pastelCard} ${pastelTints[i]}`}
               >
                 <Quote testimonial={testimonials[idx]} tone="pastel" small />
-              </TimelineContent>
+              </motion.div>
             ))}
           </div>
 
           {/* Column 3 */}
           <div className="flex flex-col gap-4 md:flex-row lg:flex-col h-full">
-            <TimelineContent
-              animationNum={5}
-              customVariants={revealVariants}
-              timelineRef={sectionRef}
-              className={`lg:flex-[3] flex-[4] ${accentCard}`}
-            >
+            <motion.div {...fadeUp()} className={`lg:flex-[3] flex-[4] ${accentCard}`}>
               <Quote testimonial={testimonials[6]} tone="accent" />
-            </TimelineContent>
+            </motion.div>
 
-            <TimelineContent
-              animationNum={6}
-              customVariants={revealVariants}
-              timelineRef={sectionRef}
-              className={`lg:flex-[7] flex-[6] ${lightCard}`}
-            >
+            <motion.div {...fadeUp(0.1)} className={`lg:flex-[7] flex-[6] ${lightCard}`}>
               {grid}
               <Quote testimonial={testimonials[0]} tone="light" />
-            </TimelineContent>
+            </motion.div>
           </div>
         </div>
       </div>
