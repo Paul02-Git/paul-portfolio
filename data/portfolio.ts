@@ -32,14 +32,12 @@ export const projects: Project[] = [
         title: "Rescue Paws Club",
         category: "Shopify Development",
         image: "/images/rescuepawsclub.webp",
-        link: "https://rescuepawsclub.com",
         tools: ["shopify", "klaviyo"],
     },
     {
         title: "Kinda Fit Club",
         category: "Shopify Development",
         image: "/images/kindafitclub.webp",
-        link: "https://kindafitclub.com",
         tools: ["shopify", "klaviyo"],
     },
     {
@@ -48,7 +46,7 @@ export const projects: Project[] = [
         image: "/images/hollywood-custom-cabinetry.webp",
         tools: ["elementor"],
     },
-      {
+    {
         title: "Rose Gold Reserve",
         category: "Web Development",
         image: "/images/The Rosegold.webp",
@@ -60,26 +58,24 @@ export const projects: Project[] = [
         image: "/images/colts-fan-cruise.webp",
         tools: ["figma", "hubspot", "elementor"],
     },
-      {
+    {
         title: "Jets Fan Cruise",
         category: "Web Development",
         image: "/images/Jets-Fan-Cruise-1.webp",
         tools: ["figma", "elementor", "hubspot"],
     },
-     {
+    {
         title: "Pinnacle Nutra Labs",
         category: "Web Development",
         image: "/images/Pinnacle.webp",
         tools: ["elementor", "ghl"],
     },
-  
     {
         title: "Raiders Fan Cruise",
         category: "Web Development",
         image: "/images/raiders-fan-cruise.webp",
         tools: ["figma", "hubspot", "elementor"],
     },
-   
     {
         title: "Steelers Fan Cruise",
         category: "Web Development",
@@ -92,7 +88,6 @@ export const projects: Project[] = [
         image: "/images/consultwithche-com-Homelessness-wp.webp",
         tools: ["figma", "elementor"],
     },
-   
     {
         title: "Ichiban Go",
         category: "Web Development",
@@ -316,6 +311,130 @@ export const fullServices: Service[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "How to Hire a WordPress & Elementor Developer in the Philippines (2026 Guide)",
+        excerpt: "Thinking of hiring a WordPress and Elementor developer from the Philippines? Here's what overseas business owners need to know in 2026, timezones, English, quality, ownership, and how to vet one without getting burned.",
+        date: "Jun 26, 2026",
+        category: "WordPress",
+        image: "/images/blog/hire-filipino-wordpress-developer.jpg",
+        slug: "hire-wordpress-elementor-developer-philippines",
+        author: "Paul Puzon",
+        authorRole: "WordPress & Elementor Developer",
+        content: `
+            <div class="space-y-6">
+                <p>Somewhere right now, a business owner in London, Sydney, or Austin is staring at a quote from a local agency, doing the maths, and quietly making the same face you make when you see the bill at a fancy restaurant where the portions were the size of a postage stamp. Then a thought arrives: <em>"Could I hire a great WordPress developer from the Philippines for a fraction of this?"</em> The answer is yes, and the fact that you've already had that thought means you're smarter than the version of me who once tried to build his own site to "save money." (Narrator: he did not save money.)</p>
+
+                <p>Hiring overseas is no longer the slightly sketchy shortcut it felt like a decade ago. The Philippines has quietly become one of the world's go-to places for skilled <strong>WordPress and Elementor developers</strong>, and plenty of US, UK, and Australian businesses now run their entire web presence through one. But "hire someone abroad" still raises perfectly reasonable questions, will the timezone be a nightmare, is the quality actually there, and how do I make sure I own what I paid for? This guide answers all of that, written by someone on the other side of the transaction: a Filipino developer who works with clients worldwide every single week.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why Overseas Businesses Hire WordPress Developers From the Philippines</h2>
+                <p>Let's start with the obvious one, because pretending cost isn't a factor would be silly: you genuinely do get more for your money. But if it were <em>only</em> about being cheap, you'd be reading a very different (and much more depressing) article. The real reason the Philippines punches above its weight comes down to a stack of things lining up:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Strong English, the working kind.</strong> The Philippines consistently ranks among the highest-proficiency English-speaking nations in Asia (<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">EF English Proficiency Index</a>). That means no awkward telephone-game miscommunication about what "above the fold" means.</li>
+                    <li><strong>A deep WordPress talent pool.</strong> WordPress powers roughly <strong>43% of all websites on the internet</strong> (<a href="https://w3techs.com/technologies/overview/content_management" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">W3Techs</a>), and Filipino developers have spent years building on it for clients abroad. Elementor expertise specifically is everywhere here.</li>
+                    <li><strong>A service culture that takes deadlines personally.</strong> This is harder to put on a spec sheet, but it's real. Reliability and responsiveness aren't extras, they're the default.</li>
+                    <li><strong>Favourable rates without favourable-rate quality.</strong> You're not trading quality for price, you're trading a higher cost of living somewhere else for a lower one here. Same work, different overheads.</li>
+                </ul>
+                <p>If you've already weighed the broader freelancer-versus-agency decision, my <a href="/blog/how-to-hire-a-wordpress-developer" class="text-primary font-semibold hover:underline">no-jargon guide to hiring a WordPress developer</a> covers that fork in detail. This guide picks up where that one leaves off, when "hire a developer" specifically means "hire one from the Philippines."</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Timezone Question (Everyone's First Worry)</h2>
+                <p>This is the concern I hear before any other, usually phrased as some polite version of <em>"So... will you be awake when I am?"</em> It's a fair worry, and the honest answer is that timezones are a logistics detail, not a dealbreaker, as long as your developer treats them like one.</p>
+                <img src="/images/blog/offshore-developer-video-call.jpg" alt="A Filipino developer on a video call with an overseas client, headphones on, smiling" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <p>Here's the reality across the big three regions:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Australia:</strong> basically a non-issue. Manila and the eastern Australian states are only a couple of hours apart, so you're working the same day, often the same hours.</li>
+                    <li><strong>UK & Europe:</strong> there's a healthy afternoon-into-evening overlap. Your morning is my afternoon, which leaves a solid window for calls and quick back-and-forth.</li>
+                    <li><strong>US:</strong> the widest gap, but it has a hidden upside. You send notes at the end of your day, I work while you sleep, and you wake up to progress. It's less "lag" and more "the work fairy visited overnight."</li>
+                </ul>
+                <p>The trick isn't matching clocks for eight hours a day, it's having a developer who's deliberate about communication: clear async updates, a guaranteed reply window, and a standing slot for live calls when something needs a real conversation. A good offshore developer makes the timezone feel like a feature. A bad one makes you feel like you're shouting into a well. Vet for the former.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">"But Is the Quality Actually Good?" — The Elementor Reality</h2>
+                <p>Let's address the quiet fear directly, because everyone has it and nobody wants to say it out loud: the worry that "cheaper" secretly means "worse." It doesn't have to, but I'll be honest, it <em>can</em>, if you hire on price alone and skip the vetting. The same is true of an expensive agency, by the way; paying more is not a magic quality filter, it just hurts more when it goes wrong.</p>
+                <img src="/images/blog/elementor-developer-philippines.jpg" alt="A WordPress and Elementor developer building a custom website layout on a large monitor" width="1200" height="900" loading="lazy" class="w-full rounded-md my-8" />
+                <p>When you hire a genuine <strong>WordPress and Elementor expert in the Philippines</strong>, here's what proper quality actually looks like, and what you should expect for your money:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Clean Elementor builds, not bloated ones.</strong> Elementor is brilliant, but in the wrong hands it can produce a heavy, sluggish page. A real expert keeps it lean so the site still loads fast (the why-this-matters version lives in my <a href="/blog/speed-up-wordpress-website-core-web-vitals" class="text-primary font-semibold hover:underline">Core Web Vitals guide</a>).</li>
+                    <li><strong>Conversion-focused layouts</strong>, pages built to turn a visitor into an enquiry, not just to look pretty in a portfolio screenshot.</li>
+                    <li><strong>Mobile-first everything</strong>, because most of your visitors are on a phone, and a desktop-only design is half a website wearing a nice coat.</li>
+                    <li><strong>SEO foundations baked in</strong>, proper structure, clean headings, and the technical groundwork that lets Google find you.</li>
+                </ul>
+                <p>The lesson isn't "Filipino developers are cheap and good," that's a lazy stereotype, even a flattering one. The lesson is that the <em>quality range</em> here is wide, exactly like it is everywhere, and your job is to land in the top slice of it. Which brings us neatly to vetting.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">How to Vet a Filipino Developer Before You Pay a Cent</h2>
+                <p>Distance makes vetting <em>more</em> important, not less, because you can't exactly pop into their office for a coffee and a vibe check. The good news is that the internet leaves a trail, and a few minutes of homework filters out most of the risk.</p>
+                <img src="/images/blog/vetting-offshore-developer.jpg" alt="Two professionals reviewing a developer's portfolio and past work on laptops" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Open their <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a> and actually click the live sites.</strong> Do they load fast? Work on your phone? A portfolio of pretty pictures is easy to fake, working websites are not.</li>
+                    <li><strong>Run one of their live sites through <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">PageSpeed Insights</a>.</strong> If the work they're proud enough to showcase is slow, that's the quality bar you're buying.</li>
+                    <li><strong>Look for clients in your part of the world.</strong> Someone who already works with US or Australian businesses understands your expectations, your timezone, and how you like to communicate.</li>
+                    <li><strong>Read reviews and ask for a reference.</strong> A confident developer will happily connect you with a past client. A nervous one suddenly gets very busy.</li>
+                </ul>
+                <p>Think of it like online dating, but with fewer red flags and more responsive design: the profile always looks great, so you judge on the evidence, not the adjectives.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Non-Negotiables: Ownership, Contracts & Milestone Payments</h2>
+                <p>This is the part that protects you, and the part people skip because it's less fun than picking fonts. When you're hiring across borders, a little structure upfront saves a lot of stress later. Insist on all three of these, no exceptions:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li><strong>You own everything.</strong> The website, the domain, the hosting account, every login. It should all be in your name or fully transferable to you. No "it's easier if I keep it on my account." That convenience has a habit of turning into leverage.</li>
+                    <li><strong>A written scope.</strong> What's included, what counts as an extra, and how many revision rounds you get, all in writing before money moves. This single document prevents roughly 90% of disputes.</li>
+                    <li><strong>Milestone payments.</strong> Pay in stages tied to delivered work, not one big leap of faith upfront. It protects you, and any professional will be completely comfortable with it.</li>
+                </ol>
+                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
+                    <h4 class="text-lg font-bold text-primary mb-2">Quick Win: Ask "What Happens If I Want to Leave?"</h4>
+                    <p class="text-sm">It feels awkward to ask, which is exactly why it's so revealing. A good developer will calmly explain that your site, domain, and accounts are yours to take anywhere, anytime. If the answer gets vague, or you discover the site is welded to their personal account, you've just spotted a very expensive trap from a safe distance. You should never be a hostage to the person who built your website, especially one in another country.</p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Beyond WordPress: GHL & Klaviyo Specialists Too</h2>
+                <p>Here's something a lot of overseas businesses discover happily by accident: the Philippines isn't just a WordPress hub. The same talent pool runs deep in the tools that sit <em>around</em> your website and quietly do the selling, the automation and email platforms that turn a pretty site into an actual lead machine.</p>
+                <p>If your project needs more than pages, you can hire specialists here for:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>GoHighLevel (GHL)</strong>, CRM setup, pipelines, and automated follow-up so leads don't slip through the cracks while you sleep.</li>
+                    <li><strong>Klaviyo</strong>, email and SMS flows that recover abandoned carts and nurture subscribers into buyers.</li>
+                    <li><strong>Marketing integrations</strong>, wiring your forms, CRM, and email together so the whole thing talks to itself instead of needing you to copy-paste leads at midnight.</li>
+                </ul>
+                <p>The advantage of hiring one developer who covers both the build <em>and</em> the systems behind it is simple: nothing falls through the gap between "the website person" and "the automation person," because they're the same person. You can see the full range on my <a href="/services" class="text-primary font-semibold hover:underline">services page</a>.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">A Quick Word on Cost</h2>
+                <p>You came here partly for the numbers, I know. But rates are their own rabbit hole, and they deserve a proper breakdown rather than a hand-wavy figure squeezed into one paragraph here. The short version: hiring from the Philippines typically lands you well below US, UK, and Australian agency pricing for comparable quality, which is the whole reason you're reading this.</p>
+                <p>For the actual ranges, what DIY, freelancer, and agency tiers really cost, and what each one should include, I've written a dedicated guide: <a href="/blog/website-design-cost-philippines" class="text-primary font-semibold hover:underline">how much a professional website costs in the Philippines</a>. You can also see my own straightforward tiers on the <a href="/pricing" class="text-primary font-semibold hover:underline">pricing page</a>. Whatever you spend, insist on transparency: fixed scope, fixed price, and no surprise invoices appearing like uninvited party guests.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Red Flags to Watch For When Hiring Offshore</h2>
+                <p>Most developers here are honest, skilled people who'd love to build you something great. But a few warning signs show up again and again in the projects that go sideways, and they're worth knowing before you commit:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Communication is already slow.</strong> If replies drag while they're trying to <em>win</em> your business, imagine the speed once they have your deposit. Across a timezone, responsiveness is everything.</li>
+                    <li><strong>The price is suspiciously cheap.</strong> There's "great value" and there's "this is too good to be true," and the second one usually means you'll pay twice, once for the cheap version, once to fix it.</li>
+                    <li><strong>No contract or written scope.</strong> "We'll sort the details as we go" is how cross-border projects quietly unravel.</li>
+                    <li><strong>They dodge the ownership question.</strong> If you won't fully own your site and domain, you don't have a website, you have a long-distance rental.</li>
+                    <li><strong>No portfolio of live, working sites.</strong> Everyone starts somewhere, but you'd rather not be the practice run for your own livelihood.</li>
+                </ul>
+                <p>One of these alone might just be an off day. Two or three together is the universe politely sliding a note across the table that reads "maybe not this one."</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">How to Set Up a Smooth Project Across the Distance</h2>
+                <p>The best offshore projects feel almost suspiciously easy, and it's rarely luck. It's a handful of habits that close the distance gap on both sides. Do these and you'll be the client every developer secretly hopes to land:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Agree on communication upfront.</strong> Which channel (email, Slack, WhatsApp), how often you'll get updates, and a standing call slot that works for both timezones. Clarity here prevents 90% of "wait, where are we?" moments.</li>
+                    <li><strong>Bring a clear goal.</strong> "More booked calls" beats "make it modern." A goal gives every decision a north star, even from 8,000 miles away.</li>
+                    <li><strong>Get your content ready.</strong> Logo, brand colours, photos, copy. The single biggest cause of a stalled project isn't the developer, it's a build sitting parked, waiting on the text only you can write.</li>
+                    <li><strong>Be honest about deadlines and budget.</strong> The more real you are upfront, the better the plan you get back. Surprises are for birthdays, not project scopes.</li>
+                </ul>
+                <p>None of this requires you to understand a single line of code. It just turns a vague "build me a website" into a proper brief, and proper briefs travel across oceans beautifully.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Hiring a Filipino WordPress Developer: FAQs</h2>
+                <h3 class="text-xl font-bold text-foreground mt-6">Is it safe to hire a WordPress developer from the Philippines?</h3>
+                <p>Yes, when you vet properly and use a written agreement. Safety in any hire, local or overseas, comes from the same things: a real portfolio of live sites, milestone payments tied to delivered work, clear ownership of your site and accounts, and a contract. Do those four and hiring offshore is no riskier than hiring down the road, just better value.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Will the timezone difference slow my project down?</h3>
+                <p>Rarely, if your developer manages it well. With Australia the overlap is large; with the UK there's a comfortable afternoon window; with the US, the gap often works <em>for</em> you, since work gets done overnight and lands in your inbox by morning. What matters is a developer who's deliberate about updates and reachable in an agreed window, not one who matches your clock minute for minute.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Do I need to know how to code to hire one?</h3>
+                <p>Not even slightly, that's the whole point of hiring an expert. Your job is to know your business, your customers, and what you want the site to achieve. The developer's job is to translate that into a fast, working WordPress site. A good one will never make you feel daft for not knowing what a plugin is.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Can the same developer handle Elementor, GHL, and Klaviyo?</h3>
+                <p>Many can, and hiring one who does means nothing falls through the cracks between your website and the systems behind it. If you want the build, the CRM automation, and the email flows handled by one person who understands how they connect, ask about it directly, it's exactly the kind of combined work I take on.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">How do I pay a developer overseas?</h3>
+                <p>Securely and in stages. Platforms like Wise, PayPal, and Payoneer handle international payments cleanly, and milestone-based payments, a deposit, then sums tied to delivered work, protect both sides. Avoid paying the full amount upfront, and any professional will expect and welcome a staged arrangement.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Ready to Hire? Let's Talk</h2>
+                <p>Hiring a WordPress and Elementor developer from the Philippines isn't a gamble, it's just a smart way to get senior-level work without the agency markup. Vet the portfolio like you mean it, insist on ownership and a written scope, agree on how you'll communicate across the timezone, and show up with a clear goal. Do that, and the distance stops mattering and the value starts.</p>
+                <p>If you'd like that developer to be someone who builds for leads and not just looks, and who can wire up the GHL and Klaviyo systems behind it too, that's exactly what I do for businesses across the US, UK, and Australia. Take a look at my <a href="/services" class="text-primary font-semibold hover:underline">services</a>, browse the <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>, or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a> and we'll map out exactly what your project needs, no jargon, no pressure, and no hostage situations. Prefer to type? Just <a href="/contact" class="text-primary font-semibold hover:underline">send a message</a> and we'll take it from there.</p>
+            </div>
+        `
+    },
     {
         title: "7 Signs Your Business Website Needs a Redesign in 2026 (And When to Start Over)",
         excerpt: "Not sure whether your business website needs a refresh or a full rebuild? Here are 7 honest signs it's time for a redesign, plus how to tell whether to fix what you've got or start from scratch.",

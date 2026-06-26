@@ -71,10 +71,10 @@ function InlineCta() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#1b2430] via-[#1b2430]/85 to-[#1b2430]/30" />
             <div className="relative p-8 sm:p-10">
                 <p className="text-xs font-bold uppercase tracking-widest text-muted">Free Website Audit</p>
-                <h3 className="mt-3 text-2xl sm:text-3xl font-bold text-white max-w-[20ch] leading-tight">
+                <h3 className="mt-3 text-2xl sm:text-3xl font-bold text-white max-w-[15ch] leading-tight">
                     Build, improve, and grow online.
                 </h3>
-                <p className="mt-3 text-white/75 max-w-[46ch]">
+                <p className="mt-3 text-white/75 max-w-[40ch]">
                     Whether you're starting fresh or improving an existing site, discover opportunities to grow online.
                 </p>
                 <Link
