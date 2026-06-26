@@ -312,6 +312,83 @@ export const fullServices: Service[] = [
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Klaviyo Email & SMS Flows Every Shopify Store Needs in 2026 (To Recover Lost Sales)",
+        excerpt: "Most Shopify stores leave money on the table by skipping email automation. Here are the Klaviyo email and SMS flows every store needs in 2026, from abandoned cart to win-back, to recover sales on autopilot.",
+        date: "Jun 26, 2026",
+        category: "Marketing",
+        image: "/images/blog/klaviyo-shopify-email-hero.webp",
+        slug: "klaviyo-email-sms-flows-shopify",
+        author: "Paul Puzon",
+        authorRole: "Shopify & Klaviyo Specialist",
+        content: `
+            <div class="space-y-6">
+                <p>Here's an uncomfortable truth about most Shopify stores: they spend a fortune getting people <em>to</em> the website, then quietly let the ones who don't buy on the first visit wander off forever, like guests leaving a party without anyone noticing. The traffic costs money. The leaving costs more. And the worst part is that the fix has been sitting in your tech stack the whole time, politely waiting to be switched on.</p>
+
+                <p>That fix is <strong>Klaviyo flows</strong>, automated email and SMS sequences that do the follow-up for you, 24/7, without you lifting a finger after setup. They're the difference between a store that only earns when you're actively running ads and one that quietly makes money while you sleep, eat, or stare blankly at your analytics wondering where everyone went. This guide walks through the exact flows every Shopify store should have in 2026, written by someone who builds these for e-commerce clients (and has watched them turn "lost" visitors back into paying customers).</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why Email & SMS Are Your Store's Quietest Money-Maker</h2>
+                <p>Let's get the strategy straight before the tactics. Ads and social bring people <em>in</em>, but most of them aren't ready to buy on the spot. Email and SMS are how you keep talking to those people, on channels you actually own, instead of renting attention from a platform that changes its rules every other Tuesday.</p>
+                <img src="/images/blog/ecommerce-revenue-from-email.webp" alt="A miniature shopping cart on a laptop showing financial growth, representing revenue recovered through Klaviyo flows" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <p>The magic word is <strong>flows</strong>, automations that trigger based on what a customer does (or doesn't do). Unlike a one-off campaign blast, a flow is set up once and then runs forever, greeting every new subscriber, chasing every abandoned cart, and winning back every customer who's gone quiet. It's the closest thing in marketing to a member of staff who never sleeps, never calls in sick, and never asks for a raise. Set them up properly and a meaningful slice of your store's revenue starts coming from email and SMS automation alone.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Klaviyo Flows Every Shopify Store Needs</h2>
+                <p>You don't need forty flows. You need a handful of essential ones, built well. If your store has these five running, you're already ahead of most of your competitors (who, statistically, set up a welcome email in 2022 and called it a day):</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Welcome series.</strong> Triggered when someone signs up. Introduce the brand, deliver any promised discount, and turn a curious browser into a first-time buyer.</li>
+                    <li><strong>Abandoned cart.</strong> The heavy lifter. Reminds people who added to cart but didn't check out, the single highest-ROI flow most stores can run.</li>
+                    <li><strong>Browse abandonment.</strong> For people who looked at a product but never added it. A gentle "still thinking about this?" nudge.</li>
+                    <li><strong>Post-purchase.</strong> Triggered after an order. Thank them, set delivery expectations, and tee up the second purchase (the one that actually makes you profitable).</li>
+                    <li><strong>Win-back.</strong> For customers who've gone quiet. A "we miss you" sequence that revives buyers you've already paid to acquire once.</li>
+                </ul>
+                <p>Each one catches revenue at a different leak in your funnel. Skip them and you're essentially running a shop where everyone who doesn't buy immediately is shown the door and never invited back.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Start With the Abandoned Cart Flow (It Pays for Everything Else)</h2>
+                <p>If you only build one flow this month, build this one. Roughly <strong>70% of online shopping carts get abandoned</strong> (<a href="https://baymard.com/lists/cart-abandonment-rate" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Baymard Institute</a>), which means for every ten people who add to cart, around seven leave without buying. They were <em>this</em> close. The abandoned cart flow is how you gently tap them on the shoulder.</p>
+                <img src="/images/blog/abandoned-cart-recovery.webp" alt="A shopper completing an online checkout with a credit card, illustrating abandoned cart recovery" width="1200" height="801" loading="lazy" class="w-full rounded-md my-8" />
+                <p>A solid abandoned cart sequence is usually three messages: a quick reminder an hour or so later (they probably just got distracted), a follow-up the next day showing the product again, and a final nudge, sometimes with a small incentive, a day after that. The goal isn't to nag; it's to remove whatever tiny bit of friction made them pause. People rarely abandon because they hated your product. They abandon because the doorbell rang.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Don't Sleep on SMS</h2>
+                <p>Email is the workhorse, but SMS is the sprinter. Text messages get opened almost immediately, which makes them perfect for time-sensitive moments, an abandoned cart that's about to go cold, a flash sale, a back-in-stock alert. The trick is restraint: SMS is a customer's most personal channel, so use it for the moments that genuinely matter, not for telling them about your new sock colour at 9pm.</p>
+                <img src="/images/blog/customer-reading-email-sms.webp" alt="A customer reading a message on her phone with coffee, representing Klaviyo SMS flows" width="1200" height="811" loading="lazy" class="w-full rounded-md my-8" />
+                <p>The best results come from blending the two: let email carry the storytelling and the longer offers, and let SMS handle the urgent, "act now" nudges. Klaviyo runs both from the same place, so your email and text don't end up contradicting each other like a couple who didn't coordinate their stories.</p>
+                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
+                    <h4 class="text-lg font-bold text-primary mb-2">Quick Win: Turn On the Abandoned Cart Flow This Week</h4>
+                    <p class="text-sm">If your store has no flows running yet, don't try to build all five at once, you'll burn out by flow number two. Just switch on a three-email abandoned cart sequence first. It targets people with the highest buying intent of anyone on your list (they literally added to cart), so it almost always recovers revenue fastest. Get that one earning, then layer in the welcome and post-purchase flows. Momentum beats perfection.</p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Mistakes That Quietly Kill Your Flows</h2>
+                <p>Setting up flows is easy. Setting them up so they actually convert is where most stores trip. Watch for these:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Sending too much, too fast.</strong> A welcome series shouldn't feel like being followed home. Space messages out and give people room to breathe.</li>
+                    <li><strong>One generic email for everyone.</strong> Klaviyo can segment by behaviour, first-time vs repeat buyers, big spenders vs bargain hunters. Treating them identically wastes the tool's whole point.</li>
+                    <li><strong>No mobile testing.</strong> Most of these get read on a phone. If your email looks like a ransom note on mobile, it doesn't matter how clever the copy is.</li>
+                    <li><strong>Set and forget forever.</strong> Flows aren't a slow cooker. Check the numbers every so often and tweak the subject lines and timing that underperform.</li>
+                </ul>
+                <p>These are the same "looks fine, quietly leaks money" problems that plague websites in general, I dug into the website version of this in <a href="/blog/small-business-website-mistakes" class="text-primary font-semibold hover:underline">why most small business websites fail to generate leads</a>. The pattern is identical: the thing looks done, but it isn't actually <em>working</em>.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Set It Up Yourself, or Bring in a Specialist?</h2>
+                <p>Klaviyo is genuinely user-friendly, and a determined store owner can absolutely build a basic flow from its templates over a weekend. If you're just starting out and budget is tight, do that, a decent abandoned cart flow beats no flow every single time.</p>
+                <p>Where a specialist earns their keep is in the details that templates don't teach: smart segmentation, the timing and copy that actually convert, clean integration with your Shopify data, and SMS set up so it complies and lands. It's the difference between flows that technically send and flows that reliably <em>earn</em>. If you'd rather skip the trial-and-error, that's exactly the kind of work I do, you can see examples of the Shopify and Klaviyo builds in my <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>. And if you run a service business rather than a store, the same automation thinking applies through GoHighLevel, which I cover in <a href="/blog/ghl-workflows-for-service-business" class="text-primary font-semibold hover:underline">5 GHL workflows every service business needs</a>.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Klaviyo Flows for Shopify: FAQs</h2>
+                <h3 class="text-xl font-bold text-foreground mt-6">Which Klaviyo flow should I build first?</h3>
+                <p>The abandoned cart flow, almost always. It targets shoppers with the highest intent (they added to cart), so it typically recovers revenue faster than any other flow. Build that, get it earning, then add your welcome and post-purchase flows.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">How many emails should an abandoned cart flow have?</h3>
+                <p>Three is the sweet spot for most stores: a reminder about an hour later, a follow-up the next day, and a final nudge (sometimes with a small incentive) a day after that. Enough to recover the sale without tipping into nagging.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Is SMS worth it, or should I stick to email?</h3>
+                <p>Both, used for different jobs. Email handles storytelling and longer offers; SMS handles urgent, time-sensitive nudges that need to be seen fast. Klaviyo runs them together, so you can blend the two without doubling your workload.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Do I need a big email list before flows are worth setting up?</h3>
+                <p>No. Flows trigger off individual behaviour, so they start working the moment one person abandons a cart or signs up, regardless of list size. In fact, the earlier you set them up, the more revenue you capture as your list grows.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Will Klaviyo work with my Shopify theme?</h3>
+                <p>Yes. Klaviyo integrates directly with Shopify and pulls in your products, customers, and order data automatically, independent of your theme. Setup is about connecting the two and building the flows, not changing your store's design.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Stop Leaving Sales on the Table</h2>
+                <p>Your store is almost certainly already getting the traffic it needs to make more money, it's just losing too many of those visitors on the way to checkout, and never following up. Klaviyo flows plug those leaks automatically. Start with the abandoned cart, add the welcome and post-purchase sequences, sprinkle in SMS for the urgent moments, and you've built a quiet little revenue engine that runs whether you're at your desk or on a beach pretending you're not checking your phone.</p>
+                <p>If you'd rather have those flows built properly the first time, by someone who sets up Shopify and Klaviyo for a living, that's exactly what I do for e-commerce businesses. Take a look at my <a href="/services" class="text-primary font-semibold hover:underline">services</a>, browse the <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>, or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a> and we'll map out the flows your store is missing, no jargon, no pressure. Prefer to type? Just <a href="/contact" class="text-primary font-semibold hover:underline">send a message</a> and we'll take it from there.</p>
+            </div>
+        `
+    },
+    {
         title: "How to Hire a WordPress & Elementor Developer in the Philippines (2026 Guide)",
         excerpt: "Thinking of hiring a WordPress and Elementor developer from the Philippines? Here's what overseas business owners need to know in 2026, timezones, English, quality, ownership, and how to vet one without getting burned.",
         date: "Jun 26, 2026",
