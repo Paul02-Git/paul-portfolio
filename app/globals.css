@@ -270,3 +270,9 @@ body {
     transform: translateY(-1em) translateZ(0);
   }
 }
+
+/* ── Contact globe city badges ── static; anchored at the city's projected point,
+   the translate offsets the badge up and centers it horizontally over its dot. */
+.globe-badge {
+  transform: translate(-50%, -130%);
+}

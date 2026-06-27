@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Bricolage_Grotesque } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -42,6 +42,11 @@ const siteDescription = "I build conversion-focused WordPress websites and GoHig
 
 // Google Tag Manager, container ID is public (rendered in page HTML). Override via env per environment.
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-PV257VBJ";
+
+// viewport-fit=cover lets the mobile nav dock honor env(safe-area-inset-bottom) on notched phones.
+export const viewport: Viewport = {
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

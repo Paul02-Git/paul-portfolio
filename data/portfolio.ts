@@ -312,6 +312,172 @@ export const fullServices: Service[] = [
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "How to Migrate from Wix or Squarespace to WordPress in 2026 (Without Losing Your SEO)",
+        excerpt: "Outgrowing Wix or Squarespace? Here's how to migrate to WordPress in 2026 without losing your Google rankings, the real reasons to switch, how the move works step by step, and how to keep your SEO intact.",
+        date: "Jun 26, 2026",
+        category: "WordPress",
+        image: "/images/blog/migrate-to-wordpress-hero.webp",
+        slug: "migrate-wix-squarespace-to-wordpress",
+        author: "Paul Puzon",
+        authorRole: "WordPress & Elementor Developer",
+        content: `
+            <div class="space-y-6">
+                <p>There's a very specific moment in a growing business's life when its website builder stops feeling like a helpful starter home and starts feeling like a studio flat you've quietly outgrown. You want to add a feature, it's not possible. You want to tweak something for SEO, the option doesn't exist. You go to move your site elsewhere and discover you can't really take it with you. If you've ever muttered "I think I've outgrown this" at your Wix or Squarespace dashboard, this one's for you.</p>
+
+                <p>Migrating to <strong>WordPress</strong> is how a lot of businesses graduate from "a website that exists" to "a website they actually control." But the move comes with one very loud fear, usually shouted in all caps: <em>WILL I LOSE MY GOOGLE RANKINGS?</em> The honest answer is "not if you do it properly," and this guide walks through exactly what "properly" looks like, why businesses make the switch, how the migration actually works, and how to keep every scrap of your hard-won SEO. I do these migrations for clients, so I'll keep it practical rather than scary.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why Businesses Outgrow Wix and Squarespace</h2>
+                <p>Let's be fair first: Wix and Squarespace are genuinely good at what they're for, getting a decent-looking site live quickly without touching code. For a brand-new business, that's perfect. The friction shows up later, once your business is bigger than the platform was designed for.</p>
+                <img src="/images/blog/frustrated-with-website-builder.webp" alt="A business owner looking frustrated at her laptop, having outgrown her website builder" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <p>The usual reasons people start eyeing the exit:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Limited flexibility.</strong> You can only do what the builder allows. When your idea lives outside that box, you're simply stuck.</li>
+                    <li><strong>SEO ceilings.</strong> You get less control over the technical details that help you rank, and that ceiling gets lower the more serious you are about traffic.</li>
+                    <li><strong>Costs that creep.</strong> Monthly fees, premium apps, and add-ons stack up, and you're renting the whole time.</li>
+                    <li><strong>The walled garden.</strong> Your content and design are tied to the platform. Leaving isn't a simple export, which is exactly how they'd like to keep it.</li>
+                </ul>
+                <p>None of this means you made a mistake starting on a builder, you didn't. It just means you've grown, which is the good kind of problem. (For the wider "is it time for a change?" question, I cover the signals in <a href="/blog/signs-your-website-needs-a-redesign" class="text-primary font-semibold hover:underline">7 signs your website needs a redesign</a>.)</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why WordPress, and What You're Actually Moving To</h2>
+                <p>WordPress powers around <strong>43% of every website on the internet</strong> (<a href="https://w3techs.com/technologies/overview/content_management" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">W3Techs</a>), and that popularity isn't an accident, it's what you get when a platform hands you the keys instead of renting you a room. Here's what actually changes when you move:</p>
+                <img src="/images/blog/wordpress-site-design-result.webp" alt="A modern website design displayed on a screen, representing a flexible WordPress build" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>You own everything.</strong> Your site, your content, your hosting, fully portable, no landlord.</li>
+                    <li><strong>Near-unlimited flexibility.</strong> With a builder like Elementor on top, you can design almost anything, and add features through plugins rather than waiting for permission.</li>
+                    <li><strong>Serious SEO control.</strong> Full access to the technical levers that builders hide, which matters if Google traffic is part of your plan (see my <a href="/blog/wordpress-seo-checklist-2026" class="text-primary font-semibold hover:underline">2026 WordPress SEO checklist</a>).</li>
+                    <li><strong>Room to grow.</strong> Bookings, e-commerce, memberships, CRM automation, WordPress scales with you instead of capping you.</li>
+                </ul>
+                <p>The trade-off is honesty time: WordPress asks for a little more setup and care than a drag-and-drop builder. That's the price of the freedom, and it's why a lot of people hand the move to a developer rather than wrestle it solo. More on that shortly.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">"Will I Lose My Google Rankings?" (The Big Fear)</h2>
+                <p>Here's the question that keeps people frozen on a platform they've outgrown. The fear is reasonable, a botched migration absolutely <em>can</em> tank your rankings. But a careful one doesn't, and the difference is entirely in the preparation, not luck.</p>
+                <img src="/images/blog/migration-seo-rankings.webp" alt="A laptop showing an analytics dashboard, representing preserved SEO rankings after migration" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <p>Your rankings survive when the migration protects the things Google already trusts about your site. In plain English, that means:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Keep your URLs the same</strong> where you can, so Google finds your pages exactly where it left them.</li>
+                    <li><strong>Set up 301 redirects</strong> for any URL that <em>has</em> to change, pointing the old address to the new one so visitors and rankings follow along.</li>
+                    <li><strong>Preserve your content and on-page SEO</strong>, page titles, meta descriptions, headings, and image alt text all carry over.</li>
+                    <li><strong>Submit a fresh sitemap</strong> in Google Search Console after launch so Google re-crawls the new site quickly.</li>
+                </ul>
+                <p>Do those and rankings typically hold steady, sometimes they even improve, because WordPress lets you fix the technical SEO and speed issues the old platform wouldn't. The horror stories you've heard almost always trace back to someone skipping the redirects. Don't skip the redirects.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">How the Migration Actually Works, Step by Step</h2>
+                <p>Migrations sound scary until you see them broken down. There's no magic "import everything" button between these platforms (they don't exactly want to make leaving easy), so a proper move is a methodical rebuild. Here's the shape of it:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li><strong>Audit what you have.</strong> List every page, your top-ranking URLs, and the content worth keeping. You can't protect what you haven't mapped.</li>
+                    <li><strong>Set up WordPress and hosting.</strong> Fresh install on quality hosting, in your name, on a staging site so the public never sees the work-in-progress.</li>
+                    <li><strong>Rebuild the design.</strong> Recreate your site in WordPress (Elementor makes this clean and fast), improving the bits that always bugged you while you're at it.</li>
+                    <li><strong>Move the content.</strong> Bring across your text, images, and pages, keeping titles, metas, and structure intact for SEO.</li>
+                    <li><strong>Map the redirects.</strong> Match every old URL to its new home with 301 redirects. This is the SEO safety net, and the step amateurs skip.</li>
+                    <li><strong>Test everything on staging.</strong> Links, forms, mobile, speed. Find the broken bits before the public does.</li>
+                    <li><strong>Launch and point the domain.</strong> Flip the switch, then keep the old site available just long enough to confirm nothing's missing.</li>
+                    <li><strong>Submit and monitor.</strong> Send the new sitemap to Search Console and watch your traffic for a few weeks to catch anything that slipped.</li>
+                </ol>
+                <div class="callout">
+                    <h4>Quick Win: Don't Cancel the Old Site on Launch Day</h4>
+                    <p>The single most expensive migration mistake is deleting your Wix or Squarespace site the moment the new one goes live. Keep it active for a few weeks. It's your safety net, if a page, image, or redirect turns out to be missing, you've still got the original to check against. Cancelling early to save one month's fee, then discovering a gap you can't reference, is the website equivalent of burning the receipt before you're sure the thing works.</p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Should You DIY the Migration, or Hire Someone?</h2>
+                <p>Could you do this yourself? If you're technically confident, have a small site, and enjoy a weekend project with stakes, genuinely, yes. The pieces are all learnable. The catch is that migrations are unforgiving: the redirects, the SEO preservation, and the DNS switch are exactly the bits where a small mistake quietly costs you traffic for months before you notice.</p>
+                <p>That's why most businesses hand the move to a developer, not because it's impossible, but because the cost of getting the SEO part wrong dwarfs the cost of doing it right. If you'd rather not gamble your rankings on a first attempt, that's the kind of migration I handle for clients, you can see the kind of work in my <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>, and there's a no-jargon walkthrough of choosing the right person in <a href="/blog/how-to-hire-a-wordpress-developer" class="text-primary font-semibold hover:underline">how to hire a WordPress developer</a>. Hiring offshore to keep costs sensible is a perfectly good route too, I cover it in <a href="/blog/hire-wordpress-elementor-developer-philippines" class="text-primary font-semibold hover:underline">hiring a WordPress and Elementor developer in the Philippines</a>.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Migrating to WordPress: FAQs</h2>
+                <h3 class="text-xl font-bold text-foreground mt-6">Will migrating to WordPress hurt my SEO?</h3>
+                <p>Not if it's done carefully. Keep your URLs where possible, set up 301 redirects for any that change, preserve your titles and meta data, and submit a new sitemap. Done right, rankings hold steady, and often improve once you fix the technical SEO and speed your old platform limited.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Can I move my content automatically from Wix or Squarespace?</h3>
+                <p>Only partially. There's no clean one-click transfer between these platforms and WordPress, so a proper migration is a structured rebuild, recreating the design and moving content deliberately. That's actually a good thing: it's your chance to improve what wasn't working rather than copy the flaws across.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">How long does a migration take?</h3>
+                <p>It depends on size. A small site can move in a week or so; a larger site with lots of pages, products, or custom features takes longer. The biggest variable is usually content readiness, the rebuild moves fastest when your text and images are organised and to hand.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Will my website go offline during the move?</h3>
+                <p>It shouldn't. A proper migration is built on a separate staging site while your live site keeps running. You only switch the domain over once the new site is tested and ready, so visitors experience little to no downtime.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Is WordPress harder to manage than Wix or Squarespace?</h3>
+                <p>It asks for a little more involvement, but a well-built WordPress site with a page builder like Elementor is very manageable for day-to-day edits. And you can arrange a maintenance plan so updates and security are handled for you, freedom without the homework.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Ready to Make the Move?</h2>
+                <p>Outgrowing your website builder isn't a failure, it's a sign your business got bigger than its starter setup. Migrating to WordPress gives you back ownership, flexibility, and real control over your SEO, and done carefully, you keep every bit of the Google traffic you've earned. Map your URLs, protect them with redirects, rebuild deliberately, and don't bin the old site on day one.</p>
+                <p>If you'd rather have the move handled by someone who does migrations for a living, and keeps your rankings intact in the process, that's exactly what I do. Take a look at my <a href="/services" class="text-primary font-semibold hover:underline">services</a>, browse the <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>, or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a> and we'll map out your migration, no jargon, no pressure, and no lost rankings. Prefer to type? Just <a href="/contact" class="text-primary font-semibold hover:underline">send a message</a> and we'll take it from there.</p>
+            </div>
+        `
+    },
+    {
+        title: "Klaviyo Email & SMS Flows Every Shopify Store Needs in 2026 (To Recover Lost Sales)",
+        excerpt: "Most Shopify stores leave money on the table by skipping email automation. Here are the Klaviyo email and SMS flows every store needs in 2026, from abandoned cart to win-back, to recover sales on autopilot.",
+        date: "Jun 26, 2026",
+        category: "Marketing",
+        image: "/images/blog/klaviyo-shopify-email-hero.webp",
+        slug: "klaviyo-email-sms-flows-shopify",
+        author: "Paul Puzon",
+        authorRole: "Shopify & Klaviyo Specialist",
+        content: `
+            <div class="space-y-6">
+                <p>Here's an uncomfortable truth about most Shopify stores: they spend a fortune getting people <em>to</em> the website, then quietly let the ones who don't buy on the first visit wander off forever, like guests leaving a party without anyone noticing. The traffic costs money. The leaving costs more. And the worst part is that the fix has been sitting in your tech stack the whole time, politely waiting to be switched on.</p>
+
+                <p>That fix is <strong>Klaviyo flows</strong>, automated email and SMS sequences that do the follow-up for you, 24/7, without you lifting a finger after setup. They're the difference between a store that only earns when you're actively running ads and one that quietly makes money while you sleep, eat, or stare blankly at your analytics wondering where everyone went. This guide walks through the exact flows every Shopify store should have in 2026, written by someone who builds these for e-commerce clients (and has watched them turn "lost" visitors back into paying customers).</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why Email & SMS Are Your Store's Quietest Money-Maker</h2>
+                <p>Let's get the strategy straight before the tactics. Ads and social bring people <em>in</em>, but most of them aren't ready to buy on the spot. Email and SMS are how you keep talking to those people, on channels you actually own, instead of renting attention from a platform that changes its rules every other Tuesday.</p>
+                <img src="/images/blog/ecommerce-revenue-from-email.webp" alt="A miniature shopping cart on a laptop showing financial growth, representing revenue recovered through Klaviyo flows" width="1200" height="800" loading="lazy" class="w-full rounded-md my-8" />
+                <p>The magic word is <strong>flows</strong>, automations that trigger based on what a customer does (or doesn't do). Unlike a one-off campaign blast, a flow is set up once and then runs forever, greeting every new subscriber, chasing every abandoned cart, and winning back every customer who's gone quiet. It's the closest thing in marketing to a member of staff who never sleeps, never calls in sick, and never asks for a raise. Set them up properly and a meaningful slice of your store's revenue starts coming from email and SMS automation alone.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Klaviyo Flows Every Shopify Store Needs</h2>
+                <p>You don't need forty flows. You need a handful of essential ones, built well. If your store has these five running, you're already ahead of most of your competitors (who, statistically, set up a welcome email in 2022 and called it a day):</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Welcome series.</strong> Triggered when someone signs up. Introduce the brand, deliver any promised discount, and turn a curious browser into a first-time buyer.</li>
+                    <li><strong>Abandoned cart.</strong> The heavy lifter. Reminds people who added to cart but didn't check out, the single highest-ROI flow most stores can run.</li>
+                    <li><strong>Browse abandonment.</strong> For people who looked at a product but never added it. A gentle "still thinking about this?" nudge.</li>
+                    <li><strong>Post-purchase.</strong> Triggered after an order. Thank them, set delivery expectations, and tee up the second purchase (the one that actually makes you profitable).</li>
+                    <li><strong>Win-back.</strong> For customers who've gone quiet. A "we miss you" sequence that revives buyers you've already paid to acquire once.</li>
+                </ul>
+                <p>Each one catches revenue at a different leak in your funnel. Skip them and you're essentially running a shop where everyone who doesn't buy immediately is shown the door and never invited back.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Start With the Abandoned Cart Flow (It Pays for Everything Else)</h2>
+                <p>If you only build one flow this month, build this one. Roughly <strong>70% of online shopping carts get abandoned</strong> (<a href="https://baymard.com/lists/cart-abandonment-rate" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Baymard Institute</a>), which means for every ten people who add to cart, around seven leave without buying. They were <em>this</em> close. The abandoned cart flow is how you gently tap them on the shoulder.</p>
+                <img src="/images/blog/abandoned-cart-recovery.webp" alt="A shopper completing an online checkout with a credit card, illustrating abandoned cart recovery" width="1200" height="801" loading="lazy" class="w-full rounded-md my-8" />
+                <p>A solid abandoned cart sequence is usually three messages: a quick reminder an hour or so later (they probably just got distracted), a follow-up the next day showing the product again, and a final nudge, sometimes with a small incentive, a day after that. The goal isn't to nag; it's to remove whatever tiny bit of friction made them pause. People rarely abandon because they hated your product. They abandon because the doorbell rang.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Don't Sleep on SMS</h2>
+                <p>Email is the workhorse, but SMS is the sprinter. Text messages get opened almost immediately, which makes them perfect for time-sensitive moments, an abandoned cart that's about to go cold, a flash sale, a back-in-stock alert. The trick is restraint: SMS is a customer's most personal channel, so use it for the moments that genuinely matter, not for telling them about your new sock colour at 9pm.</p>
+                <img src="/images/blog/customer-reading-email-sms.webp" alt="A customer reading a message on her phone with coffee, representing Klaviyo SMS flows" width="1200" height="811" loading="lazy" class="w-full rounded-md my-8" />
+                <p>The best results come from blending the two: let email carry the storytelling and the longer offers, and let SMS handle the urgent, "act now" nudges. Klaviyo runs both from the same place, so your email and text don't end up contradicting each other like a couple who didn't coordinate their stories.</p>
+                <div class="callout">
+                    <h4>Quick Win: Turn On the Abandoned Cart Flow This Week</h4>
+                    <p>If your store has no flows running yet, don't try to build all five at once, you'll burn out by flow number two. Just switch on a three-email abandoned cart sequence first. It targets people with the highest buying intent of anyone on your list (they literally added to cart), so it almost always recovers revenue fastest. Get that one earning, then layer in the welcome and post-purchase flows. Momentum beats perfection.</p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Mistakes That Quietly Kill Your Flows</h2>
+                <p>Setting up flows is easy. Setting them up so they actually convert is where most stores trip. Watch for these:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Sending too much, too fast.</strong> A welcome series shouldn't feel like being followed home. Space messages out and give people room to breathe.</li>
+                    <li><strong>One generic email for everyone.</strong> Klaviyo can segment by behaviour, first-time vs repeat buyers, big spenders vs bargain hunters. Treating them identically wastes the tool's whole point.</li>
+                    <li><strong>No mobile testing.</strong> Most of these get read on a phone. If your email looks like a ransom note on mobile, it doesn't matter how clever the copy is.</li>
+                    <li><strong>Set and forget forever.</strong> Flows aren't a slow cooker. Check the numbers every so often and tweak the subject lines and timing that underperform.</li>
+                </ul>
+                <p>These are the same "looks fine, quietly leaks money" problems that plague websites in general, I dug into the website version of this in <a href="/blog/small-business-website-mistakes" class="text-primary font-semibold hover:underline">why most small business websites fail to generate leads</a>. The pattern is identical: the thing looks done, but it isn't actually <em>working</em>.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Set It Up Yourself, or Bring in a Specialist?</h2>
+                <p>Klaviyo is genuinely user-friendly, and a determined store owner can absolutely build a basic flow from its templates over a weekend. If you're just starting out and budget is tight, do that, a decent abandoned cart flow beats no flow every single time.</p>
+                <p>Where a specialist earns their keep is in the details that templates don't teach: smart segmentation, the timing and copy that actually convert, clean integration with your Shopify data, and SMS set up so it complies and lands. It's the difference between flows that technically send and flows that reliably <em>earn</em>. If you'd rather skip the trial-and-error, that's exactly the kind of work I do, you can see examples of the Shopify and Klaviyo builds in my <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>. And if you run a service business rather than a store, the same automation thinking applies through GoHighLevel, which I cover in <a href="/blog/ghl-workflows-for-service-business" class="text-primary font-semibold hover:underline">5 GHL workflows every service business needs</a>.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Klaviyo Flows for Shopify: FAQs</h2>
+                <h3 class="text-xl font-bold text-foreground mt-6">Which Klaviyo flow should I build first?</h3>
+                <p>The abandoned cart flow, almost always. It targets shoppers with the highest intent (they added to cart), so it typically recovers revenue faster than any other flow. Build that, get it earning, then add your welcome and post-purchase flows.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">How many emails should an abandoned cart flow have?</h3>
+                <p>Three is the sweet spot for most stores: a reminder about an hour later, a follow-up the next day, and a final nudge (sometimes with a small incentive) a day after that. Enough to recover the sale without tipping into nagging.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Is SMS worth it, or should I stick to email?</h3>
+                <p>Both, used for different jobs. Email handles storytelling and longer offers; SMS handles urgent, time-sensitive nudges that need to be seen fast. Klaviyo runs them together, so you can blend the two without doubling your workload.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Do I need a big email list before flows are worth setting up?</h3>
+                <p>No. Flows trigger off individual behaviour, so they start working the moment one person abandons a cart or signs up, regardless of list size. In fact, the earlier you set them up, the more revenue you capture as your list grows.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Will Klaviyo work with my Shopify theme?</h3>
+                <p>Yes. Klaviyo integrates directly with Shopify and pulls in your products, customers, and order data automatically, independent of your theme. Setup is about connecting the two and building the flows, not changing your store's design.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Stop Leaving Sales on the Table</h2>
+                <p>Your store is almost certainly already getting the traffic it needs to make more money, it's just losing too many of those visitors on the way to checkout, and never following up. Klaviyo flows plug those leaks automatically. Start with the abandoned cart, add the welcome and post-purchase sequences, sprinkle in SMS for the urgent moments, and you've built a quiet little revenue engine that runs whether you're at your desk or on a beach pretending you're not checking your phone.</p>
+                <p>If you'd rather have those flows built properly the first time, by someone who sets up Shopify and Klaviyo for a living, that's exactly what I do for e-commerce businesses. Take a look at my <a href="/services" class="text-primary font-semibold hover:underline">services</a>, browse the <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>, or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a> and we'll map out the flows your store is missing, no jargon, no pressure. Prefer to type? Just <a href="/contact" class="text-primary font-semibold hover:underline">send a message</a> and we'll take it from there.</p>
+            </div>
+        `
+    },
+    {
         title: "How to Hire a WordPress & Elementor Developer in the Philippines (2026 Guide)",
         excerpt: "Thinking of hiring a WordPress and Elementor developer from the Philippines? Here's what overseas business owners need to know in 2026, timezones, English, quality, ownership, and how to vet one without getting burned.",
         date: "Jun 26, 2026",
@@ -377,9 +543,9 @@ export const blogPosts: BlogPost[] = [
                     <li><strong>A written scope.</strong> What's included, what counts as an extra, and how many revision rounds you get, all in writing before money moves. This single document prevents roughly 90% of disputes.</li>
                     <li><strong>Milestone payments.</strong> Pay in stages tied to delivered work, not one big leap of faith upfront. It protects you, and any professional will be completely comfortable with it.</li>
                 </ol>
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">Quick Win: Ask "What Happens If I Want to Leave?"</h4>
-                    <p class="text-sm">It feels awkward to ask, which is exactly why it's so revealing. A good developer will calmly explain that your site, domain, and accounts are yours to take anywhere, anytime. If the answer gets vague, or you discover the site is welded to their personal account, you've just spotted a very expensive trap from a safe distance. You should never be a hostage to the person who built your website, especially one in another country.</p>
+                <div class="callout">
+                    <h4>Quick Win: Ask "What Happens If I Want to Leave?"</h4>
+                    <p>It feels awkward to ask, which is exactly why it's so revealing. A good developer will calmly explain that your site, domain, and accounts are yours to take anywhere, anytime. If the answer gets vague, or you discover the site is welded to their personal account, you've just spotted a very expensive trap from a safe distance. You should never be a hostage to the person who built your website, especially one in another country.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">Beyond WordPress: GHL & Klaviyo Specialists Too</h2>
@@ -479,6 +645,11 @@ export const blogPosts: BlogPost[] = [
                 <p>If your traffic has been drifting downward and you can't point to why, the problem might be structural. Search in 2026 rewards fast load times, mobile-first design, clean code, and proper schema, the kind of foundations that are hard to bolt onto an old site after the fact.</p>
                 <img src="/images/blog/redesign-google-rankings.jpg" alt="The Google search page, where a business website's rankings rise or fall" width="1200" height="675" loading="lazy" class="w-full rounded-2xl my-8" />
                 <p>An ageing website often carries technical debt that holds back its rankings no matter how much content you publish. If you've been doing the SEO work and still slipping, the platform underneath may be the ceiling. (You can sanity-check the fundamentals against my <a href="/blog/wordpress-seo-checklist-2026" class="text-primary font-semibold hover:underline">2026 WordPress SEO checklist</a> before deciding.)</p>
+
+                <div class="callout">
+                    <h4>Quick Win: Run the 5-Second Test Today</h4>
+                    <p>Before you spend a peso on a redesign, do this free experiment. Show your homepage to someone who's never seen it, for five seconds only, then cover the screen and ask two questions: "What does this business do?" and "What would you click next?" If they can't answer either, no design budget will save you until the messaging is fixed first. It's the cheapest user research you'll ever run, and reliably the most humbling.</p>
+                </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">Redesign or Rebuild? How to Tell Which You Need</h2>
                 <p>Spotting the signs is the easy bit. The real question, and <a href="https://www.quora.com/When-should-we-redesign-a-website-from-scratch-and-when-should-we-just-improve-it" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">one business owners debate constantly</a>, is whether you need a <strong>redesign</strong> (keep the foundations, refresh the look and structure) or a <strong>full rebuild</strong> (start fresh on a new platform). Here's the simple way to think about it:</p>
@@ -625,9 +796,9 @@ export const blogPosts: BlogPost[] = [
                     <li><strong>"Do you build for conversions and SEO, or just the design?"</strong> This one question quietly filters out half the field.</li>
                     <li><strong>"Can I talk to a past client?"</strong> Confident developers say "of course." Nervous ones suddenly remember they're very busy.</li>
                 </ol>
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">Quick Win: Ask "What Happens If I Want to Leave?"</h4>
-                    <p class="text-sm">It feels awkward, but it's the most revealing question of all. A good developer will calmly explain that the site, hosting, and accounts are yours to take anywhere. If the answer involves vague talk of "proprietary systems" or you discovering the site is locked to their platform, you've just dodged a very expensive trap. You should never be a hostage to the person who built your website.</p>
+                <div class="callout">
+                    <h4>Quick Win: Ask "What Happens If I Want to Leave?"</h4>
+                    <p>It feels awkward, but it's the most revealing question of all. A good developer will calmly explain that the site, hosting, and accounts are yours to take anywhere. If the answer involves vague talk of "proprietary systems" or you discovering the site is locked to their platform, you've just dodged a very expensive trap. You should never be a hostage to the person who built your website.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">Red Flags That Should Send You Running</h2>
@@ -793,9 +964,9 @@ export const blogPosts: BlogPost[] = [
                 <p>When leads live in six different inboxes, two things happen: some get missed entirely, and the rest get answered slowly because checking six places all day is nobody's idea of a good time. The fix is a single hub, a simple CRM, where every enquiry, no matter where it came from, lands in one tidy list. One place to watch, one place to reply, nothing falling down the back of the digital sofa.</p>
                 <p>This is exactly what a tool like <a href="/services" class="text-primary font-semibold hover:underline">GoHighLevel set up properly</a> is built to do: funnel every channel into one pipeline so you can see, at a glance, who's new, who's waiting, and who's about to go cold. If you want the nuts and bolts, I've broken down the exact sequences in my guide to <a href="/blog/ghl-workflows-for-service-business" class="text-primary font-semibold hover:underline">GHL workflows every service business needs</a>.</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">Quick Win: Time Your Own Response This Week</h4>
-                    <p class="text-sm">Before changing anything, run one honest test. Have a friend submit an enquiry through your website as if they were a real customer, then time how long until they get a genuine reply. Most owners are quietly horrified by the answer, and that number is your starting line. You can't fix a leak you've never measured.</p>
+                <div class="callout">
+                    <h4>Quick Win: Time Your Own Response This Week</h4>
+                    <p>Before changing anything, run one honest test. Have a friend submit an enquiry through your website as if they were a real customer, then time how long until they get a genuine reply. Most owners are quietly horrified by the answer, and that number is your starting line. You can't fix a leak you've never measured.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">A Simple Automated Follow-Up Flow You Can Steal</h2>
@@ -917,9 +1088,9 @@ export const blogPosts: BlogPost[] = [
                 <h3 class="text-xl font-bold text-foreground mt-6">7. Keep WordPress, themes, and plugins updated</h3>
                 <p>Updates aren't just about security, they regularly ship performance improvements too. A neglected, out-of-date site is both slower and a sitting duck. (For more on keeping a site healthy and visible, see my <a href="/blog/wordpress-seo-checklist-2026" class="text-primary font-semibold hover:underline">2026 WordPress SEO checklist</a>.)</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">The Elementor Speed Myth</h4>
-                    <p class="text-sm">"Page builders are slow" is the most repeated half-truth in WordPress. A bloated Elementor site is slow; a disciplined one regularly scores 90+. The secret is a lightweight base theme and only loading the assets each page actually needs, more on that in my guide to <a href="/blog/elementor-high-converting-landing-pages" class="text-primary font-semibold hover:underline">high-converting Elementor landing pages</a>.</p>
+                <div class="callout">
+                    <h4>The Elementor Speed Myth</h4>
+                    <p>"Page builders are slow" is the most repeated half-truth in WordPress. A bloated Elementor site is slow; a disciplined one regularly scores 90+. The secret is a lightweight base theme and only loading the assets each page actually needs, more on that in my guide to <a href="/blog/elementor-high-converting-landing-pages" class="text-primary font-semibold hover:underline">high-converting Elementor landing pages</a>.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">Don't Forget Mobile</h2>
@@ -1030,6 +1201,11 @@ export const blogPosts: BlogPost[] = [
                 </ul>
                 <p>If a quote doesn't mention any of these, that's usually why it's cheap. These features are exactly what separate a <a href="/services" class="text-primary font-semibold hover:underline">professionally built website</a> from a bargain one that looks fine and quietly underperforms.</p>
 
+                <div class="callout">
+                    <h4>Quick Win: Ask for an Itemized Quote</h4>
+                    <p>When you're comparing prices, ask every candidate to break their number into line items: design, development, SEO setup, content, and revisions. A single round figure tells you almost nothing; an itemized one tells you exactly what you're paying for, and what's quietly missing. The suspiciously cheap quotes usually get cheap by leaving things off the list, not by being more efficient, and that gap is what you pay for later.</p>
+                </div>
+
                 <h2 class="text-2xl font-bold text-foreground mt-8">The Real Cost of a Cheap Website</h2>
                 <p>A cheap website rarely stays cheap. The sticker price is low; the hidden bill just arrives later.</p>
                 <img src="/images/blog/real-cost-cheap-website.webp" alt="Coins stacked with a small plant growing, a website as an investment, not just a cost" width="1000" height="560" loading="lazy" class="w-full rounded-2xl my-8" />
@@ -1126,6 +1302,11 @@ export const blogPosts: BlogPost[] = [
                 </ul>
                 <p>Social media sends people somewhere. Your website is the somewhere.</p>
 
+                <div class="callout">
+                    <h4>Quick Win: Claim Your Free Google Business Profile</h4>
+                    <p>A proper website takes a little time, but you can plant a flag on Google today for free. Claim your Google Business Profile, add your hours, a few photos, and a link, and you'll start surfacing in local "near me" searches and Maps. It won't capture leads or tell your full story the way a website does, but it's the fastest credibility you can buy with zero pesos, and the perfect first road pointing back to the digital HQ you build next.</p>
+                </div>
+
                 <h2 class="text-2xl font-bold text-foreground mt-8">So, Does Your Business Need a Website?</h2>
                 <p>Let's bring it home. A website isn't a replacement for social media, your accounts are still brilliant for reach, personality, and staying top-of-mind. But they're the marketing; your website is the foundation everything else stands on.</p>
                 <p>A quick recap on the real business website benefits, and why businesses need websites in 2026:</p>
@@ -1182,9 +1363,9 @@ export const blogPosts: BlogPost[] = [
                 </ul>
                 <p>Slow speed quietly hurts you 3 ways at once: visitors bounce, Google ranks you lower, and you lose leads you never even knew existed. A fast <a href="/services" class="text-primary font-semibold hover:underline">website design for small business</a> isn't a luxury, it's the price of admission.</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">Quick Win: Fix One Leak This Week</h4>
-                    <p class="text-sm">You don't need a full teardown to see results. Find the single biggest leak, usually a weak CTA or a painfully slow page, and fix just that. Small, focused improvements compound surprisingly fast (and unlike your gym membership, this one actually pays off).</p>
+                <div class="callout">
+                    <h4>Quick Win: Fix One Leak This Week</h4>
+                    <p>You don't need a full teardown to see results. Find the single biggest leak, usually a weak CTA or a painfully slow page, and fix just that. Small, focused improvements compound surprisingly fast (and unlike your gym membership, this one actually pays off).</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">3. The Mobile Experience Is Painful</h2>
@@ -1264,9 +1445,9 @@ export const blogPosts: BlogPost[] = [
                 <h3 class="text-xl font-bold text-foreground mt-6">2. Creating the GHL Triggered Workflow</h3>
                 <p>Inside GoHighLevel, you'll create a new Automation Workflow. The trigger for this workflow will be the 'Inbound Webhook'. Once GHL receives a sample submission from your Elementor form, you can map the custom fields (Name, Email, Phone, Project Details) to the corresponding contact fields in GHL. This ensures that every piece of information provided by the user is preserved and indexed correctly.</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">Pro Tip: Custom Field Mapping</h4>
-                    <p class="text-sm">Don't just collect names and emails. Use Elementor's hidden fields to pass through UTM parameters (Source, Medium, Campaign). This allows you to track exactly which marketing efforts are driving your highest-quality leads within GHL.</p>
+                <div class="callout">
+                    <h4>Pro Tip: Custom Field Mapping</h4>
+                    <p>Don't just collect names and emails. Use Elementor's hidden fields to pass through UTM parameters (Source, Medium, Campaign). This allows you to track exactly which marketing efforts are driving your highest-quality leads within GHL.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">Real-World Results: Automation in Action</h2>
@@ -1303,9 +1484,9 @@ export const blogPosts: BlogPost[] = [
                 <h2 class="text-2xl font-bold text-foreground mt-8">3. Semantic Content Strategy: Pillar and Cluster Models</h2>
                 <p>Stop writing for robots. Write for clusters. Semantic SEO is about context. Instead of targeting a single keyword like "WordPress developer," we build a foundation around the pillar of "Professional WordPress Development" and support it with clusters like "Elementor Performance," "GHL Integration," and "Technical SEO for WordPress."</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">The Hidden Ranking Factor: Accessibility</h4>
-                    <p class="text-sm">In 2026, web accessibility (WCAG 2.1) has become an indirect ranking signal. Search engines favor sites that are navigable by all users. Ensure your contrast ratios are high, your SVGs have titles, and your DOM structure is semantic. Good UX is good SEO.</p>
+                <div class="callout">
+                    <h4>The Hidden Ranking Factor: Accessibility</h4>
+                    <p>In 2026, web accessibility (WCAG 2.1) has become an indirect ranking signal. Search engines favor sites that are navigable by all users. Ensure your contrast ratios are high, your SVGs have titles, and your DOM structure is semantic. Good UX is good SEO.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">4. Mobile-First is Now Mobile-Only</h2>
@@ -1337,9 +1518,9 @@ export const blogPosts: BlogPost[] = [
                 
                 <p>Injecting multiple scripts directly into your header slows down your site and hurts your SEO. GTM loads asynchronously, meaning it won't block the rendering of your page. Furthermore, having all your tags in one container (Facebook Pixel, LinkedIn Insight Tag, GA4, etc.) makes it incredibly easy to debug and update your tracking as your marketing stack grows.</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">Key Setup: Conversions vs. Events</h4>
-                    <p class="text-sm">Not all events are created equal. In GA4, you should mark your most important events (like 'Form Submit') as 'Conversions'. This allows GA4 to prioritize this data in its machine-learning models, helping you identify exactly which traffic sources are delivering the highest ROI.</p>
+                <div class="callout">
+                    <h4>Key Setup: Conversions vs. Events</h4>
+                    <p>Not all events are created equal. In GA4, you should mark your most important events (like 'Form Submit') as 'Conversions'. This allows GA4 to prioritize this data in its machine-learning models, helping you identify exactly which traffic sources are delivering the highest ROI.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">Advanced Tracking: Enhanced Measurement</h2>
@@ -1371,9 +1552,9 @@ export const blogPosts: BlogPost[] = [
 
                 <p>We use 'Hello Elementor', the lightest base theme available, and combine it with advanced optimization tools like Asset CleanUp to dequeue unnecessary scripts on a page-by-page basis. By only loading the JavaScript needed for that specific landing page, we ensure a lightweight footprint that keeps both Google and your users happy.</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">The Power of Dynamic Content</h4>
-                    <p class="text-sm">Elementor Pro's real 'secret weapon' is its integration with Advanced Custom Fields (ACF). This allows us to create dynamic landing page templates that pull data from your backend. If you're running multiple variations of an ad campaign, we can use dynamic tags to swap out headlines and images based on the user's search query, significantly increasing relevance and lowering your CPA.</p>
+                <div class="callout">
+                    <h4>The Power of Dynamic Content</h4>
+                    <p>Elementor Pro's real 'secret weapon' is its integration with Advanced Custom Fields (ACF). This allows us to create dynamic landing page templates that pull data from your backend. If you're running multiple variations of an ad campaign, we can use dynamic tags to swap out headlines and images based on the user's search query, significantly increasing relevance and lowering your CPA.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">Psychological Triggers and UI Design</h2>
@@ -1404,9 +1585,9 @@ export const blogPosts: BlogPost[] = [
                 <h2 class="text-2xl font-bold text-foreground mt-8">3. The 7-Day Nurture Sequence</h2>
                 <p>Not every lead is ready to buy today. Don't let them go cold. An automated nurture sequence provides value, establishes authority, and keeps your brand top-of-mind. Through a series of educational emails, you can address common objections, share case studies, and guide the prospect toward booking a call when the time is right for them.</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">Advanced Automation: Pipeline Stages</h4>
-                    <p class="text-sm">GHL workflows can automatically move contacts through your sales pipeline based on their actions. For example, if a user clicks a link in your email to view your portfolio, GHL can 'Tag' them as a 'Hot Lead' and notify you to reach out personally. This level of intentionality ensures you're always focusing your energy on the highest-probability deals.</p>
+                <div class="callout">
+                    <h4>Advanced Automation: Pipeline Stages</h4>
+                    <p>GHL workflows can automatically move contacts through your sales pipeline based on their actions. For example, if a user clicks a link in your email to view your portfolio, GHL can 'Tag' them as a 'Hot Lead' and notify you to reach out personally. This level of intentionality ensures you're always focusing your energy on the highest-probability deals.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">4. Post-Purchase / Onboarding Automation</h2>
@@ -1434,9 +1615,9 @@ export const blogPosts: BlogPost[] = [
                 <h2 class="text-2xl font-bold text-foreground mt-8">Dead Clicks, Rage Clicks, and Quick Backs</h2>
                 <p>Clarity's true power lies in its ability to automatically flag behavioral patterns that indicate frustration. <strong>"Rage Clicks"</strong> occur when a user clicks repeatedly in the same area in a short period, usually because a button isn't working or the page feels frozen. <strong>"Dead Clicks"</strong> are clicks that have no effect on the page. By watching the session recordings associated with these flags, you can find and fix bugs in your UI in minutes rather than days.</p>
 
-                <div class="my-10 p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 class="text-lg font-bold text-primary mb-2">CRO Tip: The "Quick Back" Metric</h4>
-                    <p class="text-sm">A "Quick Back" happens when a user navigates to a page and then immediately returns to the previous one. This usually indicates a mismatch between the user's expectation (based on the link they clicked) and the reality of the landing page. Clarity allows you to filter recordings by this metric, helping you fix your messaging and improve your conversion rates.</p>
+                <div class="callout">
+                    <h4>CRO Tip: The "Quick Back" Metric</h4>
+                    <p>A "Quick Back" happens when a user navigates to a page and then immediately returns to the previous one. This usually indicates a mismatch between the user's expectation (based on the link they clicked) and the reality of the landing page. Clarity allows you to filter recordings by this metric, helping you fix your messaging and improve your conversion rates.</p>
                 </div>
 
                 <h2 class="text-2xl font-bold text-foreground mt-8">Session Recordings: Being the "Fly on the Wall"</h2>

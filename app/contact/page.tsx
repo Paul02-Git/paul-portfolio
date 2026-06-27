@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { faqs } from "@/data/portfolio";
-import { Send, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
+import { Send, Facebook, Linkedin, ArrowUpRight } from "lucide-react";
 import { Whatsapp } from "@/components/icons/Whatsapp";
+import { Button } from "@/components/Button";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { cn, isValidEmail } from "@/lib/utils";
 import { trackEvent } from "@/lib/gtm";
@@ -24,17 +25,9 @@ const faqSchema = {
     })),
 };
 
-const contactInfo = [
-    { Icon: Whatsapp, label: "WhatsApp", value: "Message Me", href: "https://wa.me/639914075808" },
-    { Icon: Mail, label: "Email", value: "paulpuzon0007@gmail.com", href: "mailto:paulpuzon0007@gmail.com" },
-    { Icon: MapPin, label: "Address", value: "Manila, Philippines", href: null },
-];
-
-const businessHours = [
-    { day: "Monday – Friday", hours: "9:00 am – 6:00 pm" },
-    { day: "Saturday", hours: "10:00 am – 2:00 pm" },
-    { day: "Sunday", hours: "Closed" },
-];
+// Decorative SVG used as a subtle background accent on the CTA section.
+const SECTION_VECTOR =
+    "https://cdn.prod.website-files.com/65b8e12a56259feed61841a0/65b8e12a56259feed61841c6_review-vecotr.svg";
 
 const socials = [
     { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/" },
@@ -221,46 +214,25 @@ export default function ContactPage() {
                         </form>
                     </div>
 
-                    {/* Right, Info + Hours */}
-                    <div className="flex flex-col gap-5 justify-between">
-                        {/* Contact information */}
-                        <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
+                    {/* Right, Map + Social */}
+                    <div className="flex flex-col gap-5">
+                        {/* Location map */}
+                        <div className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-border/60 bg-card min-h-[320px]">
                             <div className={cardHeader}>
-                                <h2 className="text-lg">Contact Information</h2>
+                                <h2 className="text-lg">Location</h2>
                             </div>
-                            <div className="p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                {contactInfo.map(({ Icon, label, value, href }) => (
-                                    <div key={label} className="flex items-start gap-3">
-                                        <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                                            <Icon className="w-4 h-4 text-primary" />
-                                        </span>
-                                        <div className="min-w-0">
-                                            <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-0.5">{label}</p>
-                                            {href ? (
-                                                <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors break-words">
-                                                    {value}
-                                                </a>
-                                            ) : (
-                                                <p className="text-sm text-muted-foreground break-words">{value}</p>
-                                            )}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Business hours */}
-                        <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
-                            <div className={cardHeader}>
-                                <h2 className="text-lg">Business Hours</h2>
-                            </div>
-                            <div className="p-6 md:p-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
-                                {businessHours.map(({ day, hours }) => (
-                                    <div key={day}>
-                                        <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-1">{day}</p>
-                                        <p className="text-sm text-muted-foreground">{hours}</p>
-                                    </div>
-                                ))}
+                            <div className="flex-1">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15442.279603348185!2d120.97059437153664!3d14.62319985923985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec387%3A0x69d1d5751069c11f!2sManila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1711234567890!5m2!1sen!2sph"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Location Map, Manila, Philippines"
+                                    className="block h-full w-full"
+                                />
                             </div>
                         </div>
 
@@ -285,24 +257,49 @@ export default function ContactPage() {
                     </div>
                 </div>
 
-                {/* Map */}
-                <div className="mt-5 overflow-hidden rounded-md border border-border/60 h-[360px] md:h-[420px]">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15442.279603348185!2d120.97059437153664!3d14.62319985923985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec387%3A0x69d1d5751069c11f!2sManila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1711234567890!5m2!1sen!2sph"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="Location Map, Manila, Philippines"
-                    />
-                </div>
-
                 {/* FAQ */}
                 <div className="mt-20">
                     <FaqAccordion items={faqs} />
                 </div>
+
+                {/* CTA */}
+                <section className="relative mt-20 overflow-hidden rounded-2xl bg-[#0047AB] px-6 py-16 text-center md:px-12 md:py-24">
+                    {/* Subtle dot-grid texture */}
+                    <span
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0"
+                        style={{
+                            backgroundImage: "radial-gradient(circle, rgba(30,58,138,0.10) 1px, transparent 1.5px)",
+                            backgroundSize: "18px 18px",
+                        }}
+                    />
+
+                    {/* Decorative section vectors, mirrored on both ends */}
+                    <span
+                        aria-hidden
+                        className="pointer-events-none absolute right-0 top-0 h-[164px] w-[160px] bg-contain bg-no-repeat sm:h-[205px] sm:w-[200px] md:h-[243px] md:w-[237px]"
+                        style={{ backgroundImage: `url(${SECTION_VECTOR})` }}
+                    />
+                    <span
+                        aria-hidden
+                        className="pointer-events-none absolute bottom-0 left-0 h-[164px] w-[160px] rotate-180 bg-contain bg-no-repeat sm:h-[205px] sm:w-[200px] md:h-[243px] md:w-[237px]"
+                        style={{ backgroundImage: `url(${SECTION_VECTOR})` }}
+                    />
+
+                    <div className="relative z-10">
+                        <h2 className="text-3xl uppercase text-muted sm:text-4xl lg:text-5xl">
+                            Let&apos;s build something great
+                        </h2>
+                        <p className="mx-auto mt-5 max-w-[46ch] leading-relaxed text-muted/90">
+                            Have a project in mind? Book a free consultation and we&apos;ll map out how to bring it to life.
+                        </p>
+                        <div className="mt-8 flex justify-center">
+                            <Button href="/book-a-call" className="bg-muted text-foreground" icon={<ArrowUpRight className="h-5 w-5" />}>
+                                Book a Free Call
+                            </Button>
+                        </div>
+                    </div>
+                </section>
             </main>
         </>
     );
