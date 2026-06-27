@@ -107,7 +107,7 @@ function Quote({
   return (
     <article className="relative mt-auto">
       <Stars count={testimonial.rating} />
-      <p className={`pt-3 leading-relaxed ${small ? "text-sm" : ""}`}>
+      <p className={`pt-3 leading-relaxed ${small ? "md:text-sm" : ""}`}>
         &ldquo;{testimonial.quote}&rdquo;
       </p>
       <Author

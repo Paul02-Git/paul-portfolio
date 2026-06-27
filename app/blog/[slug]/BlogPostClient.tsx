@@ -40,12 +40,16 @@ const PROSE_CLASSES =
     "[&_h2]:text-foreground [&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4 " +
     "[&_h3]:text-foreground [&_h3]:text-xl [&_h3]:mt-8 [&_h3]:mb-3 " +
     "[&_h4]:text-foreground " +
-    "[&_p]:mb-6 " +
     "[&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 " +
     "[&_strong]:text-foreground [&_strong]:font-bold " +
     "[&_i]:text-primary " +
     "[&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2 " +
-    "[&_img]:h-auto [&_img]:w-full";
+    "[&_img]:h-auto [&_img]:w-full " +
+    // Callout / "Quick Win" box. Authored in post HTML as <div class="callout">,
+    // styled globally here so the markup stays a one-liner and never drifts.
+    "[&_.callout]:my-10 [&_.callout]:p-6 [&_.callout]:bg-primary/5 [&_.callout]:border [&_.callout]:border-primary/20 [&_.callout]:rounded-2xl " +
+    "[&_.callout>h4]:text-lg [&_.callout>h4]:font-bold [&_.callout>h4]:text-primary [&_.callout>h4]:mb-2 " +
+    "[&_.callout>p]:text-sm";
 
 /** Drop-cap treatment, applied only to the first paragraph of the article. */
 const DROPCAP_CLASSES =
@@ -288,12 +292,12 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                     </nav>
 
                     {/* Title */}
-                    <h1 className="mt-5 text-center text-3xl md:text-4xl max-w-[35ch] mx-auto">
+                    <h1 className="mt-5 text-center text-3xl md:text-4xl max-w-[31ch] mx-auto text-balance">
                         {post.title}
                     </h1>
 
                     {/* Excerpt */}
-                    <p className="mt-6 text-center text-lg text-muted-foreground leading-relaxed max-w-[75ch] mx-auto">
+                    <p className="mt-6 text-center text-lg text-muted-foreground leading-relaxed mx-auto max-w-[60ch] text-balance">
                         {post.excerpt}
                     </p>
 
