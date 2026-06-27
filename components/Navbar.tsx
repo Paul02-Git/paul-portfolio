@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ArrowUpRight, Menu, X, Facebook, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Home, Wrench, User, Tag, FolderOpen, Newspaper, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "./Button";
 import { VibeToggle } from "./VibeToggle";
+import { Dock } from "@/components/ui/dock";
 import {
     NavigationMenu,
     NavigationMenuList,
@@ -26,15 +26,16 @@ const navLinks = [
     { href: "/contact", label: "Contact" },
 ];
 
-// Mobile has no mega menu, so it lists every page flat.
+// Mobile/tablet navigation lives in a bottom dock (see <Dock> below), so each page
+// gets an icon. Listed flat — no mega menu on small screens.
 const mobileNavLinks = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/about", label: "About" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", label: "Home", icon: Home },
+    { href: "/services", label: "Services", icon: Wrench },
+    { href: "/about", label: "About", icon: User },
+    { href: "/pricing", label: "Pricing", icon: Tag },
+    { href: "/portfolio", label: "Portfolio", icon: FolderOpen },
+    { href: "/blog", label: "Blog", icon: Newspaper },
+    { href: "/contact", label: "Contact", icon: Mail },
 ];
 
 // Pages surfaced inside the About mega menu.
@@ -117,17 +118,15 @@ function AboutMega({ pathname }: { pathname: string }) {
 }
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
-    // Lock background scroll while the mobile menu is open. This page scrolls on the
-    // <html> element (it carries overflow-x-clip), so the lock must target documentElement.
-    useEffect(() => {
-        document.documentElement.style.overflow = isOpen ? "hidden" : "";
-        return () => {
-            document.documentElement.style.overflow = "";
-        };
-    }, [isOpen]);
+    // Bottom-dock items for mobile/tablet — one per page, with the current page marked active.
+    const dockItems = mobileNavLinks.map((link) => ({
+        icon: link.icon,
+        label: link.label,
+        href: link.href,
+        active: pathname === link.href,
+    }));
 
     return (
         <>
@@ -143,12 +142,12 @@ export default function Navbar() {
                                 width={505}
                                 height={522}
                                 priority
-                                className="h-11 w-auto object-contain"
+                                className="h-9 sm:h-11 w-auto object-contain"
                             />
 
                         </Link>
 
-                        {/* Desktop Links, centered (lg+; tablet uses the hamburger) */}
+                        {/* Desktop Links, centered (lg+; tablet/mobile use the bottom dock) */}
                         <div className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
                             {navLinks.map((link) =>
                                 link.label === "About" ? (
@@ -174,88 +173,22 @@ export default function Navbar() {
 
                             <Button
                                 size="sm"
-                                className="shadow-lg shadow-black/5"
+                                className="shadow-lg shadow-black/5 text-[14px]"
                                 icon={<ArrowUpRight className="w-4 h-4" />}
                                 href="/book-a-call"
                             >
                                 Book A Call
                             </Button>
-
-                            {/* Mobile/Tablet Menu Button */}
-                            <button
-                                className="lg:hidden p-2 rounded-full hover:bg-gray-100 transition-colors"
-                                onClick={() => setIsOpen(!isOpen)}
-                                aria-label="Toggle menu"
-                            >
-                                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                            </button>
                         </div>
                     </nav>
                 </div>
             </header>
 
-            {/* Mobile Menu, luxury minimalist panel below the header */}
-            {isOpen && (
-                <div className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col overflow-y-auto bg-card lg:hidden animate-in fade-in duration-150">
-                    <nav className="flex flex-col px-6 pt-4">
-                        {mobileNavLinks.map((link, i) => {
-                            const active = pathname === link.href;
-                            return (
-                                <Link
-                                    key={link.label}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    style={{ animationDelay: `${i * 20}ms` }}
-                                    className={cn(
-                                        "w-full border-b border-border/40 py-5 text-lg font-extrabold tracking-tight transition-colors fill-mode-both duration-150 animate-in fade-in slide-in-from-bottom-2",
-                                        active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                                    )}
-                                >
-                                    {link.label}
-                                </Link>
-                            );
-                        })}
-                    </nav>
-
-                    {/* Connect, social links */}
-                    <div
-                        style={{ animationDelay: `${mobileNavLinks.length * 20}ms` }}
-                        className="relative mt-20 flex flex-col items-center text-center fill-mode-both duration-150 animate-in fade-in slide-in-from-bottom-2"
-                    >
-                        {/* Faded illustration sitting behind the Connect content */}
-                        <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-                            <Image
-                                src="/images/message-sent.svg"
-                                alt=""
-                                aria-hidden="true"
-                                width={500}
-                                height={400}
-                                className="w-[100%] max-w-[150px] h-auto select-none opacity-[0.1]"
-                            />
-                        </div>
-
-                        <p className="relative z-10 mb-4 text-sm font-bold uppercase tracking-widest text-muted-foreground">Let&apos;s Connect</p>
-                        <div className="relative z-10 flex items-center gap-6">
-                            {[
-                                { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/", external: true },
-                                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/paul-puzon-932b86303/", external: true },
-                                { Icon: Mail, label: "Email", href: "mailto:paulpuzon0007@gmail.com", external: false },
-                            ].map(({ Icon, label, href, external }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    aria-label={label}
-                                    onClick={() => setIsOpen(false)}
-                                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                                    className="flex h-11 w-11 items-center justify-center rounded-full border bg-primary text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
-                                >
-                                    <Icon className="h-5 w-5" />
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            )}
+            {/* Mobile/tablet navigation — floating bottom dock (replaces the hamburger menu). */}
+            <Dock
+                items={dockItems}
+                className="fixed inset-x-0 z-40 px-3 lg:hidden bottom-[max(0.75rem,env(safe-area-inset-bottom))]"
+            />
         </>
     );
 }
