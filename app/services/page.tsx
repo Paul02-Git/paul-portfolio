@@ -11,6 +11,7 @@ import Navbar from "@/components/Navbar";
 import { Button } from "@/components/Button";
 import { FloatingIconsHero, type FloatingIcon } from "@/components/FloatingIconsHero";
 import { Eyebrow } from "@/components/Eyebrow";
+import { SectionVectorBlobs } from "@/components/SectionVectorBlobs";
 import { brands } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 import { SITE_URL } from "@/lib/site";
@@ -204,8 +205,9 @@ export default function ServicesPage() {
                 </section>
 
                 {/* ── STATS BAND ── */}
-                <section className="full-bleed bg-muted/30">
-                    <div className={cn(INNER, "section-y-sm")}>
+                <section className="full-bleed relative overflow-hidden bg-primary">
+                    <SectionVectorBlobs />
+                    <div className={cn(INNER, "section-y-sm relative z-10")}>
                         <div className="grid grid-cols-2 md:grid-cols-4">
                             {stats.map((s, i) => (
                                 <motion.div
@@ -213,12 +215,12 @@ export default function ServicesPage() {
                                     {...fadeUp(i * 0.06)}
                                     className={cn(
                                         "px-2 md:px-6 py-4 text-center md:text-center",
-                                        i > 0 && "md:border-l md:border-border/60",
-                                        i % 2 === 1 && "border-l border-border/60 md:border-l"
+                                        i > 0 && "md:border-l md:border-white/20",
+                                        i % 2 === 1 && "border-l border-white/20 md:border-l"
                                     )}
                                 >
-                                    <div className="text-4xl md:text-5xl font-bold tracking-tight">{s.value}</div>
-                                    <div className="mt-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{s.label}</div>
+                                    <div className="text-4xl md:text-5xl font-bold tracking-tight text-white">{s.value}</div>
+                                    <div className="mt-1.5 text-xs font-semibold uppercase tracking-widest text-white">{s.label}</div>
                                 </motion.div>
                             ))}
                         </div>

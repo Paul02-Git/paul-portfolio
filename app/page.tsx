@@ -185,7 +185,7 @@ export default function Home() {
 
         {/* ── DOUBLE MARQUEE BAND, full viewport width ── */}
         <div className="relative left-1/2 -translate-x-1/2 w-screen">
-          <div className="bg-foreground py-8 space-y-3">
+          <div className="bg-foreground py-10 space-y-3">
 
             {/* Row 1, scrolls left */}
             <div className="overflow-hidden">
@@ -201,7 +201,7 @@ export default function Home() {
                 ]).map((item, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-8 px-4 text-white font-bold text-lg uppercase tracking-widest whitespace-nowrap"
+                    className="inline-flex items-center gap-8 px-4 text-white font-bold text-2xl uppercase tracking-widest whitespace-nowrap"
                   >
                     {item}
                     <span className="text-white/90 leading-none">✦</span>
@@ -629,7 +629,7 @@ export default function Home() {
 
         {/* ── PROCESS MARQUEE BAND (matches top marquee) ── */}
         <div className="relative left-1/2 -translate-x-1/2 w-screen">
-          <div className="bg-foreground py-8 w-screen">
+          <div className="bg-foreground py-10 w-screen">
             <div className="overflow-hidden">
               <div className="flex items-center animate-marquee w-max">
                 {[...Array(4)].flatMap(() => [
@@ -643,7 +643,7 @@ export default function Home() {
                 ]).map((item, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-8 px-4 text-white font-bold text-lg uppercase tracking-widest whitespace-nowrap"
+                    className="inline-flex items-center gap-8 px-4 text-white font-bold text-2xl uppercase tracking-widest whitespace-nowrap"
                   >
                     {item}
                     <span className="text-white/90 leading-none">✦</span>

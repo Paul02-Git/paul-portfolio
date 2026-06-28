@@ -7,6 +7,7 @@ import { Send, Facebook, Linkedin, ArrowUpRight } from "lucide-react";
 import { Whatsapp } from "@/components/icons/Whatsapp";
 import { Button } from "@/components/Button";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { SectionVectorBlobs } from "@/components/SectionVectorBlobs";
 import { cn, isValidEmail } from "@/lib/utils";
 import { trackEvent } from "@/lib/gtm";
 import Script from "next/script";
@@ -24,10 +25,6 @@ const faqSchema = {
         },
     })),
 };
-
-// Decorative SVG used as a subtle background accent on the CTA section.
-const SECTION_VECTOR =
-    "https://cdn.prod.website-files.com/65b8e12a56259feed61841a0/65b8e12a56259feed61841c6_review-vecotr.svg";
 
 const socials = [
     { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/paul.puzon73/" },
@@ -275,16 +272,7 @@ export default function ContactPage() {
                     />
 
                     {/* Decorative section vectors, mirrored on both ends */}
-                    <span
-                        aria-hidden
-                        className="pointer-events-none absolute right-0 top-0 h-[164px] w-[160px] bg-contain bg-no-repeat sm:h-[205px] sm:w-[200px] md:h-[243px] md:w-[237px]"
-                        style={{ backgroundImage: `url(${SECTION_VECTOR})` }}
-                    />
-                    <span
-                        aria-hidden
-                        className="pointer-events-none absolute bottom-0 left-0 h-[164px] w-[160px] rotate-180 bg-contain bg-no-repeat sm:h-[205px] sm:w-[200px] md:h-[243px] md:w-[237px]"
-                        style={{ backgroundImage: `url(${SECTION_VECTOR})` }}
-                    />
+                    <SectionVectorBlobs />
 
                     <div className="relative z-10">
                         <h2 className="text-3xl uppercase text-muted sm:text-4xl lg:text-5xl">
