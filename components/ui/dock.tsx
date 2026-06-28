@@ -50,7 +50,12 @@ const Dock = React.forwardRef<HTMLElement, DockProps>(
                     aria-label={ariaLabel}
                     className={cn(
                         "pointer-events-auto mx-auto flex w-full max-w-lg items-stretch gap-0.5 p-1.5",
-                        "rounded-2xl border border-border bg-background/90 shadow-lg backdrop-blur-lg"
+                        // Opaque bar — no backdrop-filter. backdrop-blur on a fixed element
+                        // forces the browser to re-blur the page behind it on every scroll
+                        // frame, which is the main source of jank on low-end phones. The
+                        // translateZ(0) keeps the bar on its own GPU layer so page scrolling
+                        // never repaints it.
+                        "rounded-2xl border border-border bg-background shadow-lg [transform:translateZ(0)]"
                     )}
                 >
                     {items.map((item) =>
