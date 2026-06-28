@@ -43,13 +43,13 @@ const services = [
 function MarqueeBand() {
     return (
         <div className="relative left-1/2 -translate-x-1/2 w-screen">
-            <div className="bg-foreground py-8">
+            <div className="bg-foreground py-10">
                 <div className="overflow-hidden">
                     <div className="flex items-center animate-marquee w-max ">
                         {[...Array(2)].flatMap(() => services).map((item, i) => (
                             <span
                                 key={i}
-                                className="inline-flex items-center gap-8 px-4 text-white font-bold text-lg uppercase tracking-widest whitespace-nowrap"
+                                className="inline-flex items-center gap-8 px-4 text-white font-bold text-2xl uppercase tracking-widest whitespace-nowrap"
                             >
                                 {item}
                                 <Asterisk className="w-7 h-7 text-white/80" />

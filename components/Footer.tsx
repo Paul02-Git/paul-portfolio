@@ -46,7 +46,7 @@ const socials = [
 
 export const Footer = () => {
     return (
-        <footer className="w-full pb-24 lg:pb-0">
+        <footer>
 
             {/* ── Get In Touch CTA band ── */}
             <div className="relative overflow-hidden bg-primary section-y">

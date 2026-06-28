@@ -1317,7 +1317,7 @@ export const blogPosts: BlogPost[] = [
                     <li>It helps you <strong>show up on Google</strong> for the long haul</li>
                     <li>It's your <strong>digital headquarters</strong>, tying every channel together</li>
                 </ul>
-                <p>So if you've been quietly wondering whether your business needs a website, here's the honest version: social media rents you an audience, but a website lets you build something you actually keep.</p>
+                <p>So if you've been quietly wondering whether your business needs a website, here's the honest version: social media rents you an audience, but a website lets you build something you actually  keep.</p>
                 <p>Thinking about building your first website? <a href="/contact" class="text-primary font-semibold hover:underline">Let's discuss your business goals</a>, or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a>, and we'll map out exactly what your business needs (and, just as usefully, what it doesn't).</p>
             </div>
         `
