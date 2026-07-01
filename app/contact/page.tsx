@@ -260,7 +260,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* CTA */}
-                <section className="relative mt-20 overflow-hidden rounded-2xl bg-[#0047AB] px-6 py-16 text-center md:px-12 md:py-24">
+                <section className="relative mt-20 overflow-hidden rounded-2xl bg-primary px-6 py-16 text-center md:px-12 md:py-24">
                     {/* Subtle dot-grid texture */}
                     <span
                         aria-hidden

@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeManager } from "@/components/ThemeManager";
 import { ThemeScript } from "@/components/ThemeScript";
 import { Footer } from "@/components/Footer";
+import { Guestbook } from "@/components/guestbook/Guestbook";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 const inter = Inter({
@@ -223,6 +224,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <ThemeManager />
+        <Guestbook />
 
         <div className="container-page pt-6 relative z-10">
           {children}
