@@ -305,12 +305,104 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── PROCESS (bridges Problem → Fix, left copy / right stacked images) ── */}
+        <section className="section-yb">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+
+            {/* Right, Text (order-2 on mobile and desktop) */}
+            <motion.div {...fadeUp()} className="space-y-8 order-2 lg:order-2">
+              <div className="space-y-4">
+                <Eyebrow>The Process</Eyebrow>
+                <h2 className="max-w-[15ch]">
+                  Here&apos;s Exactly How I Fix It
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  A better website isn&apos;t about adding more features. It&apos;s about removing obstacles, building trust, and making it easier for potential customers to reach out.
+                </p>
+              </div>
+
+              <ul className="space-y-4">
+                {[
+                  { Icon: Search,    text: "Find opportunities to improve your website." },
+                  { Icon: Code2Icon, text: "Create a faster, more user-friendly experience." },
+                  { Icon: Clock,     text: "Make it easier to capture and manage inquiries." },
+                ].map(({ Icon, text }, i) => (
+                  <motion.li key={i} {...fadeUp(0.15 + i * 0.1)} className="flex items-start gap-3">
+                    <span className="mt-0.5 w-6 h-6 rounded-full bg-primary flex items-center justify-center shrink-0">
+                      <Icon className="w-3.5 h-3.5 text-white" />
+                    </span>
+                    <span className="text-foreground leading-relaxed">{text}</span>
+                  </motion.li>
+                ))}
+              </ul>
+
+              <Button
+                icon={<ArrowUpRight className="w-5 h-5" />}
+                href="/book-a-call"
+              >
+                Book A Call
+              </Button>
+            </motion.div>
+
+            {/* Left, Image collage (order-1 on mobile and desktop) */}
+            <div className="relative order-1 lg:order-1 w-full max-w-[26rem] sm:max-w-[34rem] lg:max-w-none mx-auto lg:mx-0 lg:mr-auto">
+
+              {/* Frame */}
+              <div className="relative h-[300px] md:h-[450px]">
+
+                {/* Back image, top left */}
+                <motion.div
+                  {...fadeUp(0.1)}
+                  className="absolute top-0 left-0 w-[60%] h-[80%] rounded-3xl overflow-hidden shadow-xl"
+                >
+                  <Image
+                    src="https://images.pexels.com/photos/8424559/pexels-photo-8424559.jpeg?auto=compress&cs=tinysrgb&w=2000"
+                    alt="Two people mapping out a website strategy and analytics on a whiteboard"
+                    fill
+                    quality={92}
+                    sizes="(max-width: 640px) 80vw, (max-width: 1024px) 46vw, 36vw"
+                    className="object-cover object-center"
+                  />
+                </motion.div>
+
+                {/* Front image, bottom right */}
+                <motion.div
+                  {...fadeUp(0.25)}
+                  className="absolute bottom-0 right-0 w-[64%] h-[88%] rounded-3xl overflow-hidden shadow-2xl"
+                >
+                  <Image
+                    src="https://images.pexels.com/photos/5474282/pexels-photo-5474282.jpeg?auto=compress&cs=tinysrgb&w=2000"
+                    alt="Developer building and testing the new website"
+                    fill
+                    quality={92}
+                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 48vw, 40vw"
+                    className="object-cover object-center"
+                  />
+                </motion.div>
+
+                {/* Floating pill, top left */}
+                <motion.div {...popIn(0.4)} className="absolute top-6 -left-3 sm:left-2 z-30 flex items-center gap-2 bg-white border border-border/60 rounded-full px-3.5 py-2 shadow-lg -rotate-3">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-foreground">No Guesswork</span>
+                </motion.div>
+
+                {/* Floating pill, bottom right */}
+                <motion.div {...popIn(0.55)} className="absolute bottom-8 right-2 sm:right-3 z-30 flex items-center gap-2 bg-white border border-border/60 rounded-full px-3.5 py-2 shadow-lg rotate-3">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-foreground">Automated Follow-Up</span>
+                </motion.div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
         {/* ── ANSWER: TURN VISITORS INTO BOOKED CALLS (left image, right copy) ── */}
         <section className="section-yb">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
             {/* Right, Copy (order-2 on mobile and desktop) */}
-            <motion.div {...fadeUp()} className="space-y-8 order-2 lg:order-2">
+            <motion.div {...fadeUp()} className="space-y-8 order-2 lg:order-1">
               <div className="space-y-4">
                 <Eyebrow>The Fix</Eyebrow>
                 <h2 className="max-w-[20ch]">
