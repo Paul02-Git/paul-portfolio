@@ -25,6 +25,7 @@ import { Eyebrow } from "@/components/Eyebrow";
 import { Button } from "@/components/Button";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ClientFeedback } from "@/components/ClientFeedback";
+import { SectionVectorBlobs } from "@/components/SectionVectorBlobs";
 import { projects, blogPosts, faqs } from "@/data/portfolio";
 
 // Logo bubbles embedded in the trust headline (WordPress mark matches the services hero).
@@ -490,6 +491,43 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        {/* ── CTA: LET'S BUILD SOMETHING GREAT ── */}
+        <section className="section-yb">
+          <div>
+            <motion.div
+              {...fadeUp()}
+              className="relative overflow-hidden rounded-2xl bg-primary px-6 py-16 md:px-12 md:py-10"
+            >
+              {/* Subtle dot-grid texture */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  backgroundImage: "radial-gradient(circle, rgba(30,58,138,0.10) 1px, transparent 1.5px)",
+                  backgroundSize: "18px 18px",
+                }}
+              />
+
+              {/* Decorative section vectors, mirrored on both ends */}
+              <SectionVectorBlobs />
+
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                <div>
+                  <h2 className="text-muted">
+                    Ready for a Better Website?
+                  </h2>
+                  <p className="mt-5 max-w-[58ch] leading-relaxed text-muted/90">
+                    Whether you're starting from scratch or improving what you already have, let's discuss your goals and find the right next steps for your business.
+                  </p>
+                </div>
+                <Button href="/book-a-call" className="bg-muted text-foreground shrink-0" icon={<ArrowUpRight className="h-5 w-5" />}>
+                  Book A Call
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </section>
 
