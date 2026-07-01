@@ -313,7 +313,7 @@ export default function Home() {
             <motion.div {...fadeUp()} className="space-y-8 order-2 lg:order-2">
               <div className="space-y-4">
                 <Eyebrow>The Process</Eyebrow>
-                <h2 className="max-w-[15ch]">
+                <h2>
                   Here&apos;s Exactly How I Fix It
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
