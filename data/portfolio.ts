@@ -312,6 +312,78 @@ export const fullServices: Service[] = [
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Why Your Business Emails Keep Going to Spam (Step-by-Step Fix for 2026)",
+        excerpt: "Invoices and replies vanishing into spam instead of inboxes? Here's the step-by-step fix, SPF, DKIM, and DMARC explained in plain English, with real DNS record examples you can follow today.",
+        date: "Jul 1, 2026",
+        category: "Marketing",
+        image: "/images/blog/email-deliverability-hero.webp",
+        slug: "why-business-emails-go-to-spam",
+        author: "Paul Puzon",
+        authorRole: "Web Developer & Email Deliverability Specialist",
+        content: `
+            <div class="space-y-6">
+                <p>You send an invoice. You send a friendly follow-up. You send the contract your new client has been waiting a week for. Then, nothing. No reply, no read receipt, not even a "sorry, been slammed." I've watched business owners refresh their inbox like it owes them money, convinced a client's gone cold, when the real story is far less dramatic: the email never made it past the spam folder in the first place. Your domain never told Gmail and Yahoo it was allowed to send that message, so they quietly binned it, and nobody told you.</p>
+
+                <p>This isn't rare, and it isn't your writing, your subject lines, or bad luck. It's almost always a missing piece of DNS configuration with three names that sound scarier than they are: <strong>SPF, DKIM, and DMARC</strong>. This guide walks through exactly what they do, why they suddenly matter more than they used to, and a step-by-step fix you (or whoever manages your domain) can follow today, no computer science degree required.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Why This Suddenly Got a Lot More Serious</h2>
+                <p>Email authentication used to be one of those "nice to have, get to it eventually" technical chores. Not anymore. Starting in February 2024, Google and Yahoo began enforcing hard requirements for anyone sending bulk email, and by November 2025 the enforcement tightened further, with non-compliant senders facing outright rejections instead of a polite nudge into spam (<a href="https://powerdmarc.com/google-and-yahoo-email-authentication-requirements/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">PowerDMARC</a>). Yahoo goes a step further still: it requires SPF and DKIM for <em>every</em> sender, not just businesses blasting thousands of emails a day (<a href="https://www.mailgun.com/state-of-email-deliverability/chapter/yahoogle-bulk-senders/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Mailgun</a>).</p>
+                <p>In plain English: email now has a bouncer at the door, checking ID before anyone gets into the inbox. If your domain shows up without proof it's really you, it gets turned away, and unlike an actual bouncer, it won't even tell you it happened. You just get silence, and a growing pile of "did you get my email?" phone calls.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">SPF, DKIM & DMARC, Explained Without the Jargon</h2>
+                <p>Three acronyms, three jobs. Think of them as the paperwork your email carries to prove it's legitimately from you:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>SPF (Sender Policy Framework)</strong> is the guest list. It's a DNS record that names exactly which mail servers are allowed to send email using your domain, Google Workspace, your CRM, your invoicing tool, whatever. Anything not on the list gets treated with suspicion.</li>
+                    <li><strong>DKIM (DomainKeys Identified Mail)</strong> is the wax seal. Every email gets a digital signature added behind the scenes, proving the message wasn't tampered with in transit and genuinely came from where it claims to.</li>
+                    <li><strong>DMARC (Domain-based Message Authentication, Reporting & Conformance)</strong> is the bouncer's instruction manual. It tells Gmail, Yahoo, and Outlook what to do when a message fails the SPF or DKIM check, let it through, quarantine it, or reject it outright, and it emails you a report so you can see who's been sending mail pretending to be you.</li>
+                </ul>
+                <img src="/images/blog/email-authentication-data-center.webp" alt="A woman navigating a data center on a laptop, representing the DNS infrastructure behind email authentication" width="1200" height="801" loading="lazy" class="w-full rounded-md my-8" />
+                <p>Get all three set up correctly and working together (what's called "alignment"), and your emails walk through the door with a passport, a photo ID, and a letter of recommendation. Skip one, and you're the guy at the club trying to convince the bouncer you're on the list with nothing but a confident smile.</p>
+
+                <div class="callout">
+                    <h4>Quick Win: Run the Free 2-Minute Test First</h4>
+                    <p>Before touching any DNS records, go to <a href="https://www.mail-tester.com/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">mail-tester.com</a>, send a test email to the address it gives you, and see your current score out of 10. It'll tell you exactly which of the three records are missing or broken, so you're fixing a known problem instead of guessing in the dark.</p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">The Step-by-Step Fix</h2>
+                <p>Here's the whole process, in order. You (or your web developer) will need access to your domain's DNS settings, usually through wherever you registered or host your domain.</p>
+                <img src="/images/blog/dns-records-setup-engineer.webp" alt="A focused person working on a laptop, representing the process of configuring DNS authentication records" width="1200" height="801" loading="lazy" class="w-full rounded-md my-8" />
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li><strong>List everyone who sends email as you.</strong> Google Workspace or Microsoft 365, your website's contact form, your CRM (GoHighLevel, HubSpot), Klaviyo or Mailchimp, your invoicing tool (QuickBooks, Xero). You can't authorize senders you've forgotten about.</li>
+                    <li><strong>Add or fix your SPF record.</strong> This is a single TXT record at your root domain that lists every sender from step 1. You can only have <em>one</em> SPF record, folding every source into it, e.g. <code>v=spf1 include:_spf.google.com include:mailgun.org ~all</code>.</li>
+                    <li><strong>Turn on DKIM for every platform in your list.</strong> Each tool generates its own DKIM key in its admin settings, usually under "domain authentication" or "custom sending domain." You publish the TXT or CNAME record it gives you, one per platform.</li>
+                    <li><strong>Publish a DMARC record, starting in monitor-only mode.</strong> Add a TXT record at <code>_dmarc.yourdomain.com</code> like <code>v=DMARC1; p=none; rua=mailto:you@yourdomain.com; pct=100</code>. The <code>p=none</code> means "just report to me, don't block anything yet", your safety net while you confirm everything's set up right.</li>
+                    <li><strong>Watch the reports for two to four weeks.</strong> DMARC sends you a daily digest showing every source sending mail as your domain, and whether it passed. Free tools like <a href="https://mxtoolbox.com/dmarc.aspx" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">MxToolbox's DMARC lookup</a> or Google Postmaster Tools make the raw reports readable.</li>
+                    <li><strong>Tighten the policy once everything's passing.</strong> Move from <code>p=none</code> to <code>p=quarantine</code>, then eventually <code>p=reject</code>, so anyone spoofing your domain gets blocked outright instead of just logged.</li>
+                </ol>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Free Tools & Video Walkthroughs</h2>
+                <p>If you'd rather watch someone click through the actual DNS panel than follow written steps, these two walkthroughs cover the setup end to end:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><a href="https://www.youtube.com/watch?v=r06_AYpyG-U" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Postmark: DKIM, SPF & DMARC Setup (Full Domain Authentication Guide)</a>, a platform-agnostic walkthrough of all three records.</li>
+                    <li><a href="https://www.youtube.com/watch?v=bXxcDJa84uA" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">How to Set Up SPF, DKIM & DMARC for Google Workspace</a>, if Gmail is where most of your business email lives.</li>
+                </ul>
+                <p>Pair either video with <a href="https://mxtoolbox.com/dmarc.aspx" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">MxToolbox</a> open in another tab to check your work as you go, it'll flag a broken or duplicate record immediately instead of you finding out three weeks later.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Email Deliverability: FAQs</h2>
+                <h3 class="text-xl font-bold text-foreground mt-6">What's the actual difference between SPF, DKIM, and DMARC?</h3>
+                <p>SPF says which servers are allowed to send as you. DKIM proves a specific message wasn't altered and really came from you. DMARC ties the two together and tells inboxes what to do when a message fails, plus reports back to you on who's sending mail using your domain.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Do I need this if I only send a handful of emails a day?</h3>
+                <p>Yes. Google's hard requirements only kick in past 5,000 emails a day, but Yahoo requires SPF and DKIM for every sender regardless of volume, and Gmail's spam filters weigh authentication for small senders too. A two-person business is just as capable of landing in spam as a 500-person one.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">Will this pull emails already sitting in someone's spam folder back out?</h3>
+                <p>No, fixing your records doesn't retroactively rescue mail that's already been filtered. What it does is improve deliverability going forward, so the next invoice or reply lands in the inbox instead of getting buried.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">How long until I see results?</h3>
+                <p>DNS changes typically propagate within a few hours, but your sender reputation with Gmail and Yahoo rebuilds gradually. Most businesses notice a real improvement in deliverability within one to three weeks of everything being correctly configured and passing.</p>
+                <h3 class="text-xl font-bold text-foreground mt-6">What happens if I get a DNS record wrong?</h3>
+                <p>Usually nothing dramatic, a malformed SPF or DMARC record just gets ignored by receiving servers, which leaves you back where you started rather than making things worse. That said, jumping straight to <code>p=reject</code> before confirming every legitimate sender passes can bounce your own real emails, which is why the monitor-only <code>p=none</code> stage matters. Start slow.</p>
+
+                <h2 class="text-2xl font-bold text-foreground mt-8">Stop Wondering, Start Checking</h2>
+                <p>Emails vanishing into spam isn't a mystery, and it isn't a sign your business is doing anything wrong, it's almost always a missing DNS record that takes an afternoon to fix. Run the free test, work through the steps in order, and don't rush the DMARC policy, monitor first, tighten later. Quiet, unglamorous fix, genuinely enormous payoff, since a hidden deliverability problem costs you the same way as <a href="/blog/speed-to-lead-follow-up-faster" class="text-primary font-semibold hover:underline">slow lead follow-up</a> does: it just does it silently, where you can't see the damage happening.</p>
+                <p>If DNS records make your eyes glaze over, or you'd simply rather have someone who does this for a living handle it properly the first time, that's exactly the kind of thing I set up when I build and launch client websites. Take a look at my <a href="/services" class="text-primary font-semibold hover:underline">services</a>, browse the <a href="/portfolio" class="text-primary font-semibold hover:underline">portfolio</a>, or <a href="/book-a-call" class="text-primary font-semibold hover:underline">book a free discovery call</a> and we'll get your domain properly authenticated, no jargon, no pressure. Prefer to type first? <a href="/contact" class="text-primary font-semibold hover:underline">Send a message</a> and we'll take it from there.</p>
+            </div>
+        `
+    },
+    {
         title: "How to Migrate from Wix or Squarespace to WordPress in 2026 (Without Losing Your SEO)",
         excerpt: "Outgrowing Wix or Squarespace? Here's how to migrate to WordPress in 2026 without losing your Google rankings, the real reasons to switch, how the move works step by step, and how to keep your SEO intact.",
         date: "Jun 26, 2026",
